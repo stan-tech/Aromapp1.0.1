@@ -42,11 +42,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.Ajouter = new System.Windows.Forms.Button();
+            this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
             this.suppliersTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.searchText = new Aromapp.HintTexBox();
-            this.iconButton4 = new System.Windows.Forms.Button();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.SuppsNumber = new System.Windows.Forms.Label();
@@ -68,8 +68,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton5 = new System.Windows.Forms.Button();
-            this.iconButton1 = new System.Windows.Forms.Button();
+            this.iconButton5 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DebtsText = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -90,8 +90,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.54942F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.45058F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.58342F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.41658F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -115,7 +115,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 15, 3, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.groupBox1.Size = new System.Drawing.Size(1173, 1110);
+            this.groupBox1.Size = new System.Drawing.Size(1135, 1110);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fournisseurs";
@@ -135,7 +135,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.61299F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.45471F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1167, 1066);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1129, 1066);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -145,29 +145,29 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 262F));
             this.tableLayoutPanel5.Controls.Add(this.Ajouter, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 967);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1161, 96);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1123, 96);
             this.tableLayoutPanel5.TabIndex = 32;
             // 
             // Ajouter
             // 
             this.Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Ajouter.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.Ajouter.BorderRadius = 5;
+            this.Ajouter.FillColor = System.Drawing.Color.RoyalBlue;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.Ajouter.ForeColor = System.Drawing.Color.Black;
+            this.Ajouter.ForeColor = System.Drawing.Color.White;
             this.Ajouter.Location = new System.Drawing.Point(13, 24);
             this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
             this.Ajouter.Name = "Ajouter";
-            this.Ajouter.Size = new System.Drawing.Size(424, 69);
+            this.Ajouter.Size = new System.Drawing.Size(404, 69);
             this.Ajouter.TabIndex = 1;
             this.Ajouter.Text = "    Ajouter un fournisseur";
-            this.Ajouter.UseVisualStyleBackColor = false;
             this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // suppliersTable
@@ -224,7 +224,7 @@
             this.suppliersTable.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.suppliersTable.RowTemplate.Height = 33;
             this.suppliersTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.suppliersTable.Size = new System.Drawing.Size(1147, 659);
+            this.suppliersTable.Size = new System.Drawing.Size(1109, 659);
             this.suppliersTable.TabIndex = 27;
             this.suppliersTable.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.suppliersTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -266,7 +266,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1161, 167);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1123, 167);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // searchText
@@ -279,7 +279,7 @@
             this.searchText.Location = new System.Drawing.Point(20, 30);
             this.searchText.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(482, 47);
+            this.searchText.Size = new System.Drawing.Size(466, 47);
             this.searchText.TabIndex = 0;
             this.searchText.Tag = "Rechercher...";
             this.searchText.Text = "Rechercher...";
@@ -292,16 +292,15 @@
             this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton4.BorderRadius = 5;
             this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.Black;
-            this.iconButton4.Location = new System.Drawing.Point(902, 28);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 3, 72);
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
+            this.iconButton4.Location = new System.Drawing.Point(875, 28);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 20, 72);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(256, 67);
+            this.iconButton4.Size = new System.Drawing.Size(228, 67);
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "Actualiser";
-            this.iconButton4.UseVisualStyleBackColor = false;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // tableLayoutPanel3
@@ -312,7 +311,7 @@
             this.tableLayoutPanel3.Controls.Add(this.groupBox3, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.groupBox4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1199, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1161, 3);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -320,7 +319,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.69611F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.34982F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(680, 1132);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(718, 1132);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // groupBox2
@@ -334,7 +333,7 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 12);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(674, 108);
+            this.groupBox2.Size = new System.Drawing.Size(712, 108);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nombre de fournisseurs";
@@ -381,7 +380,7 @@
             this.groupBox3.Location = new System.Drawing.Point(3, 322);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(674, 800);
+            this.groupBox3.Size = new System.Drawing.Size(712, 800);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informations sur le client";
@@ -450,7 +449,7 @@
             this.prods.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.prods.RowTemplate.Height = 33;
             this.prods.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prods.Size = new System.Drawing.Size(616, 162);
+            this.prods.Size = new System.Drawing.Size(654, 162);
             this.prods.TabIndex = 48;
             this.prods.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.prods.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -474,6 +473,7 @@
             this.prods.ThemeStyle.RowsStyle.Height = 33;
             this.prods.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.prods.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.prods.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prods_CellDoubleClick);
             // 
             // dettes
             // 
@@ -644,47 +644,47 @@
             this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.41727F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.58273F));
             this.tableLayoutPanel6.Controls.Add(this.iconButton5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.iconButton1, 1, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(10, 690);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(658, 100);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(696, 100);
             this.tableLayoutPanel6.TabIndex = 25;
             // 
             // iconButton5
             // 
             this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton5.BorderRadius = 5;
+            this.iconButton5.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton5.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
             this.iconButton5.Location = new System.Drawing.Point(3, 28);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(321, 69);
+            this.iconButton5.Size = new System.Drawing.Size(398, 69);
             this.iconButton5.TabIndex = 1;
             this.iconButton5.Text = "Modifier le fournisseur";
-            this.iconButton5.UseVisualStyleBackColor = false;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.FillColor = System.Drawing.Color.Red;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(334, 28);
+            this.iconButton1.Location = new System.Drawing.Point(411, 28);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(321, 69);
+            this.iconButton1.Size = new System.Drawing.Size(282, 69);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Supprimer";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // groupBox4
@@ -699,7 +699,7 @@
             this.groupBox4.Location = new System.Drawing.Point(3, 135);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(674, 174);
+            this.groupBox4.Size = new System.Drawing.Size(712, 174);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dettes";
@@ -712,7 +712,7 @@
             this.DebtsText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DebtsText.Font = new System.Drawing.Font("Calibri", 18.125F, System.Drawing.FontStyle.Bold);
             this.DebtsText.ForeColor = System.Drawing.Color.White;
-            this.DebtsText.Location = new System.Drawing.Point(521, 87);
+            this.DebtsText.Location = new System.Drawing.Point(559, 87);
             this.DebtsText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.DebtsText.Name = "DebtsText";
             this.DebtsText.Size = new System.Drawing.Size(50, 60);
@@ -725,7 +725,8 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -771,11 +772,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button Ajouter;
+        private Guna.UI2.WinForms.Guna2Button Ajouter;
         private Guna.UI2.WinForms.Guna2DataGridView suppliersTable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private HintTexBox searchText;
-        private System.Windows.Forms.Button iconButton4;
+        private Guna.UI2.WinForms.Guna2Button iconButton4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label SuppsNumber;
@@ -797,8 +798,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button iconButton5;
-        private System.Windows.Forms.Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton5;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label DebtsText;
         private System.Windows.Forms.Label label4;

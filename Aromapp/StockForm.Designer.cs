@@ -37,10 +37,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.Ajouter = new System.Windows.Forms.Button();
+            this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.searchText = new Aromapp.HintTexBox();
-            this.iconButton4 = new System.Windows.Forms.Button();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.Tyype = new System.Windows.Forms.ComboBox();
             this.invTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,8 +60,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton5 = new System.Windows.Forms.Button();
-            this.iconButton1 = new System.Windows.Forms.Button();
+            this.iconButton5 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.shortageN = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -153,16 +153,16 @@
             // 
             this.Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Ajouter.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.Ajouter.BorderRadius = 5;
+            this.Ajouter.FillColor = System.Drawing.Color.RoyalBlue;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.Ajouter.ForeColor = System.Drawing.Color.Black;
+            this.Ajouter.ForeColor = System.Drawing.Color.White;
             this.Ajouter.Location = new System.Drawing.Point(13, 26);
             this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
             this.Ajouter.Name = "Ajouter";
             this.Ajouter.Size = new System.Drawing.Size(401, 69);
             this.Ajouter.TabIndex = 1;
             this.Ajouter.Text = "Historique";
-            this.Ajouter.UseVisualStyleBackColor = false;
             this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // tableLayoutPanel4
@@ -205,16 +205,15 @@
             this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton4.BorderRadius = 5;
             this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.Black;
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
             this.iconButton4.Location = new System.Drawing.Point(868, 28);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 3, 52);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(244, 61);
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "Actualiser";
-            this.iconButton4.UseVisualStyleBackColor = false;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // Tyype
@@ -227,7 +226,7 @@
             "Homme",
             "Femme",
             "Unisexe",
-            "Emabllage",
+            "Emballage",
             "Sachet"});
             this.Tyype.Location = new System.Drawing.Point(20, 233);
             this.Tyype.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
@@ -556,23 +555,24 @@
             // 
             this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton5.BorderRadius = 5;
+            this.iconButton5.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton5.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
             this.iconButton5.Location = new System.Drawing.Point(3, 28);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(308, 69);
             this.iconButton5.TabIndex = 1;
             this.iconButton5.Text = "Modifier ";
-            this.iconButton5.UseVisualStyleBackColor = false;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.FillColor = System.Drawing.Color.Red;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.Location = new System.Drawing.Point(321, 28);
@@ -581,7 +581,6 @@
             this.iconButton1.Size = new System.Drawing.Size(309, 69);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Supprimer";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // groupBox4
@@ -683,17 +682,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button iconButton5;
-        private System.Windows.Forms.Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton5;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label shortageN;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button Ajouter;
+        private Guna.UI2.WinForms.Guna2Button Ajouter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private HintTexBox searchText;
-        private System.Windows.Forms.Button iconButton4;
+        private Guna.UI2.WinForms.Guna2Button iconButton4;
         private System.Windows.Forms.ComboBox Tyype;
         private Guna.UI2.WinForms.Guna2DataGridView invTable;
     }

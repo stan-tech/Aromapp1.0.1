@@ -67,5 +67,9 @@ namespace Aromapp
             ScarceTable.DataSource = table;
         }
 
+        private void ScarceProducts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

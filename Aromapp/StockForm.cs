@@ -20,6 +20,7 @@ namespace Aromapp
         DataTable table = new DataTable();
         int limit = 100;
         int currentPage = 1;
+        string SelectedTable = "produits";
         public StockForm()
         {
             InitializeComponent();
@@ -120,21 +121,25 @@ namespace Aromapp
 
         private void invTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            double entre = double.Parse(invTable.SelectedRows[0].Cells[3].Value.ToString())
-                , sortie = double.Parse(invTable.SelectedRows[0].Cells[4].Value.ToString())
-                , achat = double.Parse(invTable.SelectedRows[0].Cells[5].Value.ToString())
-                , vente = double.Parse(invTable.SelectedRows[0].Cells[2].Value.ToString());
+            if (invTable.SelectedRows[0].Cells[1].Value!=null)
+            {
+                double entre = double.Parse(invTable.SelectedRows[0].Cells[3].Value.ToString())
+                      , sortie = double.Parse(invTable.SelectedRows[0].Cells[4].Value.ToString())
+                      , achat = double.Parse(invTable.SelectedRows[0].Cells[5].Value.ToString())
+                      , vente = double.Parse(invTable.SelectedRows[0].Cells[2].Value.ToString());
 
-            NameText.Text = invTable.SelectedRows[0].Cells[1].Value.ToString();
-            VenteText.Text = sortie.ToString();
-            AchatText.Text = entre.ToString();
-            date.Text = DBHelper.getAddedDate(invTable.SelectedRows[0].Cells[0].Value.ToString());
-            retenus.Text = ((vente - achat) * sortie).ToString() + " " + retenus.Tag.ToString();
-            generateBarcode(QR, invTable.SelectedRows[0].Cells[0].Value.ToString());
+                NameText.Text = invTable.SelectedRows[0].Cells[1].Value.ToString();
+                VenteText.Text = sortie.ToString();
+                AchatText.Text = entre.ToString();
+                date.Text = DBHelper.getAddedDate(invTable.SelectedRows[0].Cells[0].Value.ToString());
+                retenus.Text = ((vente - achat) * sortie).ToString() + " " + retenus.Tag.ToString();
+                generateBarcode(QR, invTable.SelectedRows[0].Cells[0].Value.ToString()); 
+            }
 
         }
         public void Search()
         {
+
             using (DBHelper helper = new DBHelper())
             {
                 if (searchText.Text != searchText.Tag.ToString())
@@ -145,7 +150,7 @@ namespace Aromapp
             }
         }
 
-
+        
         private void Tyype_SelectedIndexChanged(object sender, EventArgs e)
         {
             DBHelper helper = new DBHelper();

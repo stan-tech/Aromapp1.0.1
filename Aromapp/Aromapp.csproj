@@ -175,6 +175,12 @@
       <DependentUpon>CartItemOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="ClientHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientHistory.Designer.cs">
+      <DependentUpon>ClientHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clients.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,6 +223,12 @@
     </Compile>
     <Compile Include="EditSupplierForm.Designer.cs">
       <DependentUpon>EditSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="etiquette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="etiquette.Designer.cs">
+      <DependentUpon>etiquette.cs</DependentUpon>
     </Compile>
     <Compile Include="HintTexBox.cs">
       <SubType>Component</SubType>
@@ -387,6 +399,9 @@
     <EmbeddedResource Include="CartItemOptions.resx">
       <DependentUpon>CartItemOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientHistory.resx">
+      <DependentUpon>ClientHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditSupplierForm.resx">
       <DependentUpon>EditSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="etiquette.resx">
+      <DependentUpon>etiquette.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="History.resx">
       <DependentUpon>History.cs</DependentUpon>

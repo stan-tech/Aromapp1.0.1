@@ -20,6 +20,7 @@ namespace Aromapp
         NumberFormatInfo nfi;
         string BarCodePref;
         public event EventHandler QTChanged;
+        string SelectedTable = "produits";
 
         public AddPurchase()
         {
@@ -273,7 +274,9 @@ namespace Aromapp
         public void AddToCart()
         {
             double price;
-            string prodID = "PR" + int.Parse(prodRef.Text).ToString("D4");
+            string prodID = (SelectedTable == "produits") ?
+                    "PR" + int.Parse(prodRef.Text).ToString("D4") :
+                    "FL" + int.Parse(prodRef.Text).ToString("D4");
 
             purchaseLine.PrixVG = double.Parse(priceSG.Text.Replace(".", ","));
             purchaseLine.PrixVD = double.Parse(priceSD.Text.Replace(".", ","));
@@ -371,7 +374,10 @@ namespace Aromapp
                 QT.Text != QT.Tag.ToString())
             {
                 bool newProd = true;
-                string newProdID = "PR" + int.Parse(prodRef.Text).ToString("D4");
+                string newProdID = (SelectedTable == "produits")?
+                    "PR" + int.Parse(prodRef.Text).ToString("D4"):
+                    "FL" + int.Parse(prodRef.Text).ToString("D4");
+
                 foreach (string id in listBox1.Items)
                 {
                     if (id == newProdID)
@@ -392,7 +398,9 @@ namespace Aromapp
                 {
                     try
                     {
-                        purchaseLine.C_PR = "PR" + int.Parse(prodRef.Text).ToString("D4");
+                        purchaseLine.C_PR = (SelectedTable == "produits") ?
+                    "PR" + int.Parse(prodRef.Text).ToString("D4") :
+                    "FL" + int.Parse(prodRef.Text).ToString("D4");
 
 
                     }
@@ -640,8 +648,9 @@ namespace Aromapp
 
             if (!string.IsNullOrEmpty(prodRef.Text))
             {
-                listBox1.DataSource = helper.searchForIDs(prodRef.Text);
+                listBox1.DataSource = helper.searchForIDs(SelectedTable,prodRef.Text);
             }
+           
         }
         
 
@@ -769,28 +778,22 @@ namespace Aromapp
 
                 try
                 {
-                    
-                        suppName.BeginInvoke((Action)(() => {
+                    if (string.IsNullOrEmpty(suppName.Text))
+                    {
 
-                           
+                        suppName.BeginInvoke((Action)(() =>
+                        {
 
-                            suppName.Items.Clear();
-                            List<string> collectionList = collection.Cast<string>().ToList();
 
-                            foreach (string s in collectionList)
-                            {
-                                suppName.Items.Add(s);
-
-                            }
-
-                            suppName.DroppedDown = true;
-                            suppName.Select(suppName.Text.Length, 0);
-
+                            suppName.AutoCompleteCustomSource = collection;
+                            suppName.AutoCompleteMode = AutoCompleteMode.Suggest;
+                            suppName.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                         }));
-                    
 
 
+
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -807,11 +810,12 @@ namespace Aromapp
 
             using (DBHelper helper = new DBHelper())
             {
-                product = helper.GetProductByID(selection);
+                product = helper.GetProductByID(SelectedTable,selection);
 
 
                 prodRef_Click(sender, e);
-                prodRef.Text = product.ID.Replace("PR", "").TrimStart('0');
+                prodRef.Text = (SelectedTable== "produits")?product.ID.Replace("PR", "").TrimStart('0'):
+                    product.ID.Replace("FL", "").TrimStart('0');
 
                 prodClick(sender, e);
                 prodName.Text = product.Name;
@@ -952,7 +956,16 @@ namespace Aromapp
 
         private void prodRef_Click(object sender, EventArgs e)
         {
-            HintUtils.HideHint(prodRef);
+            if (comboBox1.SelectedItem != null)
+            {
+                HintUtils.HideHint(prodRef);
+
+            }
+            else
+            {
+                MessageBoxer.showGeneralMsg("Veuillez séléctionner une catégorie premièrement");
+                return;
+            }
         }
 
         private void tva_KeyPress(object sender, KeyPressEventArgs e)
@@ -1025,7 +1038,7 @@ namespace Aromapp
             {
                 try
                 {
-                    Namescollection = helper.GetProductsNames(prodName.Text, out products);
+                    Namescollection = helper.GetProductsNames(SelectedTable,prodName.Text, out products);
 
                 }
                 catch (Exception)
@@ -1067,6 +1080,20 @@ namespace Aromapp
                 System.Windows.Forms.MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                SelectedTable = "produits";
+            }
+            else
+            {
+                SelectedTable = "emballage";
+            }
+        }
+
+       
 
         private void priceP_KeyPress(object sender, KeyPressEventArgs e)
         {

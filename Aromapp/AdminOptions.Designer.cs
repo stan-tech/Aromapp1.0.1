@@ -44,17 +44,17 @@ namespace Aromapp
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.encaiss = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            this.AddUser = new System.Windows.Forms.Button();
+            this.AddUser = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.modifMDP = new System.Windows.Forms.Button();
-            this.DeleteUser = new System.Windows.Forms.Button();
+            this.modifMDP = new Guna.UI2.WinForms.Guna2Button();
+            this.DeleteUser = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.UserCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new System.Windows.Forms.GroupBox();
             this.valueBox = new Aromapp.HintTexBox();
-            this.modifINF = new System.Windows.Forms.Button();
+            this.modifINF = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.ColumnCombo = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,9 +76,9 @@ namespace Aromapp
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.supprimer = new System.Windows.Forms.Button();
-            this.iconButton1 = new System.Windows.Forms.Button();
-            this.iconButton2 = new System.Windows.Forms.Button();
+            this.supprimer = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton2 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -298,16 +298,16 @@ namespace Aromapp
             // 
             this.AddUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddUser.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.AddUser.BorderRadius = 5;
+            this.AddUser.FillColor = System.Drawing.Color.RoyalBlue;
             this.AddUser.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.AddUser.ForeColor = System.Drawing.Color.Black;
+            this.AddUser.ForeColor = System.Drawing.Color.White;
             this.AddUser.Location = new System.Drawing.Point(26, 585);
             this.AddUser.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.AddUser.Name = "AddUser";
             this.AddUser.Size = new System.Drawing.Size(847, 69);
             this.AddUser.TabIndex = 1;
             this.AddUser.Text = "  Ajouter un utilisateur";
-            this.AddUser.UseVisualStyleBackColor = false;
             this.AddUser.Click += new System.EventHandler(this.AddUser_Click);
             // 
             // tableLayoutPanel1
@@ -330,23 +330,23 @@ namespace Aromapp
             // 
             this.modifMDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.modifMDP.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.modifMDP.BorderRadius = 5;
             this.modifMDP.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.modifMDP.ForeColor = System.Drawing.Color.Black;
+            this.modifMDP.ForeColor = System.Drawing.Color.White;
             this.modifMDP.Location = new System.Drawing.Point(3, 30);
             this.modifMDP.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.modifMDP.Name = "modifMDP";
             this.modifMDP.Size = new System.Drawing.Size(417, 69);
             this.modifMDP.TabIndex = 1;
             this.modifMDP.Text = "  Modifier";
-            this.modifMDP.UseVisualStyleBackColor = false;
             this.modifMDP.Click += new System.EventHandler(this.modifMDP_Click);
             // 
             // DeleteUser
             // 
             this.DeleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteUser.BackColor = System.Drawing.Color.Red;
+            this.DeleteUser.BorderRadius = 5;
+            this.DeleteUser.FillColor = System.Drawing.Color.Red;
             this.DeleteUser.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.DeleteUser.ForeColor = System.Drawing.Color.White;
             this.DeleteUser.Location = new System.Drawing.Point(430, 30);
@@ -355,7 +355,6 @@ namespace Aromapp
             this.DeleteUser.Size = new System.Drawing.Size(417, 69);
             this.DeleteUser.TabIndex = 1;
             this.DeleteUser.Text = "  Supprimer";
-            this.DeleteUser.UseVisualStyleBackColor = false;
             this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
             // 
             // label6
@@ -457,16 +456,15 @@ namespace Aromapp
             // 
             this.modifINF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.modifINF.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.modifINF.BorderRadius = 5;
             this.modifINF.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.modifINF.ForeColor = System.Drawing.Color.Black;
-            this.modifINF.Location = new System.Drawing.Point(375, 362);
+            this.modifINF.ForeColor = System.Drawing.Color.White;
+            this.modifINF.Location = new System.Drawing.Point(278, 362);
             this.modifINF.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.modifINF.Name = "modifINF";
-            this.modifINF.Size = new System.Drawing.Size(347, 69);
+            this.modifINF.Size = new System.Drawing.Size(531, 69);
             this.modifINF.TabIndex = 1;
             this.modifINF.Text = "Modifier";
-            this.modifINF.UseVisualStyleBackColor = false;
             this.modifINF.Click += new System.EventHandler(this.modifINF_Click);
             // 
             // tableLayoutPanel5
@@ -743,9 +741,9 @@ namespace Aromapp
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.4995F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.26083F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.29003F));
             this.tableLayoutPanel2.Controls.Add(this.supprimer, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.iconButton1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.iconButton2, 2, 0);
@@ -762,16 +760,16 @@ namespace Aromapp
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.supprimer.BackColor = System.Drawing.Color.Red;
+            this.supprimer.BorderRadius = 5;
+            this.supprimer.FillColor = System.Drawing.Color.Red;
             this.supprimer.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.supprimer.ForeColor = System.Drawing.Color.White;
             this.supprimer.Location = new System.Drawing.Point(20, 40);
             this.supprimer.Margin = new System.Windows.Forms.Padding(20, 40, 3, 40);
             this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(639, 63);
+            this.supprimer.Size = new System.Drawing.Size(542, 63);
             this.supprimer.TabIndex = 2;
             this.supprimer.Text = "   Supprimer toute l\'inventaire";
-            this.supprimer.UseVisualStyleBackColor = false;
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // iconButton1
@@ -779,16 +777,16 @@ namespace Aromapp
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.FillColor = System.Drawing.Color.Red;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(682, 40);
+            this.iconButton1.Location = new System.Drawing.Point(585, 40);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(20, 40, 20, 40);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(622, 63);
+            this.iconButton1.Size = new System.Drawing.Size(699, 63);
             this.iconButton1.TabIndex = 2;
             this.iconButton1.Text = "Supprimer tous les rapports de vente";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton2
@@ -796,16 +794,16 @@ namespace Aromapp
             this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BackColor = System.Drawing.Color.Red;
+            this.iconButton2.BorderRadius = 5;
+            this.iconButton2.FillColor = System.Drawing.Color.Red;
             this.iconButton2.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.Location = new System.Drawing.Point(1329, 40);
+            this.iconButton2.Location = new System.Drawing.Point(1309, 40);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(5, 40, 20, 40);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(637, 63);
+            this.iconButton2.Size = new System.Drawing.Size(657, 63);
             this.iconButton2.TabIndex = 2;
             this.iconButton2.Text = "Supprimer tous les rapports d\'achat";
-            this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // tableLayoutPanel7
@@ -885,11 +883,11 @@ namespace Aromapp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label PhoneText;
         private System.Windows.Forms.Label label3;
-        private Button AddUser;
+        private Guna.UI2.WinForms.Guna2Button AddUser;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button modifMDP;
-        private Button DeleteUser;
-        private Button modifINF;
+        private Guna.UI2.WinForms.Guna2Button modifMDP;
+        private Guna.UI2.WinForms.Guna2Button DeleteUser;
+        private Guna.UI2.WinForms.Guna2Button modifINF;
         private HintTexBox valueBox;
         private Panel panel1;
         private Label label13;
@@ -899,9 +897,9 @@ namespace Aromapp
         private Guna.UI2.WinForms.Guna2CustomCheckBox encaiss;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button supprimer;
-        private Button iconButton1;
-        private Button iconButton2;
+        private Guna.UI2.WinForms.Guna2Button supprimer;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton2;
         private TableLayoutPanel tableLayoutPanel7;
         private TableLayoutPanel tableLayoutPanel8;
         private TableLayoutPanel tableLayoutPanel9;

@@ -416,9 +416,7 @@ namespace Aromapp
                 {
                     if (double.Parse(dueText.Text) != 0)
                     {
-                        Confirm confirm = new Confirm();
-                        confirm.Passed += PasswoCorrect;
-                        confirm.ShowDialog();
+                        PasswoCorrect(sender,e);
                     }
                     else
                     {

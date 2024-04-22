@@ -27,13 +27,13 @@ namespace Aromapp
         string number = "0";
         public Home()
         {
-            /*Thread t = new Thread(new ThreadStart(StartForm));
+            Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(5000);*/
+            Thread.Sleep(5000);
 
             InitializeComponent();
 
-            /*t.Abort(); */
+            t.Abort();
 
             this.DoubleBuffered = true;
             using (DBHelper helper = new DBHelper())
@@ -157,46 +157,41 @@ namespace Aromapp
 
             logForm.ShowDialog();
 
-            /* Dictionary<int, string> IDs = new Dictionary<int, string>();
-              int Order = 1;
-              using (SQLiteConnection connection = new SQLiteConnection(DBHelper.connectionString))
-              {
-                  string q = "select c_prd from emballage order by c_prd asc;";
+            /*    Dictionary<int, string> IDs = new Dictionary<int, string>();
+                int Order = 1;
+                using (SQLiteConnection connection = new SQLiteConnection(DBHelper.connectionString))
+                {
+                    string q = "select code from stock order by code asc;";
 
-                  using (SQLiteCommand command = connection.CreateCommand())
-                  {
-                      command.CommandText = q;
+                    using (SQLiteCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = q;
 
-                      connection.Open();
-                      using (SQLiteDataReader reader = command.ExecuteReader())
-                      {
-                          while (reader.Read())
-                          {
-                              IDs.Add(Order, reader.GetString(0));
-                              Order++;
-                          }
-                          reader.Close();
-                      }
-                  }
+                        connection.Open();
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                IDs.Add(Order, reader.GetString(0));
+                                Order++;
+                            }
+                            reader.Close();
+                        }
+                    }
 
-                  foreach (var id in IDs)
-                  {
-                      string query = "update emballage set c_prd = 'FL" + id.Key.ToString("D4") + "' where c_prd = '" + id.Value + "' ;";
-                      new SQLiteCommand(query, connection).ExecuteN
-            
-            
-            
-            
-            uery();
+                    foreach (var id in IDs)
+                    {
+                        string query = "update stock set code = 'PR" + id.Key.ToString("D4") + "' where code = '" + id.Value + "' ;";
+                        new SQLiteCommand(query, connection).ExecuteNonQuery();
 
 
 
 
-                  }
-                  connection.Close();
+                    }
+                    connection.Close();
 
 
-              }*/
+                }*/
 
         }
 

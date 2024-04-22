@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
             this.PassWord = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton5 = new System.Windows.Forms.Button();
-            this.Ok = new System.Windows.Forms.Button();
+            this.iconButton5 = new Guna.UI2.WinForms.Guna2Button();
+            this.Ok = new Guna.UI2.WinForms.Guna2Button();
             this.Factures = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.UsersCombo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,15 +76,16 @@
             this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.Red;
+            this.iconButton5.BorderRadius = 5;
+            this.iconButton5.FillColor = System.Drawing.Color.Red;
             this.iconButton5.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton5.ForeColor = System.Drawing.Color.White;
             this.iconButton5.Location = new System.Drawing.Point(18, 21);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(323, 78);
+            this.iconButton5.Size = new System.Drawing.Size(316, 78);
             this.iconButton5.TabIndex = 0;
             this.iconButton5.Text = "Annuler";
-            this.iconButton5.UseVisualStyleBackColor = false;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // Ok
@@ -92,15 +93,17 @@
             this.Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Ok.BackColor = System.Drawing.Color.Gray;
+            this.Ok.BorderRadius = 5;
+            this.Ok.BorderThickness = 1;
+            this.Ok.FillColor = System.Drawing.Color.Gray;
             this.Ok.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Ok.ForeColor = System.Drawing.Color.White;
-            this.Ok.Location = new System.Drawing.Point(347, 21);
+            this.Ok.Location = new System.Drawing.Point(354, 21);
+            this.Ok.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.Ok.Name = "Ok";
-            this.Ok.Size = new System.Drawing.Size(323, 78);
+            this.Ok.Size = new System.Drawing.Size(316, 78);
             this.Ok.TabIndex = 0;
             this.Ok.Text = "Confirmer";
-            this.Ok.UseVisualStyleBackColor = false;
             this.Ok.Click += new System.EventHandler(this.Ok_Click);
             // 
             // Factures
@@ -227,8 +230,8 @@
 
         private System.Windows.Forms.TextBox PassWord;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button iconButton5;
-        private System.Windows.Forms.Button Ok;
+        private Guna.UI2.WinForms.Guna2Button iconButton5;
+        private Guna.UI2.WinForms.Guna2Button Ok;
         private Guna.UI2.WinForms.Guna2CustomCheckBox Factures;
         private System.Windows.Forms.ComboBox UsersCombo;
         private System.Windows.Forms.Label label4;

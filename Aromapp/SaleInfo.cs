@@ -18,6 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using DevExpress.XtraEditors.Filtering.Templates;
 using static DevExpress.XtraEditors.Mask.MaskSettings;
 using ZXing;
+using System.Text.RegularExpressions;
 
 namespace Aromapp
 {
@@ -26,6 +27,8 @@ namespace Aromapp
 
         public Sale sale { get; set; }
         static bool deletedProduct = false;
+        public static double NewPrice { get; set; }
+
         public static bool DeletedProduct { get => deletedProduct; set => deletedProduct = value; }
         static bool deletedSale = false;
         public double OriginalTotal, NewTotal;
@@ -62,6 +65,10 @@ namespace Aromapp
 
             dataLoader.DoWork += LoadProducts;
             dataLoader.RunWorkerCompleted += LoadProductsCompleted;
+            CartTable = new DataTable();
+            CartTable.Columns.AddRange(new DataColumn[9] { new DataColumn("N"), new DataColumn("Type"),new DataColumn("Réf"),new DataColumn("Désignation"),
+                new DataColumn("Qté"), new DataColumn("Prix U"),new DataColumn("Marge"),
+                new DataColumn("Montant HT"),new DataColumn("Remise") });
         }
         private void searchBox_Click(object sender, EventArgs e)
         {
@@ -74,6 +81,8 @@ namespace Aromapp
             HintUtils.ShowHint(searchBox);
 
         }
+        string SelectedTable = "produits";
+
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             using (DBHelper helper = new DBHelper())
@@ -81,7 +90,7 @@ namespace Aromapp
                 if (searchBox.Text != searchBox.Tag.ToString() && !string.IsNullOrEmpty(searchBox.Text.Trim()))
                 {
                     searching = true;
-                    prods.DataSource = helper.searchPOS(searchBox.Text, 100, 1);
+                    prods.DataSource = helper.searchPOS(SelectedTable,searchBox.Text, 100, 1);
                 }
                 else
                 {
@@ -146,7 +155,7 @@ namespace Aromapp
             
             BillLines.DataSource = helper.selectBillLines(sale.N);
             saleRef.Text = sale.N;
-            saleTotal.Text = sale.TotalHT.ToString();
+            saleTotal.Text = sale.TotalHT.ToString("F2") + " DA";
             saleType.Text = sale.Type;
             saleDate.Text = sale.Date.Replace("00:00:00", "");
             subTotal.Text = "0";
@@ -154,8 +163,12 @@ namespace Aromapp
             SaleRefString = saleRef.Text;
             label3.Text = label3.Text.Replace("Bon", sale.Type);
 
-            cartTable = (DataTable) BillLines.DataSource;
+            cartTable = ((DataTable)BillLines.DataSource).Copy();
 
+            foreach (var item in cartTable.Rows)
+            {
+                CartTable.Rows.Add(item);
+            }
             foreach (DataRow line in cartTable.Rows)
             {
 
@@ -241,7 +254,7 @@ namespace Aromapp
         {
             prods.Invoke((Action)(() => { prods.DataSource = table; }));
 
-            CartTable = (DataTable)cart.DataSource;
+            CartTable = ((DataTable)cart.DataSource).Copy();
         }
 
         string column = null;
@@ -385,7 +398,7 @@ namespace Aromapp
         {
             PdfPTable table = new PdfPTable(5);
             Information Storeinfo = DBHelper.GetStoreInformation();
-
+            string pattern = @"\p{IsArabic}";
 
             PdfPCell pdfPCell = null;
             Chunk glue = new Chunk(new VerticalPositionMark());
@@ -512,7 +525,22 @@ namespace Aromapp
             float startX = x + 10; // X-coordinate for the start of text
             float startY = y - 10;
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(ClientProp.Nom, FS), startX, startY + 80, 0);
+            if (Regex.IsMatch(ClientProp.Nom, pattern))
+            {
+                ColumnText columnText = new ColumnText(cb);
+                columnText.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+                columnText.SetSimpleColumn(startX + ClientProp.Nom.Length * 5, startY + 100, ClientProp.Nom.Length, 4);
+                columnText.AddElement(new Phrase(ClientProp.Nom,
+                    new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL,
+                    BaseColor.BLACK)));
+                columnText.Go();
+
+            }
+            else
+            {
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(ClientProp.Nom, FS), startX, startY + 80, 0);
+
+            }
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("\n"), startX, startY + 80, 0);
 
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Tel: " + ClientProp.Tel, SmallFS), startX, startY + 60, 0);
@@ -674,8 +702,13 @@ namespace Aromapp
 
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            NewPrice = detail ? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()) :
+     NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
 
             Qt qt = new Qt();
+
+            qt.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+            qt.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
             qt.Added += AddProduct;
             qt.ShowDialog();
@@ -683,7 +716,6 @@ namespace Aromapp
     
         void AddProduct(object sender, EventArgs e)
         {
-            double sellingPrice;
             double buyinPrice;
 
 
@@ -693,25 +725,17 @@ namespace Aromapp
 
             string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
 
-            if (detail)
-            {
-                sellingPrice = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
-            }
-            else
-            {
-                sellingPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-
-            }
+       
             buyinPrice = double.Parse(prods.SelectedRows[0].Cells[4].Value.ToString());
 
             BuyingPrices.Add(buyinPrice);
 
-            produits l_Ventes = new produits(nomproduits, quantity, sellingPrice, 10, 0);
+            produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
 
-            l_Ventes.Marge = (sellingPrice - buyinPrice) * quantity;
-            l_Ventes.MontantHT = sellingPrice * quantity;
+            l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
+            l_Ventes.MontantHT = NewPrice* quantity;
 
-            nettotalText.Text = (int.Parse(nettotalText.Text) + quantity * sellingPrice).ToString();
+            nettotalText.Text = (double.Parse(nettotalText.Text.Replace(" DA", "")) + quantity * NewPrice).ToString("F2")+" DA";
 
             quantity = 1;
 
@@ -720,7 +744,7 @@ namespace Aromapp
             sale.C_CL = ClientProp.C_CL;
             sale.Nomproduit = nomproduits;
             sale.Quantité = l_Ventes.Quantité;
-            sale.PrixHT = sellingPrice;
+            sale.PrixHT = NewPrice;
             sale.Marge = l_Ventes.Marge;
             sale.Remise = 0;
             sale.C_PR = reference;
@@ -732,8 +756,9 @@ namespace Aromapp
             NewSaleLines.Add(sale);
 
 
-            CartTable.Rows.Add(saleRef.Text, type, reference, l_Ventes.Nomproduits, l_Ventes.Quantité, sellingPrice, l_Ventes.Marge, l_Ventes.MontantHT,
-                0);
+            CartTable.Rows.Add(saleRef.Text, type, reference, l_Ventes.Nomproduits, double.Parse(l_Ventes.Quantité.ToString().Replace(".", ",")),
+                NewPrice, l_Ventes.Marge, l_Ventes.MontantHT,
+                Aromapp.Qt.Remise);
 
             cart.DataSource = CartTable;
 
@@ -749,8 +774,7 @@ namespace Aromapp
         public void UpdateBillStatus(bool executed)
         {
             applied = true;
-            DataTable newTable = (DataTable)cart.DataSource;
-            newTable = newTable.Clone();
+            DataTable newTable = ((DataTable)cart.DataSource).Copy();
             List<SaleLine> saleLines = new List<SaleLine>();
 
 
@@ -769,7 +793,7 @@ namespace Aromapp
 
             double benefice = 0;
 
-            foreach (DataRow line in cartTable.Rows)
+            foreach (DataRow line in newTable.Rows)
             {
 
                 try
@@ -794,12 +818,13 @@ namespace Aromapp
 
                 }
             }
-            sale.MontantRegler = decimal.Parse(nettotalText.Text);
+            sale.MontantRegler = decimal.Parse(nettotalText.Text.Replace(" DA", ""));
 
             using (DBHelper helper = new DBHelper())
             {
 
-                if (helper.UpdateBill(benefice, saleRef.Text, double.Parse(nettotalText.Text.Replace(".", ",")), executed, out newID) > 0)
+                if (helper.UpdateBill(benefice, saleRef.Text, double.Parse(nettotalText.Text.Replace(".", ",")
+                    .Replace(" DA", "")), executed, out newID) > 0)
                 {
                     foreach (SaleLine line in saleLines)
                     {
@@ -813,7 +838,7 @@ namespace Aromapp
                         {
                             helper.InsertIntoLog("La vente " + newID + " avec le total de : "+ nettotalText.Text + " a été éffectuée");
 
-                            helper.Earn(double.Parse(nettotalText.Text.Replace(".", ",")), new User(Properties.Settings.
+                            helper.Earn(double.Parse(nettotalText.Text.Replace(".", ",").Replace(" DA", "")), new User(Properties.Settings.
                                                             Default.LoggedInUserName, Properties.Settings.
                                                             Default.LoggedInUserID), saleLines[0].DateA.ToString("yyyy-MM-dd"),
                                                             (!string.IsNullOrEmpty(saleLines[0].NomClient))?
@@ -833,13 +858,13 @@ namespace Aromapp
         }
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            SaveBtn.Enabled = false;
             UpdateBillStatus(true);
             MessageBoxer.showGeneralMsg("Vente effectuée");
 
             prods.DataSource = helper.selectAllProducts(limit, 1);
             BillLines.DataSource = helper.selectBillLines(newID);
-            cartTable = (DataTable)BillLines.DataSource;
+            cartTable = ((DataTable)cart.DataSource).Copy();
             cart.DataSource = cartTable; ;
             OldSaleLines.Clear();
             foreach (DataRow line in cartTable.Rows)
@@ -937,7 +962,7 @@ namespace Aromapp
             {
                 BillLines.DataSource = helper.selectBillLines(sale.N);
 
-                saleTotal.Text = Total.ToString();
+                saleTotal.Text = Total.ToString("F2") + " DA";
 
             }
 
@@ -949,8 +974,8 @@ namespace Aromapp
             if (DeletedProduct)
             {
 
-                nettotalText.Text = (double.Parse(nettotalText.Text) - 
-                    double.Parse(cart.SelectedRows[0].Cells[7].Value.ToString())).ToString();
+                nettotalText.Text = (double.Parse(nettotalText.Text.Replace(" DA", "")) - 
+                    double.Parse(cart.SelectedRows[0].Cells[7].Value.ToString())).ToString("F2") + " DA";
                 int index = cart.SelectedRows[0].Index;
 
                 cart.Rows.RemoveAt(index);
@@ -959,9 +984,9 @@ namespace Aromapp
                 {
                     OldSaleLines[index] = null;
                 }
-                NewTotal=double.Parse(nettotalText.Text);
+                NewTotal=double.Parse(nettotalText.Text.Replace(" DA",""));
 
-                 saleTotal.Text = Total.ToString();
+                 saleTotal.Text = Total.ToString("F2") + " DA";
 
             }
             
@@ -1023,6 +1048,88 @@ namespace Aromapp
                 {
                     MessageBoxer.showGeneralMsg("Sélectionnez d'abord une ligne");
                 } 
+            }
+        }
+
+        private void prods_Scroll(object sender, ScrollEventArgs e)
+        {
+            int totalHeight = 0;
+
+            if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
+            {
+                foreach (DataGridViewRow row in prods.Rows)
+                    totalHeight += row.Height;
+
+                if (!searching)
+                {
+
+                    if (prods.VerticalScrollingOffset == 0 && e.NewValue < e.OldValue)
+                    {
+                        if (currentPage > 1)
+                        {
+                            currentPage--;
+                            AddTable(currentPage);
+                            tableFull = false;
+
+                        }
+                        else
+                        {
+                            AddTable(1);
+                        }
+                    }
+
+                    if (totalHeight - prods.Height < prods.VerticalScrollingOffset)
+                    {
+                        if (currentPage == 1)
+                        {
+                            AddTable(currentPage);
+
+                        }
+                        else if (currentPage != 1 && !tableFull)
+                        {
+                            AddTable(currentPage);
+
+                            if (table.Rows.Count < limit)
+                            {
+                                tableFull = true;
+                            }
+
+                        }
+
+                        if (!tableFull)
+                        {
+                            currentPage++;
+
+                        }
+
+                    }
+
+
+                }
+
+            }
+        }
+        public void AddTable(int currentPage)
+        {
+            BindingSource bindingSource = new BindingSource();
+            using (DBHelper helper = new DBHelper())
+            {
+                table = helper.selectAllProducts(limit, currentPage);
+
+            }
+            bindingSource.DataSource = table;
+            prods.DataSource = bindingSource;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 1)
+            {
+                SelectedTable = "emballage";
+            }
+            else
+            {
+                SelectedTable = "produits";
             }
         }
 

@@ -27,6 +27,7 @@ namespace Aromapp
         stock,
         user,
         ventes,
-        ventesTemp
+        ventesTemp,
+        emballage
     }
 }

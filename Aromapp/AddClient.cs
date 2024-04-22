@@ -106,8 +106,8 @@ namespace Aromapp
 
             string[] str = new string[] { name.Text, phone.Text, address.Text, email.Text, fax.Text };
 
-            if (!(phone.Text == phone.Tag.ToString()
-                || string.IsNullOrEmpty(phone.Text)))
+            if (!(name.Text == name.Tag.ToString()
+                || string.IsNullOrEmpty(name.Text)))
             {
                 for (int i = 0; i < str.Length; i++)
                 {
@@ -128,7 +128,8 @@ namespace Aromapp
                     , str[3], str[4]);
 
                     client.DatAjout = DateTime.Now.Date.ToShortDateString();
-                    client.Debts = (!(string.IsNullOrEmpty(debt.Text) || debt.Text == debt.Tag.ToString())) ? double.Parse(debt.Text.ToString().Replace(".", ",")) : 0;
+                    client.Debts = (!(string.IsNullOrEmpty(debt.Text) ||
+                        debt.Text == debt.Tag.ToString())) ? double.Parse(debt.Text.ToString().Replace(".", ",")) : 0;
 
                     if (!helper.AddClient(client))
                     {

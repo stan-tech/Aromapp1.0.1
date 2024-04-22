@@ -134,7 +134,7 @@ namespace Aromapp
             using (DBHelper helper = new DBHelper())
             {
                 LastWeekTotal = helper.SelectLastPurchaseTotal();
-                lastWP.Text = LastWeekTotal.ToString() + " DA";
+                lastWP.Text = LastWeekTotal.ToString("F2") + " DA";
             }
         }
 
@@ -229,7 +229,7 @@ namespace Aromapp
         }
         void worker_workCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            lastWP.Text = LastWeekTotal.ToString() + " DA";
+            lastWP.Text = LastWeekTotal.ToString("F2") + " DA";
             BuyedProducts.DataSource = table;
 
         }
@@ -271,7 +271,7 @@ namespace Aromapp
             string BillID = BuyedProducts.SelectedRows[0].Cells[0].Value.ToString();
             double due = double.Parse(amount.Text.Replace(".", ","));
 
-            helper.UpdatePurchasePaidAmount(BillID, due, Confirm.SelectedUser.Name);
+            helper.UpdatePurchasePaidAmount(BillID, due, Properties.Settings.Default.LoggedInUserName);
 
             DataTable table = helper.selectPurchases(100, 1);
             HintUtils.ShowHint(amount);
@@ -287,9 +287,7 @@ namespace Aromapp
                     double due = double.Parse(dueText.Text.Replace(".", ","));
                     if (due != 0)
                     {
-                        Confirm confirm = new Confirm();
-                        confirm.Passed += PasswoCorrect;
-                        confirm.ShowDialog();
+                        PasswoCorrect(sender,e);
                     }
                     else
                     {

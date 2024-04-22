@@ -16,8 +16,9 @@ namespace Aromapp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
-/*            using (DBHelper helper = new DBHelper())
+
+
+            using (DBHelper helper = new DBHelper())
             {
 
                 if (helper.CheckForConnectedUsers())
@@ -50,7 +51,7 @@ namespace Aromapp
 
                 }
             }
-*/
+
 
 
         }

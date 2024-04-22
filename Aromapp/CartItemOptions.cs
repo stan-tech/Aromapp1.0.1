@@ -45,8 +45,8 @@ namespace Aromapp
         private void Modifier_Click(object sender, EventArgs e)
         {
 
-            prod.Quantity = double.Parse(qtt.Text);
-            selectedRow.Cells[2].Value = double.Parse(qtt.Text);
+            prod.Quantity = double.Parse(qtt.Text.Replace(".", ","));
+            selectedRow.Cells[2].Value = double.Parse(qtt.Text.Replace(".", ","));
             OnRefreshRequested(e);
 
             this.Close();
@@ -80,6 +80,16 @@ namespace Aromapp
             OnRefresh(e);
             Comptoire.CartTable.Rows.RemoveAt(prod.Index);
             this.Close();
+        }
+
+        private void qtt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+            {
+                MessageBox.Show("Veuillez saisir uniquement des chiffres");
+
+                e.Handled = true;
+            }
         }
     }
 }

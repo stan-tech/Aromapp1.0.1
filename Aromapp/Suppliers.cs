@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Org.BouncyCastle.Math;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -192,6 +193,21 @@ namespace Aromapp
 
 
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = prods.SelectedRows[0].Cells[0].Value.ToString();
+
+            if (!string.IsNullOrEmpty(id))
+            {
+
+                Product product = new DBHelper().GetProductByID(id.Contains("FL")?"emballage":"produits",id);
+
+                ProdView prodView = new ProdView(product);
+                prodView.ShowDialog();
+
             }
         }
 

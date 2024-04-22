@@ -63,9 +63,9 @@
             this.Qt = new System.Windows.Forms.Label();
             this.PriceG = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton1 = new System.Windows.Forms.Button();
-            this.SupprimerProd = new System.Windows.Forms.Button();
-            this.supprimer = new System.Windows.Forms.Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.SupprimerProd = new Guna.UI2.WinForms.Guna2Button();
+            this.supprimer = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PurchaseLines)).BeginInit();
@@ -595,7 +595,7 @@
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Gray;
+            this.iconButton1.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.Location = new System.Drawing.Point(968, 10);
@@ -604,7 +604,7 @@
             this.iconButton1.Size = new System.Drawing.Size(459, 76);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = " Imprimmer";
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.BorderRadius = 5;
             this.iconButton1.Click += new System.EventHandler(this.imprimmer_Click);
             // 
             // SupprimerProd
@@ -612,7 +612,7 @@
             this.SupprimerProd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SupprimerProd.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.SupprimerProd.FillColor = System.Drawing.Color.LightSkyBlue;
             this.SupprimerProd.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.SupprimerProd.ForeColor = System.Drawing.Color.Black;
             this.SupprimerProd.Location = new System.Drawing.Point(489, 10);
@@ -621,7 +621,7 @@
             this.SupprimerProd.Size = new System.Drawing.Size(459, 76);
             this.SupprimerProd.TabIndex = 2;
             this.SupprimerProd.Text = "Retirer le produit";
-            this.SupprimerProd.UseVisualStyleBackColor = false;
+            this.SupprimerProd.BorderRadius = 5;
             this.SupprimerProd.Click += new System.EventHandler(this.RetirerProd_Click);
             // 
             // supprimer
@@ -629,7 +629,7 @@
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.supprimer.BackColor = System.Drawing.Color.Red;
+            this.supprimer.FillColor = System.Drawing.Color.Red;
             this.supprimer.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.supprimer.ForeColor = System.Drawing.Color.White;
             this.supprimer.Location = new System.Drawing.Point(10, 10);
@@ -638,7 +638,7 @@
             this.supprimer.Size = new System.Drawing.Size(459, 76);
             this.supprimer.TabIndex = 1;
             this.supprimer.Text = "Supprimer l\'achat";
-            this.supprimer.UseVisualStyleBackColor = false;
+            this.supprimer.BorderRadius = 5;
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // PurchaseInfo
@@ -703,8 +703,8 @@
         private System.Windows.Forms.Label Qt;
         private System.Windows.Forms.Label PriceG;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button iconButton1;
-        private System.Windows.Forms.Button SupprimerProd;
-        private System.Windows.Forms.Button supprimer;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button SupprimerProd;
+        private Guna.UI2.WinForms.Guna2Button supprimer;
     }
 }

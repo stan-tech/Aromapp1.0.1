@@ -385,7 +385,7 @@
             "Homme",
             "Femme",
             "Unisexe",
-            "Emabllage",
+            "Emballage",
             "Sachet"});
             this.comboBox1.Location = new System.Drawing.Point(3, 63);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 63, 3, 3);

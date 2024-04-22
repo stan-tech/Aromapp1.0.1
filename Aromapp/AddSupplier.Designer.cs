@@ -44,8 +44,8 @@
             this.nis = new Aromapp.HintTexBox();
             this.nif = new Aromapp.HintTexBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton1 = new System.Windows.Forms.Button();
-            this.iconButton3 = new System.Windows.Forms.Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +67,7 @@
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.97218F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.02782F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(842, 634);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
@@ -86,7 +86,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(819, 253);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(819, 243);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // pictureBox1
@@ -116,7 +116,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(637, 247);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(637, 237);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // name
@@ -141,7 +141,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.phone.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.phone.ForeColor = System.Drawing.Color.Gray;
-            this.phone.Location = new System.Drawing.Point(3, 85);
+            this.phone.Location = new System.Drawing.Point(3, 82);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(631, 47);
             this.phone.TabIndex = 29;
@@ -156,7 +156,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.address.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.address.ForeColor = System.Drawing.Color.Gray;
-            this.address.Location = new System.Drawing.Point(3, 167);
+            this.address.Location = new System.Drawing.Point(3, 161);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(631, 47);
             this.address.TabIndex = 29;
@@ -178,13 +178,13 @@
             this.tableLayoutPanel2.Controls.Add(this.activity, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.nis, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.nif, 1, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 262);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 252);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(836, 287);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(836, 276);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // email
@@ -194,7 +194,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.email.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.email.ForeColor = System.Drawing.Color.Gray;
-            this.email.Location = new System.Drawing.Point(20, 98);
+            this.email.Location = new System.Drawing.Point(20, 95);
             this.email.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(373, 47);
@@ -210,7 +210,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fax.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.fax.ForeColor = System.Drawing.Color.Gray;
-            this.fax.Location = new System.Drawing.Point(20, 193);
+            this.fax.Location = new System.Drawing.Point(20, 187);
             this.fax.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
             this.fax.Name = "fax";
             this.fax.Size = new System.Drawing.Size(373, 47);
@@ -258,7 +258,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nis.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.nis.ForeColor = System.Drawing.Color.Gray;
-            this.nis.Location = new System.Drawing.Point(438, 98);
+            this.nis.Location = new System.Drawing.Point(438, 95);
             this.nis.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
             this.nis.Name = "nis";
             this.nis.Size = new System.Drawing.Size(373, 47);
@@ -274,7 +274,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nif.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.nif.ForeColor = System.Drawing.Color.Gray;
-            this.nif.Location = new System.Drawing.Point(438, 193);
+            this.nif.Location = new System.Drawing.Point(438, 187);
             this.nif.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
             this.nif.Name = "nif";
             this.nif.Size = new System.Drawing.Size(373, 47);
@@ -293,41 +293,43 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.iconButton1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.iconButton3, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 555);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 534);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(836, 76);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(836, 97);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.FillColor = System.Drawing.Color.Red;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(3, 16);
+            this.iconButton1.Location = new System.Drawing.Point(3, 19);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(412, 57);
+            this.iconButton1.Size = new System.Drawing.Size(405, 75);
             this.iconButton1.TabIndex = 10;
             this.iconButton1.Text = "Annuler";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton3
             // 
             this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton3.BackColor = System.Drawing.Color.Gray;
+            this.iconButton3.BorderRadius = 5;
+            this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.Location = new System.Drawing.Point(421, 16);
+            this.iconButton3.Location = new System.Drawing.Point(428, 19);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(412, 57);
+            this.iconButton3.Size = new System.Drawing.Size(405, 75);
             this.iconButton3.TabIndex = 10;
             this.iconButton3.Text = "Ok";
-            this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // AddSupplier
@@ -375,8 +377,8 @@
         private HintTexBox debts;
         private HintTexBox activity;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button iconButton1;
-        private System.Windows.Forms.Button iconButton3;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton3;
         private HintTexBox nis;
         private HintTexBox nif;
     }

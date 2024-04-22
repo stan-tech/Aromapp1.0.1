@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.debtsTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,11 +40,14 @@
             this.oldest = new System.Windows.Forms.Label();
             this.OldestclientName = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.searchText = new Aromapp.HintTexBox();
             this.DebtsTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButton2 = new Guna.UI2.WinForms.Guna2Button();
             this.amount = new Aromapp.HintTexBox();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Montant = new System.Windows.Forms.Label();
@@ -63,9 +66,6 @@
             this.clientName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dur = new System.Windows.Forms.Label();
-            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
-            this.iconButton2 = new Guna.UI2.WinForms.Guna2Button();
-            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DebtsTable)).BeginInit();
@@ -111,7 +111,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.00223F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.99777F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 764F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 765F));
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.oldest, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.OldestclientName, 2, 0);
@@ -142,7 +142,7 @@
             this.oldest.BackColor = System.Drawing.Color.Transparent;
             this.oldest.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.oldest.ForeColor = System.Drawing.Color.White;
-            this.oldest.Location = new System.Drawing.Point(248, 8);
+            this.oldest.Location = new System.Drawing.Point(247, 8);
             this.oldest.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             this.oldest.Name = "oldest";
             this.oldest.Size = new System.Drawing.Size(161, 37);
@@ -155,7 +155,7 @@
             this.OldestclientName.BackColor = System.Drawing.Color.Transparent;
             this.OldestclientName.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.OldestclientName.ForeColor = System.Drawing.Color.White;
-            this.OldestclientName.Location = new System.Drawing.Point(483, 8);
+            this.OldestclientName.Location = new System.Drawing.Point(482, 8);
             this.OldestclientName.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             this.OldestclientName.Name = "OldestclientName";
             this.OldestclientName.Size = new System.Drawing.Size(76, 37);
@@ -179,6 +179,29 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1282, 91);
             this.tableLayoutPanel4.TabIndex = 34;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton4.BorderRadius = 5;
+            this.iconButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.iconButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.iconButton4.FillColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
+            this.iconButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.iconButton4.ImageSize = new System.Drawing.Size(10, 10);
+            this.iconButton4.Location = new System.Drawing.Point(635, 20);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(10, 20, 10, 10);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(276, 61);
+            this.iconButton4.TabIndex = 41;
+            this.iconButton4.Text = "Actualiser";
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // guna2DateTimePicker1
             // 
@@ -205,8 +228,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchText.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.searchText.ForeColor = System.Drawing.Color.Gray;
-            this.searchText.Location = new System.Drawing.Point(20, 30);
-            this.searchText.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
+            this.searchText.Location = new System.Drawing.Point(20, 22);
+            this.searchText.Margin = new System.Windows.Forms.Padding(20, 22, 3, 3);
             this.searchText.Name = "searchText";
             this.searchText.Size = new System.Drawing.Size(602, 47);
             this.searchText.TabIndex = 0;
@@ -219,53 +242,53 @@
             // DebtsTable
             // 
             this.DebtsTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.DebtsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.DebtsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DebtsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DebtsTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DebtsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.DebtsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DebtsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DebtsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DebtsTable.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DebtsTable.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DebtsTable.DefaultCellStyle = dataGridViewCellStyle8;
             this.DebtsTable.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.DebtsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.DebtsTable.Location = new System.Drawing.Point(24, 317);
             this.DebtsTable.Name = "DebtsTable";
             this.DebtsTable.ReadOnly = true;
             this.DebtsTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DebtsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DebtsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DebtsTable.RowHeadersVisible = false;
             this.DebtsTable.RowHeadersWidth = 82;
             this.DebtsTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DebtsTable.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DebtsTable.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DebtsTable.RowTemplate.Height = 33;
             this.DebtsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DebtsTable.Size = new System.Drawing.Size(1289, 451);
@@ -312,6 +335,28 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1282, 91);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton2.BorderRadius = 5;
+            this.iconButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.iconButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.iconButton2.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.iconButton2.ForeColor = System.Drawing.Color.White;
+            this.iconButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.iconButton2.ImageSize = new System.Drawing.Size(10, 10);
+            this.iconButton2.Location = new System.Drawing.Point(635, 10);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(10);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(303, 71);
+            this.iconButton2.TabIndex = 40;
+            this.iconButton2.Text = "Éffectuer";
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
             // amount
             // 
             this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -319,8 +364,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.amount.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.amount.ForeColor = System.Drawing.Color.Gray;
-            this.amount.Location = new System.Drawing.Point(20, 30);
-            this.amount.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
+            this.amount.Location = new System.Drawing.Point(20, 22);
+            this.amount.Margin = new System.Windows.Forms.Padding(20, 22, 3, 3);
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(602, 47);
             this.amount.TabIndex = 0;
@@ -330,6 +375,29 @@
             this.amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.amount_KeyDown);
             this.amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amount_KeyPress);
             this.amount.Leave += new System.EventHandler(this.amount_Leave);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.iconButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.iconButton1.FillColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton1.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.iconButton1.ImageSize = new System.Drawing.Size(10, 10);
+            this.iconButton1.Location = new System.Drawing.Point(958, 10);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(10);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(314, 71);
+            this.iconButton1.TabIndex = 39;
+            this.iconButton1.Text = "Régler";
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -610,74 +678,6 @@
             this.dur.TabIndex = 39;
             this.dur.Text = "0";
             this.dur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BorderRadius = 5;
-            this.iconButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.iconButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.iconButton1.FillColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton1.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.iconButton1.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton1.Location = new System.Drawing.Point(958, 10);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(10);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(314, 71);
-            this.iconButton1.TabIndex = 39;
-            this.iconButton1.Text = "Régler";
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BorderRadius = 5;
-            this.iconButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.iconButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.iconButton2.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.iconButton2.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton2.Location = new System.Drawing.Point(635, 10);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(10);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(303, 71);
-            this.iconButton2.TabIndex = 40;
-            this.iconButton2.Text = "Éffectuer";
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BorderRadius = 5;
-            this.iconButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.iconButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.iconButton4.FillColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.iconButton4.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton4.Location = new System.Drawing.Point(635, 20);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(276, 61);
-            this.iconButton4.TabIndex = 41;
-            this.iconButton4.Text = "Actualiser";
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // Debts
             // 

@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.returnStock = new System.Windows.Forms.Button();
-            this.supprimer = new System.Windows.Forms.Button();
+            this.returnStock = new Guna.UI2.WinForms.Guna2Button();
+            this.supprimer = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             this.returnStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.returnStock.BackColor = System.Drawing.Color.Green;
+            this.returnStock.FillColor = System.Drawing.Color.Green;
             this.returnStock.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.returnStock.ForeColor = System.Drawing.Color.Black;
             this.returnStock.Location = new System.Drawing.Point(440, 20);
@@ -81,7 +81,7 @@
             this.returnStock.Size = new System.Drawing.Size(222, 76);
             this.returnStock.TabIndex = 24;
             this.returnStock.Text = "Décaisser";
-            this.returnStock.UseVisualStyleBackColor = false;
+            this.returnStock.BorderRadius = 5;
             this.returnStock.Click += new System.EventHandler(this.returnStock_Click);
             // 
             // supprimer
@@ -89,7 +89,7 @@
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.supprimer.BackColor = System.Drawing.Color.Red;
+            this.supprimer.FillColor = System.Drawing.Color.Red;
             this.supprimer.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.supprimer.ForeColor = System.Drawing.Color.White;
             this.supprimer.Location = new System.Drawing.Point(10, 20);
@@ -98,7 +98,7 @@
             this.supprimer.Size = new System.Drawing.Size(410, 76);
             this.supprimer.TabIndex = 23;
             this.supprimer.Text = "Continuer sans décaissement";
-            this.supprimer.UseVisualStyleBackColor = false;
+            this.supprimer.BorderRadius = 5;
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // Spend
@@ -126,7 +126,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button returnStock;
-        private System.Windows.Forms.Button supprimer;
+        private Guna.UI2.WinForms.Guna2Button returnStock;
+        private Guna.UI2.WinForms.Guna2Button supprimer;
     }
 }

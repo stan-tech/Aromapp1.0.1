@@ -263,10 +263,30 @@ namespace Aromapp
 
         private void clientsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            contextMenuStrip1.Show(Cursor.Position.X,Cursor.Position.Y);
+        }
+
+        private void clientsTable_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete)
+            {
+                iconButton1_Click(sender, e);
+            }
+        }
+
+        private void historiqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string c_cl = clientsTable.SelectedRows[0].Cells[0].Value.ToString();
+            ClientHistory history = new ClientHistory(c_cl);
+            history.ShowDialog();
+        }
+
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             string s = clientsTable.SelectedRows[0].Cells[0].Value.ToString();
             if (!string.IsNullOrEmpty(s))
             {
-                if (s.ToLower()!="x")
+                if (s.ToLower() != "x")
                 {
                     EditClient editClient = new EditClient(s);
 
@@ -276,14 +296,6 @@ namespace Aromapp
                 {
                     MessageBoxer.showGeneralMsg("Cette ligne n'est pas modifiable");
                 }
-            }
-        }
-
-        private void clientsTable_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Delete)
-            {
-                iconButton1_Click(sender, e);
             }
         }
 

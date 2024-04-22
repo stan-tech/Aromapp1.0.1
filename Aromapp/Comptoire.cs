@@ -7,6 +7,7 @@ using Humanizer;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.draw;
+using iTextSharp.text.pdf.qrcode;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -282,8 +283,8 @@ namespace Aromapp
             if (cart.RowCount > 0)
             {
 
-                int quantity = int.Parse(cart.SelectedRows[0].Cells[2].Value.ToString());
-                decimal prix = decimal.Parse(cart.SelectedRows[0].Cells[3].Value.ToString());
+                double quantity = double.Parse(cart.SelectedRows[0].Cells[2].Value.ToString());
+                double prix = double.Parse(cart.SelectedRows[0].Cells[3].Value.ToString());
                 subtotalText.Text = (prix * quantity).ToString();
             }
             else
@@ -322,24 +323,24 @@ namespace Aromapp
             }
             else
             {
-                double quantity = Int32.Parse(options.Product.Quantity.ToString());
-                double prix = double.Parse(options.Product.PriceG.ToString());
+                double quantity = double.Parse(options.Product.Quantity.ToString().Replace(".", ","));
+                double prix = double.Parse(options.Product.PriceG.ToString().Replace(".", ","));
                 subtotalText.Text = (prix * quantity).ToString();
                 cart.SelectedRows[0].Cells[2].Value = quantity;
                 cart.SelectedRows[0].Cells[7].Value = quantity * prix;
 
-                float total = 0;
-                int sub_quantity = 0;
+                double total = 0;
+                double sub_quantity = 0;
                 double sub_prix = 0;
 
                 try
                 {
                     foreach (DataGridViewRow row in cart.Rows)
                     {
-                        sub_quantity = int.Parse(row.Cells[2].Value.ToString());
-                        sub_prix = double.Parse(row.Cells[3].Value.ToString());
+                        sub_quantity = double.Parse(row.Cells[2].Value.ToString().Replace(".", ","));
+                        sub_prix = double.Parse(row.Cells[3].Value.ToString().Replace(".", ","));
 
-                        total += (float)(sub_quantity * sub_prix);
+                        total += (sub_quantity * sub_prix);
                     }
                 }
                 catch
@@ -393,7 +394,6 @@ namespace Aromapp
 
         void AddProduct(object sender, EventArgs e)
         {
-            double sellingPrice;
             double buyinPrice;
 
 
@@ -404,31 +404,23 @@ namespace Aromapp
 
             string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
 
-            if (detail)
-            {
-                sellingPrice = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
-            }
-            else
-            {
-                sellingPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-
-            }
+           
             buyinPrice = double.Parse(prods.SelectedRows[0].Cells[4].Value.ToString());
 
             BuyingPrices.Add(buyinPrice);
 
-            produits l_Ventes = new produits(nomproduits, quantity, sellingPrice, 10, 0);
+            produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
 
-            l_Ventes.Marge = (sellingPrice - buyinPrice) * quantity;
-            l_Ventes.MontantHT = sellingPrice * quantity;
+            l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
+            l_Ventes.MontantHT = NewPrice * quantity;
 
-            nettotalText.Text = (int.Parse(nettotalText.Text) + quantity * sellingPrice).ToString();
-            subtotalText.Text = (quantity * sellingPrice).ToString();
+            nettotalText.Text = (int.Parse(nettotalText.Text) + quantity * NewPrice).ToString();
+            subtotalText.Text = (quantity * NewPrice).ToString();
 
             quantity = 1;
 
-            CartTable.Rows.Add(reference, l_Ventes.Nomproduits, l_Ventes.Quantité, l_Ventes.PrixHT.ToString(), type,
-                l_Ventes.Marge, 0, l_Ventes.MontantHT);
+            CartTable.Rows.Add(reference, l_Ventes.Nomproduits, l_Ventes.Quantité, NewPrice.ToString(), type,
+                l_Ventes.Marge, Qt.Remise, l_Ventes.MontantHT); 
 
             cart.DataSource = CartTable;
             n_lignes.Text = cart.RowCount.ToString();
@@ -436,8 +428,15 @@ namespace Aromapp
 
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+                NewPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()):
+                     NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+         
 
             Qt qt = new Qt();
+
+            qt.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+            qt.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
             qt.Added += AddProduct;
             qt.ShowDialog();
@@ -449,6 +448,8 @@ namespace Aromapp
 
         }
 
+        string SelectedTable = "produits";
+
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             using (DBHelper helper = new DBHelper())
@@ -456,7 +457,7 @@ namespace Aromapp
                 if (searchBox.Text != searchBox.Tag.ToString() && !string.IsNullOrEmpty(searchBox.Text.Trim()))
                 {
                     searching = true;
-                    prods.DataSource = helper.searchPOS(searchBox.Text, 100, 1);
+                    prods.DataSource = helper.searchPOS(SelectedTable,searchBox.Text, 100, 1);
                 }
                 else
                 {
@@ -470,11 +471,22 @@ namespace Aromapp
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             typeSelected = true;
+            searching = true;
+
 
             using (DBHelper helper = new DBHelper())
             {
                 prods.DataSource = helper.GetProductByType(comboBox1.SelectedItem.ToString().Trim(), searchLimit, searchCurrentPage);
 
+            }
+
+            if(comboBox1.SelectedIndex==3|| comboBox1.SelectedIndex == 4)
+            {
+                SelectedTable = "emballage";
+            }
+            else
+            {
+                SelectedTable = "produits";
             }
 
         }
@@ -698,6 +710,8 @@ namespace Aromapp
 
             }
             prods.Invoke((Action)(() => { prods.DataSource = table; }));
+            comboBox1.Text = "Types";
+            SelectedTable = "produits";
         }
 
         private void tva_TextChanged(object sender, EventArgs e)
@@ -1148,6 +1162,7 @@ namespace Aromapp
             PdfPTable titlePhrase = new PdfPTable(1);
             Phrase titleYeah = new Phrase(" بيت العود و العطور الفاخرة",
                 new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL, BaseColor.BLACK));
+
             Phrase subtitleYeah = new Phrase(Storeinfo.Activite, FontFactory.GetFont("Calibri", 10, iTextSharp.text.Font.BOLD,
             BaseColor.BLACK));
 
@@ -1232,10 +1247,28 @@ namespace Aromapp
 
 
             ColumnText ct = new ColumnText(cb);
-            float startX = x + 10; // X-coordinate for the start of text
+            float startX = x + 10; 
             float startY = y - 10;
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(bill.ClientObj.Nom, FS), startX, startY + 80, 0);
+            if (Regex.IsMatch(bill.ClientObj.Nom, pattern))
+            {
+                ColumnText columnText = new ColumnText(cb);
+                columnText.RunDirection = PdfWriter.RUN_DIRECTION_RTL; 
+                columnText.SetSimpleColumn(startX+ bill.ClientObj.Nom.Length*5, startY + 100, bill.ClientObj.Nom.Length, 4); 
+                columnText.AddElement(new Phrase(bill.ClientObj.Nom,
+                    new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL,
+                    BaseColor.BLACK)));
+                columnText.Go();
+
+            }
+            else
+            {
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(bill.ClientObj.Nom, FS), startX, startY + 80, 0);
+
+            }
+
+
+
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("\n"), startX, startY + 80, 0);
 
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Tel: " + bill.ClientObj.Tel, SmallFS), startX, startY + 60, 0);
@@ -1406,5 +1439,6 @@ namespace Aromapp
 
             }
         }
+        public static double NewPrice { get; set; }
     }
 }

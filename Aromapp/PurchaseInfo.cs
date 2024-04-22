@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Aromapp
 {
@@ -185,10 +186,8 @@ namespace Aromapp
         }
         private void supprimer_Click(object sender, EventArgs e)
         {
-            Confirm confirm = new Confirm();
-            confirm.Passed += PasswoCorrectDelete;
+             PasswoCorrectDelete(sender,e);
 
-            confirm.ShowDialog();
         }
 
         private void imprimmer_Click(object sender, EventArgs e)
@@ -213,6 +212,7 @@ namespace Aromapp
             PdfPTable table = new PdfPTable(5);
 
             Information Storeinfo = DBHelper.GetStoreInformation();
+            string pattern = @"\p{IsArabic}";
 
             PdfPCell pdfPCell = null;
             Chunk glue = new Chunk(new VerticalPositionMark());
@@ -338,7 +338,22 @@ namespace Aromapp
             float startX = x + 10; // X-coordinate for the start of text
             float startY = y - 10;
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(Supplier.Nom, FS), startX, startY + 80, 0);
+            if (Regex.IsMatch(Supplier.Nom, pattern))
+            {
+                ColumnText columnText = new ColumnText(cb);
+                columnText.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+                columnText.SetSimpleColumn(startX + Supplier.Nom.Length * 5, startY + 100, Supplier.Nom.Length, 4);
+                columnText.AddElement(new Phrase(Supplier.Nom,
+                    new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL,
+                    BaseColor.BLACK)));
+                columnText.Go();
+
+            }
+            else
+            {
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(Supplier.Nom, FS), startX, startY + 80, 0);
+
+            }
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("\n"), startX, startY + 80, 0);
 
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Tel: " + Supplier.Tel, SmallFS), startX, startY + 60, 0);

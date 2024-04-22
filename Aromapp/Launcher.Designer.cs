@@ -44,7 +44,7 @@ namespace Aromapp
             this.email = new Aromapp.HintTexBox();
             this.phone = new Aromapp.HintTexBox();
             this.fax = new Aromapp.HintTexBox();
-            this.create = new System.Windows.Forms.Button();
+            this.create = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -288,16 +288,16 @@ namespace Aromapp
             // 
             this.create.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.create.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.create.BorderRadius = 5;
+            this.create.FillColor = System.Drawing.Color.RoyalBlue;
             this.create.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.create.ForeColor = System.Drawing.Color.Black;
+            this.create.ForeColor = System.Drawing.Color.White;
             this.create.Location = new System.Drawing.Point(200, 655);
             this.create.Margin = new System.Windows.Forms.Padding(200, 20, 200, 25);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(824, 75);
             this.create.TabIndex = 34;
             this.create.Text = "Cérer mon magasin";
-            this.create.UseVisualStyleBackColor = false;
             this.create.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // groupBox1
@@ -396,7 +396,7 @@ namespace Aromapp
         private GroupBox getStartedBox;
         private GroupBox guna2GroupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button create;
+        private Guna.UI2.WinForms.Guna2Button create;
         private HintTexBox StoreName;
         private HintTexBox StoreActivity;
         private TableLayoutPanel tableLayoutPanel3;

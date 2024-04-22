@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,12 +38,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.loyalBtn = new System.Windows.Forms.Button();
-            this.Ajouter = new System.Windows.Forms.Button();
+            this.loyalBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
             this.clientsTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.searchText = new Aromapp.HintTexBox();
-            this.iconButton4 = new System.Windows.Forms.Button();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ClientsNumber = new System.Windows.Forms.Label();
@@ -62,11 +63,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.mostbuyed = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton5 = new System.Windows.Forms.Button();
-            this.iconButton1 = new System.Windows.Forms.Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton5 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Debts = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.historiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -78,6 +82,7 @@
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,7 +146,8 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tableLayoutPanel5.Controls.Add(this.loyalBtn, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.Ajouter, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 967);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 970);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -152,32 +158,31 @@
             // 
             this.loyalBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.loyalBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.loyalBtn.BorderRadius = 5;
             this.loyalBtn.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.loyalBtn.ForeColor = System.Drawing.Color.Black;
-            this.loyalBtn.Location = new System.Drawing.Point(453, 24);
-            this.loyalBtn.Margin = new System.Windows.Forms.Padding(3, 23, 13, 3);
+            this.loyalBtn.ForeColor = System.Drawing.Color.White;
+            this.loyalBtn.Location = new System.Drawing.Point(453, 27);
+            this.loyalBtn.Margin = new System.Windows.Forms.Padding(3, 23, 13, 0);
             this.loyalBtn.Name = "loyalBtn";
             this.loyalBtn.Size = new System.Drawing.Size(434, 69);
             this.loyalBtn.TabIndex = 1;
             this.loyalBtn.Text = "Clients fidéles";
-            this.loyalBtn.UseVisualStyleBackColor = false;
             this.loyalBtn.Click += new System.EventHandler(this.loyalBtn_Click);
             // 
             // Ajouter
             // 
             this.Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Ajouter.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.Ajouter.BorderRadius = 5;
+            this.Ajouter.FillColor = System.Drawing.Color.RoyalBlue;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.Ajouter.ForeColor = System.Drawing.Color.Black;
-            this.Ajouter.Location = new System.Drawing.Point(13, 24);
-            this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
+            this.Ajouter.ForeColor = System.Drawing.Color.White;
+            this.Ajouter.Location = new System.Drawing.Point(13, 27);
+            this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 0);
             this.Ajouter.Name = "Ajouter";
             this.Ajouter.Size = new System.Drawing.Size(424, 69);
             this.Ajouter.TabIndex = 1;
             this.Ajouter.Text = "    Ajouter un client";
-            this.Ajouter.UseVisualStyleBackColor = false;
             this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // clientsTable
@@ -303,16 +308,15 @@
             this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton4.BorderRadius = 5;
             this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.Black;
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
             this.iconButton4.Location = new System.Drawing.Point(902, 28);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 3, 72);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(256, 67);
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "Actualiser";
-            this.iconButton4.UseVisualStyleBackColor = false;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // tableLayoutPanel3
@@ -570,8 +574,8 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.iconButton5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.iconButton1, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.iconButton5, 0, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(10, 690);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
@@ -579,37 +583,37 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(658, 100);
             this.tableLayoutPanel6.TabIndex = 25;
             // 
-            // iconButton5
-            // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.iconButton5.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
-            this.iconButton5.Location = new System.Drawing.Point(3, 28);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(321, 69);
-            this.iconButton5.TabIndex = 1;
-            this.iconButton5.Text = "Modifier le client";
-            this.iconButton5.UseVisualStyleBackColor = false;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
-            // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.FillColor = System.Drawing.Color.Red;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(334, 28);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.iconButton1.Location = new System.Drawing.Point(334, 31);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 0);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(321, 69);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Supprimer";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton5.BorderRadius = 5;
+            this.iconButton5.FillColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton5.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
+            this.iconButton5.Location = new System.Drawing.Point(3, 31);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 3, 5, 0);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(321, 69);
+            this.iconButton5.TabIndex = 1;
+            this.iconButton5.Text = "Modifier le client";
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // groupBox4
             // 
@@ -649,7 +653,8 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -659,6 +664,31 @@
             this.label4.Size = new System.Drawing.Size(437, 28);
             this.label4.TabIndex = 15;
             this.label4.Text = "cliquez sur le chiffre pour voir les dettes";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historiqueToolStripMenuItem,
+            this.modifierToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(209, 88);
+            this.contextMenuStrip1.Text = "Historique";
+            // 
+            // historiqueToolStripMenuItem
+            // 
+            this.historiqueToolStripMenuItem.Name = "historiqueToolStripMenuItem";
+            this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(208, 42);
+            this.historiqueToolStripMenuItem.Text = "Historique";
+            this.historiqueToolStripMenuItem.Click += new System.EventHandler(this.historiqueToolStripMenuItem_Click);
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(208, 42);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // Clients
             // 
@@ -684,6 +714,7 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -696,13 +727,13 @@
         private Guna.UI2.WinForms.Guna2DataGridView clientsTable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private HintTexBox searchText;
-        private System.Windows.Forms.Button iconButton4;
+        private Guna.UI2.WinForms.Guna2Button iconButton4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button iconButton5;
-        private System.Windows.Forms.Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton5;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
         private System.Windows.Forms.Label dettes;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label custAddrText;
@@ -722,7 +753,10 @@
         private System.Windows.Forms.Label Debts;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button loyalBtn;
-        private System.Windows.Forms.Button Ajouter;
+        private Guna.UI2.WinForms.Guna2Button loyalBtn;
+        private Guna.UI2.WinForms.Guna2Button Ajouter;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem historiqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
     }
 }
