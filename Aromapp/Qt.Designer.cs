@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.qtt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.reduction = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.totalBulkText = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.totalRetailText = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.annuler = new Guna.UI2.WinForms.Guna2Button();
             this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
-            this.qtt = new Aromapp.HintTexBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +49,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.detail = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,18 +62,161 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.qtt, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(498, 450);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.54206F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.92523F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.34579F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(600, 585);
             this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.qtt, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.reduction, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel4, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.Padding = new System.Windows.Forms.Padding(20, 10, 20, 0);
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.49785F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.50215F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(594, 266);
+            this.tableLayoutPanel4.TabIndex = 28;
+            // 
+            // qtt
+            // 
+            this.qtt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.qtt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.qtt.DefaultText = "1";
+            this.qtt.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.qtt.ForeColor = System.Drawing.Color.Black;
+            this.qtt.Location = new System.Drawing.Point(28, 133);
+            this.qtt.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.qtt.Name = "qtt";
+            this.qtt.PasswordChar = '\0';
+            this.qtt.PlaceholderText = "";
+            this.qtt.SelectedText = "";
+            this.qtt.Size = new System.Drawing.Size(538, 59);
+            this.qtt.TabIndex = 3;
+            this.qtt.Tag = "Montant payé...";
+            this.qtt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.qtt.TextChanged += new System.EventHandler(this.qtt_TextChanged);
+            this.qtt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.qtt_KeyDown1);
+            this.qtt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtt_KeyPress);
+            // 
+            // reduction
+            // 
+            this.reduction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reduction.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.reduction.DefaultText = "Réduction...";
+            this.reduction.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.reduction.ForeColor = System.Drawing.Color.Gray;
+            this.reduction.Location = new System.Drawing.Point(28, 208);
+            this.reduction.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.reduction.Name = "reduction";
+            this.reduction.PasswordChar = '\0';
+            this.reduction.PlaceholderText = "";
+            this.reduction.SelectedText = "";
+            this.reduction.Size = new System.Drawing.Size(538, 50);
+            this.reduction.TabIndex = 3;
+            this.reduction.Tag = "Réduction...";
+            this.reduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reduction.TextChanged += new System.EventHandler(this.reduc_TextChanged);
+            this.reduction.Click += new System.EventHandler(this.reduc_Click);
+            this.reduction.KeyDown += new System.Windows.Forms.KeyEventHandler(this.qtt_KeyDown);
+            this.reduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtt_KeyPress);
+            this.reduction.Leave += new System.EventHandler(this.reduc_Leave);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.totalBulkText);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(23, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(548, 50);
+            this.panel3.TabIndex = 28;
+            // 
+            // totalBulkText
+            // 
+            this.totalBulkText.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.totalBulkText.ForeColor = System.Drawing.Color.White;
+            this.totalBulkText.Location = new System.Drawing.Point(201, 1);
+            this.totalBulkText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.totalBulkText.Name = "totalBulkText";
+            this.totalBulkText.Size = new System.Drawing.Size(205, 45);
+            this.totalBulkText.TabIndex = 27;
+            this.totalBulkText.Text = "00,00";
+            this.totalBulkText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-3, -2);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 45);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Total en gros:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.totalRetailText);
+            this.panel4.Location = new System.Drawing.Point(23, 69);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(548, 53);
+            this.panel4.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Calibri", 10.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Green;
+            this.label6.Location = new System.Drawing.Point(6, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(205, 45);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Total en detail:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // totalRetailText
+            // 
+            this.totalRetailText.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.totalRetailText.ForeColor = System.Drawing.Color.White;
+            this.totalRetailText.Location = new System.Drawing.Point(201, 2);
+            this.totalRetailText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.totalRetailText.Name = "totalRetailText";
+            this.totalRetailText.Size = new System.Drawing.Size(205, 45);
+            this.totalRetailText.TabIndex = 27;
+            this.totalRetailText.Text = "00,00";
+            this.totalRetailText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -72,12 +226,12 @@
             this.tableLayoutPanel3.Controls.Add(this.annuler, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.iconButton3, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 306);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 441);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(15, 18, 15, 18);
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(492, 141);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(594, 141);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // annuler
@@ -98,7 +252,7 @@
             this.annuler.Location = new System.Drawing.Point(25, 28);
             this.annuler.Margin = new System.Windows.Forms.Padding(10);
             this.annuler.Name = "annuler";
-            this.annuler.Size = new System.Drawing.Size(211, 85);
+            this.annuler.Size = new System.Drawing.Size(262, 85);
             this.annuler.TabIndex = 27;
             this.annuler.Text = "Annuler";
             this.annuler.Click += new System.EventHandler(this.annuler_Click);
@@ -118,31 +272,13 @@
             this.iconButton3.ForeColor = System.Drawing.Color.White;
             this.iconButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.iconButton3.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton3.Location = new System.Drawing.Point(256, 28);
+            this.iconButton3.Location = new System.Drawing.Point(307, 28);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(10);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(211, 85);
+            this.iconButton3.Size = new System.Drawing.Size(262, 85);
             this.iconButton3.TabIndex = 26;
             this.iconButton3.Text = "Ok";
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
-            // 
-            // qtt
-            // 
-            this.qtt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.qtt.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.qtt.ForeColor = System.Drawing.Color.Black;
-            this.qtt.Location = new System.Drawing.Point(20, 35);
-            this.qtt.Margin = new System.Windows.Forms.Padding(20, 35, 20, 3);
-            this.qtt.Name = "qtt";
-            this.qtt.Size = new System.Drawing.Size(458, 47);
-            this.qtt.TabIndex = 3;
-            this.qtt.Tag = "Montant payé...";
-            this.qtt.Text = "1";
-            this.qtt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.qtt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.qtt_KeyDown);
-            this.qtt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtt_KeyPress);
             // 
             // tableLayoutPanel1
             // 
@@ -152,11 +288,11 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 153);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 275);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 144);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(594, 134);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // panel2
@@ -166,9 +302,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.gros);
-            this.panel2.Location = new System.Drawing.Point(249, 3);
+            this.panel2.Location = new System.Drawing.Point(300, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(240, 138);
+            this.panel2.Size = new System.Drawing.Size(291, 128);
             this.panel2.TabIndex = 30;
             // 
             // label1
@@ -209,7 +345,7 @@
             this.panel1.Controls.Add(this.detail);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(240, 138);
+            this.panel1.Size = new System.Drawing.Size(291, 128);
             this.panel1.TabIndex = 29;
             // 
             // label3
@@ -248,7 +384,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 450);
+            this.ClientSize = new System.Drawing.Size(600, 585);
             this.Controls.Add(this.tableLayoutPanel2);
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
@@ -260,7 +396,9 @@
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Qt_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -271,7 +409,7 @@
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private HintTexBox qtt;
+        private Guna.UI2.WinForms.Guna2TextBox qtt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
@@ -282,5 +420,13 @@
         private Guna.UI2.WinForms.Guna2CustomCheckBox detail;
         private Guna.UI2.WinForms.Guna2Button iconButton3;
         private Guna.UI2.WinForms.Guna2Button annuler;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private Guna.UI2.WinForms.Guna2TextBox reduction;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label totalBulkText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label totalRetailText;
     }
 }

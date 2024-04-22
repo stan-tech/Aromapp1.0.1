@@ -27,7 +27,7 @@ namespace Aromapp
 
             using (DBHelper helper = new DBHelper())
             {
-                product = helper.GetProductByID(product.ID);
+                product = helper.GetProductByID(product.ID.Contains("PR") ? "produits" : "emballage", product.ID);
 
                 barcodeText = helper.getProductBarcode(product.ID);
 
@@ -73,26 +73,26 @@ namespace Aromapp
 
                     break;
             }
-            switch (product.Type)
+            switch (product.Type.ToLower())
             {
-                case "Homme":
+                case "homme":
                     Tyype.SelectedIndex = 0;
 
                     break;
 
-                case "Femme":
+                case "femme":
                     Tyype.SelectedIndex = 1;
 
                     break;
-                case "Unisexe":
+                case "unisexe":
                     Tyype.SelectedIndex = 2;
 
                     break;
-                case " Emabllage":
+                case "emballage":
                     Tyype.SelectedIndex = 3;
 
                     break;
-                case "Sachet":
+                case "sachet":
                     Tyype.SelectedIndex = 4;
 
                     break;
@@ -102,7 +102,7 @@ namespace Aromapp
         {
             using (DBHelper helper = new DBHelper())
             {
-                product = helper.GetProductByID(product.ID);
+                product = helper.GetProductByID(product.ID.Contains("PR") ? "produits" : "emballage", product.ID);
 
             }
 

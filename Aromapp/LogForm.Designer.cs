@@ -34,12 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.delete = new Guna.UI2.WinForms.Guna2Button();
             this.duration = new System.Windows.Forms.ComboBox();
             this.HistTable = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.iconButton4 = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.iconButton5 = new System.Windows.Forms.Button();
+            this.iconButton5 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,6 +64,20 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1128, 152);
             this.tableLayoutPanel8.TabIndex = 32;
             // 
+            // iconButton4
+            // 
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton4.BorderRadius = 5;
+            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
+            this.iconButton4.Location = new System.Drawing.Point(880, 78);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 3, 10);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(244, 61);
+            this.iconButton4.TabIndex = 36;
+            this.iconButton4.Text = "Actualiser";
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.delete);
@@ -73,6 +87,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 149);
             this.panel1.TabIndex = 35;
+            // 
+            // delete
+            // 
+            this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.delete.BorderRadius = 5;
+            this.delete.FillColor = System.Drawing.Color.Transparent;
+            this.delete.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.delete.ForeColor = System.Drawing.Color.Black;
+            this.delete.Location = new System.Drawing.Point(3, 78);
+            this.delete.Margin = new System.Windows.Forms.Padding(40, 28, 3, 10);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(305, 61);
+            this.delete.TabIndex = 37;
+            this.delete.Text = "Supprimer";
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // duration
             // 
@@ -167,51 +196,21 @@
             this.HistTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.HistTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // iconButton4
-            // 
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.Black;
-            this.iconButton4.Location = new System.Drawing.Point(880, 78);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 3, 10);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(244, 61);
-            this.iconButton4.TabIndex = 36;
-            this.iconButton4.Text = "Actualiser";
-            this.iconButton4.UseVisualStyleBackColor = false;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // delete
-            // 
-            this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.delete.BackColor = System.Drawing.Color.Transparent;
-            this.delete.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.delete.ForeColor = System.Drawing.Color.Black;
-            this.delete.Location = new System.Drawing.Point(3, 78);
-            this.delete.Margin = new System.Windows.Forms.Padding(40, 28, 3, 10);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(305, 61);
-            this.delete.TabIndex = 37;
-            this.delete.Text = "Supprimer";
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
             // iconButton5
             // 
             this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton5.BorderRadius = 5;
+            this.iconButton5.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton5.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
             this.iconButton5.Location = new System.Drawing.Point(40, 947);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(40, 50, 40, 10);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(1054, 100);
             this.iconButton5.TabIndex = 37;
             this.iconButton5.Text = "Nettoyer l\'historique";
-            this.iconButton5.UseVisualStyleBackColor = false;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // tableLayoutPanel1
@@ -264,9 +263,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox duration;
         private Guna.UI2.WinForms.Guna2DataGridView HistTable;
-        private System.Windows.Forms.Button iconButton4;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button iconButton5;
+        private Guna.UI2.WinForms.Guna2Button iconButton4;
+        private Guna.UI2.WinForms.Guna2Button delete;
+        private Guna.UI2.WinForms.Guna2Button iconButton5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

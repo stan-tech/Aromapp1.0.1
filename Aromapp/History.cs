@@ -267,9 +267,9 @@ namespace Aromapp
 
                 if (result == DialogResult.Yes)
                 {
-                    Confirm confirm = new Confirm();
-                    confirm.Passed += PasswoCorrect;
-                    confirm.ShowDialog();
+                    
+                    PasswoCorrect(new object(),EventArgs.Empty);
+                    
                 }
             }
 
@@ -280,9 +280,8 @@ namespace Aromapp
 
                 if (result == DialogResult.Yes)
                 {
-                    Confirm confirm = new Confirm();
-                    confirm.Passed += PasswoCorrect;
-                    confirm.ShowDialog();
+                    PasswoCorrect(new object(), EventArgs.Empty);
+
                 }
             }
             else
@@ -317,6 +316,14 @@ namespace Aromapp
             {
                 Transaction.Text = "Transaction";
             }
+        }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+            this.ClientSize = new System.Drawing.Size(570, 560);
+            this.MaximumSize = new System.Drawing.Size(570, 560);
+            this.MinimumSize = new System.Drawing.Size(570, 560);
+            this.CenterToScreen();
         }
 
         private void iconButton5_Click(object sender, EventArgs e)

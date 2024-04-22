@@ -33,8 +33,8 @@
             this.name = new Aromapp.HintTexBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton1 = new System.Windows.Forms.Button();
-            this.iconButton3 = new System.Windows.Forms.Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
             this.admin = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -97,41 +97,43 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.iconButton1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.iconButton3, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(23, 512);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(23, 490);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(769, 76);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(769, 98);
             this.tableLayoutPanel5.TabIndex = 46;
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.BorderRadius = 5;
+            this.iconButton1.FillColor = System.Drawing.Color.Red;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(3, 16);
+            this.iconButton1.Location = new System.Drawing.Point(3, 25);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(378, 57);
+            this.iconButton1.Size = new System.Drawing.Size(371, 70);
             this.iconButton1.TabIndex = 10;
             this.iconButton1.Text = "Annuler";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton3
             // 
             this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton3.BackColor = System.Drawing.Color.Gray;
+            this.iconButton3.BorderRadius = 5;
+            this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.Location = new System.Drawing.Point(387, 16);
+            this.iconButton3.Location = new System.Drawing.Point(394, 25);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(379, 57);
+            this.iconButton3.Size = new System.Drawing.Size(372, 70);
             this.iconButton3.TabIndex = 10;
             this.iconButton3.Text = "Ok";
-            this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // admin
@@ -140,7 +142,7 @@
             this.admin.CheckedState.BorderRadius = 2;
             this.admin.CheckedState.BorderThickness = 0;
             this.admin.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.admin.Location = new System.Drawing.Point(85, 442);
+            this.admin.Location = new System.Drawing.Point(85, 428);
             this.admin.Name = "admin";
             this.admin.Size = new System.Drawing.Size(47, 42);
             this.admin.TabIndex = 47;
@@ -154,7 +156,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(137, 444);
+            this.label3.Location = new System.Drawing.Point(137, 430);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 50);
@@ -252,8 +254,8 @@
         private HintTexBox name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button iconButton1;
-        private System.Windows.Forms.Button iconButton3;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton3;
         private Guna.UI2.WinForms.Guna2CustomCheckBox admin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;

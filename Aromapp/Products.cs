@@ -18,6 +18,9 @@ using System.Text.RegularExpressions;
 using static DevExpress.Utils.MVVM.Internal.ILReader;
 using static DevExpress.Utils.Svg.CommonSvgImages;
 using System.Data.SQLite;
+using System.Threading;
+using DevExpress.Utils.Behaviors;
+using DevExpress.XtraBars.Docking.Helpers;
 
 namespace Aromapp
 {
@@ -28,9 +31,9 @@ namespace Aromapp
         BackgroundWorker TTVPWorker;
         BackgroundWorker VPJWorker;
         List<string> prodIDs = new List<string>();
-        Timer timer = new Timer();
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         bool searching = false, tableFull = false;
-
+        public static int EtiqNumber { get; set; }
 
       
 
@@ -207,17 +210,22 @@ namespace Aromapp
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        public void iconButton1_Click(object sender, EventArgs e)
         {
-
-            GeneratePdf(ProductsTable);
-
+            contextMenuStrip1.Show(System.Windows.Forms.Cursor.Position.X,
+                System.Windows.Forms.Cursor.Position.Y);
 
         }
         FileStream fileStream;
-        public void GeneratePdf(Guna2DataGridView grid)
+        public void GeneratePdf(DataTable gridTable)
         {
-            PdfPTable table = new PdfPTable(grid.ColumnCount - 1);
+            string fontPath = Environment.CurrentDirectory + "\\arabicFont.ttf";
+
+            DataTable grid = gridTable;
+            grid.Columns.RemoveAt(4);
+
+            PdfPTable table = new PdfPTable(grid.Columns.Count - 1);
+            BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 
             string pattern = @"\p{IsArabic}";
 
@@ -262,7 +270,35 @@ namespace Aromapp
             iTextSharp.text.Font SmallFS = FontFactory.GetFont("Calibri", 10, iTextSharp.text.Font.NORMAL,
             BaseColor.BLACK);
 
-            document.Add(new Phrase("Address: " + Storeinfo.Adresse, SmallFS));
+            PdfPTable title = new PdfPTable(1);
+
+            Phrase titleYeah = new Phrase(" بيت العود و العطور الفاخرة",
+                new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL, BaseColor.BLACK));
+            PdfPCell Titlecell = new PdfPCell(titleYeah);
+
+            Titlecell.HorizontalAlignment = Element.ALIGN_CENTER;
+            Titlecell.BorderWidthBottom = 0f;
+            Titlecell.BorderWidthLeft = 0f;
+            Titlecell.BorderWidthTop = 0f;
+            Titlecell.BorderWidthRight = 0f;
+
+
+            title.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+            title.HorizontalAlignment = Element.ALIGN_CENTER;
+            title.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+            title.AddCell(Titlecell);
+            document.Add(title);
+
+            iTextSharp.text.Image picture = iTextSharp.text.Image.GetInstance(AppDomain.CurrentDomain.BaseDirectory + "\\Logo.png");
+
+            picture.ScaleToFit(80f, 80f);
+            picture.Alignment = Element.ALIGN_CENTER;
+            picture.SpacingAfter = 1;
+
+            document.Add(picture);
+
+            document.Add(new Phrase("Adresse: " + Storeinfo.Adresse, SmallFS));
             document.Add(new iTextSharp.text.Paragraph("\n"));
             document.Add(new Phrase("Tel: " + Storeinfo.Tel, SmallFS));
             document.Add(new iTextSharp.text.Paragraph("\n"));
@@ -276,19 +312,41 @@ namespace Aromapp
             document.Add(lineSeparator);
 
             document.Add(new iTextSharp.text.Paragraph(""));
-            iTextSharp.text.Image picture = iTextSharp.text.Image.GetInstance(AppDomain.CurrentDomain.BaseDirectory + "\\Logo.png");
+       
+            PdfPTable titlePhrase = new PdfPTable(1);
 
-            picture.ScaleToFit(80f, 80f);
-            picture.Alignment = Element.ALIGN_CENTER;
-            picture.SpacingAfter = 1;
-
-            document.Add(picture);
-
-            Phrase storeNamePhrase = new Phrase("Liste des nouveaux produits chez le magasin de parfums Bait Al Oud", FS);
-
+            Phrase storeNamePhrase = new Phrase("قائمة أسعار العطور بالجملة",
+                new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.BOLD, BaseColor.BLACK));
+            Phrase storeNameSub = new Phrase("أقل كمية 100غ, سعر الكيلو غرام يختلف عن سعر 100غ \n\n الشحن متوفر إلى كل الولايات",
+                new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL, BaseColor.BLACK));
             Paragraph p = new Paragraph(storeNamePhrase);
+
             p.Alignment = Element.ALIGN_CENTER;
-            document.Add(p);
+
+            PdfPCell cell = new PdfPCell(storeNamePhrase);
+            PdfPCell cellSub = new PdfPCell(storeNameSub);
+
+            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            cell.BorderWidthBottom = 0f;
+            cell.BorderWidthLeft = 0f;
+            cell.BorderWidthTop = 0f;
+            cell.BorderWidthRight = 0f;
+            cellSub.HorizontalAlignment = Element.ALIGN_CENTER;
+            cellSub.BorderWidthBottom = 0f;
+            cellSub.BorderWidthLeft = 0f;
+            cellSub.BorderWidthTop = 0f;
+            cellSub.BorderWidthRight = 0f;
+
+            titlePhrase.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+            titlePhrase.HorizontalAlignment = Element.ALIGN_CENTER;
+            titlePhrase.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+            titlePhrase.AddCell(cell);
+            titlePhrase.AddCell(cellSub);
+
+
+
+            document.Add(titlePhrase);
 
             document.Add(lineSeparator);
 
@@ -301,45 +359,56 @@ namespace Aromapp
             #region Write table
 
 
-            FS = FontFactory.GetFont("Calibri", 10,
-           BaseColor.BLACK);
+         
 
-            foreach (DataGridViewColumn header in grid.Columns)
+            foreach (DataColumn header in grid.Columns)
             {
-                if (header.Index == 0)
+
+                if (grid.Columns.IndexOf(header) == 6)
                 {
                     continue;
                 }
-                pdfPCell = new PdfPCell(new Phrase(header.HeaderText, FS));
+                if (grid.Columns.IndexOf(header) == 4)
+                {
+                    header.ColumnName = "Prix 100 g/DA";
+                }
+                if (grid.Columns.IndexOf(header) == 4)
+                {
+                    header.ColumnName = "Prix 1 KG/DA";
+                }
+
+                pdfPCell = new PdfPCell(new Phrase(header.ColumnName, FS));
                 pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pdfPCell.Padding = 6f;
                 table.AddCell(pdfPCell);
 
             }
 
-            foreach (DataGridViewRow row in grid.Rows)
+            FS = FontFactory.GetFont("Calibri", 10,
+        BaseColor.BLACK);
+            foreach (DataRow row in grid.Rows)
             {
-                if (row.Index == grid.Rows.Count - 1)
+                
+
+                if (double.Parse(row[6].ToString()) <= 0)
                 {
-                    break;
+                    continue;
                 }
-                foreach (DataGridViewCell column in row.Cells)
+
+                for (int i = 0; i<grid.Columns.Count; i++)
                 {
-                    if (row.Cells.IndexOf(column) == 0)
+                    if (i == 6)
                     {
                         continue;
                     }
-                    if (column.Value != null)
+                    if (row[i]!= null)
                     {
 
-                        if (Regex.IsMatch(column.Value.ToString(), pattern))
+                        if (Regex.IsMatch(row[i].ToString(), pattern))
                         {
-                            string fontPath = Environment.CurrentDirectory + "\\arabicFont.ttf";
 
-                            BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-
-
-                            Phrase ph = new Phrase(column.Value.ToString(),
+                            Phrase ph = new Phrase(row[i].ToString(),
                                 new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL, BaseColor.BLACK));
 
                             
@@ -349,7 +418,7 @@ namespace Aromapp
                         }
                         else
                         {
-                            pdfPCell = new PdfPCell(new Phrase(column.Value.ToString(), FS));
+                            pdfPCell = new PdfPCell(new Phrase(row[i].ToString(), FS));
 
                         }
 
@@ -362,6 +431,8 @@ namespace Aromapp
                     }
                     pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                    pdfPCell.Padding = 6f;
+
                     table.AddCell(pdfPCell);
 
                 }
@@ -395,7 +466,7 @@ namespace Aromapp
 
         }
 
-        public void GenerateNamesPDF(Dictionary<string, string> names)
+        public void GenerateNamesPDF(Dictionary<string, string> names,bool onlyOne)
         {
             PdfPTable table = new PdfPTable(2);
             PdfPCell pdfPCell = null;
@@ -434,66 +505,131 @@ namespace Aromapp
             iTextSharp.text.Font FS = FontFactory.GetFont("Calibri", 11, iTextSharp.text.Font.BOLD,
             BaseColor.BLACK);
 
-            foreach (var name in names)
+            if (onlyOne)
             {
-                Phrase phrase = new Phrase();
-
-
-
-
-
-                if (Regex.IsMatch(name.Value.ToString(), pattern))
+                for (int i =1;i<=EtiqNumber;i++)
                 {
-                    string fontPath = Environment.CurrentDirectory + "\\arabicFont.ttf";
-
-                    BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-                    iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-
-
-                    phrase.Add(new Chunk(name.Value + "\n\n",font));
-                    phrase.Add(new Chunk(name.Key));
+                    Phrase phrase = new Phrase();
+                    string key = ProductsTable.SelectedRows[0].Cells[0].Value.ToString();
+                    string value =ProductsTable.SelectedRows[0].Cells[1].Value.ToString();
 
 
-                    pdfPCell = new PdfPCell(phrase);
-                    pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+
+                if (Regex.IsMatch(value, pattern))
+                    {
+                        string fontPath = Environment.CurrentDirectory + "\\arabicFont.ttf";
+
+                        BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                        iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
 
 
-                }
-                else
-                {
-                    phrase.Add(new Chunk(name.Value + "\n\n", FS));
-                    phrase.Add(new Chunk(name.Key));
+                        phrase.Add(new Chunk(value, font));
 
 
-                    pdfPCell = new PdfPCell(phrase);
-                    pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_LTR;
-                }
+                        pdfPCell = new PdfPCell(phrase);
+                        pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
 
-                pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-                pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                pdfPCell.Padding = 15f;
-                if (name.Value == names.Values.Last() && names.Values.Count % 2 != 0)
-                {
-                    
-                    table.AddCell(pdfPCell);
-                    pdfPCell = new PdfPCell(new Phrase("", FS));
+
+                    }
+                    else
+                    {
+                        phrase.Add(new Chunk(value , FS));
+
+
+                        pdfPCell = new PdfPCell(phrase);
+                        pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_LTR;
+                    }
 
                     pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                    pdfPCell.Padding = 10f;
+                    pdfPCell.Padding = 15f;
+                    if (i==EtiqNumber && i % 2 != 0)
+                    {
 
-                    table.AddCell(pdfPCell);
+                        table.AddCell(pdfPCell);
+                        pdfPCell = new PdfPCell(new Phrase("", FS));
 
-                    break;
+                        pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        pdfPCell.Padding = 10f;
+
+                        table.AddCell(pdfPCell);
+
+                        break;
 
 
-                }
-                else
-                {
-                    table.AddCell(pdfPCell);
+                    }
+                    else
+                    {
+                        table.AddCell(pdfPCell);
 
+                    }
                 }
             }
+            else
+            {
+                foreach (var name in names)
+                {
+                    Phrase phrase = new Phrase();
+
+
+
+
+
+                    if (Regex.IsMatch(name.Value.ToString(), pattern))
+                    {
+                        string fontPath = Environment.CurrentDirectory + "\\arabicFont.ttf";
+
+                        BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                        iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+
+                        phrase.Add(new Chunk(name.Value + "\n\n", font));
+                        phrase.Add(new Chunk(name.Key));
+
+
+                        pdfPCell = new PdfPCell(phrase);
+                        pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+
+
+                    }
+                    else
+                    {
+                        phrase.Add(new Chunk(name.Value + "\n\n", FS));
+                        phrase.Add(new Chunk(name.Key));
+
+
+                        pdfPCell = new PdfPCell(phrase);
+                        pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_LTR;
+                    }
+
+                    pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                    pdfPCell.Padding = 15f;
+                    if (name.Value == names.Values.Last() && names.Values.Count % 2 != 0)
+                    {
+
+                        table.AddCell(pdfPCell);
+                        pdfPCell = new PdfPCell(new Phrase("", FS));
+
+                        pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        pdfPCell.Padding = 10f;
+
+                        table.AddCell(pdfPCell);
+
+                        break;
+
+
+                    }
+                    else
+                    {
+                        table.AddCell(pdfPCell);
+
+                    }
+                }
+            }
+            
 
             document.Add(table);
             document.Close();
@@ -560,7 +696,7 @@ namespace Aromapp
                         break;
                     }
                 }
-                GenerateNamesPDF(names);
+                GenerateNamesPDF(names,false);
 
             }
             else
@@ -572,11 +708,15 @@ namespace Aromapp
         private void types_SelectedIndexChanged(object sender, EventArgs e)
         {
             searching = true;
+                     
 
-            if (types.SelectedItem.ToString() == "Emabllage")
+            if (types.SelectedItem.ToString().Trim() == "Emballage"||
+                types.SelectedItem.ToString().Trim() == "Sachet")
             {
+                SelectedTable = "emballage";
 
                 DataTable table = new DataTable();
+
                 string q = "SELECT c_prd as Référence,[Nom],[Unit],[Type],[Prix_VenteHT] as " +
                     "'Prix en Detail',[PrixVGros] as 'Prix en Gros',prix_achat 'Prix d''achat', [Q_Stock] as 'Disponible'" +
                     "  FROM Emballage order by c_prd asc;";
@@ -593,6 +733,7 @@ namespace Aromapp
 
                 return;
             }
+            SelectedTable = "produits";
 
             using (DBHelper helper = new DBHelper())
             {
@@ -613,7 +754,15 @@ namespace Aromapp
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            SetupCharts();
+            try
+            {
+                SetupCharts();
+
+            }
+            catch (IndexOutOfRangeException)
+            {
+
+            }           
             searching = false;
             tableFull = false;
             currentPage = 1;
@@ -645,7 +794,7 @@ namespace Aromapp
             }
 
 
-            if (salesByDate != null)
+            if (salesByDate != null && salesByDate.Count>0) 
                
                 {
                     foreach (var val in salesByDate)
@@ -655,15 +804,18 @@ namespace Aromapp
                     } 
                 }
 
-            foreach (var point in VPJ.Series[0].Points)
+            if (totals!=null && totals.Length> 0)
             {
-                point.Color = Color.LightSteelBlue;
-            }
-            if ((TVPP.ChartAreas[0].AxisY.Interval / totals[0]) < 10)
-            {
-                TVPP.ChartAreas[0].AxisY.Interval = TVPP.ChartAreas[0].AxisY.Interval * 10;
-            }
+                foreach (var point in VPJ.Series[0].Points)
+                {
+                    point.Color = Color.LightSteelBlue;
+                }
+                if ((TVPP.ChartAreas[0].AxisY.Interval / totals[0]) < 10)
+                {
+                    TVPP.ChartAreas[0].AxisY.Interval = TVPP.ChartAreas[0].AxisY.Interval * 10;
+                }
 
+            }
 
             if (names != null)
             {
@@ -712,6 +864,7 @@ namespace Aromapp
 
 
         }
+        string SelectedTable = "produits";
 
         public void Search()
         {
@@ -719,7 +872,7 @@ namespace Aromapp
             {
                 if (searchText.Text != searchText.Tag.ToString())
                 {
-                    ProductsTable.DataSource = helper.searchForProduct(searchText.Text.ToLower());
+                    ProductsTable.DataSource = helper.searchForProduct(SelectedTable,searchText.Text.ToLower());
 
                 }
             }
@@ -732,30 +885,7 @@ namespace Aromapp
         private void Products_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
-            string id = ProductsTable.SelectedRows[0].Cells[0].Value.ToString(),
-                name = ProductsTable.SelectedRows[0].Cells[1].Value.ToString(),
-                priceP = ProductsTable.SelectedRows[0].Cells[7].Value.ToString(),
-                priceSD = ProductsTable.SelectedRows[0].Cells[4].Value.ToString(),
-                priceSG = ProductsTable.SelectedRows[0].Cells[5].Value.ToString(),
-                q_stock = ProductsTable.SelectedRows[0].Cells[6].Value.ToString(),
-                type = ProductsTable.SelectedRows[0].Cells[3].Value.ToString(),
-                unit = ProductsTable.SelectedRows[0].Cells[2].Value.ToString();
-
-            Product product = new Product()
-            {
-                ID = id,
-                Name = name,
-                PriceD = double.Parse(priceSD),
-                PriceG = double.Parse(priceSG),
-                Quantity = double.Parse(q_stock),
-                Type = type,
-                Unit = unit,
-                PriceP = double.Parse(priceP)
-            };
-
-            ProdView prodView = new ProdView(product);
-            prodView.ShowDialog();
+            contextMenuStrip2.Show(System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y);
 
         }
 
@@ -927,6 +1057,8 @@ namespace Aromapp
                             if (prodIDs.Count > 1)
                             {
                                 MessageBoxer.showGeneralMsg("Produits supprimés");
+                                prodIDs.Clear();
+                                iconButton4_Click(sender, e);
 
                             }
                             else
@@ -944,6 +1076,171 @@ namespace Aromapp
                 MessageBoxer.showGeneralMsg("Selectionnez au moins une ligne");
 
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void VPJ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void searchText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TVPP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tousLesProduitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            DataTable table;
+            using (DBHelper helper = new DBHelper())
+            {
+                table = helper.selectAllProducts(10000, 1);
+
+                GeneratePdf(table);
+
+                MessageBox.Show("Fichier généré", "Terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+           
+
+
+
+
+        }
+
+        private void seulementLaListeVisibleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (DBHelper helper = new DBHelper())
+            {
+
+                DataTable table = ((DataTable)(ProductsTable.DataSource)).Copy();
+                GeneratePdf(table); 
+            }
+
+        }
+
+        private void detailsSurLeProduitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                string id = ProductsTable.SelectedRows[0].Cells[0].Value.ToString(),
+        name = ProductsTable.SelectedRows[0].Cells[1].Value.ToString(),
+        priceP = ProductsTable.SelectedRows[0].Cells[7].Value.ToString(),
+        priceSD = ProductsTable.SelectedRows[0].Cells[4].Value.ToString(),
+        priceSG = ProductsTable.SelectedRows[0].Cells[5].Value.ToString(),
+        q_stock = ProductsTable.SelectedRows[0].Cells[6].Value.ToString(),
+        type = ProductsTable.SelectedRows[0].Cells[3].Value.ToString(),
+        unit = ProductsTable.SelectedRows[0].Cells[2].Value.ToString();
+
+                Product product = new Product()
+                {
+                    ID = id,
+                    Name = name,
+                    PriceD = double.Parse(priceSD),
+                    PriceG = double.Parse(priceSG),
+                    Quantity = double.Parse(q_stock),
+                    Type = type,
+                    Unit = unit,
+                    PriceP = double.Parse(priceP)
+                };
+
+                ProdView prodView = new ProdView(product);
+                prodView.ShowDialog();
+        }
+
+        void EtiquetteCanceled(object sender, EventArgs e)
+        {
+            Etiquette.Close();
+        }
+        void EtiquettePrint(object sender, EventArgs e)
+        {
+            Dictionary<string, string> names = new Dictionary<string, string>();
+
+           
+                names.Add(ProductsTable.SelectedRows[0].Cells[0].Value.ToString(),
+                                            ProductsTable.SelectedRows[0].Cells[1].Value.ToString());
+            
+            GenerateNamesPDF(names,true);
+            Etiquette.Close();
+
+
+        }
+        etiquette Etiquette;
+        private void imprimerDesÉtiquettesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Etiquette = new etiquette();
+            Etiquette.Canceled += EtiquetteCanceled;
+            Etiquette.Print += EtiquettePrint;
+            Etiquette.ShowDialog();
         }
 
         public void AddTable(int currentPage)

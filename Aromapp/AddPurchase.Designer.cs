@@ -31,25 +31,31 @@ namespace Aromapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.retirer = new Guna.UI2.WinForms.Guna2Button();
             this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.avendre = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.StockAlert = new Aromapp.HintTexBox();
             this.Unit = new System.Windows.Forms.ComboBox();
             this.Typpe = new System.Windows.Forms.ComboBox();
+            this.QT = new Aromapp.HintTexBox();
+            this.priceSG = new Aromapp.HintTexBox();
+            this.priceSD = new Aromapp.HintTexBox();
             this.prodName = new Guna.UI2.WinForms.Guna2TextBox();
             this.listBox1 = new System.Windows.Forms.ComboBox();
+            this.prodRef = new Aromapp.HintTexBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.priceP = new Aromapp.HintTexBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.suppName = new System.Windows.Forms.ComboBox();
             this.effacerbtn = new Guna.UI2.WinForms.Guna2Button();
             this.tva = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,13 +68,8 @@ namespace Aromapp
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.StockAlert = new Aromapp.HintTexBox();
-            this.QT = new Aromapp.HintTexBox();
-            this.priceSG = new Aromapp.HintTexBox();
-            this.priceSD = new Aromapp.HintTexBox();
-            this.priceP = new Aromapp.HintTexBox();
-            this.prodRef = new Aromapp.HintTexBox();
-            this.Amount = new Aromapp.HintTexBox();
+            this.Amount = new Guna.UI2.WinForms.Guna2TextBox();
+            this.suppName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,34 +90,36 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.retirer, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.Ajouter, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.Unit, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.Typpe, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.QT, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.priceSG, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.priceSD, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.priceP, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.prodName, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.prodRef, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.retirer, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.Ajouter, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.Unit, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.Typpe, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.QT, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.priceSG, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.priceSD, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.prodName, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.prodRef, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.priceP, 0, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.603194F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.283763F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.297421F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.77997F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.842185F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.69044F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.359636F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.762474F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.503162F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15249F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.14125F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.29234F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.877414F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.788945F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.951424F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.025126F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.030151F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.862647F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.872697F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.946399F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90604F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.12081F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.0976F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(453, 1318);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -129,10 +132,10 @@ namespace Aromapp
             this.retirer.FillColor = System.Drawing.Color.Red;
             this.retirer.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.retirer.ForeColor = System.Drawing.Color.White;
-            this.retirer.Location = new System.Drawing.Point(23, 1215);
+            this.retirer.Location = new System.Drawing.Point(23, 1212);
             this.retirer.Margin = new System.Windows.Forms.Padding(3, 10, 3, 30);
             this.retirer.Name = "retirer";
-            this.retirer.Size = new System.Drawing.Size(407, 73);
+            this.retirer.Size = new System.Drawing.Size(407, 76);
             this.retirer.TabIndex = 8;
             this.retirer.Text = "Retirer";
             this.retirer.Click += new System.EventHandler(this.retirer_Click);
@@ -145,10 +148,10 @@ namespace Aromapp
             this.Ajouter.BorderRadius = 5;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Ajouter.ForeColor = System.Drawing.Color.White;
-            this.Ajouter.Location = new System.Drawing.Point(23, 1108);
+            this.Ajouter.Location = new System.Drawing.Point(23, 1084);
             this.Ajouter.Margin = new System.Windows.Forms.Padding(3, 40, 3, 20);
             this.Ajouter.Name = "Ajouter";
-            this.Ajouter.Size = new System.Drawing.Size(407, 77);
+            this.Ajouter.Size = new System.Drawing.Size(407, 76);
             this.Ajouter.TabIndex = 8;
             this.Ajouter.Text = "Ajouter";
             this.toolTip1.SetToolTip(this.Ajouter, "Ctrl+N");
@@ -161,7 +164,7 @@ namespace Aromapp
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.avendre);
             this.panel1.Controls.Add(this.StockAlert);
-            this.panel1.Location = new System.Drawing.Point(23, 756);
+            this.panel1.Location = new System.Drawing.Point(23, 803);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(407, 193);
             this.panel1.TabIndex = 18;
@@ -196,6 +199,22 @@ namespace Aromapp
             this.avendre.UncheckedState.BorderThickness = 0;
             this.avendre.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
+            // StockAlert
+            // 
+            this.StockAlert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StockAlert.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.StockAlert.ForeColor = System.Drawing.Color.Gray;
+            this.StockAlert.Location = new System.Drawing.Point(8, 25);
+            this.StockAlert.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.StockAlert.Name = "StockAlert";
+            this.StockAlert.Size = new System.Drawing.Size(396, 47);
+            this.StockAlert.TabIndex = 28;
+            this.StockAlert.Tag = "Alerte de stock...";
+            this.StockAlert.Text = "Alerte de stock...";
+            this.toolTip1.SetToolTip(this.StockAlert, "Alerte de stock...");
+            // 
             // Unit
             // 
             this.Unit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -209,7 +228,7 @@ namespace Aromapp
             "G",
             "KG",
             "M"});
-            this.Unit.Location = new System.Drawing.Point(23, 651);
+            this.Unit.Location = new System.Drawing.Point(23, 681);
             this.Unit.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(407, 47);
@@ -230,13 +249,66 @@ namespace Aromapp
             "Unisexe",
             "Emabllage",
             "Sachet"});
-            this.Typpe.Location = new System.Drawing.Point(23, 575);
+            this.Typpe.Location = new System.Drawing.Point(23, 611);
             this.Typpe.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.Typpe.Name = "Typpe";
             this.Typpe.Size = new System.Drawing.Size(407, 47);
             this.Typpe.TabIndex = 29;
             this.Typpe.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
             this.Typpe.TextChanged += new System.EventHandler(this.Type_TextChanged);
+            // 
+            // QT
+            // 
+            this.QT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.QT.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.QT.ForeColor = System.Drawing.Color.Gray;
+            this.QT.Location = new System.Drawing.Point(23, 543);
+            this.QT.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.QT.Name = "QT";
+            this.QT.Size = new System.Drawing.Size(407, 47);
+            this.QT.TabIndex = 28;
+            this.QT.Tag = "Quantité...";
+            this.QT.Text = "Quantité...";
+            this.toolTip1.SetToolTip(this.QT, "Quantité...");
+            this.QT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
+            // 
+            // priceSG
+            // 
+            this.priceSG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceSG.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.priceSG.ForeColor = System.Drawing.Color.Gray;
+            this.priceSG.Location = new System.Drawing.Point(23, 474);
+            this.priceSG.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.priceSG.Name = "priceSG";
+            this.priceSG.Size = new System.Drawing.Size(407, 47);
+            this.priceSG.TabIndex = 28;
+            this.priceSG.Tag = "Prix de vente en gros...";
+            this.priceSG.Text = "Prix de vente en gros...";
+            this.toolTip1.SetToolTip(this.priceSG, "Prix de vente en gros...");
+            this.priceSG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSG_KeyDown);
+            this.priceSG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
+            // 
+            // priceSD
+            // 
+            this.priceSD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceSD.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.priceSD.ForeColor = System.Drawing.Color.Gray;
+            this.priceSD.Location = new System.Drawing.Point(23, 403);
+            this.priceSD.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.priceSD.Name = "priceSD";
+            this.priceSD.Size = new System.Drawing.Size(407, 47);
+            this.priceSD.TabIndex = 28;
+            this.priceSD.Tag = "Prix de vente en detail...";
+            this.priceSD.Text = "Prix de vente en detail...";
+            this.toolTip1.SetToolTip(this.priceSD, "Prix de vente en detail...");
+            this.priceSD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSD_KeyDown);
+            this.priceSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
             // 
             // prodName
             // 
@@ -247,15 +319,16 @@ namespace Aromapp
             this.prodName.DefaultText = "Nom de produits...";
             this.prodName.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.prodName.ForeColor = System.Drawing.Color.Gray;
-            this.prodName.Location = new System.Drawing.Point(23, 195);
+            this.prodName.Location = new System.Drawing.Point(23, 252);
             this.prodName.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
             this.prodName.Name = "prodName";
             this.prodName.PasswordChar = '\0';
             this.prodName.PlaceholderText = "";
             this.prodName.SelectedText = "";
-            this.prodName.Size = new System.Drawing.Size(407, 55);
+            this.prodName.Size = new System.Drawing.Size(407, 54);
             this.prodName.TabIndex = 28;
             this.prodName.Tag = "Nom de produits...";
+            this.toolTip1.SetToolTip(this.prodName, "Nom de produits...");
             this.prodName.TextChanged += new System.EventHandler(this.prodName_TextChanged);
             this.prodName.Click += new System.EventHandler(this.prodClick);
             this.prodName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.prodName_KeyDown);
@@ -269,7 +342,7 @@ namespace Aromapp
             this.listBox1.Font = new System.Drawing.Font("Calibri", 12.125F);
             this.listBox1.ForeColor = System.Drawing.Color.Black;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(23, 109);
+            this.listBox1.Location = new System.Drawing.Point(23, 170);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(407, 47);
@@ -279,6 +352,66 @@ namespace Aromapp
             this.listBox1.DataSourceChanged += new System.EventHandler(this.listBox1_DataSourceChanged);
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.prodRef_MouseClick);
             this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1MouseDown);
+            // 
+            // prodRef
+            // 
+            this.prodRef.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prodRef.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.prodRef.ForeColor = System.Drawing.Color.Gray;
+            this.prodRef.Location = new System.Drawing.Point(23, 101);
+            this.prodRef.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.prodRef.Name = "prodRef";
+            this.prodRef.Size = new System.Drawing.Size(407, 47);
+            this.prodRef.TabIndex = 28;
+            this.prodRef.Tag = "Référence de produits...";
+            this.prodRef.Text = "Référence de produits...";
+            this.toolTip1.SetToolTip(this.prodRef, "Référence de produits...");
+            this.prodRef.Click += new System.EventHandler(this.prodRef_Click);
+            this.prodRef.TextChanged += new System.EventHandler(this.prodRef_TextChanged);
+            this.prodRef.KeyDown += new System.Windows.Forms.KeyEventHandler(this.prodRef_KeyDown);
+            this.prodRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prodRef_KeyPress);
+            this.prodRef.Leave += new System.EventHandler(this.prodRefLeave);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.Font = new System.Drawing.Font("Calibri", 12.125F);
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Parfum",
+            "Emballage/Sachet"});
+            this.comboBox1.Location = new System.Drawing.Point(23, 35);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(407, 47);
+            this.comboBox1.TabIndex = 30;
+            this.comboBox1.Tag = "";
+            this.comboBox1.Text = "Catégories";
+            this.toolTip1.SetToolTip(this.comboBox1, "Catégories");
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // priceP
+            // 
+            this.priceP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceP.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.priceP.ForeColor = System.Drawing.Color.Gray;
+            this.priceP.Location = new System.Drawing.Point(23, 334);
+            this.priceP.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
+            this.priceP.Name = "priceP";
+            this.priceP.Size = new System.Drawing.Size(407, 47);
+            this.priceP.TabIndex = 28;
+            this.priceP.Tag = "Prix...";
+            this.priceP.Text = "Prix...";
+            this.toolTip1.SetToolTip(this.priceP, "Prix...");
+            this.priceP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceP_KeyDown);
+            this.priceP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
             // 
             // groupBox1
             // 
@@ -317,10 +450,10 @@ namespace Aromapp
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.suppName, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.Amount, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.effacerbtn, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.tva, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.Amount, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.suppName, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(10, 41);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -331,31 +464,6 @@ namespace Aromapp
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(944, 246);
             this.tableLayoutPanel8.TabIndex = 0;
-            // 
-            // suppName
-            // 
-            this.suppName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.suppName.Font = new System.Drawing.Font("Calibri", 10.125F);
-            this.suppName.ForeColor = System.Drawing.Color.Gray;
-            this.suppName.FormattingEnabled = true;
-            this.suppName.Items.AddRange(new object[] {
-            "Homme",
-            "Femme",
-            "Unisexe",
-            "Emabllage",
-            "Sachet"});
-            this.suppName.Location = new System.Drawing.Point(23, 58);
-            this.suppName.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
-            this.suppName.Name = "suppName";
-            this.suppName.Size = new System.Drawing.Size(446, 41);
-            this.suppName.TabIndex = 27;
-            this.suppName.Tag = "Nom de fournisseur...";
-            this.suppName.Text = "Nom de fournisseur...";
-            this.suppName.TextChanged += new System.EventHandler(this.suppName_TextChanged);
-            this.suppName.Click += new System.EventHandler(this.suppNameClick);
-            this.suppName.Leave += new System.EventHandler(this.suppNameLeave);
             // 
             // effacerbtn
             // 
@@ -487,56 +595,56 @@ namespace Aromapp
             this.cart.AllowUserToAddRows = false;
             this.cart.AllowUserToDeleteRows = false;
             this.cart.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.cart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cart.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.cart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.cart.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.DefaultCellStyle = dataGridViewCellStyle13;
             this.cart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.cart.Location = new System.Drawing.Point(13, 571);
             this.cart.Name = "cart";
             this.cart.ReadOnly = true;
             this.cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.cart.RowHeadersVisible = false;
             this.cart.RowHeadersWidth = 82;
             this.cart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Calibri", 9.25F);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 9.25F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.cart.RowTemplate.Height = 33;
             this.cart.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cart.Size = new System.Drawing.Size(1040, 623);
@@ -624,125 +732,51 @@ namespace Aromapp
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1541, 1334);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
-            // StockAlert
-            // 
-            this.StockAlert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.StockAlert.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.StockAlert.ForeColor = System.Drawing.Color.Gray;
-            this.StockAlert.Location = new System.Drawing.Point(-3, 25);
-            this.StockAlert.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
-            this.StockAlert.Name = "StockAlert";
-            this.StockAlert.Size = new System.Drawing.Size(407, 47);
-            this.StockAlert.TabIndex = 28;
-            this.StockAlert.Tag = "Alerte de stock...";
-            this.StockAlert.Text = "Alerte de stock...";
-            // 
-            // QT
-            // 
-            this.QT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.QT.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.QT.ForeColor = System.Drawing.Color.Gray;
-            this.QT.Location = new System.Drawing.Point(23, 503);
-            this.QT.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
-            this.QT.Name = "QT";
-            this.QT.Size = new System.Drawing.Size(407, 47);
-            this.QT.TabIndex = 28;
-            this.QT.Tag = "Quantité...";
-            this.QT.Text = "Quantité...";
-            this.QT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
-            // 
-            // priceSG
-            // 
-            this.priceSG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceSG.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.priceSG.ForeColor = System.Drawing.Color.Gray;
-            this.priceSG.Location = new System.Drawing.Point(23, 428);
-            this.priceSG.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
-            this.priceSG.Name = "priceSG";
-            this.priceSG.Size = new System.Drawing.Size(407, 47);
-            this.priceSG.TabIndex = 28;
-            this.priceSG.Tag = "Prix de vente en gros...";
-            this.priceSG.Text = "Prix de vente en gros...";
-            this.priceSG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSG_KeyDown);
-            this.priceSG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
-            // 
-            // priceSD
-            // 
-            this.priceSD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceSD.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.priceSD.ForeColor = System.Drawing.Color.Gray;
-            this.priceSD.Location = new System.Drawing.Point(23, 351);
-            this.priceSD.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
-            this.priceSD.Name = "priceSD";
-            this.priceSD.Size = new System.Drawing.Size(407, 47);
-            this.priceSD.TabIndex = 28;
-            this.priceSD.Tag = "Prix de vente en detail...";
-            this.priceSD.Text = "Prix de vente en detail...";
-            this.priceSD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSD_KeyDown);
-            this.priceSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
-            // 
-            // priceP
-            // 
-            this.priceP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceP.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.priceP.ForeColor = System.Drawing.Color.Gray;
-            this.priceP.Location = new System.Drawing.Point(23, 278);
-            this.priceP.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
-            this.priceP.Name = "priceP";
-            this.priceP.Size = new System.Drawing.Size(407, 47);
-            this.priceP.TabIndex = 28;
-            this.priceP.Tag = "Prix...";
-            this.priceP.Text = "Prix...";
-            this.priceP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceP_KeyDown);
-            this.priceP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
-            // 
-            // prodRef
-            // 
-            this.prodRef.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prodRef.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.prodRef.ForeColor = System.Drawing.Color.Gray;
-            this.prodRef.Location = new System.Drawing.Point(23, 35);
-            this.prodRef.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
-            this.prodRef.Name = "prodRef";
-            this.prodRef.Size = new System.Drawing.Size(407, 47);
-            this.prodRef.TabIndex = 28;
-            this.prodRef.Tag = "Référence de produits...";
-            this.prodRef.Text = "Référence de produits...";
-            this.prodRef.Click += new System.EventHandler(this.prodRef_Click);
-            this.prodRef.TextChanged += new System.EventHandler(this.prodRef_TextChanged);
-            this.prodRef.KeyDown += new System.Windows.Forms.KeyEventHandler(this.prodRef_KeyDown);
-            this.prodRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prodRef_KeyPress);
-            this.prodRef.Leave += new System.EventHandler(this.prodRefLeave);
-            // 
             // Amount
             // 
             this.Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Amount.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.Amount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Amount.DefaultText = "Montant payé...";
+            this.Amount.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Amount.ForeColor = System.Drawing.Color.Gray;
             this.Amount.Location = new System.Drawing.Point(475, 58);
-            this.Amount.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.Amount.Margin = new System.Windows.Forms.Padding(3, 35, 3, 25);
             this.Amount.Name = "Amount";
-            this.Amount.Size = new System.Drawing.Size(446, 41);
-            this.Amount.TabIndex = 2;
+            this.Amount.PasswordChar = '\0';
+            this.Amount.PlaceholderText = "";
+            this.Amount.SelectedText = "";
+            this.Amount.Size = new System.Drawing.Size(446, 45);
+            this.Amount.TabIndex = 29;
             this.Amount.Tag = "Montant payé...";
-            this.Amount.Text = "Montant payé...";
+            this.toolTip1.SetToolTip(this.Amount, "Montant payé...");
             this.Amount.Click += new System.EventHandler(this.AmountClick);
             this.Amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
             this.Amount.Leave += new System.EventHandler(this.AmountLeave);
+            // 
+            // suppName
+            // 
+            this.suppName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.suppName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.suppName.DefaultText = "Nom de fournisseur...";
+            this.suppName.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.suppName.ForeColor = System.Drawing.Color.Gray;
+            this.suppName.Location = new System.Drawing.Point(23, 58);
+            this.suppName.Margin = new System.Windows.Forms.Padding(3, 35, 3, 25);
+            this.suppName.Name = "suppName";
+            this.suppName.PasswordChar = '\0';
+            this.suppName.PlaceholderText = "";
+            this.suppName.SelectedText = "";
+            this.suppName.Size = new System.Drawing.Size(446, 45);
+            this.suppName.TabIndex = 28;
+            this.suppName.Tag = "Nom de fournisseur...";
+            this.toolTip1.SetToolTip(this.suppName, "Nom de fournisseur...");
+            this.suppName.TextChanged += new System.EventHandler(this.suppName_TextChanged);
+            this.suppName.Click += new System.EventHandler(this.suppNameClick);
+            this.suppName.Leave += new System.EventHandler(this.suppNameLeave);
             // 
             // AddPurchase
             // 
@@ -770,7 +804,6 @@ namespace Aromapp
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -810,14 +843,15 @@ namespace Aromapp
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.ComboBox tva;
-        private HintTexBox Amount;
         private HintTexBox StockAlert;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox listBox1;
         private HintTexBox prodRef;
-        private System.Windows.Forms.ComboBox suppName;
         private System.Windows.Forms.ToolTip toolTip1;
         private Guna.UI2.WinForms.Guna2Button effacerbtn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Guna2TextBox Amount;
+        private Guna2TextBox suppName;
     }
 }

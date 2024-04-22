@@ -52,15 +52,15 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.bppuText = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.delete = new System.Windows.Forms.Button();
+            this.delete = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Unit = new System.Windows.Forms.ComboBox();
             this.Tyype = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton3 = new System.Windows.Forms.Button();
-            this.iconButton1 = new System.Windows.Forms.Button();
+            this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.amount = new Aromapp.HintTexBox();
             this.updateChoiceBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -466,7 +466,7 @@
             // 
             this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.delete.BackColor = System.Drawing.Color.Red;
+            this.delete.FillColor = System.Drawing.Color.Red;
             this.delete.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.delete.ForeColor = System.Drawing.Color.White;
             this.delete.Location = new System.Drawing.Point(5, 1148);
@@ -475,7 +475,7 @@
             this.delete.Size = new System.Drawing.Size(960, 69);
             this.delete.TabIndex = 45;
             this.delete.Text = " Supprimer ce produit";
-            this.delete.UseVisualStyleBackColor = false;
+            this.delete.BorderRadius = 5;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // label1
@@ -579,7 +579,7 @@
             // 
             this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton3.BackColor = System.Drawing.Color.Gray;
+            this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton3.ForeColor = System.Drawing.Color.White;
             this.iconButton3.Location = new System.Drawing.Point(3, 28);
@@ -588,14 +588,14 @@
             this.iconButton3.Size = new System.Drawing.Size(437, 69);
             this.iconButton3.TabIndex = 1;
             this.iconButton3.Text = "Mettre à jour";
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.BorderRadius = 5;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.iconButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.Location = new System.Drawing.Point(450, 28);
@@ -604,7 +604,7 @@
             this.iconButton1.Size = new System.Drawing.Size(438, 69);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Annuler";
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.BorderRadius = 5;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // amount
@@ -720,9 +720,9 @@
         private System.Windows.Forms.Label label1;
         private HintTexBox amount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button iconButton3;
-        private System.Windows.Forms.Button iconButton1;
-        private System.Windows.Forms.Button delete;
+        private Guna.UI2.WinForms.Guna2Button iconButton3;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button delete;
         private System.Windows.Forms.Label BARCODE;
     }
 }

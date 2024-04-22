@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.returnStock = new Guna.UI2.WinForms.Guna2Button();
             this.supprimer = new Guna.UI2.WinForms.Guna2Button();
+            this.returnStock = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,29 +67,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(777, 123);
             this.tableLayoutPanel2.TabIndex = 30;
             // 
-            // returnStock
-            // 
-            this.returnStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.returnStock.BorderRadius = 5;
-            this.returnStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.returnStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.returnStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.returnStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.returnStock.FillColor = System.Drawing.Color.RoyalBlue;
-            this.returnStock.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.returnStock.ForeColor = System.Drawing.Color.White;
-            this.returnStock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.returnStock.ImageSize = new System.Drawing.Size(10, 10);
-            this.returnStock.Location = new System.Drawing.Point(406, 20);
-            this.returnStock.Margin = new System.Windows.Forms.Padding(10);
-            this.returnStock.Name = "returnStock";
-            this.returnStock.Size = new System.Drawing.Size(361, 83);
-            this.returnStock.TabIndex = 27;
-            this.returnStock.Text = "Retouner au stock";
-            this.returnStock.Click += new System.EventHandler(this.Modifier_Click);
-            // 
             // supprimer
             // 
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -112,6 +89,29 @@
             this.supprimer.TabIndex = 28;
             this.supprimer.Text = "Supprimer ";
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
+            // 
+            // returnStock
+            // 
+            this.returnStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.returnStock.BorderRadius = 5;
+            this.returnStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.returnStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.returnStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.returnStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.returnStock.FillColor = System.Drawing.Color.RoyalBlue;
+            this.returnStock.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.returnStock.ForeColor = System.Drawing.Color.White;
+            this.returnStock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.returnStock.ImageSize = new System.Drawing.Size(10, 10);
+            this.returnStock.Location = new System.Drawing.Point(406, 20);
+            this.returnStock.Margin = new System.Windows.Forms.Padding(10);
+            this.returnStock.Name = "returnStock";
+            this.returnStock.Size = new System.Drawing.Size(361, 83);
+            this.returnStock.TabIndex = 27;
+            this.returnStock.Text = "Retirer de stock";
+            this.returnStock.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // RemoveFromPurchases
             // 

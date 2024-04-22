@@ -678,7 +678,7 @@ namespace Aromapp
         private void regLines_SelectionChanged(object sender, EventArgs e)
         {
 
-            if (rowSelected)
+            if (rowSelected && table.Rows.Count>0)
             {
                 IDs = new List<string>();
 

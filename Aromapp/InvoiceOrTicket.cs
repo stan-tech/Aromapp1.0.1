@@ -100,7 +100,7 @@ namespace Aromapp
                 using (DBHelper helper = new DBHelper())
                 {
                     if (helper.SaveSale(soldProducts, SelectedBill.TotalTTC, SelectedBill.ClientObj.Nom,
-                               0, float.Parse(SelectedBill.TauxTVA.ToString()),
+                                SelectedBill.MontantRegler, float.Parse(SelectedBill.TauxTVA.ToString()),
                                Type, out billID, double.Parse(reductionString)) > 0)
                     {
                         MessageBoxer.showGeneralMsg("Vente sauvegardée");

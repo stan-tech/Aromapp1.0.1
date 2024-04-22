@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Humanizer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,6 @@ namespace Aromapp
             prodName.Leave += prodLeave;
             priceSD.Leave += priceSDLeave;
             priceSG.Leave += priceSGLeave;
-            QT.Leave += QTLeave;
 
             prodName.Click += prodClick;
 
@@ -40,7 +40,6 @@ namespace Aromapp
             priceSG.Click += priceSGClick;
 
 
-            QT.Click += QTClick;
         }
 
         public void OnAdded(EventArgs e)
@@ -58,9 +57,18 @@ namespace Aromapp
                 }
             }
         }
+
+        string SelectedTable = "produits";
         private void Type_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(Tyype.SelectedIndex == 3|| Tyype.SelectedIndex == 4)
+            {
+                SelectedTable = "emballage";
+            }
+            else
+            {
+                SelectedTable = "produits";
+            }
         }
 
         private void Type_TextChanged(object sender, EventArgs e)
@@ -133,14 +141,7 @@ namespace Aromapp
             }
         }
  
-        void QTLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(QT.Text))
-            {
-                HintUtils.ShowHint(QT);
-
-            }
-        }
+      
 
 
         void prodClick(object sender, EventArgs e)
@@ -162,10 +163,7 @@ namespace Aromapp
         {
             HintUtils.HideHint(priceSG);
         }
-        void QTClick(object sender, EventArgs e)
-        {
-            HintUtils.HideHint(QT);
-        }
+     
 
 
 
@@ -177,14 +175,12 @@ namespace Aromapp
             prodName.Text = "";
             priceSD.Text = "";
             priceSG.Text = "";
-            QT.Text = "";
         
 
             HintUtils.ShowHint(priceP);
             HintUtils.ShowHint(prodName);
             HintUtils.ShowHint(priceSD);
             HintUtils.ShowHint(priceSG);
-            HintUtils.ShowHint(QT);
 
 
 
@@ -192,13 +188,13 @@ namespace Aromapp
         public void OkButton_Click(object sender, EventArgs e)
         {
             string BarCodePref;
-            if (QT.Text == QT.Tag.ToString() ||
+            if (
                 priceP.Text == priceP.Tag.ToString() ||
                 priceSD.Text == priceSD.Tag.ToString() ||
                 priceSG.Text == priceSG.Tag.ToString() ||
                 prodName.Text == prodName.Tag.ToString() ||
                 string.IsNullOrEmpty(prodName.Text) ||
-                string.IsNullOrEmpty(QT.Text) ||
+                
                 string.IsNullOrEmpty(priceP.Text) ||
                 string.IsNullOrEmpty(priceSD.Text) ||
                 string.IsNullOrEmpty(priceSG.Text) ||
@@ -214,7 +210,7 @@ namespace Aromapp
                 product.PriceP = double.Parse(priceP.Text.Trim().Replace(".", ","));
                 product.PriceD = double.Parse(priceSD.Text.Trim().Replace(".", ","));
                 product.PriceG = double.Parse(priceSG.Text.Trim().Replace(".", ","));
-                product.Quantity = double.Parse(QT.Text.Trim().Replace(".", ","));
+                product.Quantity = 0;
                 product.Type = Tyype.SelectedItem.ToString();
                 product.Unit = Unit.SelectedItem.ToString();
                 product.StockAlert = double.Parse(Alert.Text.Trim().Replace(".", ","));
@@ -225,11 +221,15 @@ namespace Aromapp
                     BarCodePref = helper.getStoreBarCode();
                 }
 
-                string prodID = DBHelper.IsProductIDAvailable();
-                product.ID = (prodID != "") ? prodID : DBHelper.generateID("PR", Tables.produits);
+                string prodID = (SelectedTable == "produits") ? DBHelper.IsProductIDAvailable():"";
+
+                product.ID = (prodID != "") ? prodID : DBHelper.generateID((SelectedTable == "produits")?"PR":"FL",
+                    (SelectedTable == "produits") ? Tables.produits:Tables.emballage);
 
                 product.BarCode = BarCodePref + DateTime.Now.Year + DateTime.Now.Month +
-                DateTime.Now.Day + product.ID.Replace("PR", "").TrimStart('0');
+                DateTime.Now.Day + DateTime.Now.ToString("HH:mm:ss").Replace(":", "") + 
+                product.ID.Replace((SelectedTable == "produits")
+                ? "PR" : "FL", "").TrimStart('0');
 
 
                 using (DBHelper helper = new DBHelper())
@@ -239,6 +239,8 @@ namespace Aromapp
 
                         if (helper.AddProduct(product, product.Quantity) > 0)
                         {
+                            helper.AddProductToStock(product, 0);
+
                             MessageBoxer.showGeneralMsg("Produit ajouté");
                             ClearTexts();
 
@@ -404,22 +406,13 @@ namespace Aromapp
         {
             if (e.KeyCode == Keys.Enter)
             {
-                QTClick(sender, e);
-                QT.Focus();
-                e.SuppressKeyPress = true;
-
-            }
-        }
-
-        private void QT_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
                 Alert_Click(sender, e);
                 Alert.Focus();
                 e.SuppressKeyPress = true;
 
             }
         }
+
+      
     }
 }

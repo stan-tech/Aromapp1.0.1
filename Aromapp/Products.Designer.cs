@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,20 +50,26 @@
             this.Bon = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.Nouveautés = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.REF = new System.Windows.Forms.Button();
-            this.Ajouter = new System.Windows.Forms.Button();
+            this.REF = new Guna.UI2.WinForms.Guna2Button();
+            this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
             this.ProductsTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.searchText = new Aromapp.HintTexBox();
-            this.iconButton4 = new System.Windows.Forms.Button();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TVPP = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.VPJ = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton3 = new System.Windows.Forms.Button();
-            this.iconButton1 = new System.Windows.Forms.Button();
+            this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tousLesProduitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seulementLaListeVisibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detailsSurLeProduitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimerDesÉtiquettesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -77,6 +84,8 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VPJ)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -94,6 +103,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1882, 1145);
             this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // groupBox1
             // 
@@ -111,6 +121,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produits";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tableLayoutPanel2
             // 
@@ -130,6 +141,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1167, 1066);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel7
             // 
@@ -149,6 +161,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1144, 96);
             this.tableLayoutPanel7.TabIndex = 35;
+            this.tableLayoutPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel7_Paint);
             // 
             // types
             // 
@@ -160,9 +173,10 @@
             "Homme",
             "Femme",
             "Unisexe",
-            "Emabllage",
+            "Emballage",
             "Sachet"});
-            this.types.Location = new System.Drawing.Point(3, 56);
+            this.types.Location = new System.Drawing.Point(3, 52);
+            this.types.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.types.Name = "types";
             this.types.Size = new System.Drawing.Size(275, 37);
             this.types.TabIndex = 27;
@@ -173,23 +187,26 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.Bon);
-            this.panel4.Location = new System.Drawing.Point(851, 19);
+            this.panel4.Location = new System.Drawing.Point(851, 22);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(290, 74);
             this.panel4.TabIndex = 32;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(74, 18);
+            this.label11.Location = new System.Drawing.Point(74, 33);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(210, 50);
+            this.label11.Size = new System.Drawing.Size(210, 40);
             this.label11.TabIndex = 31;
             this.label11.Text = "Selectionner tout";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // Bon
             // 
@@ -198,7 +215,7 @@
             this.Bon.CheckedState.BorderRadius = 2;
             this.Bon.CheckedState.BorderThickness = 0;
             this.Bon.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Bon.Location = new System.Drawing.Point(40, 26);
+            this.Bon.Location = new System.Drawing.Point(40, 38);
             this.Bon.Name = "Bon";
             this.Bon.Size = new System.Drawing.Size(35, 32);
             this.Bon.TabIndex = 30;
@@ -220,7 +237,7 @@
             "Derniér moi",
             "",
             " "});
-            this.Nouveautés.Location = new System.Drawing.Point(306, 56);
+            this.Nouveautés.Location = new System.Drawing.Point(306, 54);
             this.Nouveautés.Name = "Nouveautés";
             this.Nouveautés.Size = new System.Drawing.Size(278, 37);
             this.Nouveautés.TabIndex = 27;
@@ -241,12 +258,14 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1161, 96);
             this.tableLayoutPanel5.TabIndex = 32;
+            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
             // REF
             // 
             this.REF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.REF.BackColor = System.Drawing.Color.Red;
+            this.REF.BorderRadius = 5;
+            this.REF.FillColor = System.Drawing.Color.Red;
             this.REF.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.REF.ForeColor = System.Drawing.Color.White;
             this.REF.Location = new System.Drawing.Point(427, 24);
@@ -256,53 +275,52 @@
             this.REF.TabIndex = 1;
             this.REF.Tag = "   Supprimer les éléments sélectionnés";
             this.REF.Text = "   Supprimer les éléments sélectionnés";
-            this.REF.UseVisualStyleBackColor = false;
             this.REF.Click += new System.EventHandler(this.REF_Click);
             // 
             // Ajouter
             // 
             this.Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Ajouter.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.Ajouter.BorderRadius = 5;
+            this.Ajouter.FillColor = System.Drawing.Color.RoyalBlue;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.Ajouter.ForeColor = System.Drawing.Color.Black;
+            this.Ajouter.ForeColor = System.Drawing.Color.White;
             this.Ajouter.Location = new System.Drawing.Point(13, 24);
             this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
             this.Ajouter.Name = "Ajouter";
             this.Ajouter.Size = new System.Drawing.Size(398, 69);
             this.Ajouter.TabIndex = 1;
-            this.Ajouter.Text = "    Ajouter un produit";
-            this.Ajouter.UseVisualStyleBackColor = false;
+            this.Ajouter.Text = " Ajouter un produit";
             this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // ProductsTable
             // 
             this.ProductsTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.ProductsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductsTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ProductsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.ProductsTable.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle23;
             this.ProductsTable.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.ProductsTable.Location = new System.Drawing.Point(10, 290);
@@ -310,23 +328,23 @@
             this.ProductsTable.Name = "ProductsTable";
             this.ProductsTable.ReadOnly = true;
             this.ProductsTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.ProductsTable.RowHeadersVisible = false;
             this.ProductsTable.RowHeadersWidth = 82;
             this.ProductsTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.ProductsTable.RowTemplate.Height = 33;
             this.ProductsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductsTable.Size = new System.Drawing.Size(1147, 659);
@@ -354,6 +372,7 @@
             this.ProductsTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.ProductsTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.ProductsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Products_CellClick);
+            this.ProductsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsTable_CellContentClick);
             this.ProductsTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Products_CellDoubleClick);
             this.ProductsTable.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Products_Scroll);
             // 
@@ -373,6 +392,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1161, 167);
             this.tableLayoutPanel4.TabIndex = 2;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // searchText
             // 
@@ -389,6 +409,7 @@
             this.searchText.Tag = "Rechercher...";
             this.searchText.Text = "Rechercher...";
             this.searchText.Click += new System.EventHandler(this.search_Click);
+            this.searchText.TextChanged += new System.EventHandler(this.searchText_TextChanged);
             this.searchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_KeyDown);
             this.searchText.Leave += new System.EventHandler(this.search_Leave);
             // 
@@ -397,16 +418,15 @@
             this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton4.BorderRadius = 5;
             this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.Black;
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
             this.iconButton4.Location = new System.Drawing.Point(902, 28);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 3, 72);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(256, 67);
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "Actualiser";
-            this.iconButton4.UseVisualStyleBackColor = false;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // tableLayoutPanel3
@@ -427,6 +447,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(680, 1132);
             this.tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // groupBox2
             // 
@@ -444,23 +465,25 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ventes de la dernière semaine par produit";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // TVPP
             // 
-            chartArea3.Name = "ChartArea1";
-            this.TVPP.ChartAreas.Add(chartArea3);
+            chartArea9.Name = "ChartArea1";
+            this.TVPP.ChartAreas.Add(chartArea9);
             this.TVPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.TVPP.Legends.Add(legend3);
+            legend9.Name = "Legend1";
+            this.TVPP.Legends.Add(legend9);
             this.TVPP.Location = new System.Drawing.Point(10, 41);
             this.TVPP.Name = "TVPP";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.TVPP.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.TVPP.Series.Add(series9);
             this.TVPP.Size = new System.Drawing.Size(654, 389);
             this.TVPP.TabIndex = 0;
             this.TVPP.Text = "chart1";
+            this.TVPP.Click += new System.EventHandler(this.TVPP_Click);
             // 
             // groupBox3
             // 
@@ -478,73 +501,123 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ventes par jour";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // VPJ
             // 
-            chartArea4.Name = "ChartArea1";
-            this.VPJ.ChartAreas.Add(chartArea4);
+            chartArea10.Name = "ChartArea1";
+            this.VPJ.ChartAreas.Add(chartArea10);
             this.VPJ.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.VPJ.Legends.Add(legend4);
+            legend10.Name = "Legend1";
+            this.VPJ.Legends.Add(legend10);
             this.VPJ.Location = new System.Drawing.Point(10, 41);
             this.VPJ.Name = "VPJ";
             this.VPJ.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.VPJ.Series.Add(series4);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.VPJ.Series.Add(series10);
             this.VPJ.Size = new System.Drawing.Size(654, 476);
             this.VPJ.TabIndex = 1;
             this.VPJ.Text = "chart2";
+            this.VPJ.Click += new System.EventHandler(this.VPJ_Click);
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.71513F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.28487F));
             this.tableLayoutPanel6.Controls.Add(this.iconButton3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.iconButton1, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 1008);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 1005);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 26);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(674, 121);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(674, 101);
             this.tableLayoutPanel6.TabIndex = 25;
+            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // iconButton3
             // 
             this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton3.BorderRadius = 5;
+            this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.iconButton3.ForeColor = System.Drawing.Color.Black;
-            this.iconButton3.Location = new System.Drawing.Point(3, 27);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 3, 5, 25);
+            this.iconButton3.ForeColor = System.Drawing.Color.White;
+            this.iconButton3.Location = new System.Drawing.Point(3, 32);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 3, 5, 0);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(329, 69);
+            this.iconButton3.Size = new System.Drawing.Size(381, 69);
             this.iconButton3.TabIndex = 1;
-            this.iconButton3.Text = "Imprimer les noms";
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Text = "Imprimer les étiquettes";
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.iconButton1.BorderRadius = 5;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.Location = new System.Drawing.Point(342, 27);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 25);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.Location = new System.Drawing.Point(394, 32);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(329, 69);
+            this.iconButton1.Size = new System.Drawing.Size(277, 69);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Exporter en pdf";
-            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tousLesProduitsToolStripMenuItem,
+            this.seulementLaListeVisibleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(353, 80);
+            // 
+            // tousLesProduitsToolStripMenuItem
+            // 
+            this.tousLesProduitsToolStripMenuItem.Name = "tousLesProduitsToolStripMenuItem";
+            this.tousLesProduitsToolStripMenuItem.Size = new System.Drawing.Size(352, 38);
+            this.tousLesProduitsToolStripMenuItem.Text = "Tous les produits";
+            this.tousLesProduitsToolStripMenuItem.Click += new System.EventHandler(this.tousLesProduitsToolStripMenuItem_Click);
+            // 
+            // seulementLaListeVisibleToolStripMenuItem
+            // 
+            this.seulementLaListeVisibleToolStripMenuItem.Name = "seulementLaListeVisibleToolStripMenuItem";
+            this.seulementLaListeVisibleToolStripMenuItem.Size = new System.Drawing.Size(352, 38);
+            this.seulementLaListeVisibleToolStripMenuItem.Text = "Seulement la liste visible";
+            this.seulementLaListeVisibleToolStripMenuItem.Click += new System.EventHandler(this.seulementLaListeVisibleToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detailsSurLeProduitToolStripMenuItem,
+            this.imprimerDesÉtiquettesToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip1";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(344, 80);
+            this.contextMenuStrip2.Text = "Details sur le produit ";
+            // 
+            // detailsSurLeProduitToolStripMenuItem
+            // 
+            this.detailsSurLeProduitToolStripMenuItem.Name = "detailsSurLeProduitToolStripMenuItem";
+            this.detailsSurLeProduitToolStripMenuItem.Size = new System.Drawing.Size(343, 38);
+            this.detailsSurLeProduitToolStripMenuItem.Text = "Details sur le produit ";
+            this.detailsSurLeProduitToolStripMenuItem.Click += new System.EventHandler(this.detailsSurLeProduitToolStripMenuItem_Click);
+            // 
+            // imprimerDesÉtiquettesToolStripMenuItem
+            // 
+            this.imprimerDesÉtiquettesToolStripMenuItem.Name = "imprimerDesÉtiquettesToolStripMenuItem";
+            this.imprimerDesÉtiquettesToolStripMenuItem.Size = new System.Drawing.Size(343, 38);
+            this.imprimerDesÉtiquettesToolStripMenuItem.Text = "Imprimer des étiquettes";
+            this.imprimerDesÉtiquettesToolStripMenuItem.Click += new System.EventHandler(this.imprimerDesÉtiquettesToolStripMenuItem_Click);
             // 
             // Products
             // 
@@ -570,6 +643,8 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.VPJ)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -580,19 +655,19 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button REF;
-        private System.Windows.Forms.Button Ajouter;
+        private Guna.UI2.WinForms.Guna2Button REF;
+        private Guna.UI2.WinForms.Guna2Button Ajouter;
         private Guna.UI2.WinForms.Guna2DataGridView ProductsTable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private HintTexBox searchText;
-        private System.Windows.Forms.Button iconButton4;
+        private Guna.UI2.WinForms.Guna2Button iconButton4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataVisualization.Charting.Chart TVPP;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button iconButton3;
-        private System.Windows.Forms.Button iconButton1;
+        private Guna.UI2.WinForms.Guna2Button iconButton3;
+        private Guna.UI2.WinForms.Guna2Button iconButton1;
         private System.Windows.Forms.DataVisualization.Charting.Chart VPJ;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.ComboBox types;
@@ -600,5 +675,11 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2CustomCheckBox Bon;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tousLesProduitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seulementLaListeVisibleToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem detailsSurLeProduitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imprimerDesÉtiquettesToolStripMenuItem;
     }
 }

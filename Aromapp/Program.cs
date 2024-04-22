@@ -17,40 +17,42 @@ namespace Aromapp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Home());
-/*            using (DBHelper helper = new DBHelper())
-            {
 
-                if (helper.CheckForConnectedUsers())
-                {
-                    Application.Run(new Home());
+            /*
+                        using (DBHelper helper = new DBHelper())
+                        {
 
-                }
-                else if (!helper.CheckForStoreInfo())
-                {
+                            if (helper.CheckForConnectedUsers())
+                            {
+                                Application.Run(new Home());
 
-                    Launcher launcher = new Launcher();
-                    Application.Run(launcher);
+                            }
+                            else if (!helper.CheckForStoreInfo())
+                            {
+
+                                Launcher launcher = new Launcher();
+                                Application.Run(launcher);
 
 
-                }
-                else
-                {
-                    List<User> users = helper.GetUsers();
+                            }
+                            else
+                            {
+                                List<User> users = helper.GetUsers();
 
-                    if (users.Count == 0)
-                    {
-                        Application.Run(new AddUser(true));
+                                if (users.Count == 0)
+                                {
+                                    Application.Run(new AddUser(true));
 
-                    }
-                    else
-                    {
-                        Application.Run(new SignIn());
+                                }
+                                else
+                                {
+                                    Application.Run(new SignIn());
 
-                    }
+                                }
 
-                }
-            }
-*/
+                            }
+                        }*/
+
 
 
         }

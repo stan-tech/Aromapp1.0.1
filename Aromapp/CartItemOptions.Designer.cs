@@ -30,8 +30,8 @@
         {
             this.qtt = new Aromapp.HintTexBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.supprimer = new System.Windows.Forms.Button();
-            this.Modifier = new System.Windows.Forms.Button();
+            this.supprimer = new Guna.UI2.WinForms.Guna2Button();
+            this.Modifier = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -50,8 +50,8 @@
             this.qtt.Name = "qtt";
             this.qtt.Size = new System.Drawing.Size(470, 47);
             this.qtt.TabIndex = 2;
-            this.qtt.Tag = "Montant payé...";
-            this.qtt.Text = "Montant payé...";
+            this.qtt.Tag = "0";
+            this.qtt.Text = "0";
             this.qtt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel1
@@ -75,15 +75,16 @@
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.supprimer.BackColor = System.Drawing.Color.Red;
+            this.supprimer.BorderRadius = 5;
+            this.supprimer.FillColor = System.Drawing.Color.Red;
             this.supprimer.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.supprimer.ForeColor = System.Drawing.Color.White;
             this.supprimer.Location = new System.Drawing.Point(18, 21);
+            this.supprimer.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(458, 70);
+            this.supprimer.Size = new System.Drawing.Size(451, 70);
             this.supprimer.TabIndex = 0;
             this.supprimer.Text = "Supprimer du panier";
-            this.supprimer.UseVisualStyleBackColor = false;
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // Modifier
@@ -91,7 +92,8 @@
             this.Modifier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Modifier.BackColor = System.Drawing.Color.Gray;
+            this.Modifier.BorderRadius = 5;
+            this.Modifier.FillColor = System.Drawing.Color.RoyalBlue;
             this.Modifier.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Modifier.ForeColor = System.Drawing.Color.White;
             this.Modifier.Location = new System.Drawing.Point(482, 21);
@@ -99,7 +101,6 @@
             this.Modifier.Size = new System.Drawing.Size(262, 70);
             this.Modifier.TabIndex = 0;
             this.Modifier.Text = "Modifier";
-            this.Modifier.UseVisualStyleBackColor = false;
             this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // tableLayoutPanel2
@@ -142,7 +143,6 @@
             this.ClientSize = new System.Drawing.Size(762, 244);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Calibri", 9F);
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -161,8 +161,8 @@
 
         private HintTexBox qtt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button supprimer;
-        private System.Windows.Forms.Button Modifier;
+        private Guna.UI2.WinForms.Guna2Button supprimer;
+        private Guna.UI2.WinForms.Guna2Button Modifier;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
     }

@@ -38,12 +38,11 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Tyype = new System.Windows.Forms.ComboBox();
             this.Unit = new System.Windows.Forms.ComboBox();
-            this.QT = new Aromapp.HintTexBox();
-            this.Alert = new Aromapp.HintTexBox();
             this.priceSG = new Aromapp.HintTexBox();
+            this.Alert = new Aromapp.HintTexBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.Annuler = new System.Windows.Forms.Button();
-            this.OkButton = new System.Windows.Forms.Button();
+            this.Annuler = new Guna.UI2.WinForms.Guna2Button();
+            this.OkButton = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,9 +62,9 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(20, 20);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.97218F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.02782F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.7421F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.2579F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(990, 719);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
@@ -84,9 +83,9 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 293F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 293F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(967, 293);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 323F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 323F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(967, 323);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // pictureBox1
@@ -116,7 +115,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(753, 287);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(753, 317);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // prodName
@@ -143,7 +142,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.priceP.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.priceP.ForeColor = System.Drawing.Color.Gray;
-            this.priceP.Location = new System.Drawing.Point(3, 98);
+            this.priceP.Location = new System.Drawing.Point(3, 108);
             this.priceP.Name = "priceP";
             this.priceP.Size = new System.Drawing.Size(747, 47);
             this.priceP.TabIndex = 29;
@@ -161,7 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.priceSD.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.priceSD.ForeColor = System.Drawing.Color.Gray;
-            this.priceSD.Location = new System.Drawing.Point(3, 193);
+            this.priceSD.Location = new System.Drawing.Point(3, 213);
             this.priceSD.Name = "priceSD";
             this.priceSD.Size = new System.Drawing.Size(747, 47);
             this.priceSD.TabIndex = 29;
@@ -182,16 +181,14 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.Tyype, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.Unit, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.QT, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Alert, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.priceSG, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 302);
+            this.tableLayoutPanel2.Controls.Add(this.Alert, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 332);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(984, 332);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(984, 266);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // Tyype
@@ -226,48 +223,12 @@
             "G",
             "KG",
             "M"});
-            this.Unit.Location = new System.Drawing.Point(512, 123);
+            this.Unit.Location = new System.Drawing.Point(512, 146);
             this.Unit.Margin = new System.Windows.Forms.Padding(20, 13, 20, 3);
             this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(452, 41);
             this.Unit.TabIndex = 44;
             this.Unit.TextChanged += new System.EventHandler(this.Unit_TextChanged);
-            // 
-            // QT
-            // 
-            this.QT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.QT.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.QT.ForeColor = System.Drawing.Color.Gray;
-            this.QT.Location = new System.Drawing.Point(20, 123);
-            this.QT.Margin = new System.Windows.Forms.Padding(20, 13, 25, 3);
-            this.QT.Name = "QT";
-            this.QT.Size = new System.Drawing.Size(447, 47);
-            this.QT.TabIndex = 29;
-            this.QT.Tag = "Quantité...";
-            this.QT.Text = "Quantité...";
-            this.QT.Click += new System.EventHandler(this.QTClick);
-            this.QT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QT_KeyDown);
-            this.QT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QT_KeyPress);
-            this.QT.Leave += new System.EventHandler(this.QTLeave);
-            // 
-            // Alert
-            // 
-            this.Alert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Alert.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.Alert.ForeColor = System.Drawing.Color.Gray;
-            this.Alert.Location = new System.Drawing.Point(20, 223);
-            this.Alert.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
-            this.Alert.Name = "Alert";
-            this.Alert.Size = new System.Drawing.Size(447, 47);
-            this.Alert.TabIndex = 29;
-            this.Alert.Tag = "Alerte de stock...";
-            this.Alert.Text = "Alerte de stock...";
-            this.Alert.Click += new System.EventHandler(this.Alert_Click);
-            this.Alert.Leave += new System.EventHandler(this.Alert_Leave);
             // 
             // priceSG
             // 
@@ -288,6 +249,23 @@
             this.priceSG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceSG_KeyPress);
             this.priceSG.Leave += new System.EventHandler(this.priceSGLeave);
             // 
+            // Alert
+            // 
+            this.Alert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Alert.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.Alert.ForeColor = System.Drawing.Color.Gray;
+            this.Alert.Location = new System.Drawing.Point(20, 136);
+            this.Alert.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.Alert.Name = "Alert";
+            this.Alert.Size = new System.Drawing.Size(447, 47);
+            this.Alert.TabIndex = 29;
+            this.Alert.Tag = "Alerte de stock...";
+            this.Alert.Text = "Alerte de stock...";
+            this.Alert.Click += new System.EventHandler(this.Alert_Click);
+            this.Alert.Leave += new System.EventHandler(this.Alert_Leave);
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -298,41 +276,43 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.Annuler, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.OkButton, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 640);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 604);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(984, 76);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(984, 112);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // Annuler
             // 
             this.Annuler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Annuler.BackColor = System.Drawing.Color.Red;
+            this.Annuler.BorderRadius = 5;
+            this.Annuler.FillColor = System.Drawing.Color.Red;
             this.Annuler.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Annuler.ForeColor = System.Drawing.Color.White;
-            this.Annuler.Location = new System.Drawing.Point(3, 16);
+            this.Annuler.Location = new System.Drawing.Point(10, 34);
+            this.Annuler.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.Annuler.Name = "Annuler";
-            this.Annuler.Size = new System.Drawing.Size(486, 57);
+            this.Annuler.Size = new System.Drawing.Size(479, 75);
             this.Annuler.TabIndex = 10;
             this.Annuler.Text = "Annuler";
-            this.Annuler.UseVisualStyleBackColor = false;
             this.Annuler.Click += new System.EventHandler(this.Annuler_Click);
             // 
             // OkButton
             // 
             this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.OkButton.BackColor = System.Drawing.Color.Gray;
+            this.OkButton.BorderRadius = 5;
+            this.OkButton.FillColor = System.Drawing.Color.RoyalBlue;
             this.OkButton.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.OkButton.ForeColor = System.Drawing.Color.White;
-            this.OkButton.Location = new System.Drawing.Point(495, 16);
+            this.OkButton.Location = new System.Drawing.Point(502, 34);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(486, 57);
+            this.OkButton.Size = new System.Drawing.Size(479, 75);
             this.OkButton.TabIndex = 10;
             this.OkButton.Text = "Ok";
-            this.OkButton.UseVisualStyleBackColor = false;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // AddProduct
@@ -374,12 +354,11 @@
         private HintTexBox priceP;
         private HintTexBox priceSD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private HintTexBox QT;
         private HintTexBox Alert;
         private HintTexBox priceSG;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button Annuler;
-        private System.Windows.Forms.Button OkButton;
+        private Guna.UI2.WinForms.Guna2Button Annuler;
+        private Guna.UI2.WinForms.Guna2Button OkButton;
         private System.Windows.Forms.ComboBox Tyype;
         private System.Windows.Forms.ComboBox Unit;
     }
