@@ -40,10 +40,10 @@
             this.Unit = new System.Windows.Forms.ComboBox();
             this.priceSG = new Aromapp.HintTexBox();
             this.Alert = new Aromapp.HintTexBox();
+            this.supp = new Aromapp.HintTexBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Annuler = new Guna.UI2.WinForms.Guna2Button();
             this.OkButton = new Guna.UI2.WinForms.Guna2Button();
-            this.supp = new Aromapp.HintTexBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -271,6 +271,23 @@
             this.Alert.Click += new System.EventHandler(this.Alert_Click);
             this.Alert.Leave += new System.EventHandler(this.Alert_Leave);
             // 
+            // supp
+            // 
+            this.supp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.supp.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.supp.ForeColor = System.Drawing.Color.Gray;
+            this.supp.Location = new System.Drawing.Point(20, 153);
+            this.supp.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.supp.Name = "supp";
+            this.supp.Size = new System.Drawing.Size(447, 47);
+            this.supp.TabIndex = 29;
+            this.supp.Tag = "Fournisseur...";
+            this.supp.Text = "Fournisseur...";
+            this.supp.Click += new System.EventHandler(this.Alert_Click);
+            this.supp.Leave += new System.EventHandler(this.Alert_Leave);
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -319,23 +336,6 @@
             this.OkButton.TabIndex = 10;
             this.OkButton.Text = "Ok";
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
-            // 
-            // supp
-            // 
-            this.supp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.supp.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.supp.ForeColor = System.Drawing.Color.Gray;
-            this.supp.Location = new System.Drawing.Point(20, 153);
-            this.supp.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
-            this.supp.Name = "supp";
-            this.supp.Size = new System.Drawing.Size(447, 47);
-            this.supp.TabIndex = 29;
-            this.supp.Tag = "Fournisseur...";
-            this.supp.Text = "Fournisseur...";
-            this.supp.Click += new System.EventHandler(this.Alert_Click);
-            this.supp.Leave += new System.EventHandler(this.Alert_Leave);
             // 
             // AddProduct
             // 
