@@ -30,6 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClient));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+<<<<<<< HEAD
+=======
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.name = new Aromapp.HintTexBox();
             this.phone = new Aromapp.HintTexBox();
             this.address = new Aromapp.HintTexBox();
@@ -289,6 +299,114 @@
             this.iconButton3.Text = "Ok";
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
+<<<<<<< HEAD
+=======
+            // name
+            // 
+            this.name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.name.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.name.ForeColor = System.Drawing.Color.Gray;
+            this.name.Location = new System.Drawing.Point(3, 3);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(633, 47);
+            this.name.TabIndex = 29;
+            this.name.Tag = "Nom...";
+            this.name.Text = "Nom...";
+            this.name.Click += new System.EventHandler(this.nameClick);
+            this.name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.name_KeyDown);
+            this.name.Leave += new System.EventHandler(this.nameLeave);
+            // 
+            // phone
+            // 
+            this.phone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.phone.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.phone.ForeColor = System.Drawing.Color.Gray;
+            this.phone.Location = new System.Drawing.Point(3, 78);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(633, 47);
+            this.phone.TabIndex = 29;
+            this.phone.Tag = "Téléphone...";
+            this.phone.Text = "Téléphone...";
+            this.phone.Click += new System.EventHandler(this.phoneClick);
+            this.phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phone_KeyDown);
+            this.phone.Leave += new System.EventHandler(this.phoneLeave);
+            // 
+            // address
+            // 
+            this.address.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.address.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.address.ForeColor = System.Drawing.Color.Gray;
+            this.address.Location = new System.Drawing.Point(3, 153);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(633, 47);
+            this.address.TabIndex = 29;
+            this.address.Tag = "Adresse...";
+            this.address.Text = "Adresse...";
+            this.address.Click += new System.EventHandler(this.addressClick);
+            this.address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.address_KeyDown);
+            this.address.Leave += new System.EventHandler(this.addressLeave);
+            // 
+            // debt
+            // 
+            this.debt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.debt.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.debt.ForeColor = System.Drawing.Color.Gray;
+            this.debt.Location = new System.Drawing.Point(20, 3);
+            this.debt.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.debt.Name = "debt";
+            this.debt.Size = new System.Drawing.Size(794, 47);
+            this.debt.TabIndex = 29;
+            this.debt.Tag = "Dettes...";
+            this.debt.Text = "Dettes...";
+            this.debt.Click += new System.EventHandler(this.debtsClick);
+            this.debt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.debt_KeyDown);
+            this.debt.Leave += new System.EventHandler(this.debtsLeave);
+            // 
+            // email
+            // 
+            this.email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.email.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.email.ForeColor = System.Drawing.Color.Gray;
+            this.email.Location = new System.Drawing.Point(20, 90);
+            this.email.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(794, 47);
+            this.email.TabIndex = 29;
+            this.email.Tag = "Email...";
+            this.email.Text = "Email...";
+            this.email.Click += new System.EventHandler(this.emailClick);
+            this.email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.email_KeyDown);
+            this.email.Leave += new System.EventHandler(this.emailLeave);
+            // 
+            // fax
+            // 
+            this.fax.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fax.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.fax.ForeColor = System.Drawing.Color.Gray;
+            this.fax.Location = new System.Drawing.Point(20, 177);
+            this.fax.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.fax.Name = "fax";
+            this.fax.Size = new System.Drawing.Size(794, 47);
+            this.fax.TabIndex = 29;
+            this.fax.Tag = "FAX...";
+            this.fax.Text = "FAX...";
+            this.fax.Click += new System.EventHandler(this.faxClick);
+            this.fax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fax_KeyDown);
+            this.fax.Leave += new System.EventHandler(this.faxLeave);
+            // 
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             // AddClient
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;

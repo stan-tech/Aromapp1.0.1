@@ -598,7 +598,10 @@
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.iconButton1.BorderRadius = 5;
+=======
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.iconButton1.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
@@ -608,6 +611,10 @@
             this.iconButton1.Size = new System.Drawing.Size(491, 76);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = " Imprimmer";
+<<<<<<< HEAD
+=======
+            this.iconButton1.BorderRadius = 5;
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.iconButton1.Click += new System.EventHandler(this.imprimmer_Click);
             // 
             // SupprimerProd
@@ -615,7 +622,10 @@
             this.SupprimerProd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.SupprimerProd.BorderRadius = 5;
+=======
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.SupprimerProd.FillColor = System.Drawing.Color.LightSkyBlue;
             this.SupprimerProd.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.SupprimerProd.ForeColor = System.Drawing.Color.Black;
@@ -625,6 +635,10 @@
             this.SupprimerProd.Size = new System.Drawing.Size(491, 76);
             this.SupprimerProd.TabIndex = 2;
             this.SupprimerProd.Text = "Retirer le produit";
+<<<<<<< HEAD
+=======
+            this.SupprimerProd.BorderRadius = 5;
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.SupprimerProd.Click += new System.EventHandler(this.RetirerProd_Click);
             // 
             // supprimer
@@ -632,7 +646,10 @@
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.supprimer.BorderRadius = 5;
+=======
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.supprimer.FillColor = System.Drawing.Color.Red;
             this.supprimer.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.supprimer.ForeColor = System.Drawing.Color.White;
@@ -642,6 +659,10 @@
             this.supprimer.Size = new System.Drawing.Size(491, 76);
             this.supprimer.TabIndex = 1;
             this.supprimer.Text = "Supprimer l\'achat";
+<<<<<<< HEAD
+=======
+            this.supprimer.BorderRadius = 5;
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // PurchaseInfo

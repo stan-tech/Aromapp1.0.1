@@ -70,7 +70,11 @@ namespace Aromapp
             {
                 string query = "SELECT c_prd as Référence,[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
                 "'Prix en Detail',[PrixVGros] as 'Prix en Gros', [Q_Stock] as 'Disponible' " +
+<<<<<<< HEAD
                 "  FROM ["+ TableName + "] where lower(nom) like @search or lower(c_prd) like @search ;";
+=======
+                "  FROM ["+ TableName + "] where lower(nom) like '%" + search + "%' or lower(c_prd) like '%" + search + "%' ;";
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
 
 
@@ -163,7 +167,11 @@ namespace Aromapp
 
                 string query = "SELECT c_prd as Référence,[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat' ,[Prix_VenteHT] as " +
             "'Prix de vente en Detail',[PrixVGros] as 'Prix de vente en Gros', [Q_Stock] as 'Disponible' " +
+<<<<<<< HEAD
                     "  FROM ["+tableName+ "] where c_prd like @search or nom like @search limit "
+=======
+                    "  FROM ["+tableName+"] where c_prd like '%" + search + "%' or nom like '%" + search + "%' limit "
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
                     + limit + " offset " + (currentPage - 1) * limit + ";";
 
 

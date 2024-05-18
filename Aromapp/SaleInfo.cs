@@ -19,7 +19,10 @@ using DevExpress.XtraEditors.Filtering.Templates;
 using static DevExpress.XtraEditors.Mask.MaskSettings;
 using ZXing;
 using System.Text.RegularExpressions;
+<<<<<<< HEAD
 using System.Security.Cryptography;
+=======
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
 namespace Aromapp
 {
@@ -772,11 +775,19 @@ namespace Aromapp
 
             qtForm = new Qt();
 
+<<<<<<< HEAD
             qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
             qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
             qtForm.Added += AddProduct;
             qtForm.ShowDialog();
+=======
+            qt.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+            qt.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
+
+            qt.Added += AddProduct;
+            qt.ShowDialog();
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
         }
     
         void AddProduct(object sender, EventArgs e)
@@ -821,9 +832,15 @@ namespace Aromapp
             NewSaleLines.Add(sale);
 
 
+<<<<<<< HEAD
             CartTable.Rows.Add(saleRef.Text, type, reference, l_Ventes.Nomproduits, double.Parse(l_Ventes.Quantité.ToString().Replace(".", ",")),
                 NewPrice, l_Ventes.Marge, l_Ventes.MontantHT,
                 Aromapp.Qt.OptionalPrice);
+=======
+            CartTable.Rows.Add(saleRef.Text, type, reference, l_Ventes.Nomproduits, l_Ventes.Quantité,
+                NewPrice, l_Ventes.Marge, l_Ventes.MontantHT,
+                Aromapp.Qt.Remise);
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
             cart.DataSource = CartTable;
 
@@ -925,6 +942,7 @@ namespace Aromapp
         }
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             try
             {
                 SaveBtn.Enabled = false;
@@ -938,6 +956,11 @@ namespace Aromapp
                 OldSaleLines.Clear();
                 foreach (DataRow line in cartTable.Rows)
                 {
+=======
+            SaveBtn.Enabled = false;
+            UpdateBillStatus(true);
+            MessageBoxer.showGeneralMsg("Vente effectuée");
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
                     SaleLine sale = new SaleLine();
                     sale.N = saleRef.Text;
@@ -1069,7 +1092,11 @@ namespace Aromapp
 
             if (DeletedProduct)
             {
+<<<<<<< HEAD
                 applied = false;
+=======
+
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
                 nettotalText.Text = (double.Parse(nettotalText.Text.Replace(" DA", "")) - 
                     double.Parse(cart.SelectedRows[0].Cells[7].Value.ToString())).ToString("F2") + " DA";
                 int index = cart.SelectedRows[0].Index;
@@ -1091,8 +1118,11 @@ namespace Aromapp
                 NewTotal=double.Parse(nettotalText.Text.Replace(" DA",""));
 
                  saleTotal.Text = Total.ToString("F2") + " DA";
+<<<<<<< HEAD
 
                 cart.DataSource = CartTable;
+=======
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
             }
             
@@ -1229,7 +1259,11 @@ namespace Aromapp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (comboBox1.SelectedIndex == 1)
+=======
+            if (comboBox1.SelectedIndex == 3 || comboBox1.SelectedIndex == 4)
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             {
                 SelectedTable = "emballage";
             }

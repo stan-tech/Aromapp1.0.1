@@ -31,11 +31,19 @@ namespace Aromapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.retirer = new Guna.UI2.WinForms.Guna2Button();
             this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
@@ -70,6 +78,11 @@ namespace Aromapp
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+<<<<<<< HEAD
+=======
+            this.Amount = new Guna.UI2.WinForms.Guna2TextBox();
+            this.suppName = new Guna.UI2.WinForms.Guna2TextBox();
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -641,15 +654,22 @@ namespace Aromapp
             this.cart.AllowUserToAddRows = false;
             this.cart.AllowUserToDeleteRows = false;
             this.cart.AllowUserToResizeRows = false;
+<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+=======
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.cart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cart.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.cart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+<<<<<<< HEAD
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -667,12 +687,32 @@ namespace Aromapp
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.DefaultCellStyle = dataGridViewCellStyle3;
+=======
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.cart.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.DefaultCellStyle = dataGridViewCellStyle13;
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.cart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.cart.Location = new System.Drawing.Point(13, 571);
             this.cart.Name = "cart";
             this.cart.ReadOnly = true;
             this.cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+<<<<<<< HEAD
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -691,6 +731,26 @@ namespace Aromapp
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.RowsDefaultCellStyle = dataGridViewCellStyle5;
+=======
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.cart.RowHeadersVisible = false;
+            this.cart.RowHeadersWidth = 82;
+            this.cart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 9.25F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.RowsDefaultCellStyle = dataGridViewCellStyle15;
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.cart.RowTemplate.Height = 33;
             this.cart.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cart.Size = new System.Drawing.Size(1040, 623);
@@ -778,6 +838,55 @@ namespace Aromapp
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1541, 1334);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
+<<<<<<< HEAD
+=======
+            // Amount
+            // 
+            this.Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Amount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Amount.DefaultText = "Montant payé...";
+            this.Amount.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.Amount.ForeColor = System.Drawing.Color.Gray;
+            this.Amount.Location = new System.Drawing.Point(475, 58);
+            this.Amount.Margin = new System.Windows.Forms.Padding(3, 35, 3, 25);
+            this.Amount.Name = "Amount";
+            this.Amount.PasswordChar = '\0';
+            this.Amount.PlaceholderText = "";
+            this.Amount.SelectedText = "";
+            this.Amount.Size = new System.Drawing.Size(446, 45);
+            this.Amount.TabIndex = 29;
+            this.Amount.Tag = "Montant payé...";
+            this.toolTip1.SetToolTip(this.Amount, "Montant payé...");
+            this.Amount.Click += new System.EventHandler(this.AmountClick);
+            this.Amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
+            this.Amount.Leave += new System.EventHandler(this.AmountLeave);
+            // 
+            // suppName
+            // 
+            this.suppName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.suppName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.suppName.DefaultText = "Nom de fournisseur...";
+            this.suppName.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.suppName.ForeColor = System.Drawing.Color.Gray;
+            this.suppName.Location = new System.Drawing.Point(23, 58);
+            this.suppName.Margin = new System.Windows.Forms.Padding(3, 35, 3, 25);
+            this.suppName.Name = "suppName";
+            this.suppName.PasswordChar = '\0';
+            this.suppName.PlaceholderText = "";
+            this.suppName.SelectedText = "";
+            this.suppName.Size = new System.Drawing.Size(446, 45);
+            this.suppName.TabIndex = 28;
+            this.suppName.Tag = "Nom de fournisseur...";
+            this.toolTip1.SetToolTip(this.suppName, "Nom de fournisseur...");
+            this.suppName.TextChanged += new System.EventHandler(this.suppName_TextChanged);
+            this.suppName.Click += new System.EventHandler(this.suppNameClick);
+            this.suppName.Leave += new System.EventHandler(this.suppNameLeave);
+            // 
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             // AddPurchase
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;

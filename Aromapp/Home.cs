@@ -27,8 +27,19 @@ namespace Aromapp
         string number = "0";
         public Home()
         {
+<<<<<<< HEAD
           
             InitializeComponent();
+=======
+           /* Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(5000);*/
+
+            InitializeComponent();
+
+/*            t.Abort();
+*/
+>>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.DoubleBuffered = true;
             using (DBHelper helper = new DBHelper())
             {
