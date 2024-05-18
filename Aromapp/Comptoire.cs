@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars.Docking.Helpers;
+﻿using DevExpress.Utils.Zip;
+using DevExpress.XtraBars.Docking.Helpers;
 using DevExpress.XtraBars.ViewInfo;
 using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting.Native;
@@ -8,6 +9,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.draw;
 using iTextSharp.text.pdf.qrcode;
+using PdfiumViewer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -394,52 +396,99 @@ namespace Aromapp
 
         void AddProduct(object sender, EventArgs e)
         {
+            bool cont = true;
             double buyinPrice;
-
-
-            string reference = prods.SelectedRows[0].Cells[0].Value.ToString(),
-                type = prods.SelectedRows[0].Cells[3].Value.ToString();
-
-            tva.SelectedIndex = 0;
-
-            string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
-
-           
             buyinPrice = double.Parse(prods.SelectedRows[0].Cells[4].Value.ToString());
+            DialogResult result;
 
-            BuyingPrices.Add(buyinPrice);
+            double oldPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()) :
+                     oldPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
 
-            produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
+            if (oldPrice == NewPrice)
+            {
+                NewPrice = oldPrice;
+            }
 
-            l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
-            l_Ventes.MontantHT = NewPrice * quantity;
+            if (NewPrice <= buyinPrice)
+            {
+                result = MessageBox.Show("Le prix fourni est inférieur ou égal au prix d'achat, veuillez continuer ?",
+                    "Attention",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Exclamation);
 
-            nettotalText.Text = (int.Parse(nettotalText.Text) + quantity * NewPrice).ToString();
-            subtotalText.Text = (quantity * NewPrice).ToString();
+                if(result == DialogResult.Yes)
+                {
+                    cont = true;
+                }
+                else
+                {
+                    cont = false;
+                }
 
-            quantity = 1;
+            }
+            
+            if(cont)
+            {
+                string reference = prods.SelectedRows[0].Cells[0].Value.ToString(),
+            type = prods.SelectedRows[0].Cells[3].Value.ToString();
 
-            CartTable.Rows.Add(reference, l_Ventes.Nomproduits, l_Ventes.Quantité, NewPrice.ToString(), type,
-                l_Ventes.Marge, Qt.Remise, l_Ventes.MontantHT); 
+                tva.SelectedIndex = 0;
 
-            cart.DataSource = CartTable;
-            n_lignes.Text = cart.RowCount.ToString();
+                string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
+
+
+
+                BuyingPrices.Add(buyinPrice);
+
+                produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
+
+                l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
+                l_Ventes.MontantHT = NewPrice * quantity;
+
+                nettotalText.Text = (int.Parse(nettotalText.Text) + quantity * NewPrice).ToString();
+                subtotalText.Text = (quantity * NewPrice).ToString();
+
+                quantity = 1;
+
+                CartTable.Rows.Add(reference, l_Ventes.Nomproduits, l_Ventes.Quantité, NewPrice.ToString(), type,
+                    l_Ventes.Marge, oldPrice-NewPrice, l_Ventes.MontantHT);
+
+                cart.DataSource = CartTable;
+                n_lignes.Text = cart.RowCount.ToString();
+
+                qtForm.Close();
+            }
+
+
+        
         }
 
+        Qt qtForm;
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             
                 NewPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()):
                      NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-         
 
-            Qt qt = new Qt();
 
-            qt.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-            qt.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
-            qt.Added += AddProduct;
-            qt.ShowDialog();
+            string prodID = prods.SelectedRows[0].Cells[0].Value.ToString();
+
+            
+                if (double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString())>0)
+                {
+                    qtForm = new Qt();
+
+                    qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+                    qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
+
+                    qtForm.Added += AddProduct;
+                    qtForm.ShowDialog();
+                }
+                else
+                {
+                    MessageBoxer.showGeneralMsg("Le produit " + prodID + " n'est plus disponible. Vérifiez la liste des produits.");
+
+                } 
+            
 
         }
 
@@ -945,7 +994,8 @@ namespace Aromapp
                     custName.BeginInvoke((Action)(() =>
                     {
 
-                        *//* custName.AutoCompleteCustomSource = collection;
+                        */
+/* custName.AutoCompleteCustomSource = collection;
                          custName.AutoCompleteMode = AutoCompleteMode.Suggest;
                          custName.AutoCompleteSource = AutoCompleteSource.CustomSource;
                          *//*
@@ -1362,6 +1412,11 @@ namespace Aromapp
                 }
             }
 
+
+
+
+
+
             #endregion
 
 
@@ -1370,41 +1425,97 @@ namespace Aromapp
 
             document.Add(table);
 
-
-
+          
             document.Add(new iTextSharp.text.Paragraph("\n"));
 
-            document.Add(new iTextSharp.text.Paragraph("Total lignes: " + bill.N_Ligne));
+            Paragraph num_Paragraphs = new iTextSharp.text.Paragraph("Total lignes: " + bill.N_Ligne);
+            
+            document.Add(num_Paragraphs);
+            float NumLignePos = writer.GetVerticalPosition(true);
             document.Add(Chunk.NEWLINE);
 
             pageCount = document.PageNumber + 1;
 
-            if (table.Rows.Count > 16 * pageCount)
-            {
-                document.NewPage();
-
-            }
-
+            var remainingPageSpace = NumLignePos - document.BottomMargin;
 
             float phraseHeight = SmallFS.GetCalculatedBaseFont(true).
                 GetFontDescriptor(BaseFont.AWT_MAXADVANCE, SmallFS.Size);
 
             float phraseY = document.BottomMargin + phraseHeight;
 
-            PdfContentByte conb = writer.DirectContent;
+            if (table.Rows.Count <= 17 && remainingPageSpace>100)
+            {
+                phraseY = NumLignePos - 100;
+
+                PdfContentByte conb = writer.DirectContent;
 
 
-            conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
-            conb.Stroke();
+                conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
+                conb.Stroke();
 
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + bill.TotalTTC.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + bill.TotalTTC.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + bill.MontantRegler.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + bill.MontantRegler.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+
+
+            }
+            else if (writer.PageNumber>1 && table.Rows.Count%17 >= 0)
+            {
+
+
+                if (table.TotalHeight >= 500)
+                {
+                    phraseY = NumLignePos - 120;
+
+                }
+
+                PdfContentByte conb = writer.DirectContent;
+
+
+                conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
+                conb.Stroke();
+
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + bill.TotalTTC.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + bill.MontantRegler.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+
+            }
+            else
+            {
+                document.NewPage();
+                phraseY = document.PageSize.Height - document.TopMargin - phraseHeight * 10;
+                PdfContentByte conb = writer.DirectContent;
+
+
+                conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
+                conb.Stroke();
+
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + bill.TotalTTC.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + bill.MontantRegler.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+            }
+
+            /*  if (table.Rows.Count > 16 * pageCount)
+              {
+                  document.NewPage();
+
+              }*/
+
 
 
 
@@ -1413,8 +1524,12 @@ namespace Aromapp
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(text + " est à la somme de: ", SmallFS), document.Left, phraseY + 40, 0);
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("\n"), document.Left, phraseY + 40, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(Convert.ToInt32(bill.TotalTTC).ToWords(
-                new System.Globalization.CultureInfo("fr-FR")).ToUpper() + " Dinars Algériens"), document.Left, phraseY + 20, 0);
+            string TotalString = Convert.ToInt32(Math.Round(double.Parse(nettotalText.Text.Replace("DA", "")), 0)).ToWords(
+                  new System.Globalization.CultureInfo("fr-FR")).ToUpper() + " Dinars algériens";
+
+            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(TotalString,
+                FontFactory.GetFont("Calibri", 8, iTextSharp.text.Font.NORMAL,
+            BaseColor.BLACK)), document.Left, phraseY + 20, 0);
 
             document.Close();
 

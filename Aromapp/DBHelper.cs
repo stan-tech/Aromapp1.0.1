@@ -70,7 +70,7 @@ namespace Aromapp
             {
                 string query = "SELECT c_prd as Référence,[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
                 "'Prix en Detail',[PrixVGros] as 'Prix en Gros', [Q_Stock] as 'Disponible' " +
-                "  FROM ["+ TableName + "] where lower(nom) like '%" + search + "%' or lower(c_prd) like '%" + search + "%' ;";
+                "  FROM ["+ TableName + "] where lower(nom) like @search or lower(c_prd) like @search ;";
 
 
 
@@ -81,10 +81,12 @@ namespace Aromapp
 
                     SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection);
 
-                    adapter.Fill(table);
+                     adapter.SelectCommand.Parameters.Add("@search", (DbType)SqlDbType.VarChar).Value = "%" + search.ToLower() + "%";
 
-                    connection.Close();
-                    return table;
+                     adapter.Fill(table);
+
+                        connection.Close();
+                        return table;
 
                 }
             }
@@ -161,7 +163,7 @@ namespace Aromapp
 
                 string query = "SELECT c_prd as Référence,[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat' ,[Prix_VenteHT] as " +
             "'Prix de vente en Detail',[PrixVGros] as 'Prix de vente en Gros', [Q_Stock] as 'Disponible' " +
-                    "  FROM ["+tableName+"] where c_prd like '%" + search + "%' or nom like '%" + search + "%' limit "
+                    "  FROM ["+tableName+ "] where c_prd like @search or nom like @search limit "
                     + limit + " offset " + (currentPage - 1) * limit + ";";
 
 
@@ -172,8 +174,9 @@ namespace Aromapp
                     var table = new DataTable();
 
                     SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection);
+                adapter.SelectCommand.Parameters.Add("@search", (DbType)SqlDbType.VarChar).Value = "%" + search.ToLower() + "%";
 
-                    adapter.Fill(table);
+                adapter.Fill(table);
 
                     connection.Close();
                     return table;
@@ -913,12 +916,14 @@ namespace Aromapp
             public int RemoveProductFromBill(double montant,string c_pr, string SaleID, 
                 bool returnProd, decimal quantity,bool modif)
             {
+            string table = c_pr.Contains("FL") ? "emballage" : "produits";
                 double SUM;
+
                 string get_deletedSum = "select montantht from l_ventes where c_pr = '" + c_pr + "' and n = '" + SaleID + "' ;";
 
                 string query1 = "delete from l_ventes where c_pr = '" + c_pr + "' and n = '" + SaleID + "' ;";
 
-                string return_to_stock = "update produits set q_stock = q_stock + " + quantity + "  where c_prd = '" + c_pr + "' ;";
+            string return_to_stock = "update " + table + " set q_stock = q_stock + " + quantity.ToString().Replace(",",".") + "  where c_prd = '" + c_pr + "' ;";
 
 
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -949,6 +954,8 @@ namespace Aromapp
                             {
                                 DeleteBill(SaleID);
 
+                            if (!SaleID.Contains("T"))
+                            {
                                 if (new SQLiteCommand(return_to_stock, connection).ExecuteNonQuery() > 0)
                                 {
                                     connection.Close();
@@ -958,7 +965,8 @@ namespace Aromapp
                                 {
                                     connection.Close();
                                     return 0;
-                                }
+                                } 
+                            }
                             }
                             else if (checkLength(SaleID) == 1 && !modif)
                             {
@@ -975,30 +983,43 @@ namespace Aromapp
 
                             if (updateTotal.ExecuteNonQuery() > 0)
                             {
-                                updateTotal = new SQLiteCommand(return_to_stock, connection);
-
-                                if (updateTotal.ExecuteNonQuery() > 0)
+                                 if (!SaleID.Contains("T"))
                                 {
-                                    if (!SaleID.Contains("T"))
+                                    updateTotal = new SQLiteCommand(return_to_stock, connection);
+
+                                    if (updateTotal.ExecuteNonQuery() > 0)
                                     {
-                                        new SQLiteCommand("update caisse set entre = entre - " + SUM + " ", connection).ExecuteNonQuery();
+                                    
+                                          new SQLiteCommand("update caisse set entre = entre - " + SUM + " ", connection).ExecuteNonQuery();
 
+                                    
+                                        SaleInfo.Total = (decimal)getNewTotal.ExecuteScalar();
+
+                                        connection.Close();
+
+                                        val = 1;
                                     }
-                                    SaleInfo.Total = (decimal)getNewTotal.ExecuteScalar();
+                                    else
+                                    {
+                                        connection.Close();
+                                        val = 0;
+                                    }
+                                 }
+                                else
+                                {
+                                SaleInfo.Total = (decimal)getNewTotal.ExecuteScalar();
 
-                                    connection.Close();
+                                connection.Close();
 
                                     val = 1;
                                 }
-                                else
-                                {
-                                    connection.Close();
-                                    val = 0;
-                                }
 
+                            }
+                            else
+                            {
 
-
-
+                                connection.Close();
+                                val = 0;
                             }
 
 
@@ -4427,10 +4448,8 @@ namespace Aromapp
                 {
                     reglé = "Réglé";
                 }
-
-
-
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+         
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
 
 

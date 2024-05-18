@@ -107,7 +107,7 @@ namespace Aromapp
 
         private void PurchaseInfo_Load(object sender, EventArgs e)
         {
-            this.ClientSize = new System.Drawing.Size(845, 498);
+            this.ClientSize = new System.Drawing.Size(945, 498);
             this.CenterToScreen();
 
             using (DBHelper helper = new DBHelper())

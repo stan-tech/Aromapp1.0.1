@@ -97,8 +97,8 @@ namespace Aromapp
             this.prods = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.searchBox = new Aromapp.HintTexBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.Actuelle.SuspendLayout();
@@ -1097,7 +1097,7 @@ namespace Aromapp
             this.tableLayoutPanel10.ColumnCount = 3;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.22794F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.77206F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
             this.tableLayoutPanel10.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.searchBox, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label11, 0, 0);
@@ -1119,25 +1119,14 @@ namespace Aromapp
             this.comboBox1.Items.AddRange(new object[] {
             "Parfum",
             "Emballage/Sachet"});
-            this.comboBox1.Location = new System.Drawing.Point(527, 6);
+            this.comboBox1.Location = new System.Drawing.Point(519, 6);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 6, 8, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(236, 41);
+            this.comboBox1.Size = new System.Drawing.Size(244, 41);
             this.comboBox1.TabIndex = 38;
             this.comboBox1.Tag = "";
             this.comboBox1.Text = "Catégories";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(6, 5);
-            this.label11.Margin = new System.Windows.Forms.Padding(6, 5, 6, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 50);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "Produits";
             // 
             // searchBox
             // 
@@ -1146,16 +1135,27 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.searchBox.ForeColor = System.Drawing.Color.Gray;
-            this.searchBox.Location = new System.Drawing.Point(156, 6);
+            this.searchBox.Location = new System.Drawing.Point(154, 6);
             this.searchBox.Margin = new System.Windows.Forms.Padding(3, 6, 8, 3);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(360, 41);
+            this.searchBox.Size = new System.Drawing.Size(354, 41);
             this.searchBox.TabIndex = 37;
             this.searchBox.Tag = "Rechercher...";
             this.searchBox.Text = "Rechercher...";
             this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label11.Location = new System.Drawing.Point(6, 5);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 5, 6, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 50);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Produits";
             // 
             // SaleInfo
             // 

@@ -31,7 +31,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.qtt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.reduction = new Guna.UI2.WinForms.Guna2TextBox();
+            this.newPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.totalBulkText = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.qtt, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.reduction, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.newPrice, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
@@ -121,30 +121,30 @@
             this.qtt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.qtt_KeyDown1);
             this.qtt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtt_KeyPress);
             // 
-            // reduction
+            // newPrice
             // 
-            this.reduction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.newPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reduction.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.reduction.DefaultText = "Réduction...";
-            this.reduction.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.reduction.ForeColor = System.Drawing.Color.Gray;
-            this.reduction.Location = new System.Drawing.Point(28, 208);
-            this.reduction.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.reduction.Name = "reduction";
-            this.reduction.PasswordChar = '\0';
-            this.reduction.PlaceholderText = "";
-            this.reduction.SelectedText = "";
-            this.reduction.Size = new System.Drawing.Size(538, 50);
-            this.reduction.TabIndex = 3;
-            this.reduction.Tag = "Réduction...";
-            this.reduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.reduction.TextChanged += new System.EventHandler(this.reduc_TextChanged);
-            this.reduction.Click += new System.EventHandler(this.reduc_Click);
-            this.reduction.KeyDown += new System.Windows.Forms.KeyEventHandler(this.reduction_KeyDown);
-            this.reduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtt_KeyPress);
-            this.reduction.Leave += new System.EventHandler(this.reduc_Leave);
+            this.newPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.newPrice.DefaultText = "Nouveau prix...";
+            this.newPrice.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.newPrice.ForeColor = System.Drawing.Color.Gray;
+            this.newPrice.Location = new System.Drawing.Point(28, 208);
+            this.newPrice.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.newPrice.Name = "newPrice";
+            this.newPrice.PasswordChar = '\0';
+            this.newPrice.PlaceholderText = "";
+            this.newPrice.SelectedText = "";
+            this.newPrice.Size = new System.Drawing.Size(538, 50);
+            this.newPrice.TabIndex = 3;
+            this.newPrice.Tag = "Nouveau prix...";
+            this.newPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.newPrice.TextChanged += new System.EventHandler(this.reduc_TextChanged);
+            this.newPrice.Click += new System.EventHandler(this.reduc_Click);
+            this.newPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.reduction_KeyDown);
+            this.newPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtt_KeyPress);
+            this.newPrice.Leave += new System.EventHandler(this.reduc_Leave);
             // 
             // panel3
             // 
@@ -421,7 +421,7 @@
         private Guna.UI2.WinForms.Guna2Button iconButton3;
         private Guna.UI2.WinForms.Guna2Button annuler;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private Guna.UI2.WinForms.Guna2TextBox reduction;
+        private Guna.UI2.WinForms.Guna2TextBox newPrice;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label totalBulkText;
         private System.Windows.Forms.Label label2;

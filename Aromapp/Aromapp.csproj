@@ -106,12 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AccountItem.Designer.cs">
-      <DependentUpon>AccountItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountModel.cs" />
     <Compile Include="Achats.cs">
       <SubType>UserControl</SubType>
@@ -366,9 +360,6 @@
     <Compile Include="Ventes.Designer.cs">
       <DependentUpon>Ventes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountItem.resx">
-      <DependentUpon>AccountItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Achats.resx">
       <DependentUpon>Achats.cs</DependentUpon>
     </EmbeddedResource>

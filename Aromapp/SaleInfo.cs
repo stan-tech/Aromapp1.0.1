@@ -19,6 +19,7 @@ using DevExpress.XtraEditors.Filtering.Templates;
 using static DevExpress.XtraEditors.Mask.MaskSettings;
 using ZXing;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace Aromapp
 {
@@ -104,7 +105,8 @@ namespace Aromapp
         private void SaleInfo_Load(object sender, EventArgs e)
         {
             
-            this.ClientSize = new System.Drawing.Size(845, 498);
+            this.ClientSize = new System.Drawing.Size(1045, 698);
+       
             this.CenterToScreen();
 
             BillLines.CellBorderStyle = DataGridViewCellBorderStyle.Single;
@@ -164,7 +166,6 @@ namespace Aromapp
             label3.Text = label3.Text.Replace("Bon", sale.Type);
 
             cartTable = ((DataTable)BillLines.DataSource).Copy();
-
             foreach (var item in cartTable.Rows)
             {
                 CartTable.Rows.Add(item);
@@ -427,8 +428,10 @@ namespace Aromapp
             iTextSharp.text.Font SmallFS = FontFactory.GetFont("Calibri", 10, iTextSharp.text.Font.NORMAL,
             BaseColor.BLACK);
 
+
             writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, fileStream);
 
+            writer.ViewerPreferences = PdfWriter.PageLayoutTwoColumnLeft;
 
             document.Open();
 
@@ -646,30 +649,90 @@ namespace Aromapp
             document.Add(new iTextSharp.text.Paragraph("\n"));
 
             document.Add(new iTextSharp.text.Paragraph("Total lignes: " + (grid.RowCount - 1).ToString()));
+            float NumLignePos = writer.GetVerticalPosition(true);
 
             document.Add(Chunk.NEWLINE);
+
+            var remainingPageSpace = NumLignePos - document.BottomMargin;
 
             float phraseHeight = SmallFS.GetCalculatedBaseFont(true).
                 GetFontDescriptor(BaseFont.AWT_MAXADVANCE, SmallFS.Size);
 
             float phraseY = document.BottomMargin + phraseHeight;
 
-            PdfContentByte conb = writer.DirectContent;
+            if (table.Rows.Count <= 17 && remainingPageSpace > 100)
+            {
+                phraseY = NumLignePos - 100;
+
+                PdfContentByte conb = writer.DirectContent;
 
 
-            conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
-            conb.Stroke();
+                conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
+                conb.Stroke();
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
-            string versement = (NewTotal == OriginalTotal) ? bill.MontantRegler.ToString("F2") : NewTotal.ToString("F2");
-            string total = (NewTotal == OriginalTotal) ? OriginalTotal.ToString("F2") : NewTotal.ToString("F2");
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
+                string versement = (NewTotal == OriginalTotal) ? bill.MontantRegler.ToString("F2") : NewTotal.ToString("F2");
+                string total = (NewTotal == OriginalTotal) ? OriginalTotal.ToString("F2") : NewTotal.ToString("F2");
 
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + total + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + total + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" +versement+ " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + versement + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+
+
+            }
+            else if (writer.PageNumber > 1 && table.Rows.Count % 17 >= 0)
+            {
+
+
+                if (table.TotalHeight >= 500)
+                {
+                    phraseY = NumLignePos - 120;
+
+                }
+
+                PdfContentByte conb = writer.DirectContent;
+
+
+                conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
+                conb.Stroke();
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
+                string versement = (NewTotal == OriginalTotal) ? bill.MontantRegler.ToString("F2") : NewTotal.ToString("F2");
+                string total = (NewTotal == OriginalTotal) ? OriginalTotal.ToString("F2") : NewTotal.ToString("F2");
+
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + total + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + versement + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+
+            }
+            else
+            {
+                document.NewPage();
+                phraseY = document.PageSize.Height - document.TopMargin - phraseHeight*10;
+                PdfContentByte conb = writer.DirectContent;
+
+
+                conb.RoundRectangle(document.Right - 150, phraseY + 10, 150, 100, 20);
+                conb.Stroke();
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Taux TVA: \t" + bill.TauxTVA.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 90, 0);
+                string versement = (NewTotal == OriginalTotal) ? bill.MontantRegler.ToString("F2") : NewTotal.ToString("F2");
+                string total = (NewTotal == OriginalTotal) ? OriginalTotal.ToString("F2") : NewTotal.ToString("F2");
+
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Total TTC: \t" + total + " DA", SmallFS), document.Right - 140, phraseY + 70, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Versement: \t" + versement + " DA", SmallFS), document.Right - 140, phraseY + 50, 0);
+
+                ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("Reste: \t" + bill.MontantRest.ToString("F2") + " DA", SmallFS), document.Right - 140, phraseY + 30, 0);
+            }
+
 
 
 
@@ -678,12 +741,14 @@ namespace Aromapp
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(text + " est à la somme de: ", SmallFS), document.Left, phraseY + 40, 0);
             ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase("\n"), document.Left, phraseY + 40, 0);
 
-            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(Convert.ToInt32(bill.TotalTTC).ToWords(
-                new System.Globalization.CultureInfo("fr-FR")).ToUpper() + " Dinars algériens"), document.Left, phraseY + 20, 0);
+            string TotalString = Convert.ToInt32(Math.Round(double.Parse(nettotalText.Text.Replace("DA", "")), 0)).ToWords(
+                 new System.Globalization.CultureInfo("fr-FR")).ToUpper()+ " Dinars algériens";
 
-
+            ColumnText.ShowTextAligned(cb, Element.ALIGN_LEFT, new Phrase(TotalString, 
+                FontFactory.GetFont("Calibri", 8, iTextSharp.text.Font.NORMAL,
+            BaseColor.BLACK)),document.Left, phraseY + 20, 0);
+            
             document.Close();
-
             System.Diagnostics.Process.Start(fileStream.Name);
 
 
@@ -699,19 +764,19 @@ namespace Aromapp
             guna2TabControl1.TabButtonSize = new Size((int)(guna2TabControl1.Width / 2) - 2, guna2TabControl1.TabButtonSize.Height);
 
         }
-
+        Qt qtForm;
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             NewPrice = detail ? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()) :
      NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
 
-            Qt qt = new Qt();
+            qtForm = new Qt();
 
-            qt.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-            qt.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
+            qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+            qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
-            qt.Added += AddProduct;
-            qt.ShowDialog();
+            qtForm.Added += AddProduct;
+            qtForm.ShowDialog();
         }
     
         void AddProduct(object sender, EventArgs e)
@@ -740,7 +805,7 @@ namespace Aromapp
             quantity = 1;
 
             SaleLine sale = new SaleLine();
-            sale.N = saleRef.Text;
+            sale.N = (applied)?newID:saleRef.Text;
             sale.C_CL = ClientProp.C_CL;
             sale.Nomproduit = nomproduits;
             sale.Quantité = l_Ventes.Quantité;
@@ -758,12 +823,13 @@ namespace Aromapp
 
             CartTable.Rows.Add(saleRef.Text, type, reference, l_Ventes.Nomproduits, double.Parse(l_Ventes.Quantité.ToString().Replace(".", ",")),
                 NewPrice, l_Ventes.Marge, l_Ventes.MontantHT,
-                Aromapp.Qt.Remise);
+                Aromapp.Qt.OptionalPrice);
 
             cart.DataSource = CartTable;
 
             applied = false;
 
+            qtForm.Close();
 
         }
 
@@ -782,7 +848,7 @@ namespace Aromapp
             {
                 foreach (SaleLine line in OldSaleLines)
                 {
-                    if ((line != null ) && (!line.N.Contains("T")|| !executed))
+                    if (line != null)
                     {
                         helper.RemoveProductFromBill(line.MontantHT, line.C_PR, line.N, true, (decimal)line.Quantité, true);
 
@@ -832,6 +898,7 @@ namespace Aromapp
                         helper.AddSaleLines(line);
                         helper.InsertIntoStockHistory(line, line.C_CL);
                     }
+                    saleRef.Text = newID;
                     try
                     {
                         if (executed)
@@ -858,35 +925,50 @@ namespace Aromapp
         }
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            SaveBtn.Enabled = false;
-            UpdateBillStatus(true);
-            MessageBoxer.showGeneralMsg("Vente effectuée");
+            try
+            {
+                SaveBtn.Enabled = false;
+                UpdateBillStatus(true);
+                MessageBoxer.showGeneralMsg("Vente effectuée");
 
-            prods.DataSource = helper.selectAllProducts(limit, 1);
-            BillLines.DataSource = helper.selectBillLines(newID);
-            cartTable = ((DataTable)cart.DataSource).Copy();
-            cart.DataSource = cartTable; ;
-            OldSaleLines.Clear();
-            foreach (DataRow line in cartTable.Rows)
+                prods.DataSource = helper.selectAllProducts(limit, 1);
+                BillLines.DataSource = helper.selectBillLines(newID);
+                cartTable = ((DataTable)cart.DataSource).Copy();
+                cart.DataSource = cartTable; ;
+                OldSaleLines.Clear();
+                foreach (DataRow line in cartTable.Rows)
+                {
+
+                    SaleLine sale = new SaleLine();
+                    sale.N = saleRef.Text;
+                    sale.C_CL = ClientProp.C_CL;
+                    sale.Nomproduit = line[3].ToString();
+                    sale.Quantité = double.Parse(line[4].ToString());
+                    sale.PrixHT = double.Parse(line[5].ToString());
+                    sale.Marge = double.Parse(line[6].ToString());
+                    sale.Remise = double.Parse(line[8].ToString());
+                    sale.C_PR = line[2].ToString();
+                    sale.Type = line[1].ToString();
+                    sale.DateA = DateTime.Now.Date;
+                    sale.MontantHT = double.Parse(line[7].ToString());
+                    OriginalTotal += sale.PrixHT * sale.Quantité;
+                    OldSaleLines.Add(sale);
+
+                }
+                guna2TabControl1.SelectedIndex = 0;
+
+                double total = 0;
+                foreach (SaleLine saleLine in OldSaleLines)
+                {
+                    total += saleLine.MontantHT;
+                }
+                saleTotal.Text = total.ToString("F2") + " DA";
+                saleRef.Text = newID;
+            }
+            catch (Exception)
             {
 
-                SaleLine sale = new SaleLine();
-                sale.N = saleRef.Text;
-                sale.C_CL = ClientProp.C_CL;
-                sale.Nomproduit = line[3].ToString();
-                sale.Quantité = double.Parse(line[4].ToString());
-                sale.PrixHT = double.Parse(line[5].ToString());
-                sale.Marge = double.Parse(line[6].ToString());
-                sale.Remise = double.Parse(line[8].ToString());
-                sale.C_PR = line[2].ToString();
-                sale.Type = line[1].ToString();
-                sale.DateA = DateTime.Now.Date;
-                sale.MontantHT = double.Parse(line[7].ToString());
-                OriginalTotal += sale.PrixHT * sale.Quantité;
-                OldSaleLines.Add(sale);
-
             }
-
 
 
         }
@@ -901,25 +983,39 @@ namespace Aromapp
             {
                 RemoveProduct removeProduct = new RemoveProduct(ProductID, qtt, saleRef.Text.Trim());
 
-
-
-
                 try
                 {
                     if (OldSaleLines[idx] != null && OldSaleLines[idx].C_PR == ProductID)
                     {
-                        removeProduct.modif = true;
-                        removeProduct.modifNew = false;
-                        prodIsNew = false;
+                        
+                            removeProduct.modif = true;
+                            removeProduct.modifNew = false;
+                            prodIsNew = false; 
+                        
+
+
                     }
 
                     else
                     {
-                        removeProduct.modif = false;
-                        removeProduct.modifNew = true;
-                        prodIsNew = true;
+
+                        if (applied)
+                        {
+                            removeProduct.modif = true;
+                            removeProduct.modifNew = false;
+                            prodIsNew = true;
+                        }
+                        else
+                        {
+                            removeProduct.modif = false;
+                            removeProduct.modifNew = true;
+                            prodIsNew = true;
+                        }
+
 
                     }
+                    
+
                     if(OldSaleLines[idx] != null && OldSaleLines[idx].N.Contains("T"))
                     {
                         removeProduct.modif = false;
@@ -973,12 +1069,20 @@ namespace Aromapp
 
             if (DeletedProduct)
             {
-
+                applied = false;
                 nettotalText.Text = (double.Parse(nettotalText.Text.Replace(" DA", "")) - 
                     double.Parse(cart.SelectedRows[0].Cells[7].Value.ToString())).ToString("F2") + " DA";
                 int index = cart.SelectedRows[0].Index;
 
-                cart.Rows.RemoveAt(index);
+                try
+                {
+                    CartTable.Rows.RemoveAt(index);
+                }
+                catch (Exception)
+                {
+
+                }
+
 
                 if (!prodIsNew)
                 {
@@ -987,6 +1091,8 @@ namespace Aromapp
                 NewTotal=double.Parse(nettotalText.Text.Replace(" DA",""));
 
                  saleTotal.Text = Total.ToString("F2") + " DA";
+
+                cart.DataSource = CartTable;
 
             }
             
@@ -1140,15 +1246,18 @@ namespace Aromapp
             if ((guna2TabControl1.SelectedTab.Name != "Modification" || applied ))
             {
                 Bill bill = new Bill();
+
                 bill.Type = sale.Type;
                 bill.TotalRemise = (double)sale.RemiseTotal;
-                bill.TotalTTC = (double)sale.TotalHT;
-                bill.MontantRegler = (double)sale.MontantRegler;
-                bill.MontantRest = (double)(sale.TotalHT- sale.MontantRegler);
+                bill.TotalTTC =(applied)?double.Parse(saleTotal.Text.Replace(" DA","")):(double)sale.TotalHT;
+                bill.MontantRegler = (applied) ? double.Parse(saleTotal.Text.Replace(" DA", "")) :(double)sale.MontantRegler;
+                bill.MontantRest =  (applied) ? 0: (double)(sale.MontantRest);
                 bill.DateA = DateTime.Parse(sale.Date);
                 bill.N = (exe)?newID: sale.N;
 
-                GeneratePdf(BillLines, bill);
+
+
+                GeneratePdf(BillLines.Rows.Count>1?BillLines:cart, bill);
             }
             else 
             {
@@ -1171,6 +1280,7 @@ private void guna2TabControl1_Selected(object sender, TabControlEventArgs e)
                 {
                     SaveBtn.Enabled = false;
                 }
+                applied = saleRef.Text.Contains("T")?false:true;
                 dataLoader.RunWorkerAsync();
                 DataTable cartTable = (DataTable)BillLines.DataSource;
                 cart.DataSource =cartTable;

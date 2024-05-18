@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DevExpress.XtraEditors.Mask.MaskSettings;
@@ -21,9 +22,21 @@ namespace Aromapp
         List<User> users;
         public SignIn()
         {
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(5000);
+
             InitializeComponent();
+
+            t.Abort();
+
         }
 
+        void StartForm()
+        {
+            Application.Run(new SplashScreen());
+
+        }
 
         private void SignIn_Load(object sender, EventArgs e)
         {

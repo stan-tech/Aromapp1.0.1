@@ -43,6 +43,7 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Annuler = new Guna.UI2.WinForms.Guna2Button();
             this.OkButton = new Guna.UI2.WinForms.Guna2Button();
+            this.supp = new Aromapp.HintTexBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -183,11 +184,15 @@
             this.tableLayoutPanel2.Controls.Add(this.Unit, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.priceSG, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Alert, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.supp, 0, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 332);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.44481F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.44481F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.11037F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(984, 266);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -223,7 +228,7 @@
             "G",
             "KG",
             "M"});
-            this.Unit.Location = new System.Drawing.Point(512, 146);
+            this.Unit.Location = new System.Drawing.Point(512, 88);
             this.Unit.Margin = new System.Windows.Forms.Padding(20, 13, 20, 3);
             this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(452, 41);
@@ -256,7 +261,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Alert.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Alert.ForeColor = System.Drawing.Color.Gray;
-            this.Alert.Location = new System.Drawing.Point(20, 136);
+            this.Alert.Location = new System.Drawing.Point(20, 78);
             this.Alert.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
             this.Alert.Name = "Alert";
             this.Alert.Size = new System.Drawing.Size(447, 47);
@@ -315,6 +320,23 @@
             this.OkButton.Text = "Ok";
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
+            // supp
+            // 
+            this.supp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.supp.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.supp.ForeColor = System.Drawing.Color.Gray;
+            this.supp.Location = new System.Drawing.Point(20, 153);
+            this.supp.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.supp.Name = "supp";
+            this.supp.Size = new System.Drawing.Size(447, 47);
+            this.supp.TabIndex = 29;
+            this.supp.Tag = "Fournisseur...";
+            this.supp.Text = "Fournisseur...";
+            this.supp.Click += new System.EventHandler(this.Alert_Click);
+            this.supp.Leave += new System.EventHandler(this.Alert_Leave);
+            // 
             // AddProduct
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
@@ -361,5 +383,6 @@
         private Guna.UI2.WinForms.Guna2Button OkButton;
         private System.Windows.Forms.ComboBox Tyype;
         private System.Windows.Forms.ComboBox Unit;
+        private HintTexBox supp;
     }
 }

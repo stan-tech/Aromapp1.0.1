@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.PurchaseLines = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -88,7 +88,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1443, 1013);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1539, 1013);
             this.tableLayoutPanel5.TabIndex = 46;
             // 
             // tableLayoutPanel4
@@ -106,14 +106,14 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1437, 893);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1533, 893);
             this.tableLayoutPanel4.TabIndex = 44;
             // 
             // PurchaseLines
             // 
             this.PurchaseLines.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.PurchaseLines.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.PurchaseLines.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.PurchaseLines.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,23 +121,23 @@
             this.PurchaseLines.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.PurchaseLines.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.PurchaseLines.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PurchaseLines.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PurchaseLines.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.PurchaseLines.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PurchaseLines.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PurchaseLines.DefaultCellStyle = dataGridViewCellStyle13;
             this.PurchaseLines.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.PurchaseLines.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.PurchaseLines.Location = new System.Drawing.Point(3, 3);
@@ -145,26 +145,26 @@
             this.PurchaseLines.Name = "PurchaseLines";
             this.PurchaseLines.ReadOnly = true;
             this.PurchaseLines.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PurchaseLines.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PurchaseLines.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.PurchaseLines.RowHeadersVisible = false;
             this.PurchaseLines.RowHeadersWidth = 82;
             this.PurchaseLines.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PurchaseLines.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PurchaseLines.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.PurchaseLines.RowTemplate.Height = 33;
             this.PurchaseLines.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PurchaseLines.Size = new System.Drawing.Size(751, 880);
+            this.PurchaseLines.Size = new System.Drawing.Size(802, 880);
             this.PurchaseLines.TabIndex = 28;
             this.PurchaseLines.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.PurchaseLines.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -199,12 +199,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(767, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(818, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.33569F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.66431F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(667, 887);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(712, 887);
             this.tableLayoutPanel3.TabIndex = 43;
             // 
             // tableLayoutPanel2
@@ -213,8 +213,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.64872F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.35128F));
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.saleTotal, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.label14, 0, 1);
@@ -233,7 +233,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(661, 307);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(706, 307);
             this.tableLayoutPanel2.TabIndex = 42;
             // 
             // label12
@@ -252,7 +252,7 @@
             this.saleTotal.AutoSize = true;
             this.saleTotal.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleTotal.ForeColor = System.Drawing.Color.White;
-            this.saleTotal.Location = new System.Drawing.Point(336, 244);
+            this.saleTotal.Location = new System.Drawing.Point(413, 244);
             this.saleTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.saleTotal.Name = "saleTotal";
             this.saleTotal.Size = new System.Drawing.Size(58, 33);
@@ -275,7 +275,7 @@
             this.subTotal.AutoSize = true;
             this.subTotal.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotal.ForeColor = System.Drawing.Color.White;
-            this.subTotal.Location = new System.Drawing.Point(336, 183);
+            this.subTotal.Location = new System.Drawing.Point(413, 183);
             this.subTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.subTotal.Name = "subTotal";
             this.subTotal.Size = new System.Drawing.Size(58, 33);
@@ -287,7 +287,7 @@
             this.saleType.AutoSize = true;
             this.saleType.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleType.ForeColor = System.Drawing.Color.White;
-            this.saleType.Location = new System.Drawing.Point(336, 61);
+            this.saleType.Location = new System.Drawing.Point(413, 61);
             this.saleType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.saleType.Name = "saleType";
             this.saleType.Size = new System.Drawing.Size(58, 33);
@@ -299,7 +299,7 @@
             this.saleRef.AutoSize = true;
             this.saleRef.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleRef.ForeColor = System.Drawing.Color.White;
-            this.saleRef.Location = new System.Drawing.Point(336, 122);
+            this.saleRef.Location = new System.Drawing.Point(413, 122);
             this.saleRef.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.saleRef.Name = "saleRef";
             this.saleRef.Size = new System.Drawing.Size(58, 33);
@@ -319,12 +319,15 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(6, 122);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(265, 50);
+            this.label3.Size = new System.Drawing.Size(395, 61);
             this.label3.TabIndex = 35;
             this.label3.Text = "Reference de Bon:";
             // 
@@ -333,7 +336,7 @@
             this.saleDate.AutoSize = true;
             this.saleDate.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleDate.ForeColor = System.Drawing.Color.White;
-            this.saleDate.Location = new System.Drawing.Point(336, 0);
+            this.saleDate.Location = new System.Drawing.Point(413, 0);
             this.saleDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.saleDate.Name = "saleDate";
             this.saleDate.Size = new System.Drawing.Size(58, 33);
@@ -359,7 +362,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 316);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(661, 568);
+            this.groupBox1.Size = new System.Drawing.Size(706, 568);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations sur le produit";
@@ -394,7 +397,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(621, 468);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(666, 468);
             this.tableLayoutPanel1.TabIndex = 41;
             // 
             // label8
@@ -407,7 +410,7 @@
             this.label8.Location = new System.Drawing.Point(16, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(288, 74);
+            this.label8.Size = new System.Drawing.Size(311, 74);
             this.label8.TabIndex = 9;
             this.label8.Text = "Nome de produits:";
             // 
@@ -421,7 +424,7 @@
             this.label10.Location = new System.Drawing.Point(16, 158);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(288, 74);
+            this.label10.Size = new System.Drawing.Size(311, 74);
             this.label10.TabIndex = 11;
             this.label10.Text = "Prix en detail:";
             // 
@@ -433,10 +436,10 @@
             this.prodName.AutoSize = true;
             this.prodName.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodName.ForeColor = System.Drawing.Color.White;
-            this.prodName.Location = new System.Drawing.Point(316, 10);
+            this.prodName.Location = new System.Drawing.Point(339, 10);
             this.prodName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.prodName.Name = "prodName";
-            this.prodName.Size = new System.Drawing.Size(289, 74);
+            this.prodName.Size = new System.Drawing.Size(311, 74);
             this.prodName.TabIndex = 12;
             this.prodName.Text = "Non disponible";
             // 
@@ -450,7 +453,7 @@
             this.label1.Location = new System.Drawing.Point(16, 306);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 74);
+            this.label1.Size = new System.Drawing.Size(311, 74);
             this.label1.TabIndex = 11;
             this.label1.Text = "Quantité disponible:";
             // 
@@ -464,7 +467,7 @@
             this.label2.Location = new System.Drawing.Point(16, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(288, 74);
+            this.label2.Size = new System.Drawing.Size(311, 74);
             this.label2.TabIndex = 9;
             this.label2.Text = "Type de produits";
             // 
@@ -476,10 +479,10 @@
             this.QtD.AutoSize = true;
             this.QtD.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtD.ForeColor = System.Drawing.Color.White;
-            this.QtD.Location = new System.Drawing.Point(316, 306);
+            this.QtD.Location = new System.Drawing.Point(339, 306);
             this.QtD.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.QtD.Name = "QtD";
-            this.QtD.Size = new System.Drawing.Size(289, 74);
+            this.QtD.Size = new System.Drawing.Size(311, 74);
             this.QtD.TabIndex = 14;
             this.QtD.Text = "Non disponible";
             // 
@@ -491,10 +494,10 @@
             this.prodType.AutoSize = true;
             this.prodType.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodType.ForeColor = System.Drawing.Color.White;
-            this.prodType.Location = new System.Drawing.Point(316, 84);
+            this.prodType.Location = new System.Drawing.Point(339, 84);
             this.prodType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.prodType.Name = "prodType";
-            this.prodType.Size = new System.Drawing.Size(289, 74);
+            this.prodType.Size = new System.Drawing.Size(311, 74);
             this.prodType.TabIndex = 12;
             this.prodType.Text = "Non disponible";
             // 
@@ -506,10 +509,10 @@
             this.PriceD.AutoSize = true;
             this.PriceD.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriceD.ForeColor = System.Drawing.Color.White;
-            this.PriceD.Location = new System.Drawing.Point(316, 158);
+            this.PriceD.Location = new System.Drawing.Point(339, 158);
             this.PriceD.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PriceD.Name = "PriceD";
-            this.PriceD.Size = new System.Drawing.Size(289, 74);
+            this.PriceD.Size = new System.Drawing.Size(311, 74);
             this.PriceD.TabIndex = 14;
             this.PriceD.Text = "Non disponible";
             // 
@@ -523,7 +526,7 @@
             this.label4.Location = new System.Drawing.Point(16, 380);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(288, 78);
+            this.label4.Size = new System.Drawing.Size(311, 78);
             this.label4.TabIndex = 11;
             this.label4.Text = "Quantité achetée:";
             // 
@@ -537,7 +540,7 @@
             this.label9.Location = new System.Drawing.Point(16, 232);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(288, 74);
+            this.label9.Size = new System.Drawing.Size(311, 74);
             this.label9.TabIndex = 10;
             this.label9.Text = "Prix en gros:";
             // 
@@ -549,10 +552,10 @@
             this.Qt.AutoSize = true;
             this.Qt.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Qt.ForeColor = System.Drawing.Color.White;
-            this.Qt.Location = new System.Drawing.Point(316, 380);
+            this.Qt.Location = new System.Drawing.Point(339, 380);
             this.Qt.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Qt.Name = "Qt";
-            this.Qt.Size = new System.Drawing.Size(289, 78);
+            this.Qt.Size = new System.Drawing.Size(311, 78);
             this.Qt.TabIndex = 14;
             this.Qt.Text = "Non disponible";
             // 
@@ -564,10 +567,10 @@
             this.PriceG.AutoSize = true;
             this.PriceG.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriceG.ForeColor = System.Drawing.Color.White;
-            this.PriceG.Location = new System.Drawing.Point(316, 232);
+            this.PriceG.Location = new System.Drawing.Point(339, 232);
             this.PriceG.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PriceG.Name = "PriceG";
-            this.PriceG.Size = new System.Drawing.Size(289, 74);
+            this.PriceG.Size = new System.Drawing.Size(311, 74);
             this.PriceG.TabIndex = 13;
             this.PriceG.Text = "Non disponible";
             // 
@@ -587,7 +590,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1437, 96);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1533, 96);
             this.tableLayoutPanel6.TabIndex = 45;
             // 
             // iconButton1
@@ -595,16 +598,16 @@
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.BorderRadius = 5;
             this.iconButton1.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(968, 10);
+            this.iconButton1.Location = new System.Drawing.Point(1032, 10);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(10);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(459, 76);
+            this.iconButton1.Size = new System.Drawing.Size(491, 76);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = " Imprimmer";
-            this.iconButton1.BorderRadius = 5;
             this.iconButton1.Click += new System.EventHandler(this.imprimmer_Click);
             // 
             // SupprimerProd
@@ -612,16 +615,16 @@
             this.SupprimerProd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SupprimerProd.BorderRadius = 5;
             this.SupprimerProd.FillColor = System.Drawing.Color.LightSkyBlue;
             this.SupprimerProd.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.SupprimerProd.ForeColor = System.Drawing.Color.Black;
-            this.SupprimerProd.Location = new System.Drawing.Point(489, 10);
+            this.SupprimerProd.Location = new System.Drawing.Point(521, 10);
             this.SupprimerProd.Margin = new System.Windows.Forms.Padding(10);
             this.SupprimerProd.Name = "SupprimerProd";
-            this.SupprimerProd.Size = new System.Drawing.Size(459, 76);
+            this.SupprimerProd.Size = new System.Drawing.Size(491, 76);
             this.SupprimerProd.TabIndex = 2;
             this.SupprimerProd.Text = "Retirer le produit";
-            this.SupprimerProd.BorderRadius = 5;
             this.SupprimerProd.Click += new System.EventHandler(this.RetirerProd_Click);
             // 
             // supprimer
@@ -629,16 +632,16 @@
             this.supprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.supprimer.BorderRadius = 5;
             this.supprimer.FillColor = System.Drawing.Color.Red;
             this.supprimer.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.supprimer.ForeColor = System.Drawing.Color.White;
             this.supprimer.Location = new System.Drawing.Point(10, 10);
             this.supprimer.Margin = new System.Windows.Forms.Padding(10);
             this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(459, 76);
+            this.supprimer.Size = new System.Drawing.Size(491, 76);
             this.supprimer.TabIndex = 1;
             this.supprimer.Text = "Supprimer l\'achat";
-            this.supprimer.BorderRadius = 5;
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // PurchaseInfo
@@ -647,7 +650,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 1013);
+            this.ClientSize = new System.Drawing.Size(1539, 1013);
             this.Controls.Add(this.tableLayoutPanel5);
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;

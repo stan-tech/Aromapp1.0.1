@@ -510,7 +510,7 @@ namespace Aromapp
                 for (int i =1;i<=EtiqNumber;i++)
                 {
                     Phrase phrase = new Phrase();
-                    string key = ProductsTable.SelectedRows[0].Cells[0].Value.ToString();
+                    string key = ProductsTable.SelectedRows[0].Cells[3].Value.ToString();
                     string value =ProductsTable.SelectedRows[0].Cells[1].Value.ToString();
 
 
@@ -523,7 +523,8 @@ namespace Aromapp
                         iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
 
 
-                        phrase.Add(new Chunk(value, font));
+                        phrase.Add(new Chunk(value + "\n\n", font));
+                        phrase.Add(new Chunk("(" + key + ")", FS));
 
 
                         pdfPCell = new PdfPCell(phrase);
@@ -533,8 +534,8 @@ namespace Aromapp
                     }
                     else
                     {
-                        phrase.Add(new Chunk(value , FS));
-
+                        phrase.Add(new Chunk(value + "\n\n", FS));
+                        phrase.Add(new Chunk("("+key+")",FS));
 
                         pdfPCell = new PdfPCell(phrase);
                         pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_LTR;
@@ -542,7 +543,9 @@ namespace Aromapp
 
                     pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                    pdfPCell.Padding = 15f;
+                    pdfPCell.PaddingBottom = 15f;
+                    pdfPCell.PaddingTop= 15f;
+
                     if (i==EtiqNumber && i % 2 != 0)
                     {
 
@@ -1228,6 +1231,7 @@ namespace Aromapp
            
                 names.Add(ProductsTable.SelectedRows[0].Cells[0].Value.ToString(),
                                             ProductsTable.SelectedRows[0].Cells[1].Value.ToString());
+
             
             GenerateNamesPDF(names,true);
             Etiquette.Close();
