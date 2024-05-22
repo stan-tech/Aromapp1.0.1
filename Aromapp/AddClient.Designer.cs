@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClient));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-<<<<<<< HEAD
-=======
+
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,7 +38,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.name = new Aromapp.HintTexBox();
             this.phone = new Aromapp.HintTexBox();
             this.address = new Aromapp.HintTexBox();
@@ -299,8 +297,7 @@
             this.iconButton3.Text = "Ok";
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
-<<<<<<< HEAD
-=======
+
             // name
             // 
             this.name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -406,7 +403,6 @@
             this.fax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fax_KeyDown);
             this.fax.Leave += new System.EventHandler(this.faxLeave);
             // 
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             // AddClient
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;

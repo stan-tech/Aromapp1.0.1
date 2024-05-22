@@ -115,11 +115,8 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 15, 3, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 10);
-<<<<<<< HEAD
             this.groupBox1.Size = new System.Drawing.Size(1135, 1110);
-=======
-            this.groupBox1.Size = new System.Drawing.Size(1136, 1110);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fournisseurs";
@@ -139,11 +136,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.61299F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.45471F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-<<<<<<< HEAD
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1129, 1066);
-=======
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1130, 1066);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -159,11 +153,8 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-<<<<<<< HEAD
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1123, 96);
-=======
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1124, 96);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel5.TabIndex = 32;
             // 
             // Ajouter
@@ -177,11 +168,8 @@
             this.Ajouter.Location = new System.Drawing.Point(13, 24);
             this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
             this.Ajouter.Name = "Ajouter";
-<<<<<<< HEAD
             this.Ajouter.Size = new System.Drawing.Size(404, 69);
-=======
-            this.Ajouter.Size = new System.Drawing.Size(405, 69);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.Ajouter.TabIndex = 1;
             this.Ajouter.Text = "    Ajouter un fournisseur";
             this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
@@ -240,11 +228,8 @@
             this.suppliersTable.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.suppliersTable.RowTemplate.Height = 33;
             this.suppliersTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-<<<<<<< HEAD
             this.suppliersTable.Size = new System.Drawing.Size(1109, 659);
-=======
-            this.suppliersTable.Size = new System.Drawing.Size(1110, 659);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.suppliersTable.TabIndex = 27;
             this.suppliersTable.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.suppliersTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -286,11 +271,8 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-<<<<<<< HEAD
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1123, 167);
-=======
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1124, 167);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // searchText
@@ -322,11 +304,8 @@
             this.iconButton4.Location = new System.Drawing.Point(875, 28);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(40, 28, 20, 72);
             this.iconButton4.Name = "iconButton4";
-<<<<<<< HEAD
             this.iconButton4.Size = new System.Drawing.Size(228, 67);
-=======
-            this.iconButton4.Size = new System.Drawing.Size(229, 67);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "Actualiser";
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
@@ -339,11 +318,8 @@
             this.tableLayoutPanel3.Controls.Add(this.groupBox3, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.groupBox4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD
             this.tableLayoutPanel3.Location = new System.Drawing.Point(1161, 3);
-=======
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1162, 3);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -351,11 +327,8 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.69611F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.34982F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-<<<<<<< HEAD
             this.tableLayoutPanel3.Size = new System.Drawing.Size(718, 1132);
-=======
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(717, 1132);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // groupBox2
@@ -369,11 +342,8 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 12);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.groupBox2.Name = "groupBox2";
-<<<<<<< HEAD
             this.groupBox2.Size = new System.Drawing.Size(712, 108);
-=======
-            this.groupBox2.Size = new System.Drawing.Size(711, 108);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nombre de fournisseurs";
@@ -420,11 +390,8 @@
             this.groupBox3.Location = new System.Drawing.Point(3, 322);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.groupBox3.Name = "groupBox3";
-<<<<<<< HEAD
             this.groupBox3.Size = new System.Drawing.Size(712, 800);
-=======
-            this.groupBox3.Size = new System.Drawing.Size(711, 800);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informations sur le client";
@@ -493,11 +460,8 @@
             this.prods.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.prods.RowTemplate.Height = 33;
             this.prods.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-<<<<<<< HEAD
             this.prods.Size = new System.Drawing.Size(654, 162);
-=======
-            this.prods.Size = new System.Drawing.Size(653, 162);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.prods.TabIndex = 48;
             this.prods.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.prods.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -700,11 +664,8 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-<<<<<<< HEAD
             this.tableLayoutPanel6.Size = new System.Drawing.Size(696, 100);
-=======
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(695, 100);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel6.TabIndex = 25;
             // 
             // iconButton5
@@ -734,11 +695,8 @@
             this.iconButton1.Location = new System.Drawing.Point(411, 28);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.iconButton1.Name = "iconButton1";
-<<<<<<< HEAD
             this.iconButton1.Size = new System.Drawing.Size(282, 69);
-=======
-            this.iconButton1.Size = new System.Drawing.Size(281, 69);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Supprimer";
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -755,11 +713,8 @@
             this.groupBox4.Location = new System.Drawing.Point(3, 135);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.groupBox4.Name = "groupBox4";
-<<<<<<< HEAD
             this.groupBox4.Size = new System.Drawing.Size(712, 174);
-=======
-            this.groupBox4.Size = new System.Drawing.Size(711, 174);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dettes";
@@ -772,11 +727,8 @@
             this.DebtsText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DebtsText.Font = new System.Drawing.Font("Calibri", 18.125F, System.Drawing.FontStyle.Bold);
             this.DebtsText.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.DebtsText.Location = new System.Drawing.Point(559, 87);
-=======
-            this.DebtsText.Location = new System.Drawing.Point(558, 87);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.DebtsText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.DebtsText.Name = "DebtsText";
             this.DebtsText.Size = new System.Drawing.Size(50, 60);

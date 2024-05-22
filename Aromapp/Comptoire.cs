@@ -9,10 +9,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.draw;
 using iTextSharp.text.pdf.qrcode;
-<<<<<<< HEAD
+
 using PdfiumViewer;
-=======
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -399,12 +398,8 @@ namespace Aromapp
 
         void AddProduct(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             bool cont = true;
             double buyinPrice;
-=======
-            double buyinPrice;
-
 
             string reference = prods.SelectedRows[0].Cells[0].Value.ToString(),
                 type = prods.SelectedRows[0].Cells[3].Value.ToString();
@@ -414,14 +409,12 @@ namespace Aromapp
             string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
 
            
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             buyinPrice = double.Parse(prods.SelectedRows[0].Cells[4].Value.ToString());
             DialogResult result;
 
             double oldPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()) :
                      oldPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
 
-<<<<<<< HEAD
             if (oldPrice == NewPrice)
             {
                 NewPrice = oldPrice;
@@ -440,34 +433,13 @@ namespace Aromapp
                 {
                     cont = false;
                 }
-=======
-            produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
 
-            l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
-            l_Ventes.MontantHT = NewPrice * quantity;
-
-            nettotalText.Text = (int.Parse(nettotalText.Text) + quantity * NewPrice).ToString();
-            subtotalText.Text = (quantity * NewPrice).ToString();
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
             }
             
             if(cont)
             {
-                string reference = prods.SelectedRows[0].Cells[0].Value.ToString(),
-            type = prods.SelectedRows[0].Cells[3].Value.ToString();
-
-<<<<<<< HEAD
-                tva.SelectedIndex = 0;
-=======
-            CartTable.Rows.Add(reference, l_Ventes.Nomproduits, l_Ventes.Quantité, NewPrice.ToString(), type,
-                l_Ventes.Marge, Qt.Remise, l_Ventes.MontantHT); 
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
-
-                string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
-
-
-
+               
                 BuyingPrices.Add(buyinPrice);
 
                 produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
@@ -499,13 +471,6 @@ namespace Aromapp
             
                 NewPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()):
                      NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-<<<<<<< HEAD
-=======
-         
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
-
-
-<<<<<<< HEAD
 
             string prodID = prods.SelectedRows[0].Cells[0].Value.ToString();
 
@@ -525,14 +490,7 @@ namespace Aromapp
                     MessageBoxer.showGeneralMsg("Le produit " + prodID + " n'est plus disponible. Vérifiez la liste des produits.");
 
                 } 
-            
-=======
-            qt.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-            qt.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
-            qt.Added += AddProduct;
-            qt.ShowDialog();
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
         }
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,19 +40,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -189,11 +176,8 @@
             "Unisexe",
             "Emballage",
             "Sachet"});
-<<<<<<< HEAD
-            this.types.Location = new System.Drawing.Point(3, 50);
-=======
+
             this.types.Location = new System.Drawing.Point(3, 52);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.types.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.types.Name = "types";
             this.types.Size = new System.Drawing.Size(275, 37);
@@ -205,11 +189,8 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.Bon);
-<<<<<<< HEAD
-            this.panel4.Location = new System.Drawing.Point(851, 20);
-=======
+
             this.panel4.Location = new System.Drawing.Point(851, 22);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(290, 74);
@@ -259,11 +240,8 @@
             "Derniér moi",
             "",
             " "});
-<<<<<<< HEAD
-            this.Nouveautés.Location = new System.Drawing.Point(306, 52);
-=======
+
             this.Nouveautés.Location = new System.Drawing.Point(306, 54);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.Nouveautés.Name = "Nouveautés";
             this.Nouveautés.Size = new System.Drawing.Size(278, 37);
             this.Nouveautés.TabIndex = 27;
@@ -311,13 +289,9 @@
             this.Ajouter.FillColor = System.Drawing.Color.RoyalBlue;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.Ajouter.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.Ajouter.Location = new System.Drawing.Point(13, 3);
-            this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 3, 13, 3);
-=======
+
             this.Ajouter.Location = new System.Drawing.Point(13, 24);
             this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.Ajouter.Name = "Ajouter";
             this.Ajouter.Size = new System.Drawing.Size(398, 62);
             this.Ajouter.TabIndex = 1;
@@ -327,20 +301,15 @@
             // ProductsTable
             // 
             this.ProductsTable.AllowUserToResizeRows = false;
-<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-=======
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.ProductsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductsTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ProductsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-<<<<<<< HEAD
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -358,25 +327,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle3;
-=======
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
-            this.ProductsTable.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle23;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.ProductsTable.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.ProductsTable.Location = new System.Drawing.Point(10, 285);
@@ -384,7 +335,6 @@
             this.ProductsTable.Name = "ProductsTable";
             this.ProductsTable.ReadOnly = true;
             this.ProductsTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -402,25 +352,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle5;
-=======
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
-            this.ProductsTable.RowHeadersVisible = false;
-            this.ProductsTable.RowHeadersWidth = 82;
-            this.ProductsTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle25;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.ProductsTable.RowTemplate.Height = 33;
             this.ProductsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductsTable.Size = new System.Drawing.Size(1147, 692);
@@ -546,7 +478,6 @@
             // 
             // TVPP
             // 
-<<<<<<< HEAD
             this.TVPP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -561,20 +492,7 @@
             series1.Name = "Series1";
             this.TVPP.Series.Add(series1);
             this.TVPP.Size = new System.Drawing.Size(654, 386);
-=======
-            chartArea9.Name = "ChartArea1";
-            this.TVPP.ChartAreas.Add(chartArea9);
-            this.TVPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend9.Name = "Legend1";
-            this.TVPP.Legends.Add(legend9);
-            this.TVPP.Location = new System.Drawing.Point(10, 41);
-            this.TVPP.Name = "TVPP";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.TVPP.Series.Add(series9);
-            this.TVPP.Size = new System.Drawing.Size(654, 389);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.TVPP.TabIndex = 0;
             this.TVPP.Text = "chart1";
             this.TVPP.Click += new System.EventHandler(this.TVPP_Click);
@@ -599,7 +517,6 @@
             // 
             // VPJ
             // 
-<<<<<<< HEAD
             this.VPJ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -616,22 +533,7 @@
             series2.Name = "Series1";
             this.VPJ.Series.Add(series2);
             this.VPJ.Size = new System.Drawing.Size(654, 516);
-=======
-            chartArea10.Name = "ChartArea1";
-            this.VPJ.ChartAreas.Add(chartArea10);
-            this.VPJ.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend10.Name = "Legend1";
-            this.VPJ.Legends.Add(legend10);
-            this.VPJ.Location = new System.Drawing.Point(10, 41);
-            this.VPJ.Name = "VPJ";
-            this.VPJ.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.VPJ.Series.Add(series10);
-            this.VPJ.Size = new System.Drawing.Size(654, 476);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.VPJ.TabIndex = 1;
             this.VPJ.Text = "chart2";
             this.VPJ.Click += new System.EventHandler(this.VPJ_Click);
@@ -645,20 +547,14 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.28487F));
             this.tableLayoutPanel6.Controls.Add(this.iconButton3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.iconButton1, 1, 0);
-<<<<<<< HEAD
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 1032);
-=======
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 1005);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 26);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-<<<<<<< HEAD
             this.tableLayoutPanel6.Size = new System.Drawing.Size(674, 74);
-=======
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(674, 101);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.tableLayoutPanel6.TabIndex = 25;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
@@ -670,17 +566,11 @@
             this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton3.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.iconButton3.Location = new System.Drawing.Point(3, 5);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 3, 5, 0);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(380, 69);
-=======
-            this.iconButton3.Location = new System.Drawing.Point(3, 32);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 3, 5, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(381, 69);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.iconButton3.TabIndex = 1;
             this.iconButton3.Text = "Imprimer les étiquettes";
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
@@ -692,17 +582,11 @@
             this.iconButton1.BorderRadius = 5;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.iconButton1.Location = new System.Drawing.Point(393, 5);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 0);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(278, 69);
-=======
-            this.iconButton1.Location = new System.Drawing.Point(394, 32);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(277, 69);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Exporter en pdf";
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);

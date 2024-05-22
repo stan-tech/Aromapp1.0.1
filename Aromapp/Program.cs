@@ -16,13 +16,8 @@ namespace Aromapp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-
-            using (DBHelper helper = new DBHelper())
-            {
-=======
+      
             Application.Run(new Home());
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
             /*
                         using (DBHelper helper = new DBHelper())
@@ -59,16 +54,12 @@ namespace Aromapp
                             }
                         }*/
 
-<<<<<<< HEAD
-                }
-            }
-
-=======
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
-
-
-        }
+                
+         }
 
 
     }
+
+
+    
 }

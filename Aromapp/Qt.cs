@@ -17,11 +17,8 @@ namespace Aromapp
         private int remise1;
 
         public long Quantity { get; set; }
-<<<<<<< HEAD
         public static double OptionalPrice { get; set; }
-=======
         public static double Remise { get; set; }
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
         public event EventHandler Added;
         public double totalBulk { get; set; }
@@ -32,11 +29,8 @@ namespace Aromapp
         public Qt()
         {
             InitializeComponent();
-<<<<<<< HEAD
             OptionalPrice = totalRetail;
-=======
             Remise = 0;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
         }
 
         public void OnAdded(EventArgs e)
@@ -62,16 +56,12 @@ namespace Aromapp
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             string s = newPrice.Text;
-=======
-            string s = reduction.Text;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
 
             if (qtt.Text.Length == 0)
             {
                 MessageBox.Show("Entrez un numéro s'il vous plait");
-<<<<<<< HEAD
                 OptionalPrice = 0;
             }
             else
@@ -81,24 +71,7 @@ namespace Aromapp
                 SaleInfo.quantity = double.Parse(qtt.Text.Replace(".", ","));
 
                  Comptoire.detail = detail.Checked;
-=======
-                Remise = 0;
-            }
-            else
-            {
-                Comptoire.quantity = int.Parse(qtt.Text.ToString());
-                
-                SaleInfo.quantity = int.Parse(qtt.Text.ToString());
 
-                if (detail.Checked)
-                {
-                    Comptoire.detail = detail.Checked;
-
-                                    
-
-                    SaleInfo.detail = detail.Checked;
-                    OnAdded(e);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
                 Comptoire.NewPrice = Comptoire.detail ? double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ",")) :
                     double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
@@ -131,10 +104,8 @@ namespace Aromapp
         private void Qt_Load(object sender, EventArgs e)
         {
 
-<<<<<<< HEAD
             qtt.Select();
-=======
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
             totalRetailText.Text = totalRetail.ToString("F2") + " DA";
             totalBulkText.Text = totalBulk.ToString("F2")+" DA";
 
@@ -149,13 +120,9 @@ namespace Aromapp
         private void detail_Click(object sender, EventArgs e)
         {
             gros.Checked = false;
-<<<<<<< HEAD
             Comptoire.NewPrice = double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
             SaleInfo.NewPrice = double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
-=======
-            Comptoire.NewPrice = double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
-            SaleInfo.NewPrice = double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
 
 
 
@@ -165,13 +132,9 @@ namespace Aromapp
         private void gros_Click(object sender, EventArgs e)
         {
             detail.Checked = false;
-<<<<<<< HEAD
             Comptoire.NewPrice = double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
             SaleInfo.NewPrice = double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
-=======
-            Comptoire.NewPrice = double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
-            SaleInfo.NewPrice = double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
 
 
 
@@ -230,20 +193,14 @@ namespace Aromapp
 
         private void reduc_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             HintUtils.HideHint(newPrice);
-=======
-            HintUtils.HideHint(reduction);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
         }
 
         private void reduc_Leave(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             HintUtils.ShowHint(newPrice);
-=======
-            HintUtils.ShowHint(reduction);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
         }
 
         private void qtt_KeyDown1(object sender, KeyEventArgs e)
@@ -251,44 +208,27 @@ namespace Aromapp
 
             if (e.KeyCode == Keys.Enter)
             {
-<<<<<<< HEAD
                 iconButton3_Click(sender, e);
                 e.SuppressKeyPress = true;
                 this.Close();
-=======
-                reduc_Click(sender, e);
-                e.SuppressKeyPress = true;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
 
             }  
         }
 
         private void qtt_TextChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             bool priceModified = newPrice.Text != newPrice.Tag.ToString() &&
                 !string.IsNullOrEmpty(newPrice.Text);
             if (priceModified)
             {
                 
                 OptionalPrice = double.Parse(newPrice.Text);
-=======
-            if(reduction.Text== reduction.Tag.ToString() || string.IsNullOrEmpty(reduction.Text))
-            {
-                Remise = 0;
-
-            }
-            else
-            {
-                Remise = double.Parse(reduction.Text);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
             }
 
             if (!string.IsNullOrEmpty(qtt.Text)&& qtt.Text != qtt.Tag.ToString())
             {
-
-<<<<<<< HEAD
 
 
                 totalBulkText.Text = !priceModified?(totalBulk * double.Parse(qtt.Text.Replace(".",","))).ToString("F2") + " DA"
@@ -301,20 +241,6 @@ double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.T
 
                 SaleInfo.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ",")) :
          double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
-=======
-                double newRtail = totalRetail - Remise
-                    , newtotal = totalBulk - Remise;
-
-
-                totalBulkText.Text = (newtotal * double.Parse(qtt.Text)).ToString("F2") + " DA";
-                totalRetailText.Text = (newRtail * double.Parse(qtt.Text)).ToString("F2") + " DA";
-
-                Comptoire.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text) :
-double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
-
-                SaleInfo.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text) :
-         double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
 
             }
@@ -337,7 +263,6 @@ double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.T
 
           
           
-<<<<<<< HEAD
             if (!string.IsNullOrEmpty(newPrice.Text) && newPrice.Text != newPrice.Tag.ToString())
             {
                 OptionalPrice = double.Parse(newPrice.Text);
@@ -347,37 +272,20 @@ double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.T
 
                 totalBulkText.Text = (newRtail * double.Parse(qtt.Text.Replace(".", ","))).ToString("F2") + " DA";
                 totalRetailText.Text = (newRtail * double.Parse(qtt.Text.Replace(".", ","))).ToString("F2") + " DA";
-=======
-            if (!string.IsNullOrEmpty(reduction.Text) && reduction.Text != reduction.Tag.ToString())
-            {
-                Remise = double.Parse(reduction.Text);
 
-                double newRtail = totalRetail - Remise
-                   , newtotal = totalBulk - Remise;
-
-
-                totalBulkText.Text = (newtotal * double.Parse(qtt.Text)).ToString("F2") + " DA";
-                totalRetailText.Text = (newRtail * double.Parse(qtt.Text)).ToString("F2") + " DA";
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
 
             }
             else
             {
-<<<<<<< HEAD
                 OptionalPrice = (detail.Checked) ? totalRetail : totalBulk;
                 totalBulkText.Text = (totalBulk * double.Parse(qtt.Text.Replace(".", ","))).ToString("F2") + " DA";
                 totalRetailText.Text = (totalRetail * double.Parse(qtt.Text.Replace(".", ","))).ToString("F2") + " DA";
-=======
-                Remise = 0;
-                totalBulkText.Text = (totalBulk * double.Parse(qtt.Text)).ToString("F2") + " DA";
-                totalRetailText.Text = (totalRetail * double.Parse(qtt.Text)).ToString("F2") + " DA";
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
+
 
                
             }
 
 
-<<<<<<< HEAD
             Comptoire.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ",")):
        double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ","));
             SaleInfo.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text.Replace(".", ",")) :
@@ -396,15 +304,6 @@ double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.T
 
             }
         }
-=======
-            Comptoire.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text):
-       double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
-            SaleInfo.NewPrice = (!detail.Checked) ? double.Parse(totalBulkText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text) :
-       double.Parse(totalRetailText.Text.Replace("DA", "").Trim()) / double.Parse(qtt.Text);
 
-        }
-
-       
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
     }
 }

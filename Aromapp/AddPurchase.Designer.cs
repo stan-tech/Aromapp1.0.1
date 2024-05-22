@@ -31,19 +31,16 @@ namespace Aromapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.retirer = new Guna.UI2.WinForms.Guna2Button();
             this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
@@ -78,11 +75,9 @@ namespace Aromapp
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-<<<<<<< HEAD
-=======
+
             this.Amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.suppName = new Guna.UI2.WinForms.Guna2TextBox();
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -654,22 +649,18 @@ namespace Aromapp
             this.cart.AllowUserToAddRows = false;
             this.cart.AllowUserToDeleteRows = false;
             this.cart.AllowUserToResizeRows = false;
-<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-=======
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.cart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cart.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.cart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-<<<<<<< HEAD
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -687,7 +678,6 @@ namespace Aromapp
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.DefaultCellStyle = dataGridViewCellStyle3;
-=======
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -705,14 +695,12 @@ namespace Aromapp
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.DefaultCellStyle = dataGridViewCellStyle13;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.cart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.cart.Location = new System.Drawing.Point(13, 571);
             this.cart.Name = "cart";
             this.cart.ReadOnly = true;
             this.cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -731,7 +719,6 @@ namespace Aromapp
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.RowsDefaultCellStyle = dataGridViewCellStyle5;
-=======
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -750,7 +737,6 @@ namespace Aromapp
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cart.RowsDefaultCellStyle = dataGridViewCellStyle15;
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             this.cart.RowTemplate.Height = 33;
             this.cart.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cart.Size = new System.Drawing.Size(1040, 623);
@@ -838,8 +824,7 @@ namespace Aromapp
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1541, 1334);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
-<<<<<<< HEAD
-=======
+
             // Amount
             // 
             this.Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -886,7 +871,6 @@ namespace Aromapp
             this.suppName.Click += new System.EventHandler(this.suppNameClick);
             this.suppName.Leave += new System.EventHandler(this.suppNameLeave);
             // 
->>>>>>> 5d140cb56cb55814e30098b42a3b5e5fe92a1409
             // AddPurchase
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
