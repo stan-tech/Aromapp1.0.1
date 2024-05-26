@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dettes = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.soldProducts)).BeginInit();
             this.panel1.SuspendLayout();
@@ -226,10 +227,11 @@
             // 
             // custNameText
             // 
+            this.custNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.custNameText.AutoSize = true;
             this.custNameText.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custNameText.ForeColor = System.Drawing.Color.White;
-            this.custNameText.Location = new System.Drawing.Point(254, 50);
+            this.custNameText.Location = new System.Drawing.Point(268, 73);
             this.custNameText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.custNameText.Name = "custNameText";
             this.custNameText.Size = new System.Drawing.Size(56, 28);
@@ -246,6 +248,7 @@
             this.label12.Size = new System.Drawing.Size(232, 50);
             this.label12.TabIndex = 35;
             this.label12.Text = "Nome de client:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label2
             // 
@@ -263,7 +266,7 @@
             this.custRef.AutoSize = true;
             this.custRef.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custRef.ForeColor = System.Drawing.Color.White;
-            this.custRef.Location = new System.Drawing.Point(254, 0);
+            this.custRef.Location = new System.Drawing.Point(268, 0);
             this.custRef.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.custRef.Name = "custRef";
             this.custRef.Size = new System.Drawing.Size(56, 28);
@@ -274,7 +277,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(678, 0);
+            this.label4.Location = new System.Drawing.Point(598, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(196, 50);
@@ -286,7 +289,7 @@
             this.TotalAchat.AutoSize = true;
             this.TotalAchat.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAchat.ForeColor = System.Drawing.Color.White;
-            this.TotalAchat.Location = new System.Drawing.Point(891, 0);
+            this.TotalAchat.Location = new System.Drawing.Point(811, 0);
             this.TotalAchat.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TotalAchat.Name = "TotalAchat";
             this.TotalAchat.Size = new System.Drawing.Size(56, 28);
@@ -297,32 +300,37 @@
             // 
             this.label5.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(678, 50);
+            this.label5.Location = new System.Drawing.Point(598, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 50);
             this.label5.TabIndex = 35;
             this.label5.Text = "Dettes:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // dettes
             // 
+            this.dettes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dettes.AutoSize = true;
             this.dettes.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dettes.ForeColor = System.Drawing.Color.White;
-            this.dettes.Location = new System.Drawing.Point(891, 50);
+            this.dettes.Location = new System.Drawing.Point(811, 73);
             this.dettes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.dettes.Name = "dettes";
             this.dettes.Size = new System.Drawing.Size(56, 28);
             this.dettes.TabIndex = 37;
             this.dettes.Text = "Null";
+            this.dettes.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.89956F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.10044F));
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.23077F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.76923F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 382F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
+            this.tableLayoutPanel1.Controls.Add(this.iconButton4, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TotalAchat, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.dettes, 3, 1);
@@ -337,8 +345,24 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1268, 101);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1364, 101);
             this.tableLayoutPanel1.TabIndex = 38;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton4.BorderRadius = 5;
+            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
+            this.iconButton4.Location = new System.Drawing.Point(1128, 51);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(1);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(235, 49);
+            this.iconButton4.TabIndex = 47;
+            this.iconButton4.Text = "+ Dettes";
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -402,5 +426,6 @@
         private System.Windows.Forms.Label dettes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Button iconButton4;
     }
 }

@@ -52,7 +52,6 @@ namespace Aromapp
             InitializeComponent();
             this.Load += InvoiceLoad;
         }
-        PdfViewer pdfViewer;
         public void InvoiceLoad(object sender, EventArgs e)
         {
             guna2TabControl1.SelectedIndex = 0;

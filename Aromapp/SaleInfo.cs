@@ -768,13 +768,13 @@ namespace Aromapp
         Qt qtForm;
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            NewPrice = detail ? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()) :
-     NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+            NewPrice = detail ? double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString()) :
+     NewPrice = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
 
             qtForm = new Qt();
 
-            qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-            qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
+            qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
+            qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
 
             qtForm.Added += AddProduct;
             qtForm.ShowDialog();
@@ -787,13 +787,13 @@ namespace Aromapp
 
 
             string reference = prods.SelectedRows[0].Cells[0].Value.ToString(),
-                type = prods.SelectedRows[0].Cells[3].Value.ToString();
+                type = prods.SelectedRows[0].Cells[4].Value.ToString();
 
 
-            string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
+            string nomproduits = prods.SelectedRows[0].Cells[2].Value.ToString();
 
        
-            buyinPrice = double.Parse(prods.SelectedRows[0].Cells[4].Value.ToString());
+            buyinPrice = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
 
             BuyingPrices.Add(buyinPrice);
 

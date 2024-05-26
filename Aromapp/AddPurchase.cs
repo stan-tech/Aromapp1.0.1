@@ -302,6 +302,23 @@ namespace Aromapp
             product.BarCode = BarCodePref + DateTime.Now.Year + DateTime.Now.Month +
                 DateTime.Now.Day + product.ID.Replace("PR", "").TrimStart('0');
 
+            string suppID;
+            helper.getSupplierID(suppName.Text, out suppID);
+            product.c_fr = suppID;
+
+
+            if (string.IsNullOrEmpty(product.c_fr))
+            {
+                product.c_fr = DBHelper.generateID("FR", Tables.Fourniseur);
+                Supplier supplier = new Supplier(product.c_fr, suppName.Text);
+
+                using (DBHelper helper = new DBHelper())
+                {
+                    helper.InsertSupplier(supplier);
+
+                }     
+            }
+
             if (Typpe.SelectedItem != null)
             {
                 product.Type = Typpe.SelectedItem.ToString();
@@ -507,7 +524,7 @@ namespace Aromapp
                 {
                     if (collection.Contains(suppName.Text))
                     {
-                        foreach (var item in ids)
+                        foreach (var item in suppNames)
                         {
                             if (item.Value.Equals(suppName.Text))
                             {
@@ -615,9 +632,7 @@ namespace Aromapp
 
 
         }
-        AutoCompleteStringCollection references;
-        
-
+  
         private void prodRef_TextChanged(object sender, EventArgs e)
         {
             /*            using (DBHelper helper = new DBHelper())
@@ -762,7 +777,7 @@ namespace Aromapp
         }
 
         AutoCompleteStringCollection collection;
-        Dictionary<string, string> ids;
+        Dictionary<string, string> suppNames;
         private void suppName_TextChanged(object sender, EventArgs e)
         {
 
@@ -771,7 +786,7 @@ namespace Aromapp
 
                 using (DBHelper helper = new DBHelper())
                 {
-                    collection = helper.GetSupplierNames(suppName.Text, out ids);
+                    collection = helper.GetSupplierNames(suppName.Text, out suppNames);
 
                 }
 
@@ -834,6 +849,9 @@ namespace Aromapp
 
                 StockAlert_Click(sender, e);
                 StockAlert.Text = product.StockAlert.ToString();
+
+                suppNameClick(sender, e);
+                suppName.Text = helper.getSupplierInfo(product.c_fr).Nom;
 
                 string prodType = product.Type.Trim();
                 string unit = product.Unit;

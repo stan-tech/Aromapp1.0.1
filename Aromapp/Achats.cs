@@ -17,7 +17,6 @@ namespace Aromapp
         AddPurchase addPurchase;
         BackgroundWorker worker = new BackgroundWorker();
         bool searching = false;
-        string searchBy;
         public event EventHandler QTChanged;
 
         public Achats()
@@ -149,7 +148,7 @@ namespace Aromapp
         private void BuyedProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            Supplier supplier = helper.selectSupplierInfo(BuyedProducts.SelectedRows[0].Cells[3].Value.ToString());
+            Supplier supplier = helper.getSupplierInfo(BuyedProducts.SelectedRows[0].Cells[3].Value.ToString());
 
             netTotalText.Text = BuyedProducts.SelectedRows[0].Cells[5].Value.ToString();
             paidAmtText.Text = BuyedProducts.SelectedRows[0].Cells[8].Value.ToString();

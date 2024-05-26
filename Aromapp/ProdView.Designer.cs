@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MaingroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,7 +38,7 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.SA = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.pCodeText = new System.Windows.Forms.Label();
+            this.pSuppText = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dateAddedText = new System.Windows.Forms.Label();
             this.groudpjf = new System.Windows.Forms.GroupBox();
@@ -61,10 +61,10 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
             this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
-            this.amount = new Aromapp.HintTexBox();
             this.updateChoiceBox = new System.Windows.Forms.ComboBox();
+            this.amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.MaingroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,7 +88,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.50598F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.49402F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.MaingroupBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -99,22 +99,23 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1928, 1240);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // groupBox1
+            // MaingroupBox
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MaingroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(20, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 15, 3, 10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.groupBox1.Size = new System.Drawing.Size(931, 1205);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Clients";
+            this.MaingroupBox.Controls.Add(this.tableLayoutPanel2);
+            this.MaingroupBox.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.MaingroupBox.ForeColor = System.Drawing.Color.White;
+            this.MaingroupBox.Location = new System.Drawing.Point(20, 15);
+            this.MaingroupBox.Margin = new System.Windows.Forms.Padding(20, 15, 3, 10);
+            this.MaingroupBox.Name = "MaingroupBox";
+            this.MaingroupBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.MaingroupBox.Size = new System.Drawing.Size(931, 1205);
+            this.MaingroupBox.TabIndex = 0;
+            this.MaingroupBox.TabStop = false;
+            this.MaingroupBox.Tag = "Référence du produit: ";
+            this.MaingroupBox.Text = "Référence du produit: ";
             // 
             // tableLayoutPanel2
             // 
@@ -236,7 +237,7 @@
             this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox11.Controls.Add(this.pCodeText);
+            this.groupBox11.Controls.Add(this.pSuppText);
             this.groupBox11.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox11.ForeColor = System.Drawing.Color.White;
             this.groupBox11.Location = new System.Drawing.Point(6, 18);
@@ -246,20 +247,20 @@
             this.groupBox11.Size = new System.Drawing.Size(907, 81);
             this.groupBox11.TabIndex = 26;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Référence du produit";
+            this.groupBox11.Text = "Fournisseur";
             // 
-            // pCodeText
+            // pSuppText
             // 
-            this.pCodeText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCodeText.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.pCodeText.ForeColor = System.Drawing.Color.White;
-            this.pCodeText.Location = new System.Drawing.Point(6, 37);
-            this.pCodeText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.pCodeText.Name = "pCodeText";
-            this.pCodeText.Size = new System.Drawing.Size(895, 38);
-            this.pCodeText.TabIndex = 0;
-            this.pCodeText.Text = "-";
-            this.pCodeText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pSuppText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pSuppText.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.pSuppText.ForeColor = System.Drawing.Color.White;
+            this.pSuppText.Location = new System.Drawing.Point(6, 37);
+            this.pSuppText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.pSuppText.Name = "pSuppText";
+            this.pSuppText.Size = new System.Drawing.Size(895, 38);
+            this.pSuppText.TabIndex = 0;
+            this.pSuppText.Text = "-";
+            this.pSuppText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox5
             // 
@@ -466,6 +467,7 @@
             // 
             this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.delete.BorderRadius = 5;
             this.delete.FillColor = System.Drawing.Color.Red;
             this.delete.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.delete.ForeColor = System.Drawing.Color.White;
@@ -475,7 +477,6 @@
             this.delete.Size = new System.Drawing.Size(960, 69);
             this.delete.TabIndex = 45;
             this.delete.Text = " Supprimer ce produit";
-            this.delete.BorderRadius = 5;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // label1
@@ -546,8 +547,8 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
             this.groupBox3.Controls.Add(this.amount);
+            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
             this.groupBox3.Controls.Add(this.updateChoiceBox);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
@@ -579,6 +580,7 @@
             // 
             this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton3.BorderRadius = 5;
             this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton3.ForeColor = System.Drawing.Color.White;
@@ -588,14 +590,13 @@
             this.iconButton3.Size = new System.Drawing.Size(437, 69);
             this.iconButton3.TabIndex = 1;
             this.iconButton3.Text = "Mettre à jour";
-            this.iconButton3.BorderRadius = 5;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton1
             // 
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.iconButton1.BorderRadius = 5;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.Location = new System.Drawing.Point(450, 28);
@@ -604,26 +605,7 @@
             this.iconButton1.Size = new System.Drawing.Size(438, 69);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Annuler";
-            this.iconButton1.BorderRadius = 5;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // amount
-            // 
-            this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.amount.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.amount.ForeColor = System.Drawing.Color.Gray;
-            this.amount.Location = new System.Drawing.Point(37, 157);
-            this.amount.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(891, 47);
-            this.amount.TabIndex = 31;
-            this.amount.Tag = "Entrez une nouvelle valeur...";
-            this.amount.Text = "Entrez une nouvelle valeur...";
-            this.amount.Click += new System.EventHandler(this.amount_Click);
-            this.amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.amount_KeyDown);
-            this.amount.Leave += new System.EventHandler(this.amount_Leave);
             // 
             // updateChoiceBox
             // 
@@ -638,12 +620,40 @@
             "Prix d\'achat par unité",
             "Prix de vente en gros par unité",
             "Prix de vente au détail par unité",
-            "Alerte de stock"});
+            "Alerte de stock",
+            "Fournisseur"});
             this.updateChoiceBox.Location = new System.Drawing.Point(37, 81);
             this.updateChoiceBox.Name = "updateChoiceBox";
             this.updateChoiceBox.Size = new System.Drawing.Size(891, 47);
             this.updateChoiceBox.TabIndex = 30;
             this.updateChoiceBox.SelectedIndexChanged += new System.EventHandler(this.updateChoiceBox_SelectedIndexChanged);
+            // 
+            // amount
+            // 
+            this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.amount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.amount.DefaultText = "Entrez une nouvelle valeur...";
+            this.amount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.amount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.amount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.amount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.amount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.amount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.amount.Location = new System.Drawing.Point(37, 157);
+            this.amount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.amount.Name = "amount";
+            this.amount.PasswordChar = '\0';
+            this.amount.PlaceholderText = "";
+            this.amount.SelectedText = "";
+            this.amount.Size = new System.Drawing.Size(891, 47);
+            this.amount.TabIndex = 33;
+            this.amount.Tag = "Entrez une nouvelle valeur...";
+            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
+            this.amount.Click += new System.EventHandler(this.amount_Click);
+            this.amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.amount_KeyDown);
+            this.amount.Leave += new System.EventHandler(this.amount_Leave);
             // 
             // ProdView
             // 
@@ -665,7 +675,7 @@
             this.Text = "Details sur le produit ";
             this.Load += new System.EventHandler(this.ProdView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.MaingroupBox.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -681,7 +691,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -690,7 +699,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox MaingroupBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -700,7 +709,7 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label SA;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Label pCodeText;
+        private System.Windows.Forms.Label pSuppText;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label dateAddedText;
         private System.Windows.Forms.GroupBox groudpjf;
@@ -718,11 +727,11 @@
         private System.Windows.Forms.ComboBox Tyype;
         private System.Windows.Forms.ComboBox updateChoiceBox;
         private System.Windows.Forms.Label label1;
-        private HintTexBox amount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private Guna.UI2.WinForms.Guna2Button iconButton3;
         private Guna.UI2.WinForms.Guna2Button iconButton1;
         private Guna.UI2.WinForms.Guna2Button delete;
         private System.Windows.Forms.Label BARCODE;
+        private Guna.UI2.WinForms.Guna2TextBox amount;
     }
 }

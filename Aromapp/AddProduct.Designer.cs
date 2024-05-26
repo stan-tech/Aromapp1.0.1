@@ -1,4 +1,6 @@
-﻿namespace Aromapp
+﻿using Guna.UI2.WinForms;
+
+namespace Aromapp
 {
     partial class AddProduct
     {
@@ -40,8 +42,7 @@
             this.Unit = new System.Windows.Forms.ComboBox();
             this.priceSG = new Aromapp.HintTexBox();
             this.Alert = new Aromapp.HintTexBox();
-            this.supp = new Aromapp.HintTexBox();
-
+            this.suppName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Annuler = new Guna.UI2.WinForms.Guna2Button();
             this.OkButton = new Guna.UI2.WinForms.Guna2Button();
@@ -78,8 +79,8 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.56673F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.43327F));
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -185,18 +186,15 @@
             this.tableLayoutPanel2.Controls.Add(this.Unit, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.priceSG, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Alert, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.supp, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.suppName, 0, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 332);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.44481F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.44481F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.11037F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 332);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(984, 266);
@@ -234,8 +232,7 @@
             "G",
             "KG",
             "M"});
-            this.Unit.Location = new System.Drawing.Point(512, 88);
-            this.Unit.Location = new System.Drawing.Point(512, 146);
+            this.Unit.Location = new System.Drawing.Point(512, 101);
             this.Unit.Margin = new System.Windows.Forms.Padding(20, 13, 20, 3);
             this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(452, 41);
@@ -268,8 +265,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Alert.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Alert.ForeColor = System.Drawing.Color.Gray;
-            this.Alert.Location = new System.Drawing.Point(20, 78);
-            this.Alert.Location = new System.Drawing.Point(20, 136);
+            this.Alert.Location = new System.Drawing.Point(20, 91);
             this.Alert.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
             this.Alert.Name = "Alert";
             this.Alert.Size = new System.Drawing.Size(447, 47);
@@ -277,26 +273,31 @@
             this.Alert.Tag = "Alerte de stock...";
             this.Alert.Text = "Alerte de stock...";
             this.Alert.Click += new System.EventHandler(this.Alert_Click);
+            this.Alert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Alert_KeyDown);
             this.Alert.Leave += new System.EventHandler(this.Alert_Leave);
             // 
-            // supp
+            // suppName
             // 
-            this.supp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.suppName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.supp.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.supp.ForeColor = System.Drawing.Color.Gray;
-            this.supp.Location = new System.Drawing.Point(20, 153);
-            this.supp.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
-            this.supp.Name = "supp";
-            this.supp.Size = new System.Drawing.Size(447, 47);
-            this.supp.TabIndex = 29;
-            this.supp.Tag = "Fournisseur...";
-            this.supp.Text = "Fournisseur...";
-            this.supp.Click += new System.EventHandler(this.Alert_Click);
-            this.supp.Leave += new System.EventHandler(this.Alert_Leave);
+            this.suppName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.suppName.DefaultText = "Fournisseur...";
+            this.suppName.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.suppName.ForeColor = System.Drawing.Color.Gray;
+            this.suppName.Location = new System.Drawing.Point(20, 179);
+            this.suppName.Margin = new System.Windows.Forms.Padding(20, 3, 25, 42);
+            this.suppName.Name = "suppName";
+            this.suppName.PasswordChar = '\0';
+            this.suppName.PlaceholderText = "";
+            this.suppName.SelectedText = "";
+            this.suppName.Size = new System.Drawing.Size(447, 45);
+            this.suppName.TabIndex = 29;
+            this.suppName.Tag = "Fournisseur...";
+            this.suppName.TextChanged += new System.EventHandler(this.supp_TextChanged);
+            this.suppName.Click += new System.EventHandler(this.suppName_Click);
+            this.suppName.Leave += new System.EventHandler(this.suppName_Leave);
             // 
-
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -392,6 +393,6 @@
         private Guna.UI2.WinForms.Guna2Button OkButton;
         private System.Windows.Forms.ComboBox Tyype;
         private System.Windows.Forms.ComboBox Unit;
-        private HintTexBox supp;
+        private Guna2TextBox suppName;
     }
 }

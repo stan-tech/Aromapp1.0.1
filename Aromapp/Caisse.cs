@@ -461,7 +461,7 @@ namespace Aromapp
             bindingSource.DataSource = table;
             regLines.DataSource = bindingSource;
         }
-        private async void regLines_Scroll(object sender, ScrollEventArgs e)
+        private void regLines_Scroll(object sender, ScrollEventArgs e)
         {
             int totalHeight = 0;
 

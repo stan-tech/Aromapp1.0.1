@@ -253,6 +253,12 @@
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lend.Designer.cs">
+      <DependentUpon>Lend.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lend.resx">
+      <DependentUpon>Lend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>

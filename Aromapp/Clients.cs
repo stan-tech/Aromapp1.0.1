@@ -103,7 +103,6 @@ namespace Aromapp
             debts.ShowDialog();
         }
 
-        bool maximazed = false;
         BindingSource bindingSource;
 
         private void search_Leave(object sender, EventArgs e)

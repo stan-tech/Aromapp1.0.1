@@ -16,7 +16,6 @@ namespace Aromapp
     public partial class SignIn : DevExpress.XtraEditors.XtraForm
     {
         List<string> prodIDs = new List<string>();
-        public event EventHandler Passed;
         public static User SelectedUser;
 
         List<User> users;

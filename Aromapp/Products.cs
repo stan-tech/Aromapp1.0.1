@@ -170,6 +170,7 @@ namespace Aromapp
 
             ProductsTable.Invoke((Action)(() => {
 
+                ProductsTable.Columns.Clear();
                 ProductsTable.DataSource = table;
 
             }));
@@ -511,9 +512,9 @@ namespace Aromapp
                 for (int i =1;i<=EtiqNumber;i++)
                 {
                     Phrase phrase = new Phrase();
-                    string key = ProductsTable.SelectedRows[0].Cells[3].Value.ToString();
+                    string key = ProductsTable.SelectedRows[0].Cells[4].Value.ToString();
 
-                    string value =ProductsTable.SelectedRows[0].Cells[1].Value.ToString();
+                    string value =ProductsTable.SelectedRows[0].Cells[2].Value.ToString();
 
 
 
@@ -664,6 +665,7 @@ namespace Aromapp
 
             using (DBHelper helper = new DBHelper())
             {
+                ProductsTable.Columns.Clear();
                 ProductsTable.DataSource = helper.GetNewestProducts(duration);
 
             }
@@ -785,8 +787,9 @@ namespace Aromapp
 
             using (DBHelper helper = new DBHelper())
             {
-
-                ProductsTable.DataSource = helper.selectAllProducts(limit, 1);
+                DataTable table = helper.selectAllProducts(limit, 1);
+                ProductsTable.Columns.Clear();
+                ProductsTable.DataSource = table;
 
                 names = helper.GetTopSoldProductsNames();
                 totals = helper.GetTopSoldProductsTotals();
@@ -880,7 +883,8 @@ namespace Aromapp
             {
                 if (searchText.Text != searchText.Tag.ToString())
                 {
-                    ProductsTable.DataSource = helper.searchForProduct(SelectedTable,searchText.Text.ToLower());
+                    DataTable table = helper.searchForProduct(SelectedTable, searchText.Text.ToLower());
+                    ProductsTable.DataSource = table;
 
                 }
             }
@@ -1201,13 +1205,13 @@ namespace Aromapp
         private void detailsSurLeProduitToolStripMenuItem_Click(object sender, EventArgs e)
         {
                 string id = ProductsTable.SelectedRows[0].Cells[0].Value.ToString(),
-        name = ProductsTable.SelectedRows[0].Cells[1].Value.ToString(),
-        priceP = ProductsTable.SelectedRows[0].Cells[7].Value.ToString(),
-        priceSD = ProductsTable.SelectedRows[0].Cells[4].Value.ToString(),
-        priceSG = ProductsTable.SelectedRows[0].Cells[5].Value.ToString(),
-        q_stock = ProductsTable.SelectedRows[0].Cells[6].Value.ToString(),
-        type = ProductsTable.SelectedRows[0].Cells[3].Value.ToString(),
-        unit = ProductsTable.SelectedRows[0].Cells[2].Value.ToString();
+        name = ProductsTable.SelectedRows[0].Cells[2].Value.ToString(),
+        priceP = ProductsTable.SelectedRows[0].Cells[8].Value.ToString(),
+        priceSD = ProductsTable.SelectedRows[0].Cells[5].Value.ToString(),
+        priceSG = ProductsTable.SelectedRows[0].Cells[6].Value.ToString(),
+        q_stock = ProductsTable.SelectedRows[0].Cells[7].Value.ToString(),
+        type = ProductsTable.SelectedRows[0].Cells[4].Value.ToString(),
+        unit = ProductsTable.SelectedRows[0].Cells[3].Value.ToString();
 
                 Product product = new Product()
                 {
@@ -1235,7 +1239,7 @@ namespace Aromapp
 
            
                 names.Add(ProductsTable.SelectedRows[0].Cells[0].Value.ToString(),
-               ProductsTable.SelectedRows[0].Cells[1].Value.ToString());
+               ProductsTable.SelectedRows[0].Cells[2].Value.ToString());
             
             GenerateNamesPDF(names,true);
             Etiquette.Close();
@@ -1260,6 +1264,7 @@ namespace Aromapp
 
             }
             bindingSource.DataSource = table;
+            ProductsTable.Columns.Clear();
             ProductsTable.DataSource = bindingSource;
         }
 

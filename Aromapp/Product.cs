@@ -21,6 +21,9 @@ namespace Aromapp
         public double PriceP { get; set; }
         public string BarCode { get; internal set; }
         public double StockAlert { get; set; }
+        
+        public string c_fr { get; set;}
+        public string SupplierName { get; set; }
 
         public Product() { }
     }

@@ -172,5 +172,21 @@ namespace Aromapp
 
             }
         }
+
+        public void RefreshInfo(object sender,EventArgs e)
+        {
+            ClientHistory_Load(new object(),e);
+            using (DBHelper helper = new DBHelper())
+            {
+                soldProducts.DataSource = helper.getSalesByClientID(C_CL, saved, Bon.Checked);
+
+            }
+        }
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            Lend lend = new Lend(C_CL);
+            lend.Done += RefreshInfo;
+            lend.ShowDialog();
+        }
     }
 }

@@ -40,7 +40,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -176,7 +175,6 @@
             "Unisexe",
             "Emballage",
             "Sachet"});
-
             this.types.Location = new System.Drawing.Point(3, 52);
             this.types.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.types.Name = "types";
@@ -189,8 +187,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.Bon);
-
-            this.panel4.Location = new System.Drawing.Point(851, 22);
+            this.panel4.Location = new System.Drawing.Point(851, 20);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(290, 74);
@@ -240,7 +237,6 @@
             "Derniér moi",
             "",
             " "});
-
             this.Nouveautés.Location = new System.Drawing.Point(306, 54);
             this.Nouveautés.Name = "Nouveautés";
             this.Nouveautés.Size = new System.Drawing.Size(278, 37);
@@ -283,15 +279,15 @@
             // 
             // Ajouter
             // 
-            this.Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.Ajouter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Ajouter.BorderRadius = 5;
             this.Ajouter.FillColor = System.Drawing.Color.RoyalBlue;
             this.Ajouter.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.Ajouter.ForeColor = System.Drawing.Color.White;
-
-            this.Ajouter.Location = new System.Drawing.Point(13, 24);
-            this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 23, 13, 3);
+            this.Ajouter.Location = new System.Drawing.Point(13, 3);
+            this.Ajouter.Margin = new System.Windows.Forms.Padding(13, 3, 13, 3);
             this.Ajouter.Name = "Ajouter";
             this.Ajouter.Size = new System.Drawing.Size(398, 62);
             this.Ajouter.TabIndex = 1;
@@ -303,7 +299,6 @@
             this.ProductsTable.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-
             this.ProductsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -327,7 +322,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle3;
-
             this.ProductsTable.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.ProductsTable.Location = new System.Drawing.Point(10, 285);
@@ -352,7 +346,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle5;
-
             this.ProductsTable.RowTemplate.Height = 33;
             this.ProductsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductsTable.Size = new System.Drawing.Size(1147, 692);
@@ -492,7 +485,6 @@
             series1.Name = "Series1";
             this.TVPP.Series.Add(series1);
             this.TVPP.Size = new System.Drawing.Size(654, 386);
-
             this.TVPP.TabIndex = 0;
             this.TVPP.Text = "chart1";
             this.TVPP.Click += new System.EventHandler(this.TVPP_Click);
@@ -533,7 +525,6 @@
             series2.Name = "Series1";
             this.VPJ.Series.Add(series2);
             this.VPJ.Size = new System.Drawing.Size(654, 516);
-
             this.VPJ.TabIndex = 1;
             this.VPJ.Text = "chart2";
             this.VPJ.Click += new System.EventHandler(this.VPJ_Click);
@@ -548,13 +539,11 @@
             this.tableLayoutPanel6.Controls.Add(this.iconButton3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.iconButton1, 1, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 1032);
-
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 26);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(674, 74);
-
             this.tableLayoutPanel6.TabIndex = 25;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
@@ -566,11 +555,10 @@
             this.iconButton3.FillColor = System.Drawing.Color.RoyalBlue;
             this.iconButton3.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.Location = new System.Drawing.Point(3, 5);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 3, 5, 0);
+            this.iconButton3.Location = new System.Drawing.Point(3, 10);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 10, 5, 0);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(380, 69);
-
+            this.iconButton3.Size = new System.Drawing.Size(380, 64);
             this.iconButton3.TabIndex = 1;
             this.iconButton3.Text = "Imprimer les étiquettes";
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
@@ -582,11 +570,10 @@
             this.iconButton1.BorderRadius = 5;
             this.iconButton1.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.Location = new System.Drawing.Point(393, 5);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 0);
+            this.iconButton1.Location = new System.Drawing.Point(393, 10);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(5, 10, 3, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(278, 69);
-
+            this.iconButton1.Size = new System.Drawing.Size(278, 64);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Exporter en pdf";
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);

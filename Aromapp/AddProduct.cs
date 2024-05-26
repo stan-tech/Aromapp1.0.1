@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -188,75 +189,118 @@ namespace Aromapp
         public void OkButton_Click(object sender, EventArgs e)
         {
             string BarCodePref;
+            DialogResult result = DialogResult.None;
+
             if (
-                priceP.Text == priceP.Tag.ToString() ||
-                priceSD.Text == priceSD.Tag.ToString() ||
-                priceSG.Text == priceSG.Tag.ToString() ||
-                prodName.Text == prodName.Tag.ToString() ||
-                string.IsNullOrEmpty(prodName.Text) ||
-                
-                string.IsNullOrEmpty(priceP.Text) ||
-                string.IsNullOrEmpty(priceSD.Text) ||
-                string.IsNullOrEmpty(priceSG.Text) ||
-                Tyype.SelectedItem == null ||
-                Unit.SelectedItem == null)
+                   priceP.Text == priceP.Tag.ToString() ||
+                   priceSD.Text == priceSD.Tag.ToString() ||
+                   priceSG.Text == priceSG.Tag.ToString() ||
+                   prodName.Text == prodName.Tag.ToString() ||
+                   string.IsNullOrEmpty(prodName.Text) ||
+
+                   string.IsNullOrEmpty(priceP.Text) ||
+                   string.IsNullOrEmpty(priceSD.Text) ||
+                   string.IsNullOrEmpty(priceSG.Text) ||
+                   Tyype.SelectedItem == null ||
+                   Unit.SelectedItem == null)
             {
                 MessageBoxer.showGeneralMsg("Veuillez remplir les informations requises");
+                return;
             }
-            else
+
+            using (DBHelper helper = new DBHelper())
             {
-                Product product = new Product();
-                product.Name = prodName.Text.Trim();
-                product.PriceP = double.Parse(priceP.Text.Trim().Replace(".", ","));
-                product.PriceD = double.Parse(priceSD.Text.Trim().Replace(".", ","));
-                product.PriceG = double.Parse(priceSG.Text.Trim().Replace(".", ","));
-                product.Quantity = 0;
-                product.Type = Tyype.SelectedItem.ToString();
-                product.Unit = Unit.SelectedItem.ToString();
-                product.StockAlert = double.Parse(Alert.Text.Trim().Replace(".", ","));
+                DataTable table = helper.searchForProduct((Tyype.SelectedItem.ToString() == "Emabllage"
+                    || Tyype.SelectedItem.ToString()=="Sachet")?"emballage":"produits", prodName.Text);
 
-
-                using (DBHelper helper = new DBHelper())
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    BarCodePref = helper.getStoreBarCode();
-                }
-
-                string prodID = (SelectedTable == "produits") ? DBHelper.IsProductIDAvailable():"";
-
-                product.ID = (prodID != "") ? prodID : DBHelper.generateID((SelectedTable == "produits")?"PR":"FL",
-                    (SelectedTable == "produits") ? Tables.produits:Tables.emballage);
-
-                product.BarCode = BarCodePref + DateTime.Now.Year + DateTime.Now.Month +
-                DateTime.Now.Day + DateTime.Now.ToString("HH:mm:ss").Replace(":", "") + 
-                product.ID.Replace((SelectedTable == "produits")
-                ? "PR" : "FL", "").TrimStart('0');
-
-
-                using (DBHelper helper = new DBHelper())
-                {
-                    if (helper.AddEmptyInvoice(product) > 0)
+                    if (suppName.Text.ToLower().Equals(table.Rows[i][1].ToString().ToLower()) 
+                        && prodName.Text.ToLower().Equals(table.Rows[i][2].ToString().ToLower()))
                     {
+                        result = MessageBox.Show("Le produit "+prodName.Text+" ("+
+                            table.Rows[i][0].ToString()+")"+ " avec le même fournisseur existe déjà, continuer ?", "Message",
+                            MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-                        if (helper.AddProduct(product, product.Quantity) > 0)
+                        break;
+                    }
+                }
+            }
+            if (result==DialogResult.Yes||result==DialogResult.None)
+            {
+
+               
+                
+                    Product product = new Product();
+                    product.Name = prodName.Text.Trim();
+                    product.PriceP = double.Parse(priceP.Text.Trim().Replace(".", ","));
+                    product.PriceD = double.Parse(priceSD.Text.Trim().Replace(".", ","));
+                    product.PriceG = double.Parse(priceSG.Text.Trim().Replace(".", ","));
+                    product.Quantity = 0;
+                    product.Type = Tyype.SelectedItem.ToString();
+                    product.Unit = Unit.SelectedItem.ToString();
+                    product.StockAlert = double.Parse(Alert.Text.Trim().Replace(".", ","));
+
+
+
+                    using (DBHelper helper = new DBHelper())
+                    {
+                        BarCodePref = helper.getStoreBarCode();
+                        string id = "1";
+                        if (helper.getSupplierID(suppName.Text, out id))
                         {
-                            helper.AddProductToStock(product, 0);
-
-                            MessageBoxer.showGeneralMsg("Produit ajouté");
-                            ClearTexts();
-
-                            OnAdded(e);
+                            product.c_fr = id;
 
                         }
                         else
                         {
-                            MessageBoxer.showErrorMsg("Une erreur s'est produite");
-
+                            product.c_fr = DBHelper.generateID("FR", Tables.Fourniseur);
+                            Supplier supplier = new Supplier(product.c_fr, suppName.Text);
+                            helper.InsertSupplier(supplier);
                         }
                     }
 
+                    string prodID = (SelectedTable == "produits") ? DBHelper.IsProductIDAvailable() : "";
+
+                    product.ID = (prodID != "") ? prodID : DBHelper.generateID((SelectedTable == "produits") ? "PR" : "FL",
+                        (SelectedTable == "produits") ? Tables.produits : Tables.emballage);
+
+                    product.BarCode = BarCodePref + DateTime.Now.Year + DateTime.Now.Month +
+                    DateTime.Now.Day + DateTime.Now.ToString("HH:mm:ss").Replace(":", "") +
+                    product.ID.Replace((SelectedTable == "produits")
+                    ? "PR" : "FL", "").TrimStart('0');
 
 
-                }
+                    using (DBHelper helper = new DBHelper())
+                    {
+                        if (helper.AddEmptyInvoice(product) > 0)
+                        {
+
+                            if (helper.AddProduct(product, product.Quantity) > 0)
+                            {
+                                helper.AddProductToStock(product, 0);
+
+                                MessageBoxer.showGeneralMsg("Produit ajouté");
+                                ClearTexts();
+
+                                OnAdded(e);
+
+                            }
+                            else
+                            {
+                                MessageBoxer.showErrorMsg("Une erreur s'est produite");
+
+                            }
+                        }
+
+
+
+                    }
+                
+            }
+            else
+            {
+                return;
             }
         }
         Dictionary<string, string> ids;
@@ -413,6 +457,64 @@ namespace Aromapp
             }
         }
 
-      
+        private void supp_TextChanged(object sender, EventArgs e)
+        {
+            if (suppName.Text != suppName.Tag.ToString())
+            {
+
+                using (DBHelper helper = new DBHelper())
+                {
+                    collection = helper.GetSupplierNames(suppName.Text, out ids);
+                }
+
+
+                try
+                {
+                    if (string.IsNullOrEmpty(suppName.Text))
+                    {
+
+                        suppName.BeginInvoke((Action)(() =>
+                        {
+
+
+                            suppName.AutoCompleteCustomSource = collection;
+                            suppName.AutoCompleteMode = AutoCompleteMode.Suggest;
+                            suppName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                        }));
+
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    System.Windows.Forms.MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+
+        }
+
+        private void suppName_Click(object sender, EventArgs e)
+        {
+            HintUtils.HideHint(suppName);
+        }
+
+        private void suppName_Leave(object sender, EventArgs e)
+        {
+            HintUtils.ShowHint(suppName);
+        }
+
+        private void Alert_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                suppName_Click(sender, e);
+                suppName.Focus();
+                e.SuppressKeyPress = true;
+
+            }
+        }
     }
 }

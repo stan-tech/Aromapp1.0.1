@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing.Common;
 using ZXing;
+using Org.BouncyCastle.Crypto;
+using System.Collections.ObjectModel;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Aromapp
 {
@@ -22,18 +25,18 @@ namespace Aromapp
         string barcodeText;
         public ProdView(Product product)
         {
-            this.product = product;
             InitializeComponent();
 
             using (DBHelper helper = new DBHelper())
             {
                 product = helper.GetProductByID(product.ID.Contains("PR") ? "produits" : "emballage", product.ID);
-
+                this.product = product;
                 barcodeText = helper.getProductBarcode(product.ID);
 
 
             }
-            pCodeText.Text = product.ID;
+            MaingroupBox.Text = MaingroupBox.Tag.ToString() + " " + product.ID;
+            pSuppText.Text = product.SupplierName;
             pNameText.Text = product.Name;
             quantityText.Text = product.Quantity.ToString();
             sppuText.Text = product.PriceG.ToString();
@@ -106,7 +109,7 @@ namespace Aromapp
 
             }
 
-            pCodeText.Text = product.ID;
+            pSuppText.Text = product.SupplierName;
             pNameText.Text = product.Name;
             quantityText.Text = product.Quantity.ToString();
             sppuText.Text = product.PriceG.ToString();
@@ -227,14 +230,17 @@ namespace Aromapp
         }
 
         string selectedColumn = "";
+        bool supplierSearch = false;
         private void updateChoiceBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            supplierSearch = false;
+
             switch (updateChoiceBox.SelectedIndex)
             {
                 case 0:
                     selectedColumn = "c_pr";
                     amount_Click(sender, e);
-                    amount.Text = pCodeText.Text;
+                    amount.Text = pSuppText.Text;
                     break;
                 case 1:
                     selectedColumn = "nom";
@@ -266,6 +272,12 @@ namespace Aromapp
                     amount_Click(sender, e);
                     amount.Text = SA.Text;
                     break;
+                case 7:
+                    supplierSearch = true;
+                    selectedColumn = "c_fr";
+                    amount_Click(sender, e);
+                    amount.Text = pSuppText.Text;
+                    break;
             }
 
 
@@ -273,7 +285,26 @@ namespace Aromapp
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+            string c_fr = product.c_fr;
 
+            if (selectedColumn == "c_fr")
+            {
+                using (DBHelper helper = new DBHelper())
+                {
+                    
+                    helper.getSupplierID(amount.Text,out c_fr);
+
+                    if (!string.IsNullOrEmpty(amount.Text))
+                    {
+                        if (!helper.getSupplierID(amount.Text, out c_fr))
+                        {
+                            c_fr = DBHelper.generateID("FR", Tables.Fourniseur);
+                            helper.InsertSupplier(new Supplier(c_fr, amount.Text));
+                        } 
+                    }
+                   
+                }
+            }
 
             if (!string.IsNullOrEmpty(selectedColumn))
             {
@@ -281,7 +312,8 @@ namespace Aromapp
                 {
                     try
                     {
-                        if (helper.ModifyProduct(selectedColumn, amount.Text, pCodeText.Text))
+                        if (helper.ModifyProduct(selectedColumn, (!supplierSearch)?amount.Text:c_fr, MaingroupBox.
+                            Text.Replace(MaingroupBox.Tag.ToString(),"")))
                         {
                             MessageBoxer.showGeneralMsg("Produit modifié");
 
@@ -323,7 +355,7 @@ namespace Aromapp
             DialogResult result = MessageBox.Show("  Êtes vous sûr ?", ""
                                      , MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            List<string> prodIDs = new List<string> { pCodeText.Text };
+            List<string> prodIDs = new List<string> { pSuppText.Text };
 
             if (result == DialogResult.Yes)
             {
@@ -366,7 +398,7 @@ namespace Aromapp
                 using (SQLiteConnection connection = new SQLiteConnection(DBHelper.connectionString))
                 {
                     using (SQLiteCommand command = new SQLiteCommand("update produits set c_bare = '" + Barcode + "' where c_prd= '" +
-                        pCodeText.Text + "';", connection))
+                        pSuppText.Text + "';", connection))
                     {
                         connection.Open();
                         if (command.ExecuteNonQuery() > 0)
@@ -394,10 +426,12 @@ namespace Aromapp
             }
 
         }
+        Dictionary<string, string> ids;
+        AutoCompleteStringCollection collection;
 
         private void amount_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && !supplierSearch)
             {
                 if (!string.IsNullOrEmpty(amount.Text))
                 {
@@ -407,6 +441,40 @@ namespace Aromapp
             }
         }
 
-        
+        private void amount_TextChanged(object sender, EventArgs e)
+        {
+            if (supplierSearch)
+            {
+                using (DBHelper helper = new DBHelper())
+                {
+                    collection = helper.GetSupplierNames(amount.Text, out ids);
+                }
+
+
+                try
+                {
+                    if (string.IsNullOrEmpty(amount.Text))
+                    {
+                        amount.BeginInvoke((Action)(() =>
+                        {
+
+
+                            amount.AutoCompleteCustomSource = collection;
+                            amount.AutoCompleteMode = AutoCompleteMode.Suggest;
+                            amount.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                        }));
+
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    System.Windows.Forms.MessageBox.Show("An error occurred: " + ex.Message);
+                } 
+            }
+        }
     }
 }

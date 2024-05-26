@@ -17,7 +17,6 @@ namespace Aromapp
         public long Quantity { get; set; }
         public long Remise { get; set; }
 
-        public event EventHandler Added;
 
 
         public AddSavingAccount()

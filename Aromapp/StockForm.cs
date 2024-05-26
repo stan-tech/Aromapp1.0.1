@@ -20,7 +20,6 @@ namespace Aromapp
         DataTable table = new DataTable();
         int limit = 100;
         int currentPage = 1;
-        string SelectedTable = "produits";
         public StockForm()
         {
             InitializeComponent();

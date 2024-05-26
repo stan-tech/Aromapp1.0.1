@@ -1097,7 +1097,7 @@ namespace Aromapp
             this.tableLayoutPanel10.ColumnCount = 3;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.22794F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.77206F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 255F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 256F));
             this.tableLayoutPanel10.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.searchBox, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label11, 0, 0);
@@ -1119,10 +1119,10 @@ namespace Aromapp
             this.comboBox1.Items.AddRange(new object[] {
             "Parfum",
             "Emballage/Sachet"});
-            this.comboBox1.Location = new System.Drawing.Point(518, 6);
+            this.comboBox1.Location = new System.Drawing.Point(517, 6);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 6, 8, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(245, 41);
+            this.comboBox1.Size = new System.Drawing.Size(246, 41);
             this.comboBox1.TabIndex = 38;
             this.comboBox1.Tag = "";
             this.comboBox1.Text = "Catégories";
@@ -1138,7 +1138,7 @@ namespace Aromapp
             this.searchBox.Location = new System.Drawing.Point(153, 6);
             this.searchBox.Margin = new System.Windows.Forms.Padding(3, 6, 8, 3);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(354, 41);
+            this.searchBox.Size = new System.Drawing.Size(353, 41);
             this.searchBox.TabIndex = 37;
             this.searchBox.Tag = "Rechercher...";
             this.searchBox.Text = "Rechercher...";

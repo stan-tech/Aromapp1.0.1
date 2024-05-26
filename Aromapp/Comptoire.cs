@@ -402,18 +402,18 @@ namespace Aromapp
             double buyinPrice;
 
             string reference = prods.SelectedRows[0].Cells[0].Value.ToString(),
-                type = prods.SelectedRows[0].Cells[3].Value.ToString();
+                type = prods.SelectedRows[0].Cells[4].Value.ToString();
 
             tva.SelectedIndex = 0;
 
-            string nomproduits = prods.SelectedRows[0].Cells[1].Value.ToString();
+            string nomproduits = prods.SelectedRows[0].Cells[2].Value.ToString();
 
            
-            buyinPrice = double.Parse(prods.SelectedRows[0].Cells[4].Value.ToString());
+            buyinPrice = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
             DialogResult result;
 
-            double oldPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()) :
-                     oldPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
+            double oldPrice = detail? double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString()) :
+                     oldPrice = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
 
             if (oldPrice == NewPrice)
             {
@@ -468,28 +468,47 @@ namespace Aromapp
         Qt qtForm;
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-                NewPrice = detail? double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString()):
-                     NewPrice = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-
             string prodID = prods.SelectedRows[0].Cells[0].Value.ToString();
+            NewPrice = detail ? double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString()) :
+                NewPrice = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
 
-            
-                if (double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString())>0)
+            DialogResult result = DialogResult.None;
+
+            if (double.Parse(prods.SelectedRows[0].Cells[8].Value.ToString()) > 0)
+            {
+
+                for (int i = 0; i < CartTable.Rows.Count; i++)
+                {
+                    if (prodID.Equals(CartTable.Rows[i][0].ToString()))
+                    {
+                        result = MessageBox.Show("Vous avez déjà ajouté ce produit au panier, continuer ?", 
+                            prodID + " existe déjà",MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                        break;
+                    }
+                }
+
+
+                if (result == DialogResult.Yes || result == DialogResult.None)
                 {
                     qtForm = new Qt();
 
-                    qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
-                    qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[5].Value.ToString());
+                    qtForm.totalBulk = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
+                    qtForm.totalRetail = double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString());
 
                     qtForm.Added += AddProduct;
                     qtForm.ShowDialog();
                 }
                 else
                 {
-                    MessageBoxer.showGeneralMsg("Le produit " + prodID + " n'est plus disponible. Vérifiez la liste des produits.");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBoxer.showGeneralMsg("Le produit " + prodID + 
+                    " n'est plus disponible. Vérifiez la liste des produits.");
 
-                } 
+            } 
 
 
         }

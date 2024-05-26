@@ -114,6 +114,7 @@ namespace Aromapp
                 {
                     using (DBHelper helper = new DBHelper())
                     {
+                        helper.CorrectProduct(id);
                         helper.DeleteSupplier(id);
                         suppliersTable.DataSource = DBHelper.GetSuppliers(limit, currentPage);
                     }
