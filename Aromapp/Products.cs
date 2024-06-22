@@ -223,9 +223,9 @@ namespace Aromapp
             string fontPath = Environment.CurrentDirectory + "\\arabicFont.ttf";
 
             DataTable grid = gridTable;
-            grid.Columns.RemoveAt(4);
+            grid.Columns.RemoveAt(5);
 
-            PdfPTable table = new PdfPTable(grid.Columns.Count - 1);
+            PdfPTable table = new PdfPTable(grid.Columns.Count - 2);
             BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 
             string pattern = @"\p{IsArabic}";
@@ -365,15 +365,15 @@ namespace Aromapp
             foreach (DataColumn header in grid.Columns)
             {
 
-                if (grid.Columns.IndexOf(header) == 6)
+                if (grid.Columns.IndexOf(header) == 7 || grid.Columns.IndexOf(header) == 1)
                 {
                     continue;
                 }
-                if (grid.Columns.IndexOf(header) == 4)
+                if (grid.Columns.IndexOf(header) == 5)
                 {
                     header.ColumnName = "Prix 100 g/DA";
                 }
-                if (grid.Columns.IndexOf(header) == 5)
+                if (grid.Columns.IndexOf(header) == 6)
 
                 {
                     header.ColumnName = "Prix 1 KG/DA";
@@ -393,14 +393,14 @@ namespace Aromapp
             {
                 
 
-                if (double.Parse(row[6].ToString()) <= 0)
+                if (double.Parse(row[7].ToString()) <= 0)
                 {
                     continue;
                 }
 
                 for (int i = 0; i<grid.Columns.Count; i++)
                 {
-                    if (i == 6)
+                    if (i == 7 || i==1)
                     {
                         continue;
                     }
@@ -498,11 +498,14 @@ namespace Aromapp
             fileStream = new FileStream(path, FileMode.Create);
             PdfWriter writer;
 
-            writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, fileStream); // sometime rise exception on first call
+            writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, fileStream); 
+
+            float totalWidth = PageSize.A4.Width - document.LeftMargin - document.RightMargin;
+            float cellWidth = totalWidth / 8;
 
             document.Open();
 
-            table.WidthPercentage = 100;
+            table.WidthPercentage = 70;
             table.HorizontalAlignment = Element.ALIGN_CENTER;
             iTextSharp.text.Font FS = FontFactory.GetFont("Calibri", 11, iTextSharp.text.Font.BOLD,
             BaseColor.BLACK);
@@ -546,6 +549,7 @@ namespace Aromapp
                         pdfPCell.RunDirection = PdfWriter.RUN_DIRECTION_LTR;
                     }
 
+                    //pdfPCell.FixedHeight = cellWidth;
                     pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
                     pdfPCell.PaddingBottom = 15f;
@@ -695,10 +699,10 @@ namespace Aromapp
                 for (int i = ProductsTable.SelectedRows.Count - 1; i >= 0; i--)
                 {
 
-                    if (ProductsTable.SelectedRows[i].Cells[1].Value != null)
+                    if (ProductsTable.SelectedRows[i].Cells[2].Value != null)
                     {
                         names.Add(ProductsTable.SelectedRows[i].Cells[0].Value.ToString(),
-                            ProductsTable.SelectedRows[i].Cells[1].Value.ToString());
+                            ProductsTable.SelectedRows[i].Cells[2].Value.ToString());
                     }
                     else
                     {

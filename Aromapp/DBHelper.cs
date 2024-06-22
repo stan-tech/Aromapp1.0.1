@@ -35,14 +35,14 @@ namespace Aromapp
 
         public DataTable GetProductByType(string type, int limit, int currentPage)
         {
-            string query = "SELECT c_prd as Référence,[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
+            string query = "SELECT c_prd as Référence,fourniseur.nom as 'Fournisseur',produits.[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
             "'Prix en Detail',[PrixVGros] as 'Prix en Gros', [Q_Stock] as 'Disponible' " +
-            "  FROM [produits] where type like '" + type + "' order by c_prd asc limit " + limit + " offset " + (currentPage - 1) * limit + ";";
+            "  FROM [produits] inner join fourniseur on fourniseur.c_fr = produits.c_fr  where type like '" + type + "' order by c_prd asc limit " + limit + " offset " + (currentPage - 1) * limit + ";";
 
 
             if (type.ToLower() == "emballage" || type.ToLower() == "sachet")
             {
-                query = query.Replace("produits", "emballage").Substring(0, query.LastIndexOf(']') + 1) + "] order by c_prd asc;";
+                query = query.Replace("produits", "emballage").Substring(0, query.LastIndexOf(']') + 2) + "] inner join fourniseur on fourniseur.c_fr = emballage.c_fr ;";
             }
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
@@ -60,9 +60,9 @@ namespace Aromapp
         }
         public DataTable searchForProduct(string TableName, string search)
         {
-            string query = "SELECT c_prd as Référence,fourniseur.nom as 'Fournisseur',produits.[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
+            string query = "SELECT c_prd as Référence,fourniseur.nom as 'Fournisseur',["+TableName+"].[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
             "'Prix en Detail',[PrixVGros] as 'Prix en Gros', [Q_Stock] as 'Disponible' " +
-            "  FROM [" + TableName + "] inner join fourniseur on fourniseur.c_fr = produits.c_fr where lower(produits.nom) like @search or lower(c_prd) like @search order by c_prd asc;";
+            "  FROM [" + TableName + "] inner join fourniseur on fourniseur.c_fr = ["+TableName+ "].c_fr where lower(["+TableName+"].nom) like @search or lower(c_prd) like @search order by c_prd asc;";
 
 
 
@@ -157,7 +157,7 @@ namespace Aromapp
 
             string query = "SELECT c_prd as Référence,fourniseur.nom as 'Fournisseur',[" + tableName + "].[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as"
              + "'Prix en Detail',[PrixVGros] as 'Prix en Gros', [Q_Stock] as 'Disponible'"
-            + "FROM[" + tableName + "] inner join fourniseur on fourniseur.c_fr = [" + tableName + "].c_fr where c_prd like @search or produits.nom like @search order by c_prd asc  limit "
+            + "FROM[" + tableName + "] inner join fourniseur on fourniseur.c_fr = [" + tableName + "].c_fr where c_prd like @search or [" + tableName +"].nom like @search order by c_prd asc  limit "
                 + limit + " offset " + (currentPage - 1) * limit + ";";
 
 
@@ -1484,7 +1484,7 @@ namespace Aromapp
 
             string checklength = "insert into " + table + "  (C_prd , nom,type, prix_achat,prix_venteht," +
                 "prixvgros,unit,q_stock,c_bare,stock_alerte,c_fr,dateajout) values('" +
-                product.ID + "','" + product.Name.Replace("'", "''") + "','" + product.Type + "', "
+                product.ID + "',@nom,'" + product.Type + "', "
                 + product.PriceP.ToString(nfi)
                 + "," + product.PriceD.ToString(nfi) + "," + product.PriceG.ToString(nfi) + ",'"
                 + product.Unit + "', " + Quantity.ToString(nfi) + ",'" + product.BarCode + "'," + product.StockAlert.ToString(nfi) + "," +
@@ -1498,6 +1498,7 @@ namespace Aromapp
                 connection.Open();
                 SQLiteCommand checkL = new SQLiteCommand(checklength, connection);
 
+                checkL.Parameters.Add(new SQLiteParameter("@nom", product.Name));
 
                 if (checkL.ExecuteNonQuery() > 0)
                 {
@@ -3131,7 +3132,7 @@ namespace Aromapp
 
 
             }
-            string query = "insert into CLIENT  (" + columnsBuilder.ToString().Trim(',') + ") values (" + builder.ToString().Trim(',') + ");;";
+            string query = "insert into CLIENT  (" + columnsBuilder.ToString().Trim(',') + ") values (" + builder.ToString().Trim(',') + ");";
             InsertIntoLog("Un client sous le nom de: " + client.Nom + " et la référence de: " + c_cl + " a été ajouté");
 
             client.C_CL = c_cl.Clone().ToString();
@@ -3619,10 +3620,10 @@ namespace Aromapp
             DataTable dt = new DataTable();
 
 
-            string query = "SELECT c_prd as Référence,[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
+            string query = "SELECT c_prd as Référence,fourniseur.nom as 'Fournisseur',produits.[Nom],[Unit],[Type],PRIX_achat as 'Prix d''achat',[Prix_VenteHT] as " +
             "'Prix en Detail',[PrixVGros] as 'Prix en Gros', [Q_Stock] as 'Disponible' " +
-            "  FROM [produits] WHERE dateajout >= DATE('now', '-" + duration + " days')" +
-                " and produits.q_stock > 0 order by dateajout desc; ";
+            "  FROM [produits] inner join fourniseur on fourniseur.c_fr = produits.c_fr  WHERE produits.dateajout >= DATE('now', '-" + duration + " days')" +
+                " and produits.q_stock > 0 order by produits.dateajout,c_prd desc; ";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -3655,8 +3656,7 @@ namespace Aromapp
 
             string L_Achats_query = "insert into l_Achats ([N], [Type], [DateA]" +
                 ",c_pr,[nomproduit],[quantité]," +
-                "[prixht],[remise]) values('" + id + "','Ajout','" + date + "', '" + product.ID + "','" +
-                product.Name + "'," + product.Quantity + "," + product.PriceP.ToString().Replace(",", ".") + ",0 )";
+                "[prixht],[remise]) values('" + id + "','Ajout','" + date + "', '" + product.ID + "',@nom," + product.Quantity + "," + product.PriceP.ToString().Replace(",", ".") + ",0 )";
 
             SaleLine emptySale = new SaleLine();
             emptySale.N = id;
@@ -3674,6 +3674,9 @@ namespace Aromapp
 
                 SQLiteCommand achatCommand = new SQLiteCommand(insertIntoAchat, connection);
                 SQLiteCommand l_achatCommand = new SQLiteCommand(L_Achats_query, connection);
+                l_achatCommand.Parameters.Add(new SQLiteParameter("@nom", product.Name));
+
+
                 SQLiteParameter sQLiteParameter = new SQLiteParameter("@ID", id),
                       sQLiteParameter1 = new SQLiteParameter("@type", "Ajout"),
                       sQLiteParameter2 = new SQLiteParameter("@date", date),
@@ -3829,13 +3832,21 @@ namespace Aromapp
         {
             string Logtext = string.Empty;
             string table = iD.Contains("PR") ? "produits" : "emballage";
-            Product product = GetProductByID(iD.Contains("PR") ? "produits" : "emballage", iD);
+            Product product = GetProductByID(iD.Contains("PR") ? "produits" : "emballage", iD.Trim());
 
 
             switch (selectedColumn)
             {
                 case "c_pr":
                     Logtext = "La référence du produit: " + iD + " a été modifé du '" + iD + "' a '" + text + "'";
+
+                    break;
+                case "type":
+                    Logtext = "Le type du produit: " + iD + " a été modifé du '" + product.Type + "' a '" + text + "'";
+
+                    break;
+                case "unit":
+                    Logtext = "L'unité du produit: " + iD + " a été modifé du '" + product.Unit+ "' a '" + text + "'";
 
                     break;
                 case "nom":
@@ -3866,11 +3877,12 @@ namespace Aromapp
             }
             InsertIntoLog(Logtext);
 
-            string query = " update " + table + " set " + selectedColumn + " = '" + text + "'  where c_prd ='" + iD.Trim() + "';";
+            string query = " update " + table + " set " + selectedColumn + " = @text  where c_prd ='" + iD.Trim() + "';";
 
-            if (selectedColumn != "nom" && selectedColumn != "c_pr" && selectedColumn != "c_fr")
+            if (selectedColumn != "nom" && selectedColumn != "c_pr" && 
+                selectedColumn != "c_fr" && selectedColumn != "type"&& selectedColumn != "unit")
             {
-                query = " update " + table + " set " + selectedColumn + " = " + text + "  where c_prd ='" + iD + "';";
+                query = " update " + table + " set " + selectedColumn + " = @text  where c_prd ='" + iD.Trim() + "';";
             }
             bool done = false;
 
@@ -3879,6 +3891,9 @@ namespace Aromapp
             {
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
+                    SQLiteParameter parameter = new SQLiteParameter("@text", text);
+                    command.Parameters.Add(parameter);
+
                     connection.Open();
 
                     if (command.ExecuteNonQuery() > 0)
@@ -3958,7 +3973,7 @@ namespace Aromapp
         public string GetScarceProductsNumber(out string shortageNumber)
         {
             string query = "select count(code) from stock ;";
-            string query1 = "select count(c_prd) from produits where q_stock <= stock_alerte;";
+            string query1 = "select count(c_prd) from produits where q_stock <= stock_alerte ;";
             string embquery = "select count(c_prd) from emballage where q_stock <= stock_alerte;";
             string p_number = string.Empty;
             shortageNumber = string.Empty;
@@ -5106,8 +5121,8 @@ namespace Aromapp
         {
             DataTable table = new DataTable();
 
-            string query = "select c_prd as Réf,Nom,q_stock as Disponible from produits where q_stock <= stock_alerte" +
-            " UNION select c_prd as Réf,Nom,q_stock from EMBALLAGE where EMBALLAGE.q_stock <= EMBALLAGE.stock_alerte;";
+            string query = "select c_prd as Réf,Nom,q_stock as Disponible from produits where q_stock <= stock_alerte " +
+            " UNION select c_prd as Réf,Nom,q_stock from EMBALLAGE where EMBALLAGE.q_stock <= EMBALLAGE.stock_alerte order by c_prd desc;";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {

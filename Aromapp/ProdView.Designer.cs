@@ -58,11 +58,11 @@
             this.Unit = new System.Windows.Forms.ComboBox();
             this.Tyype = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButton3 = new Guna.UI2.WinForms.Guna2Button();
             this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.updateChoiceBox = new System.Windows.Forms.ComboBox();
-            this.amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.MaingroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -526,6 +526,7 @@
             this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(534, 47);
             this.Unit.TabIndex = 41;
+            this.Unit.SelectedIndexChanged += new System.EventHandler(this.Unit_SelectedIndexChanged);
             // 
             // Tyype
             // 
@@ -541,6 +542,7 @@
             this.Tyype.Name = "Tyype";
             this.Tyype.Size = new System.Drawing.Size(534, 47);
             this.Tyype.TabIndex = 42;
+            this.Tyype.SelectedIndexChanged += new System.EventHandler(this.Tyype_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -559,6 +561,33 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Choisissez ce que vous voulez mettre à jour";
+            // 
+            // amount
+            // 
+            this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.amount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.amount.DefaultText = "Entrez une nouvelle valeur...";
+            this.amount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.amount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.amount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.amount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.amount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.amount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.amount.Location = new System.Drawing.Point(37, 157);
+            this.amount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.amount.Name = "amount";
+            this.amount.PasswordChar = '\0';
+            this.amount.PlaceholderText = "";
+            this.amount.SelectedText = "";
+            this.amount.Size = new System.Drawing.Size(891, 47);
+            this.amount.TabIndex = 33;
+            this.amount.Tag = "Entrez une nouvelle valeur...";
+            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
+            this.amount.Click += new System.EventHandler(this.amount_Click);
+            this.amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.amount_KeyDown);
+            this.amount.Leave += new System.EventHandler(this.amount_Leave);
             // 
             // tableLayoutPanel6
             // 
@@ -627,33 +656,6 @@
             this.updateChoiceBox.Size = new System.Drawing.Size(891, 47);
             this.updateChoiceBox.TabIndex = 30;
             this.updateChoiceBox.SelectedIndexChanged += new System.EventHandler(this.updateChoiceBox_SelectedIndexChanged);
-            // 
-            // amount
-            // 
-            this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.amount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.amount.DefaultText = "Entrez une nouvelle valeur...";
-            this.amount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.amount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.amount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.amount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.amount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.amount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.amount.Location = new System.Drawing.Point(37, 157);
-            this.amount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.amount.Name = "amount";
-            this.amount.PasswordChar = '\0';
-            this.amount.PlaceholderText = "";
-            this.amount.SelectedText = "";
-            this.amount.Size = new System.Drawing.Size(891, 47);
-            this.amount.TabIndex = 33;
-            this.amount.Tag = "Entrez une nouvelle valeur...";
-            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
-            this.amount.Click += new System.EventHandler(this.amount_Click);
-            this.amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.amount_KeyDown);
-            this.amount.Leave += new System.EventHandler(this.amount_Leave);
             // 
             // ProdView
             // 

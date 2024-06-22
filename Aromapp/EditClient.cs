@@ -139,6 +139,7 @@ namespace Aromapp
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+            value = amount.Text;
             DateTime dateValue = datePicker.Value.Date;
             string day = dateValue.Day.ToString("D2"), month = dateValue.Month.ToString("D2");
 
@@ -148,6 +149,21 @@ namespace Aromapp
             {
                 client = helper.EditClient(client.C_CL, "dateajout", dateString);
 
+            }
+
+            if (!(string.IsNullOrEmpty(column) || string.IsNullOrEmpty(value)
+                    || value == amount.Tag.ToString()))
+            {
+                using (DBHelper helper = new DBHelper())
+                {
+                    client = helper.EditClient(client.C_CL, column, value);
+
+                }
+
+            }
+            else
+            {
+                MessageBoxer.showGeneralMsg("Choisissez la valeur à modifier");
             }
             AssignValue();
         }

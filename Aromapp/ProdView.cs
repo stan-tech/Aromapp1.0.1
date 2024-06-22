@@ -240,7 +240,7 @@ namespace Aromapp
                 case 0:
                     selectedColumn = "c_pr";
                     amount_Click(sender, e);
-                    amount.Text = pSuppText.Text;
+                    amount.Text = product.ID;
                     break;
                 case 1:
                     selectedColumn = "nom";
@@ -306,13 +306,19 @@ namespace Aromapp
                 }
             }
 
+            string selectedValue = (selectedColumn == "type") ? Tyype.SelectedItem.ToString(): amount.Text;
+
+            if(selectedColumn!="type")
+            selectedValue = (selectedColumn == "unit") ? Unit.SelectedItem.ToString() : amount.Text;
+
+
             if (!string.IsNullOrEmpty(selectedColumn))
             {
                 using (DBHelper helper = new DBHelper())
                 {
                     try
                     {
-                        if (helper.ModifyProduct(selectedColumn, (!supplierSearch)?amount.Text:c_fr, MaingroupBox.
+                        if (helper.ModifyProduct(selectedColumn, (!supplierSearch)?selectedValue:c_fr, MaingroupBox.
                             Text.Replace(MaingroupBox.Tag.ToString(),"")))
                         {
                             MessageBoxer.showGeneralMsg("Produit modifié");
@@ -475,6 +481,18 @@ namespace Aromapp
                     System.Windows.Forms.MessageBox.Show("An error occurred: " + ex.Message);
                 } 
             }
+        }
+
+        private void Tyype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedColumn = "type";
+
+        }
+
+        private void Unit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedColumn = "unit";
+
         }
     }
 }
