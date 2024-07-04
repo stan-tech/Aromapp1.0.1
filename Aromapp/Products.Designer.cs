@@ -175,7 +175,7 @@
             "Unisexe",
             "Emballage",
             "Sachet"});
-            this.types.Location = new System.Drawing.Point(3, 52);
+            this.types.Location = new System.Drawing.Point(3, 50);
             this.types.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.types.Name = "types";
             this.types.Size = new System.Drawing.Size(275, 37);
@@ -237,7 +237,7 @@
             "Derniér moi",
             "",
             " "});
-            this.Nouveautés.Location = new System.Drawing.Point(306, 54);
+            this.Nouveautés.Location = new System.Drawing.Point(306, 52);
             this.Nouveautés.Name = "Nouveautés";
             this.Nouveautés.Size = new System.Drawing.Size(278, 37);
             this.Nouveautés.TabIndex = 27;

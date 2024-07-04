@@ -4848,8 +4848,9 @@ namespace Aromapp
 
             return entre;
         }
-        public double GetProfit(bool today)
+        public double GetProfit(string duration,bool today)
         {
+
             string date = DateTime.Now.Date.Year + "-" +
                                DateTime.Now.Date.Month.ToString("D2") + "-" +
                                 DateTime.Now.Date.Day.ToString("D2");
@@ -4861,6 +4862,28 @@ namespace Aromapp
              + values[0].Trim() + "' and strftime('%m',ventes.[DateA]) = '" + values[1].Trim() +
              "' and strftime('%d',ventes.[DateA])= '" + values[2].Trim() + "' and n not like '%T%' ; "
                 : "select sum(benefice) from ventes where n not like '%T%' ; ";
+
+            if (today)
+            {
+                switch (duration)
+                {
+                    
+                    case "w":
+
+                        query = "select sum(benefice) from ventes where  ventes.[DateA] >= DATE('now', '-7 days')"+ 
+                         " and n not like '%T%' ; ";
+
+                        break;
+                   case "m":
+
+                        query = "select sum(benefice) from ventes where strftime('%Y',ventes.[DateA]) = '" 
+             +values[0].Trim() + "' and strftime('%m',ventes.[DateA]) = '" + values[1].Trim() +
+             "'  and n not like '%T%' ; ";
+
+                        break;
+
+                }
+            }
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {

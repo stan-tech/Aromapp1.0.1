@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Aromapp
 {
@@ -31,31 +33,30 @@ namespace Aromapp
         {
             InitializeComponent();
 
-
             regLines.CellBorderStyle = DataGridViewCellBorderStyle.Single;
 
             regLines.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle()
             {
-                BackColor = Color.White,
-                SelectionBackColor = Color.FromArgb(255, 64, 64, 64),
+                BackColor = System.Drawing.Color.White,
+                SelectionBackColor = System.Drawing.Color.FromArgb(255, 64, 64, 64),
                 Font = new Font("Calibri", 9.25f)
             };
             regLines.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle()
             {
-                BackColor = Color.FromArgb(63, 81, 181),
+                BackColor = System.Drawing.Color.FromArgb(63, 81, 181),
                 Font = new Font("Calibri", 9.25f, FontStyle.Bold)
             };
             Comptes.CellBorderStyle = DataGridViewCellBorderStyle.Single;
 
             Comptes.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle()
             {
-                BackColor = Color.White,
-                SelectionBackColor = Color.FromArgb(255, 64, 64, 64),
+                BackColor = System.Drawing.Color.White,
+                SelectionBackColor = System.Drawing.Color.FromArgb(255, 64, 64, 64),
                 Font = new Font("Calibri", 9.25f)
             };
             Comptes.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle()
             {
-                BackColor = Color.FromArgb(63, 81, 181),
+                BackColor = System.Drawing.Color.FromArgb(63, 81, 181),
                 Font = new Font("Calibri", 9.25f, FontStyle.Bold),
                 
             };
@@ -420,8 +421,8 @@ namespace Aromapp
             using (DBHelper helper = new DBHelper())
             {
                 entries = helper.GetEntriesAndSpendings(out spendings);
-                ProfitToday = helper.GetProfit(true);
-                Profit = helper.GetProfit(false);
+                today.Checked = true;
+                Profit = helper.GetProfit("d",false);
 
             }
 
@@ -832,6 +833,70 @@ namespace Aromapp
             }
         }
 
+        private void today_CheckedChanged(object sender, EventArgs e)
+        {
+            if (today.Checked == true)
+            {
+                thisWeek.Checked = false;
+                thisMonth.Checked = false;
+            }
+
+            groupBox3.BeginInvoke((Action)(() => {
+                groupBox3.Text = "Profits d'aujourd'hui:";
+            }));
+
+            setProfitText("d");
+
+
+
+        }
+
+        private void thisWeek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (thisWeek.Checked == true)
+            {
+                today.Checked = false;
+                thisMonth.Checked = false;
+            }
+
+            groupBox3.BeginInvoke((Action)(() => {
+                groupBox3.Text = "Profits de la semaine:";
+            }));
+
+            setProfitText("w");
+
+        }
+
+        private void thisMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (thisMonth.Checked == true)
+            {
+                today.Checked = false;
+                thisWeek.Checked = false;
+            }
+
+            groupBox3.BeginInvoke((Action)(() => {
+                groupBox3.Text = "Profits du mois:";
+            }));
+
+
+            setProfitText("m");
+        }
+        public void setProfitText(string duration)
+        {
+
+            using(DBHelper helper = new DBHelper())
+            {
+                ProfitToday = helper.GetProfit(duration, true);
+
+                benef.BeginInvoke((Action)(() =>
+                {
+                    benefToday.Text = ProfitToday.ToString("F2");
+                }));
+
+            }
+        }
+
         private void searchText_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -856,8 +921,8 @@ namespace Aromapp
             using (DBHelper helper = new DBHelper())
             {
                 entries = helper.GetEntriesAndSpendings(out spendings);
-                ProfitToday = helper.GetProfit(true);
-                Profit = helper.GetProfit(false);
+                today_CheckedChanged(sender, e);
+                Profit = helper.GetProfit("d",false);
 
             }
         }

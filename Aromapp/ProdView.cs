@@ -361,7 +361,7 @@ namespace Aromapp
             DialogResult result = MessageBox.Show("  Êtes vous sûr ?", ""
                                      , MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            List<string> prodIDs = new List<string> { pSuppText.Text };
+            List<string> prodIDs = new List<string> { product.ID };
 
             if (result == DialogResult.Yes)
             {
@@ -492,6 +492,11 @@ namespace Aromapp
         private void Unit_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedColumn = "unit";
+
+        }
+
+        private void MaingroupBox_Enter(object sender, EventArgs e)
+        {
 
         }
     }

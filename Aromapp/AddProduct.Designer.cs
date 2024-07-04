@@ -33,19 +33,19 @@ namespace Aromapp
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.prodName = new Aromapp.HintTexBox();
+            this.priceP = new Aromapp.HintTexBox();
+            this.priceSD = new Aromapp.HintTexBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Tyype = new System.Windows.Forms.ComboBox();
             this.Unit = new System.Windows.Forms.ComboBox();
+            this.priceSG = new Aromapp.HintTexBox();
+            this.Alert = new Aromapp.HintTexBox();
             this.suppName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Annuler = new Guna.UI2.WinForms.Guna2Button();
             this.OkButton = new Guna.UI2.WinForms.Guna2Button();
-            this.prodName = new Aromapp.HintTexBox();
-            this.priceP = new Aromapp.HintTexBox();
-            this.priceSD = new Aromapp.HintTexBox();
-            this.priceSG = new Aromapp.HintTexBox();
-            this.Alert = new Aromapp.HintTexBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -109,6 +109,59 @@ namespace Aromapp
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(753, 317);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // prodName
+            // 
+            this.prodName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prodName.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.prodName.ForeColor = System.Drawing.Color.Gray;
+            this.prodName.Location = new System.Drawing.Point(3, 3);
+            this.prodName.Name = "prodName";
+            this.prodName.Size = new System.Drawing.Size(747, 47);
+            this.prodName.TabIndex = 29;
+            this.prodName.Tag = "Nom de produits...";
+            this.prodName.Text = "Nom de produits...";
+            this.prodName.Click += new System.EventHandler(this.prodClick);
+            this.prodName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.prodName_KeyDown);
+            this.prodName.Leave += new System.EventHandler(this.prodLeave);
+            // 
+            // priceP
+            // 
+            this.priceP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceP.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.priceP.ForeColor = System.Drawing.Color.Gray;
+            this.priceP.Location = new System.Drawing.Point(3, 108);
+            this.priceP.Name = "priceP";
+            this.priceP.Size = new System.Drawing.Size(747, 47);
+            this.priceP.TabIndex = 29;
+            this.priceP.Tag = "Prix...";
+            this.priceP.Text = "Prix...";
+            this.priceP.Click += new System.EventHandler(this.pricePClick);
+            this.priceP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceP_KeyDown);
+            this.priceP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
+            this.priceP.Leave += new System.EventHandler(this.pricePLeave);
+            // 
+            // priceSD
+            // 
+            this.priceSD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceSD.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.priceSD.ForeColor = System.Drawing.Color.Gray;
+            this.priceSD.Location = new System.Drawing.Point(3, 213);
+            this.priceSD.Name = "priceSD";
+            this.priceSD.Size = new System.Drawing.Size(747, 47);
+            this.priceSD.TabIndex = 29;
+            this.priceSD.Tag = "Prix de vente en detail...";
+            this.priceSD.Text = "Prix de vente en detail...";
+            this.priceSD.Click += new System.EventHandler(this.priceSDClick);
+            this.priceSD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSD_KeyDown);
+            this.priceSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceSD_KeyPress);
+            this.priceSD.Leave += new System.EventHandler(this.priceSDLeave);
             // 
             // pictureBox1
             // 
@@ -186,6 +239,43 @@ namespace Aromapp
             this.Unit.TabIndex = 44;
             this.Unit.TextChanged += new System.EventHandler(this.Unit_TextChanged);
             // 
+            // priceSG
+            // 
+            this.priceSG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceSG.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.priceSG.ForeColor = System.Drawing.Color.Gray;
+            this.priceSG.Location = new System.Drawing.Point(20, 13);
+            this.priceSG.Margin = new System.Windows.Forms.Padding(20, 13, 25, 3);
+            this.priceSG.Name = "priceSG";
+            this.priceSG.Size = new System.Drawing.Size(447, 47);
+            this.priceSG.TabIndex = 29;
+            this.priceSG.Tag = "Prix de vente en gros...";
+            this.priceSG.Text = "Prix de vente en gros...";
+            this.priceSG.Click += new System.EventHandler(this.priceSGClick);
+            this.priceSG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSG_KeyDown);
+            this.priceSG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceSG_KeyPress);
+            this.priceSG.Leave += new System.EventHandler(this.priceSGLeave);
+            // 
+            // Alert
+            // 
+            this.Alert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Alert.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.Alert.ForeColor = System.Drawing.Color.Gray;
+            this.Alert.Location = new System.Drawing.Point(20, 91);
+            this.Alert.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
+            this.Alert.Name = "Alert";
+            this.Alert.Size = new System.Drawing.Size(447, 47);
+            this.Alert.TabIndex = 29;
+            this.Alert.Tag = "Alerte de stock...";
+            this.Alert.Text = "Alerte de stock...";
+            this.Alert.Click += new System.EventHandler(this.Alert_Click);
+            this.Alert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Alert_KeyDown);
+            this.Alert.Leave += new System.EventHandler(this.Alert_Leave);
+            // 
             // suppName
             // 
             this.suppName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -256,96 +346,6 @@ namespace Aromapp
             this.OkButton.TabIndex = 10;
             this.OkButton.Text = "Ok";
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
-            // 
-            // prodName
-            // 
-            this.prodName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prodName.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.prodName.ForeColor = System.Drawing.Color.Gray;
-            this.prodName.Location = new System.Drawing.Point(3, 3);
-            this.prodName.Name = "prodName";
-            this.prodName.Size = new System.Drawing.Size(747, 47);
-            this.prodName.TabIndex = 29;
-            this.prodName.Tag = "Nom de produits...";
-            this.prodName.Text = "Nom de produits...";
-            this.prodName.Click += new System.EventHandler(this.prodClick);
-            this.prodName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.prodName_KeyDown);
-            this.prodName.Leave += new System.EventHandler(this.prodLeave);
-            // 
-            // priceP
-            // 
-            this.priceP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceP.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.priceP.ForeColor = System.Drawing.Color.Gray;
-            this.priceP.Location = new System.Drawing.Point(3, 108);
-            this.priceP.Name = "priceP";
-            this.priceP.Size = new System.Drawing.Size(747, 47);
-            this.priceP.TabIndex = 29;
-            this.priceP.Tag = "Prix...";
-            this.priceP.Text = "Prix...";
-            this.priceP.Click += new System.EventHandler(this.pricePClick);
-            this.priceP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceP_KeyDown);
-            this.priceP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceP_KeyPress);
-            this.priceP.Leave += new System.EventHandler(this.pricePLeave);
-            // 
-            // priceSD
-            // 
-            this.priceSD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceSD.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.priceSD.ForeColor = System.Drawing.Color.Gray;
-            this.priceSD.Location = new System.Drawing.Point(3, 213);
-            this.priceSD.Name = "priceSD";
-            this.priceSD.Size = new System.Drawing.Size(747, 47);
-            this.priceSD.TabIndex = 29;
-            this.priceSD.Tag = "Prix de vente en detail...";
-            this.priceSD.Text = "Prix de vente en detail...";
-            this.priceSD.Click += new System.EventHandler(this.priceSDClick);
-            this.priceSD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSD_KeyDown);
-            this.priceSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceSD_KeyPress);
-            this.priceSD.Leave += new System.EventHandler(this.priceSDLeave);
-            // 
-            // priceSG
-            // 
-            this.priceSG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceSG.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.priceSG.ForeColor = System.Drawing.Color.Gray;
-            this.priceSG.Location = new System.Drawing.Point(20, 13);
-            this.priceSG.Margin = new System.Windows.Forms.Padding(20, 13, 25, 3);
-            this.priceSG.Name = "priceSG";
-            this.priceSG.Size = new System.Drawing.Size(447, 47);
-            this.priceSG.TabIndex = 29;
-            this.priceSG.Tag = "Prix de vente en gros...";
-            this.priceSG.Text = "Prix de vente en gros...";
-            this.priceSG.Click += new System.EventHandler(this.priceSGClick);
-            this.priceSG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.priceSG_KeyDown);
-            this.priceSG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceSG_KeyPress);
-            this.priceSG.Leave += new System.EventHandler(this.priceSGLeave);
-            // 
-            // Alert
-            // 
-            this.Alert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Alert.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.Alert.ForeColor = System.Drawing.Color.Gray;
-            this.Alert.Location = new System.Drawing.Point(20, 91);
-            this.Alert.Margin = new System.Windows.Forms.Padding(20, 3, 25, 3);
-            this.Alert.Name = "Alert";
-            this.Alert.Size = new System.Drawing.Size(447, 47);
-            this.Alert.TabIndex = 29;
-            this.Alert.Tag = "Alerte de stock...";
-            this.Alert.Text = "Alerte de stock...";
-            this.Alert.Click += new System.EventHandler(this.Alert_Click);
-            this.Alert.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Alert_KeyDown);
-            this.Alert.Leave += new System.EventHandler(this.Alert_Leave);
             // 
             // AddProduct
             // 

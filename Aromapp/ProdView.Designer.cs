@@ -116,6 +116,7 @@
             this.MaingroupBox.TabStop = false;
             this.MaingroupBox.Tag = "Référence du produit: ";
             this.MaingroupBox.Text = "Référence du produit: ";
+            this.MaingroupBox.Enter += new System.EventHandler(this.MaingroupBox_Enter);
             // 
             // tableLayoutPanel2
             // 
