@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aromapp", "Aromapp\Aromapp.csproj", "{EE4CA2DF-185E-4B77-A240-A576BA6BD908}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE4CA2DF-185E-4B77-A240-A576BA6BD908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4CA2DF-185E-4B77-A240-A576BA6BD908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4CA2DF-185E-4B77-A240-A576BA6BD908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4CA2DF-185E-4B77-A240-A576BA6BD908}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6C7368B-8316-4462-8506-100909749CEB}
+	EndGlobalSection
+EndGlobal
