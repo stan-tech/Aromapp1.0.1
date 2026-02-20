@@ -23,12 +23,22 @@ namespace Aromapp
         }
         void TextBox_Click(object sender, EventArgs e)
         {
-            HintUtils.ShowHint(this);
+            HintUtils.HideHint(this);
         }
         void TextBox_Leave(object sender, EventArgs e)
         {
-            HintUtils.HideHint(this);
+            HintUtils.ShowHint(this);
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // HintTexBox
+            // 
+            this.Text = "tr";
+            this.ResumeLayout(false);
+
+        }
     }
 }

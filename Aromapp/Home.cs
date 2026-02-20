@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors.TextEditController.Utils;
+using DocumentFormat.OpenXml.Office2019.Presentation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,14 +28,13 @@ namespace Aromapp
         StockForm stock = new StockForm();
         AdminOptions options = new AdminOptions();
         string number = "0";
-        CleanTrashService maintenance;
-        public Home(CleanTrashService maintenance)
+        public Home()
         {
           
             InitializeComponent();
+            InitializeTrashTimer();
             AccessControl.AccessControl._Form = this;
 
-            this.maintenance = maintenance;
             this.DoubleBuffered = true;
             using (DBHelper helper = new DBHelper())
             {
@@ -45,7 +45,23 @@ namespace Aromapp
             this.Shown += assign;
         }
 
+        private System.Windows.Forms.Timer trashTimer;
 
+        private void InitializeTrashTimer()
+        {
+            trashTimer = new System.Windows.Forms.Timer();
+            trashTimer.Interval = 600 * 60 * 1000;
+            trashTimer.Tick += TrashTimer_Tick;
+            trashTimer.Start();
+        }
+        private void TrashTimer_Tick(object sender, EventArgs e)
+        {
+          using(TrashDBHelper helper = new TrashDBHelper())
+            {
+                helper.AutoDelete();
+            }
+
+        }
         void StartForm()
         {
             Application.Run(new SplashScreen());
@@ -65,47 +81,47 @@ namespace Aromapp
         }
         private void accordionControlElement11_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
             comptoire.Dock = DockStyle.Fill;
             comptoire.BringToFront();
             comptoire.QTChanged += QuantChanged;
 
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(comptoire);
-            Properties.Settings.Default.Reload();
             AccessControl.AccessControl.Granted = !Properties.Settings.Default.CmptLocked;
 
         }
 
         private void accordionControlElement2_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
             ventes.Dock = DockStyle.Fill;
             ventes.BringToFront();
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(ventes);
-            Properties.Settings.Default.Reload();
             AccessControl.AccessControl.Granted = !Properties.Settings.Default.SalesLocked;
 
         }
 
         private void accordionControlElement3_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
             achats.Dock = DockStyle.Fill;
             achats.BringToFront();
             achats.QTChanged += QuantChanged;
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(achats);
-            Properties.Settings.Default.Reload();
             AccessControl.AccessControl.Granted = !Properties.Settings.Default.AchatLocked;
 
         }
 
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
             caisse.Dock = DockStyle.Fill;
             caisse.BringToFront();
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(caisse);
-            Properties.Settings.Default.Reload();
             AccessControl.AccessControl.Granted = !Properties.Settings.Default.CaisseLocked;
             //caisse.Granted = false;
 
@@ -113,33 +129,35 @@ namespace Aromapp
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
             clients.Dock = DockStyle.Fill;
             clients.BringToFront();
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(clients);
-            Properties.Settings.Default.Reload();
             AccessControl.AccessControl.Granted = !Properties.Settings.Default.CustLocked;
 
         }
 
         private void accordionControlElement6_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
+
             suppliers.Dock = DockStyle.Fill;
             suppliers.BringToFront();
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(suppliers);
-            Properties.Settings.Default.Reload();
            AccessControl.AccessControl.Granted = !Properties.Settings.Default.SuppLocked;
 
         }
 
         private void accordionControlElement7_Click(object sender, EventArgs e)
         {
+
+            Properties.Settings.Default.Reload();
             products.Dock = DockStyle.Fill;
             products.BringToFront();
             fluentDesignFormContainer.Controls.Clear();
             fluentDesignFormContainer.Controls.Add(products);
-            Properties.Settings.Default.Reload();
             AccessControl.AccessControl.Granted = !Properties.Settings.Default.PrdLocked;
 
         }
@@ -231,7 +249,6 @@ namespace Aromapp
 
             if (result == DialogResult.Yes)
             {
-                maintenance.Dispose();
                 new DBHelper().LogIn(Properties.Settings.Default.LoggedInUserID, false);
              
             }
@@ -243,8 +260,12 @@ namespace Aromapp
 
         private void Trash_ItemClick(object sender, ItemClickEventArgs e)
         {
+            Properties.Settings.Default.Reload();
+
             Trash trash = new Trash();
-       
+            AccessControl.AccessControl._Form = trash;
+            AccessControl.AccessControl.Granted = !Properties.Settings.Default.TrashLocked;
+            trash.TrashClosing += AccessControl.AccessControl.OnTrashClosing;
             trash.ShowDialog();
         }
     }

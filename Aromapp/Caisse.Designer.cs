@@ -770,7 +770,7 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.38283F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.54025F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 226F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.tableLayoutPanel11.Controls.Add(this.iconButton2, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.amount, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.iconButton8, 3, 0);
@@ -791,7 +791,7 @@
             this.iconButton2.FillColor = System.Drawing.Color.LightSteelBlue;
             this.iconButton2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.iconButton2.ForeColor = System.Drawing.Color.Black;
-            this.iconButton2.Location = new System.Drawing.Point(331, 20);
+            this.iconButton2.Location = new System.Drawing.Point(329, 20);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(20, 20, 3, 20);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(105, 60);
@@ -810,7 +810,7 @@
             this.amount.Location = new System.Drawing.Point(20, 25);
             this.amount.Margin = new System.Windows.Forms.Padding(20, 25, 10, 3);
             this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(281, 47);
+            this.amount.Size = new System.Drawing.Size(279, 47);
             this.amount.TabIndex = 1;
             this.amount.Tag = "Valeur...";
             this.amount.Text = "Valeur...";
@@ -826,10 +826,10 @@
             this.iconButton8.FillColor = System.Drawing.Color.LightSteelBlue;
             this.iconButton8.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.iconButton8.ForeColor = System.Drawing.Color.Black;
-            this.iconButton8.Location = new System.Drawing.Point(590, 20);
+            this.iconButton8.Location = new System.Drawing.Point(588, 20);
             this.iconButton8.Margin = new System.Windows.Forms.Padding(20, 20, 3, 20);
             this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(205, 60);
+            this.iconButton8.Size = new System.Drawing.Size(207, 60);
             this.iconButton8.TabIndex = 2;
             this.iconButton8.Text = "Remplacer";
             this.iconButton8.Click += new System.EventHandler(this.iconButton2_Click);
@@ -843,7 +843,7 @@
             this.iconButton9.FillColor = System.Drawing.Color.LightSteelBlue;
             this.iconButton9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.iconButton9.ForeColor = System.Drawing.Color.Black;
-            this.iconButton9.Location = new System.Drawing.Point(459, 20);
+            this.iconButton9.Location = new System.Drawing.Point(457, 20);
             this.iconButton9.Margin = new System.Windows.Forms.Padding(20, 20, 3, 20);
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.Size = new System.Drawing.Size(108, 60);

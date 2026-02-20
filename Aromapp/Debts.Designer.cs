@@ -111,7 +111,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.00223F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.99777F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 791F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 792F));
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.oldest, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.OldestclientName, 2, 0);
@@ -155,7 +155,7 @@
             this.OldestclientName.BackColor = System.Drawing.Color.Transparent;
             this.OldestclientName.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.OldestclientName.ForeColor = System.Drawing.Color.White;
-            this.OldestclientName.Location = new System.Drawing.Point(456, 8);
+            this.OldestclientName.Location = new System.Drawing.Point(455, 8);
             this.OldestclientName.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             this.OldestclientName.Name = "OldestclientName";
             this.OldestclientName.Size = new System.Drawing.Size(76, 37);

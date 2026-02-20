@@ -16,17 +16,30 @@ namespace Aromapp
         TrashView view;
         private bool _granted;
         private Panel unauthorizedPanel;
+        public event EventHandler TrashClosing;
 
 
-        
+
 
         public Trash()
         {
             InitializeComponent();
 
-            AccessControl.AccessControl._Form = this;
-            AccessControl.AccessControl.Granted = false;
+            //AccessControl.AccessControl._Form = this;
+            //AccessControl.AccessControl.Granted = false;
 
+        }
+
+        public void OnTrashClosing(object sender, EventArgs e)
+        {
+
+            EventHandler eventHandler = TrashClosing;
+
+            if (e != null)
+            {
+                eventHandler(sender, e);
+
+            }
         }
 
         private void Trash_Load(object sender, EventArgs e)
@@ -44,6 +57,8 @@ namespace Aromapp
             Products.Controls.Add(view);
             view.Dock = DockStyle.Fill;
 
+            TrashHint.Caption = $"Les éléments supprimés sont placés dans la corbeille pendant une durée maximale de {Properties.Settings.Default.RetentionPeriod} jours";
+            this.CenterToScreen();
 
         }
 
@@ -93,6 +108,23 @@ namespace Aromapp
             tab.Controls.Add(view);
 
             view.Dock = DockStyle.Fill;
+        }
+
+        private void barLinkContainerItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChangeRetentionPeriod change = new ChangeRetentionPeriod();
+            if(change.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.Reload();
+                TrashHint.Caption = $"Les éléments supprimés sont placés dans la corbeille pendant une durée maximale de {Properties.Settings.Default.RetentionPeriod} jours";
+
+            }
+          
+        }
+
+        private void Trash_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            OnTrashClosing(sender, e);
         }
     }
 }

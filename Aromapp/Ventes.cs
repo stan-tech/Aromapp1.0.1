@@ -51,8 +51,7 @@ namespace Aromapp
 
         private void Ventes_Load(object sender, EventArgs e)
         {
-
-
+            guna2DateTimePicker1.Value = DateTime.Now;
             timer1.Start();
         }
 

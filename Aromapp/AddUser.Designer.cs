@@ -73,6 +73,7 @@
             this.name.Tag = "Nom complet...";
             this.name.Text = "Nom complet...";
             this.name.Click += new System.EventHandler(this.name_Click);
+            this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             this.name.Leave += new System.EventHandler(this.name_Leave);
             // 
             // label1
@@ -171,7 +172,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.afficher);
-            this.panel1.Location = new System.Drawing.Point(381, 336);
+            this.panel1.Location = new System.Drawing.Point(381, 334);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 69);
             this.panel1.TabIndex = 51;

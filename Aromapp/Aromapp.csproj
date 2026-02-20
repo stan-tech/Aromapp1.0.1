@@ -210,6 +210,12 @@
     <Compile Include="CartItemOptions.Designer.cs">
       <DependentUpon>CartItemOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeRetentionPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeRetentionPeriod.Designer.cs">
+      <DependentUpon>ChangeRetentionPeriod.cs</DependentUpon>
+    </Compile>
     <Compile Include="CleanTrashService.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientHistory.cs">
@@ -401,6 +407,7 @@
     <Compile Include="Suppliers.Designer.cs">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableConfig.cs" />
     <Compile Include="Tables.cs" />
     <Compile Include="Trash.cs">
       <SubType>Form</SubType>
@@ -452,6 +459,9 @@
     <EmbeddedResource Include="CartItemOptions.resx">
       <DependentUpon>CartItemOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeRetentionPeriod.resx">
+      <DependentUpon>ChangeRetentionPeriod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientHistory.resx">
       <DependentUpon>ClientHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="etiquette.resx">
       <DependentUpon>etiquette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HintTexBox.resx">
+      <DependentUpon>HintTexBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="History.resx">
       <DependentUpon>History.cs</DependentUpon>

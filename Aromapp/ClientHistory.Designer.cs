@@ -231,7 +231,7 @@
             this.custNameText.AutoSize = true;
             this.custNameText.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custNameText.ForeColor = System.Drawing.Color.White;
-            this.custNameText.Location = new System.Drawing.Point(268, 73);
+            this.custNameText.Location = new System.Drawing.Point(271, 84);
             this.custNameText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.custNameText.Name = "custNameText";
             this.custNameText.Size = new System.Drawing.Size(56, 28);
@@ -242,7 +242,7 @@
             // 
             this.label12.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(6, 50);
+            this.label12.Location = new System.Drawing.Point(6, 49);
             this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(232, 50);
@@ -257,7 +257,7 @@
             this.label2.Location = new System.Drawing.Point(6, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 50);
+            this.label2.Size = new System.Drawing.Size(232, 49);
             this.label2.TabIndex = 35;
             this.label2.Text = "Référence de client:";
             // 
@@ -266,7 +266,7 @@
             this.custRef.AutoSize = true;
             this.custRef.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custRef.ForeColor = System.Drawing.Color.White;
-            this.custRef.Location = new System.Drawing.Point(268, 0);
+            this.custRef.Location = new System.Drawing.Point(271, 0);
             this.custRef.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.custRef.Name = "custRef";
             this.custRef.Size = new System.Drawing.Size(56, 28);
@@ -277,10 +277,10 @@
             // 
             this.label4.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(598, 0);
+            this.label4.Location = new System.Drawing.Point(605, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 50);
+            this.label4.Size = new System.Drawing.Size(196, 49);
             this.label4.TabIndex = 35;
             this.label4.Text = "Total des achats:";
             // 
@@ -289,7 +289,7 @@
             this.TotalAchat.AutoSize = true;
             this.TotalAchat.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAchat.ForeColor = System.Drawing.Color.White;
-            this.TotalAchat.Location = new System.Drawing.Point(811, 0);
+            this.TotalAchat.Location = new System.Drawing.Point(818, 0);
             this.TotalAchat.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TotalAchat.Name = "TotalAchat";
             this.TotalAchat.Size = new System.Drawing.Size(56, 28);
@@ -300,7 +300,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(598, 50);
+            this.label5.Location = new System.Drawing.Point(605, 49);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 50);
@@ -314,7 +314,7 @@
             this.dettes.AutoSize = true;
             this.dettes.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dettes.ForeColor = System.Drawing.Color.White;
-            this.dettes.Location = new System.Drawing.Point(811, 73);
+            this.dettes.Location = new System.Drawing.Point(818, 84);
             this.dettes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.dettes.Name = "dettes";
             this.dettes.Size = new System.Drawing.Size(56, 28);
@@ -329,7 +329,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.76923F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
             this.tableLayoutPanel1.Controls.Add(this.iconButton4, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TotalAchat, 3, 0);
@@ -339,13 +339,14 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.custNameText, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 30);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1364, 101);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.55445F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.44555F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1372, 112);
             this.tableLayoutPanel1.TabIndex = 38;
             // 
             // iconButton4
@@ -356,10 +357,10 @@
             this.iconButton4.BorderRadius = 5;
             this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.Location = new System.Drawing.Point(1128, 51);
+            this.iconButton4.Location = new System.Drawing.Point(1135, 50);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(1);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(235, 49);
+            this.iconButton4.Size = new System.Drawing.Size(236, 61);
             this.iconButton4.TabIndex = 47;
             this.iconButton4.Text = "+ Dettes";
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
@@ -375,8 +376,8 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 15);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.20112F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.74302F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1395, 895);
             this.tableLayoutPanel2.TabIndex = 39;

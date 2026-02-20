@@ -427,6 +427,7 @@ namespace Aromapp
 
         private void Caisse_Shown(object sender, EventArgs e)
         {
+            guna2DateTimePicker1.Value = DateTime.Now;
             worker.RunWorkerAsync();
 
         }

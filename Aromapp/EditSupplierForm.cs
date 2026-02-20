@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -174,6 +175,8 @@ namespace Aromapp
         private void EditSupplierForm_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(545, 492);
+            datePicker.Value = DateTime.Now;
+
             this.CenterToScreen();
         }
 

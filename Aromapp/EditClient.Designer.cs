@@ -387,6 +387,7 @@
             this.datePicker.Size = new System.Drawing.Size(254, 66);
             this.datePicker.TabIndex = 26;
             this.datePicker.Value = new System.DateTime(2024, 2, 2, 14, 55, 7, 466);
+            this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
             // 
             // groupBox7
             // 

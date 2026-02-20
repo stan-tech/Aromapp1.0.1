@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -235,6 +236,7 @@ namespace Aromapp
 
         private void Achats_Shown(object sender, EventArgs e)
         {
+            guna2DateTimePicker1.Value = DateTime.Now;
             worker.RunWorkerAsync();
         }
 

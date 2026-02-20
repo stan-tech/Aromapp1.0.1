@@ -12,6 +12,8 @@ namespace Aromapp.AccessControl
         public static bool _granted;
         public static Form _form;
         private static Panel unauthorizedPanel;
+        public static event EventHandler TrashClosing;
+
         public static bool Granted
         {
             get => _granted;
@@ -22,11 +24,22 @@ namespace Aromapp.AccessControl
             }
         }
 
+
         public static Form _Form
         {
             get => _form; set
             {
                 _form = value;
+            }
+        }
+        public static void OnTrashClosing(object sender, EventArgs e)
+        {
+
+            if (unauthorizedPanel != null && !unauthorizedPanel.IsDisposed)
+            {
+                _form.Controls.Remove(unauthorizedPanel);
+                unauthorizedPanel.Dispose();
+                unauthorizedPanel = null;
             }
         }
 
@@ -46,6 +59,8 @@ namespace Aromapp.AccessControl
                 }
             }
         }
+
+
         public static void ShowUnauthorizedPanel()
         {
             if (unauthorizedPanel == null || unauthorizedPanel.IsDisposed)

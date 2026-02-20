@@ -166,5 +166,53 @@ namespace Aromapp.Properties {
                 this["SuppLocked"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowPurp {
+            get {
+                return ((bool)(this["ShowPurp"]));
+            }
+            set {
+                this["ShowPurp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowStockPurp {
+            get {
+                return ((bool)(this["ShowStockPurp"]));
+            }
+            set {
+                this["ShowStockPurp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowProdPurp {
+            get {
+                return ((bool)(this["ShowProdPurp"]));
+            }
+            set {
+                this["ShowProdPurp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrashLocked {
+            get {
+                return ((bool)(this["TrashLocked"]));
+            }
+            set {
+                this["TrashLocked"] = value;
+            }
+        }
     }
 }

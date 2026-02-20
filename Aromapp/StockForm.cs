@@ -111,10 +111,18 @@ namespace Aromapp
             invTable.Invoke((Action)(() => {
 
                 invTable.DataSource = table;
+
             }));
 
             articleN.Invoke((Action)(() => { articleN.Text = NumberOfProducts; }));
             shortageN.Invoke((Action)(() => { shortageN.Text = ShortageNumber; }));
+            ShowPurp.Toggled -= ShowPurp_Toggled;
+            ShowPurp.IsOn = Properties.Settings.Default.ShowStockPurp;
+            ShowPurp.Toggled += ShowPurp_Toggled;
+
+            invTable.Columns["Prix d'achat"].Visible = Properties.Settings.Default.ShowStockPurp;
+
+
 
         }
 
@@ -352,6 +360,42 @@ namespace Aromapp
             {
                 Tyype.Text = "Type";
             }
+        }
+
+        private void ShowPurp_Toggled(object sender, EventArgs e)
+        {
+            if (ShowPurp.IsOn)
+            {
+                Confirm confirm = new Confirm();
+                confirm.Passed += ConfirmShowPurp;
+
+                if (confirm.ShowDialog() != DialogResult.OK)
+                {
+                    ShowPurp.Toggled -= ShowPurp_Toggled;
+                    ShowPurp.IsOn = !ShowPurp.IsOn;
+                    ShowPurp.Toggled += ShowPurp_Toggled;
+
+                }
+            }
+            else
+            {
+                invTable.Columns["Prix d'achat"].Visible = false;
+                Properties.Settings.Default.ShowStockPurp = false;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+
+
+            }
+        }
+
+        private void ConfirmShowPurp(object sender, EventArgs e)
+        {
+            invTable.Columns["Prix d'achat"].Visible = true;
+            Properties.Settings.Default.ShowStockPurp = true;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Reload();
+
+
         }
 
         public void AddTable(int currentPage)

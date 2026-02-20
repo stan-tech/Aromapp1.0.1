@@ -33,6 +33,14 @@ namespace Aromapp
                 users = helper.GetUsers();
 
             }
+            PassWord.Focus();
+            PassWord.Select();
+            PassWord.Invoke(new Action(() =>
+            {
+                PassWord.Focus();
+                PassWord.Select();
+            }));
+            
             UsersCombo.Items.Clear();
 
             foreach (User user in users)

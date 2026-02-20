@@ -60,6 +60,8 @@ namespace Aromapp
         public Comptoire()
         {
             InitializeComponent();
+
+         
             this.toolTip1.SetToolTip(this.iconButton2, "Ctrl+B pour un Bon, Ctrl+F pour une Facture");
             this.toolTip1.SetToolTip(this.effacerbtn, "Ctrl+E");
 
@@ -250,6 +252,7 @@ namespace Aromapp
         }
         void Comptoire_Load(object sender, EventArgs e)
         {
+           
             if (tva.Text == "")
             {
                 tva.Text = "TVA";
@@ -266,12 +269,15 @@ namespace Aromapp
             {
                 comboBox1.Text = "Types";
             }
-
+            ShowPurp.Toggled -= ShowPurp_Toggled;
+            ShowPurp.IsOn=Properties.Settings.Default.ShowPurp;
+            ShowPurp.Toggled += ShowPurp_Toggled;
 
             CartTable.Columns.AddRange(new DataColumn[8] { new DataColumn("Réf"),new DataColumn("Désignation"),
                 new DataColumn("Qté"), new DataColumn("Prix U"), new DataColumn("Type"),new DataColumn("Marge"),
                 new DataColumn("Remise") ,new DataColumn("Montant HT")});
         }
+
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
@@ -1019,7 +1025,8 @@ namespace Aromapp
 /* custName.AutoCompleteCustomSource = collection;
                          custName.AutoCompleteMode = AutoCompleteMode.Suggest;
                          custName.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                         *//*
+                         */
+/*
                         custName.Items.Clear();
                         List<string> collectionList = collection.Cast<string>().ToList();
 
@@ -1078,6 +1085,7 @@ namespace Aromapp
             }
             bindingSource.DataSource = table;
             prods.DataSource = bindingSource;
+
         }
         private void prods_Scroll(object sender, ScrollEventArgs e)
         {
@@ -1188,7 +1196,73 @@ namespace Aromapp
             }
         }
 
-       
+        private void ShowPurp_Toggled(object sender, EventArgs e)
+        {
+            if (ShowPurp.IsOn)
+            {
+                Confirm confirm = new Confirm();
+                confirm.Passed += ConfirmShowPurp;
+
+                if (confirm.ShowDialog() != DialogResult.OK)
+                {
+                    ShowPurp.Toggled -= ShowPurp_Toggled;
+                    ShowPurp.IsOn = !ShowPurp.IsOn;
+                    ShowPurp.Toggled += ShowPurp_Toggled;
+
+                }
+            }
+            else
+            {
+                prods.Columns["Prix d'achat"].Visible = false;
+                Properties.Settings.Default.ShowPurp = false;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+
+            }
+            prods.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+  
+            prods.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle()
+            {
+                BackColor = System.Drawing.Color.White,
+                SelectionBackColor = System.Drawing.Color.FromArgb(255, 64, 64, 64),
+                Font = new System.Drawing.Font("Calibri", 9.25f)
+            };
+            cart.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            cart.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle()
+            {
+                BackColor = System.Drawing.Color.White,
+                SelectionBackColor = System.Drawing.Color.FromArgb(255, 64, 64, 64),
+                Font = new System.Drawing.Font("Calibri", 9.25f)
+            };
+            cart.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle()
+            {
+                BackColor = System.Drawing.Color.FromArgb(63, 81, 181),
+                Font = new System.Drawing.Font("Calibri", 9.25f, FontStyle.Bold)
+            };
+            prods.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle()
+            {
+                BackColor = System.Drawing.Color.FromArgb(63, 81, 181),
+                Font = new System.Drawing.Font("Calibri", 9.25f, FontStyle.Bold)
+                ,
+                ForeColor = Color.White
+            };
+        }
+
+        private void ConfirmShowPurp(object sender, EventArgs e)
+        {
+            prods.Columns["Prix d'achat"].Visible = true;
+            Properties.Settings.Default.ShowPurp = true;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Reload();
+
+
+        }
+
+        private void prods_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            prods.Columns["Prix d'achat"].Visible = false;
+
+        }
 
         public string GeneratePdf(Guna2DataGridView grid,
        Bill bill)

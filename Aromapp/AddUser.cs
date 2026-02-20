@@ -206,5 +206,13 @@ namespace Aromapp
         {
             this.Close();
         }
+
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+            if(name.Text != name.Tag.ToString())
+            {
+                name.ForeColor = Color.Black;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Aromapp.Properties;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -5134,35 +5135,25 @@ namespace Aromapp
             }
             else
             {
-                InsertIntoLog("Tout les produits ont été supprimés");
+                InsertIntoLog("Tous les produits ont été supprimés");
 
             }
 
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-
-
-                using (SQLiteCommand command = new SQLiteCommand(connection))
-                {
-
+           
                     if (IDs[0] != "all")
                     {
                         foreach (string id in IDs)
                         {
-                            string query = "delete from produits where c_prd = '" + id + "';";
-
-                            command.CommandText = query;
-
+                            
                             try
                             {
-                                command.ExecuteNonQuery();
+                                TrashDBHelper helper = new TrashDBHelper();
+                                helper.DeleteProduitWithTrash(id, Properties.Settings.Default.LoggedInUserName);
                                 done = 1;
 
                             }
                             catch (Exception)
                             {
-                                connection.Close();
                                 done = 0;
                             }
 
@@ -5170,28 +5161,18 @@ namespace Aromapp
                     }
                     else
                     {
-                        string query = "delete from produits;";
+                            try
+                            {
+                                TrashDBHelper helper = new TrashDBHelper();
+                                helper.DeleteProduitWithTrash("*", Properties.Settings.Default.LoggedInUserName);
+                                done = 1;
 
-                        command.CommandText = query;
-
-                        try
-                        {
-                            command.ExecuteNonQuery();
-                            done = 1;
-
-                        }
-                        catch (Exception)
-                        {
-                            connection.Close();
-                            done = 0;
-                        }
+                            }
+                            catch (Exception)
+                            {
+                                done = 0;
+                            }
                     }
-                    connection.Close();
-
-
-                }
-            }
-
 
             if (IDs[0] != "all")
             {
@@ -5327,12 +5308,10 @@ namespace Aromapp
 
                     if (command.ExecuteNonQuery() > 0)
                     {
-                        connection.Close();
                         return true;
                     }
                     else
                     {
-                        connection.Close();
                         return false;
                     }
 
@@ -5476,7 +5455,7 @@ namespace Aromapp
         public bool DeleteUser(string ID)
         {
             string query = "delete from user where n = '" + ID + "';";
-            string trashQuery = $"insert into trash_user select * , current_timestamp, '{Properties.Settings.Default.LoggedInUserName}' from user ";
+            string trashQuery = $"insert into trash_user select * , current_timestamp, '{Properties.Settings.Default.LoggedInUserName}' from user where n = '{ID}' ";
 
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -5484,24 +5463,58 @@ namespace Aromapp
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    SQLiteCommand trashCcommand = new SQLiteCommand(trashQuery, connection);
+                    SQLiteCommand trashCommand = new SQLiteCommand(trashQuery, connection);
 
-                    if (trashCcommand.ExecuteNonQuery()>0)
+                    try
                     {
-                        if (command.ExecuteNonQuery() > 0)
+                        if (trashCommand.ExecuteNonQuery() > 0)
                         {
-                            connection.Close();
-                            return true;
+                            if (command.ExecuteNonQuery() > 0)
+                            {
+                                connection.Close();
+                                return true;
+                            }
+                            else
+                            {
+                                connection.Close();
+                                return false;
+                            }
                         }
                         else
                         {
-                            connection.Close();
                             return false;
                         }
                     }
-                    else
+                    catch (Exception)
                     {
-                        return false;
+                        string newID = generateID("US", Tables.user);
+                        string updateID = $"update user set n ='{newID}' where n = '{ID}'";
+
+                        command.CommandText = updateID;
+                        command.ExecuteNonQuery();
+
+                        command.CommandText = query.Replace(ID, newID);
+
+                        trashCommand.CommandText = trashCommand.CommandText.Replace(ID, newID);
+
+                        if (trashCommand.ExecuteNonQuery() > 0)
+                        {
+                            if (command.ExecuteNonQuery() > 0)
+                            {
+                                connection.Close();
+                                return true;
+                            }
+                            else
+                            {
+                                connection.Close();
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
                     }
                 }
             }

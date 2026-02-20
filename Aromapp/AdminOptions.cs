@@ -582,9 +582,13 @@ namespace Aromapp
                     case "StockCheck":
                         Properties.Settings.Default.StockLocked = StockCheck.Checked;
                         break;
+                    case "TrashCheck":
+                        Properties.Settings.Default.TrashLocked = TrashCheck.Checked;
+                        break;
 
                 }
                 Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
             }
         }
     }

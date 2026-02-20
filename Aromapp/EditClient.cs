@@ -171,7 +171,13 @@ namespace Aromapp
         private void EditClient_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(545, 492);
+            datePicker.Value = DateTime.Now;
             this.CenterToScreen();
+        }
+
+        private void datePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         void worker_Work(object sender, DoWorkEventArgs e)

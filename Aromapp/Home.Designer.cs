@@ -62,10 +62,10 @@
             this.fluentDesignFormContainer.Appearance.Options.UseBackColor = true;
             this.fluentDesignFormContainer.Controls.Add(this.label1);
             this.fluentDesignFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer.Location = new System.Drawing.Point(394, 62);
+            this.fluentDesignFormContainer.Location = new System.Drawing.Point(394, 102);
             this.fluentDesignFormContainer.Margin = new System.Windows.Forms.Padding(340241408, 243824640, 340241408, 243824640);
             this.fluentDesignFormContainer.Name = "fluentDesignFormContainer";
-            this.fluentDesignFormContainer.Size = new System.Drawing.Size(780, 719);
+            this.fluentDesignFormContainer.Size = new System.Drawing.Size(780, 679);
             this.fluentDesignFormContainer.TabIndex = 0;
             // 
             // label1
@@ -75,7 +75,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(780, 719);
+            this.label1.Size = new System.Drawing.Size(780, 679);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenue";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,14 +99,14 @@
             this.accordionControlElement7,
             this.accordionControlElement8,
             this.accordionControlElement9});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 62);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 102);
             this.accordionControl1.LookAndFeel.SkinName = "Office 2019 Colorful";
             this.accordionControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(261724160, 180901888, 261724160, 180901888);
             this.accordionControl1.MaximumSize = new System.Drawing.Size(1936, 0);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(394, 719);
+            this.accordionControl1.Size = new System.Drawing.Size(394, 679);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -149,7 +149,6 @@
             this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement4.Text = "Caisse";
             this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
-            
             // 
             // accordionControlElement5
             // 

@@ -323,6 +323,7 @@ namespace Aromapp
             this.ClientSize = new System.Drawing.Size(570, 560);
             this.MaximumSize = new System.Drawing.Size(570, 560);
             this.MinimumSize = new System.Drawing.Size(570, 560);
+            guna2DateTimePicker1.Value = DateTime.Now;
             this.CenterToScreen();
         }
 

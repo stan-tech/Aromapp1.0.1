@@ -44,7 +44,8 @@ namespace Aromapp
                 users = helper.GetUsers();
 
             }
-
+            PassWord.Focus();
+            PassWord.Select();
             UsersCombo.Items.Clear();
 
             foreach (User user in users)
@@ -69,6 +70,17 @@ namespace Aromapp
                     Properties.Settings.Default.LoggedInUserID = SelectedUser.ID;
                     Properties.Settings.Default.LoggedInUserName = SelectedUser.Name;
                     Properties.Settings.Default.IsUserAdmin = SelectedUser.IsAdmin;
+
+                    if (!SelectedUser.IsAdmin)
+                    {
+                        Properties.Settings.Default.ShowProdPurp=false;
+                        Properties.Settings.Default.ShowPurp=false;
+                        Properties.Settings.Default.ShowStockPurp=false;
+
+                        Properties.Settings.Default.Save();
+                        Properties.Settings.Default.Reload();
+
+                    }
 
                     Properties.Settings.Default.Save();
                 }

@@ -189,6 +189,7 @@ namespace Aromapp
             this.barLinkContainerItem1.ItemAppearance.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
             this.barLinkContainerItem1.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barLinkContainerItem1.Name = "barLinkContainerItem1";
+            this.barLinkContainerItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLinkContainerItem1_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -207,8 +208,9 @@ namespace Aromapp
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.ShowIcon = false;
             this.Name = "Trash";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Corbeille";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Trash_FormClosing);
             this.Load += new System.EventHandler(this.Trash_Load);
             this.TopTabs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();

@@ -44,6 +44,8 @@ namespace Aromapp
         {
             InitializeComponent();
             this.Load += Produits_Shown;
+            ShowPurp.IsOn = Properties.Settings.Default.ShowProdPurp;
+            ShowPurp.Toggled += ShowPurp_Toggled;
             types.SelectedIndex = 0;
             timer.Interval = 100;
             timer.Tick += TimerTick;
@@ -175,6 +177,7 @@ namespace Aromapp
 
                 ProductsTable.Columns.Clear();
                 ProductsTable.DataSource = table;
+                ProductsTable.Columns["Prix d'achat"].Visible = Properties.Settings.Default.ShowProdPurp;
 
             }));
 
@@ -862,6 +865,7 @@ namespace Aromapp
             {
                 point.Color = Color.LightSteelBlue;
             }
+            ProductsTable.Columns["Prix d'achat"].Visible = ShowPurp.IsOn;
 
         }
 
@@ -888,10 +892,11 @@ namespace Aromapp
                     Search();
                     searching = true;
 
-                e.SuppressKeyPress = true;
+                    e.SuppressKeyPress = true;
 
-                  }
+                }
 
+            ProductsTable.Columns["Prix d'achat"].Visible = ShowPurp.IsOn;
 
 
         }
@@ -923,6 +928,7 @@ namespace Aromapp
 
         private void Produits_Shown(object sender, EventArgs e)
         {
+
             TVPP.Invoke((Action)(() => {
 
                 SetupCharts();
@@ -1067,14 +1073,6 @@ namespace Aromapp
         void PasswoCorrectDelete(object sender, EventArgs e)
         {
 
-
-            DialogResult result = MessageBox.Show("  Êtes vous sûr ?", ""
-                                  , MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-
-
                 using (DBHelper helper = new DBHelper())
                 {
                     if (helper.DeleteProducts(prodIDs) > 0)
@@ -1094,7 +1092,7 @@ namespace Aromapp
                     }
                 }
 
-            }
+            
         }
         private void REF_Click(object sender, EventArgs e)
         {
@@ -1326,6 +1324,52 @@ namespace Aromapp
             Etiquette.Canceled += EtiquetteCanceled;
             Etiquette.Print += EtiquettePrint;
             Etiquette.ShowDialog();
+        }
+
+        private void ShowPurp_Toggled(object sender, EventArgs e)
+        {
+
+            if (ShowPurp.IsOn)
+            {
+                Confirm confirm = new Confirm();
+                confirm.Passed += ConfirmShowPurp;
+                confirm.FormClosing += ConfirmClosing;
+
+                if (confirm.ShowDialog() != DialogResult.OK)
+                {
+                    ShowPurp.Toggled -= ShowPurp_Toggled;
+                    ShowPurp.IsOn = !ShowPurp.IsOn;
+
+                }
+                else
+                {
+                    confirm.Close();
+                    confirm.Dispose();
+                }
+            }
+            else
+            {
+                ProductsTable.Columns["Prix d'achat"].Visible = false;
+                Properties.Settings.Default.ShowProdPurp = false;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+
+            }
+        }
+
+        private void ConfirmClosing(object sender, FormClosingEventArgs e)
+        {
+            //ShowPurp.Toggled += ShowPurp_Toggled;
+        }
+
+        private void ConfirmShowPurp(object sender, EventArgs e)
+        {
+            ProductsTable.Columns["Prix d'achat"].Visible = true;
+            Properties.Settings.Default.ShowProdPurp = true;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Reload();
+
+
         }
 
         public void AddTable(int currentPage)

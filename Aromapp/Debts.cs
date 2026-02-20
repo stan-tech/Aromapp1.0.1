@@ -366,6 +366,7 @@ namespace Aromapp
         private void Debts_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(670, 560);
+            guna2DateTimePicker1.Value = DateTime.Now;
             this.CenterToScreen();
 
 
