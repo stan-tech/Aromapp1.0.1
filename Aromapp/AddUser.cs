@@ -35,7 +35,7 @@ namespace Aromapp
             pass.ForeColor = Color.Black;
             user.ID = DBHelper.generateID("US", Tables.user);
             user.Name = name.Text;
-            user.Password = pass.Text;
+            user.Password = CryptographyHelper.Encrypt(pass.Text);
             user.IsAdmin = admin.Checked;
             user.isActive = false;
             user.BarCode = BarCodePref + DateTime.Now.Year + DateTime.Now.Month +
@@ -93,7 +93,7 @@ namespace Aromapp
 
                     user.ID = DBHelper.generateID("US", Tables.user);
                     user.Name = name.Text;
-                    user.Password = pass.Text;
+                    user.Password = CryptographyHelper.Encrypt(pass.Text);
                     user.IsAdmin = admin.Checked;
                     user.isActive = firstTime;
 

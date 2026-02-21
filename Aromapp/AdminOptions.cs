@@ -504,7 +504,7 @@ namespace Aromapp
         public bool loading  = true;
         private void AdminOptions_Load(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.Reload();
 
             StockCheck.Checked = Properties.Settings.Default.StockLocked;
             CaisseCheck.Checked = Properties.Settings.Default.CaisseLocked;
@@ -514,6 +514,8 @@ namespace Aromapp
             AchatCheck.Checked = Properties.Settings.Default.AchatLocked;
             SalesCheck.Checked = Properties.Settings.Default.SalesLocked;
             CmptCheck.Checked = Properties.Settings.Default.CmptLocked;
+            TrashCheck.Checked = Properties.Settings.Default.TrashLocked;
+
 
             loading = false;
 

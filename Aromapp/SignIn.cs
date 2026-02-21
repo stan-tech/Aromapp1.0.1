@@ -62,7 +62,8 @@ namespace Aromapp
 
         private void Ok_Click(object sender, EventArgs e)
         {
-            if (PassWord.Text == SelectedUser.Password)
+
+            if (PassWord.Text == CryptographyHelper.Decrypt(SelectedUser.Password))
             {
                 using (DBHelper helper = new DBHelper())
                 {

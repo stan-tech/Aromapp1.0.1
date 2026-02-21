@@ -19,6 +19,10 @@ namespace Aromapp
         public event EventHandler Passed;
         public static User SelectedUser;
 
+        byte[] Key, Iv;
+
+
+
         List<User> users;
         public Confirm()
         {
@@ -71,7 +75,7 @@ namespace Aromapp
         private void Ok_Click(object sender, EventArgs e)
         {
 
-            if (PassWord.Text == SelectedUser.Password && SelectedUser.IsAdmin)
+            if (PassWord.Text == CryptographyHelper.Decrypt(SelectedUser.Password) && SelectedUser.IsAdmin)
             {
                 PasswordEntered(sender, e);
                 this.DialogResult = DialogResult.OK;
