@@ -16,6 +16,15 @@ namespace Aromapp
 
         BackgroundWorker worker = new BackgroundWorker();
         Timer timer1;
+        string saleType = "";
+        int selection = 1;
+        static bool deletedBill;
+        bool searching = false;
+        BindingSource bindingSource;
+        int limit = 100, currentPage = 1;
+        bool tableFull = false;
+        DataTable table;
+        DBHelper helper = new DBHelper();
         public Ventes()
         {
             InitializeComponent();
@@ -41,8 +50,6 @@ namespace Aromapp
         }
 
 
-        DataTable table;
-        DBHelper helper = new DBHelper();
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
@@ -51,7 +58,9 @@ namespace Aromapp
 
         private void Ventes_Load(object sender, EventArgs e)
         {
+            guna2DateTimePicker1.ValueChanged -= guna2DateTimePicker1_ValueChanged;
             guna2DateTimePicker1.Value = DateTime.Now;
+            guna2DateTimePicker1.ValueChanged += guna2DateTimePicker1_ValueChanged;
             timer1.Start();
         }
 
@@ -71,10 +80,17 @@ namespace Aromapp
         {
             searching = false;
             tableFull = false;
+            saleType = "";
+            selection = 1;
 
             Bon.Checked = false;
             Factures.Checked = false;
             currentPage = 1;
+
+            searchText.Text = string.Empty;
+
+            HintUtils.ShowHint(searchText);
+
             loadData load = new loadData(RefreshData);
 
             soldProducts.Invoke(load);
@@ -105,9 +121,7 @@ namespace Aromapp
 
         }
 
-        BindingSource bindingSource;
-        int limit = 100, currentPage = 1;
-        bool tableFull = false;
+      
 
          public void AddTable(int currentPage)
         {
@@ -141,7 +155,7 @@ namespace Aromapp
                 foreach (DataGridViewRow row in soldProducts.Rows)
                     totalHeight += row.Height;
 
-                if (!searching && !tableFull)
+                if (!tableFull)
                 {
 
                     if (soldProducts.VerticalScrollingOffset == 0 && e.NewValue < e.OldValue)
@@ -149,13 +163,28 @@ namespace Aromapp
                         if (currentPage > 1)
                         {
                             currentPage--;
-                            AddTable(currentPage);
+
+                            if (!searching)
+                            {
+                                AddTable(currentPage);
+                            }
+                            else
+                            {
+                                SearchSales(currentPage,selection, saleType);   
+                            }
                             tableFull = false;
 
                         }
                         else
                         {
-                            AddTable(1);
+                            if (!searching)
+                            {
+                                AddTable(currentPage);
+                            }
+                            else
+                            {
+                                SearchSales(1, selection, saleType);
+                            }
                         }
                     }
 
@@ -163,14 +192,27 @@ namespace Aromapp
                     {
                         if (currentPage == 1)
                         {
-                            AddTable(currentPage);
+                            if (!searching)
+                            {
+                                AddTable(currentPage);
+                            }
+                            else
+                            {
+                                SearchSales(currentPage, selection, saleType);
+                            }
 
-                         
 
                         }
                         else if (currentPage != 1 && !tableFull)
                         {
-                            AddTable(currentPage);
+                            if (!searching)
+                            {
+                                AddTable(currentPage);
+                            }
+                            else
+                            {
+                                SearchSales(currentPage, selection, saleType);
+                            }
 
                             if (table.Rows.Count < limit)
                             {
@@ -240,10 +282,6 @@ namespace Aromapp
 
         }
 
-
-
-        int selection = -1;
-
         private void guna2CustomCheckBox1_Click(object sender, EventArgs e)
         {
             if (Bon.Checked)
@@ -252,12 +290,12 @@ namespace Aromapp
             }
             if (Factures.Checked)
             {
-                DBHelper helper = new DBHelper();
-                selection = 4;
                 currentPage = 1;
                 searching = true;
-                DataTable data = helper.searchForSales("Facture", selection);
-                soldProducts.DataSource = data;
+                saleType = "Facture";
+                selection = 4;
+
+                SearchSales(1, selection, saleType);
             }
         }
 
@@ -269,12 +307,11 @@ namespace Aromapp
             }
             if (Bon.Checked)
             {
-                DBHelper helper = new DBHelper();
-                selection = 4;
                 currentPage = 1;
                 searching = true;
-                DataTable data = helper.searchForSales("Bon", selection);
-                soldProducts.DataSource = data;
+                saleType = "Bon";
+                selection = 4;
+                SearchSales(1, selection, saleType);
             }
         }
 
@@ -309,19 +346,6 @@ namespace Aromapp
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            if (selection != -1)
-            {
-                selection = 1;
-                DBHelper helper = new DBHelper();
-
-                DataTable data = helper.searchForSales(searchText.Text.ToLower(), selection);
-                soldProducts.DataSource = data;
-            }
 
         }
 
@@ -381,10 +405,9 @@ namespace Aromapp
             searching = true;
             string dateString = day + "-" + month + "-" + date.Year.ToString();
             DBHelper helper = new DBHelper();
-            selection = 5;
             currentPage = 1;
 
-            DataTable data = helper.searchForSales(dateString, selection);
+            DataTable data = helper.searchForSales(dateString, 5);
             soldProducts.DataSource = data;
 
         }
@@ -451,25 +474,48 @@ namespace Aromapp
 
 
         }
-        static bool deletedBill;
-        bool searching;
+      
 
         private void searchText_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 searching = true;
-
-                DBHelper helper = new DBHelper();
                 currentPage = 1;
-
-                DataTable data = helper.searchForSales(searchText.Text.ToLower(), selection);
-
-                soldProducts.DataSource = data;
+                SearchSales(1, selection, saleType);
                 e.SuppressKeyPress = true;
 
             }
 
+        }
+
+        public void SearchSales(int currentPage, int selection, string saleType)
+        {
+
+            BindingSource bindingSource = new BindingSource();
+
+
+            string searchStr = (saleType != "Bon" && saleType != "Facture")?searchText.Text.ToLower():saleType;
+            
+
+            using (DBHelper helper = new DBHelper())
+            {
+                table = helper.searchForSales(searchStr, selection, currentPage, limit);
+
+            }
+
+            if (table.Rows.Count < limit)
+            {
+                tableFull = true;
+            }
+            else
+            {
+                tableFull = false;
+
+            }
+
+            bindingSource.DataSource = table;
+            soldProducts.DataSource = bindingSource;
         }
 
         private void amount_KeyPress(object sender, KeyPressEventArgs e)

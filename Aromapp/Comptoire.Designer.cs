@@ -47,10 +47,11 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.prods = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.searchBox = new Aromapp.HintTexBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
             this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButton2 = new Guna.UI2.WinForms.Guna2Button();
             this.cart = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -64,12 +65,11 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tva = new System.Windows.Forms.ComboBox();
             this.effacerbtn = new Guna.UI2.WinForms.Guna2Button();
-            this.amount = new Aromapp.HintTexBox();
-            this.reduction = new Aromapp.HintTexBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.n_lignes = new System.Windows.Forms.Label();
-            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.searchBox = new Aromapp.HintTexBox();
+            this.amount = new Aromapp.HintTexBox();
+            this.reduction = new Aromapp.HintTexBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -77,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.prods)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cart)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -86,8 +88,6 @@
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).BeginInit();
-            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -144,7 +144,6 @@
             this.custName.Location = new System.Drawing.Point(4, 35);
             this.custName.Margin = new System.Windows.Forms.Padding(4, 35, 4, 99);
             this.custName.Name = "custName";
-            this.custName.PasswordChar = '\0';
             this.custName.PlaceholderText = "";
             this.custName.SelectedText = "";
             this.custName.Size = new System.Drawing.Size(390, 75);
@@ -172,7 +171,6 @@
             this.custPhone.Location = new System.Drawing.Point(402, 35);
             this.custPhone.Margin = new System.Windows.Forms.Padding(4, 35, 4, 99);
             this.custPhone.Name = "custPhone";
-            this.custPhone.PasswordChar = '\0';
             this.custPhone.PlaceholderText = "";
             this.custPhone.SelectedText = "";
             this.custPhone.Size = new System.Drawing.Size(390, 75);
@@ -199,7 +197,6 @@
             this.custAddress.Location = new System.Drawing.Point(800, 35);
             this.custAddress.Margin = new System.Windows.Forms.Padding(4, 35, 4, 99);
             this.custAddress.Name = "custAddress";
-            this.custAddress.PasswordChar = '\0';
             this.custAddress.PlaceholderText = "";
             this.custAddress.SelectedText = "";
             this.custAddress.Size = new System.Drawing.Size(393, 75);
@@ -347,25 +344,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1225, 409);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // searchBox
-            // 
-            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.searchBox.ForeColor = System.Drawing.Color.Gray;
-            this.searchBox.Location = new System.Drawing.Point(4, 62);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 62, 4, 2);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(400, 41);
-            this.searchBox.TabIndex = 0;
-            this.searchBox.Tag = "Rechercher...";
-            this.searchBox.Text = "Rechercher...";
-            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
-            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
-            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -383,6 +361,62 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(599, 405);
             this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.91382F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.08618F));
+            this.tableLayoutPanel9.Controls.Add(this.ShowPurp, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.iconButton4, 1, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 312);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(599, 93);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // ShowPurp
+            // 
+            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShowPurp.Location = new System.Drawing.Point(3, 49);
+            this.ShowPurp.Name = "ShowPurp";
+            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
+            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.ShowPurp.Properties.OffText = "Prix d\'achat";
+            this.ShowPurp.Properties.OnText = "Prix d\'achat";
+            this.ShowPurp.Size = new System.Drawing.Size(376, 41);
+            this.ShowPurp.TabIndex = 2;
+            this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton4.BorderRadius = 5;
+            this.iconButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.iconButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.iconButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
+            this.iconButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.iconButton4.ImageSize = new System.Drawing.Size(10, 10);
+            this.iconButton4.Location = new System.Drawing.Point(386, 27);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(209, 64);
+            this.iconButton4.TabIndex = 2;
+            this.iconButton4.Text = "   Actualiser";
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // comboBox1
             // 
@@ -404,26 +438,6 @@
             this.comboBox1.TabIndex = 25;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BorderRadius = 5;
-            this.iconButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.iconButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.iconButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.iconButton4.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.iconButton4.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton4.Location = new System.Drawing.Point(386, 27);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(209, 64);
-            this.iconButton4.TabIndex = 2;
-            this.iconButton4.Text = "   Actualiser";
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -742,39 +756,6 @@
             this.effacerbtn.Text = "Vider le panier";
             this.effacerbtn.Click += new System.EventHandler(this.effacerbtn_Click);
             // 
-            // amount
-            // 
-            this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.amount.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.amount.ForeColor = System.Drawing.Color.Gray;
-            this.amount.Location = new System.Drawing.Point(14, 24);
-            this.amount.Margin = new System.Windows.Forms.Padding(4, 14, 4, 2);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(375, 41);
-            this.amount.TabIndex = 1;
-            this.amount.Tag = "Montant payé...";
-            this.amount.Text = "Montant payé...";
-            this.amount.Click += new System.EventHandler(this.amount_Click);
-            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
-            this.amount.Leave += new System.EventHandler(this.amount_Leave);
-            // 
-            // reduction
-            // 
-            this.reduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reduction.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.reduction.ForeColor = System.Drawing.Color.Gray;
-            this.reduction.Location = new System.Drawing.Point(397, 24);
-            this.reduction.Margin = new System.Windows.Forms.Padding(4, 14, 4, 2);
-            this.reduction.Name = "reduction";
-            this.reduction.Size = new System.Drawing.Size(376, 41);
-            this.reduction.TabIndex = 2;
-            this.reduction.Tag = "Réduction...";
-            this.reduction.Text = "Réduction...";
-            this.reduction.Click += new System.EventHandler(this.reduction_Click);
-            this.reduction.Leave += new System.EventHandler(this.reduction_Leave);
-            // 
             // groupBox6
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -808,41 +789,57 @@
             this.n_lignes.Text = "0";
             this.n_lignes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ShowPurp
+            // searchBox
             // 
-            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShowPurp.Location = new System.Drawing.Point(3, 49);
-            this.ShowPurp.Name = "ShowPurp";
-            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
-            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.ShowPurp.Properties.OffText = "Prix d\'achat";
-            this.ShowPurp.Properties.OnText = "Prix d\'achat";
-            this.ShowPurp.Size = new System.Drawing.Size(376, 41);
-            this.ShowPurp.TabIndex = 2;
-            this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
+            this.searchBox.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.searchBox.ForeColor = System.Drawing.Color.Gray;
+            this.searchBox.Location = new System.Drawing.Point(4, 62);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 62, 4, 2);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(400, 41);
+            this.searchBox.TabIndex = 0;
+            this.searchBox.Tag = "Rechercher...";
+            this.searchBox.Text = "Rechercher...";
+            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
-            // tableLayoutPanel9
+            // amount
             // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.91382F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.08618F));
-            this.tableLayoutPanel9.Controls.Add(this.ShowPurp, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.iconButton4, 1, 0);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 312);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 1;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(599, 93);
-            this.tableLayoutPanel9.TabIndex = 3;
+            this.amount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.amount.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.amount.ForeColor = System.Drawing.Color.Gray;
+            this.amount.Location = new System.Drawing.Point(14, 24);
+            this.amount.Margin = new System.Windows.Forms.Padding(4, 14, 4, 2);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(375, 41);
+            this.amount.TabIndex = 1;
+            this.amount.Tag = "Montant payé...";
+            this.amount.Text = "Montant payé...";
+            this.amount.Click += new System.EventHandler(this.amount_Click);
+            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
+            this.amount.Leave += new System.EventHandler(this.amount_Leave);
+            // 
+            // reduction
+            // 
+            this.reduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reduction.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.reduction.ForeColor = System.Drawing.Color.Gray;
+            this.reduction.Location = new System.Drawing.Point(397, 24);
+            this.reduction.Margin = new System.Windows.Forms.Padding(4, 14, 4, 2);
+            this.reduction.Name = "reduction";
+            this.reduction.Size = new System.Drawing.Size(376, 41);
+            this.reduction.TabIndex = 2;
+            this.reduction.Tag = "Réduction...";
+            this.reduction.Text = "Réduction...";
+            this.reduction.Click += new System.EventHandler(this.reduction_Click);
+            this.reduction.Leave += new System.EventHandler(this.reduction_Leave);
             // 
             // Comptoire
             // 
@@ -863,6 +860,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cart)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -876,8 +875,6 @@
             this.tableLayoutPanel8.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).EndInit();
-            this.tableLayoutPanel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

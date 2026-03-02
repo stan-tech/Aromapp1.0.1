@@ -21,6 +21,7 @@ namespace Aromapp
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+
                 using (DBHelper helper = new DBHelper())
                 {
 

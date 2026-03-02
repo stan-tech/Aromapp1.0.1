@@ -239,7 +239,7 @@
             this.Name = "AddUser";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddUser";
+            this.Text = "Ajouter un utilisateur";
             this.Load += new System.EventHandler(this.AddUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);

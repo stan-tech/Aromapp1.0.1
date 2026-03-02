@@ -20,9 +20,14 @@ namespace Aromapp
         DataTable table = new DataTable();
         int limit = 100;
         int currentPage = 1;
+        bool PurpShow = false;
+
         public StockForm()
         {
             InitializeComponent();
+
+            PurpShow = Properties.Settings.Default.IsUserAdmin;
+
             this.Load += StockForm_Shown;
             invTable.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             invTable.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle()
@@ -111,17 +116,16 @@ namespace Aromapp
             invTable.Invoke((Action)(() => {
 
                 invTable.DataSource = table;
+                invTable.Columns["Prix d'achat"].Visible = PurpShow;
+
 
             }));
 
             articleN.Invoke((Action)(() => { articleN.Text = NumberOfProducts; }));
             shortageN.Invoke((Action)(() => { shortageN.Text = ShortageNumber; }));
             ShowPurp.Toggled -= ShowPurp_Toggled;
-            ShowPurp.IsOn = Properties.Settings.Default.ShowStockPurp;
+            ShowPurp.IsOn = PurpShow;
             ShowPurp.Toggled += ShowPurp_Toggled;
-
-            invTable.Columns["Prix d'achat"].Visible = Properties.Settings.Default.ShowStockPurp;
-
 
 
         }
@@ -152,6 +156,8 @@ namespace Aromapp
                 if (searchText.Text != searchText.Tag.ToString())
                 {
                     invTable.DataSource = helper.searchForItem(searchText.Text.ToLower());
+                    invTable.Columns["Prix d'achat"].Visible = PurpShow;
+
 
                 }
             }
@@ -218,6 +224,7 @@ namespace Aromapp
             using (DBHelper helper = new DBHelper())
             {
                 invTable.DataSource = helper.GetInventory(limit, 1);
+                invTable.Columns["Prix d'achat"].Visible = PurpShow;
 
                 NumberOfProducts = helper.GetScarceProductsNumber(out ShortageNumber);
 
@@ -381,6 +388,8 @@ namespace Aromapp
             {
                 invTable.Columns["Prix d'achat"].Visible = false;
                 Properties.Settings.Default.ShowStockPurp = false;
+                PurpShow = false;
+
                 Properties.Settings.Default.Save();
                 Properties.Settings.Default.Reload();
 
@@ -392,6 +401,8 @@ namespace Aromapp
         {
             invTable.Columns["Prix d'achat"].Visible = true;
             Properties.Settings.Default.ShowStockPurp = true;
+            PurpShow = true;
+
             Properties.Settings.Default.Save();
             Properties.Settings.Default.Reload();
 
@@ -409,6 +420,8 @@ namespace Aromapp
             }
             bindingSource.DataSource = table;
             invTable.DataSource = bindingSource;
+            invTable.Columns["Prix d'achat"].Visible = PurpShow;
+
         }
 
         public void searchText_KeyDown(object sender, KeyEventArgs e)

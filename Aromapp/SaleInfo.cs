@@ -55,6 +55,8 @@ namespace Aromapp
         public List<SaleLine> NewSaleLines = new List<SaleLine>();
         public bool prodIsNew = false;
         DataTable cartTable;
+
+        bool PurpShow = false;
         public SaleInfo(Sale sale, Client client)
         {
             this.sale = sale;
@@ -63,7 +65,12 @@ namespace Aromapp
             ClientProp = client;
             dataLoader = new BackgroundWorker();
             InitializeComponent();
+
            
+            PurpShow = Properties.Settings.Default.IsUserAdmin;
+            ShowPurp.Toggled -= ShowPurp_Toggled;
+            ShowPurp.IsOn = PurpShow;
+            ShowPurp.Toggled += ShowPurp_Toggled;
 
             dataLoader.DoWork += LoadProducts;
             dataLoader.RunWorkerCompleted += LoadProductsCompleted;
@@ -93,6 +100,8 @@ namespace Aromapp
                 {
                     searching = true;
                     prods.DataSource = helper.searchPOS(SelectedTable,searchBox.Text, 100, 1);
+                    prods.Columns["Prix d'achat"].Visible = PurpShow;
+
                 }
                 else
                 {
@@ -105,7 +114,9 @@ namespace Aromapp
 
         private void SaleInfo_Load(object sender, EventArgs e)
         {
-            
+
+            ShowPurp.IsOn = PurpShow;
+
             this.ClientSize = new System.Drawing.Size(1045, 698);
        
             this.CenterToScreen();
@@ -194,6 +205,7 @@ namespace Aromapp
 
 
 
+
         }
 
         string ProductID;
@@ -254,7 +266,10 @@ namespace Aromapp
         }
         public void LoadProductsCompleted(object sener, EventArgs e)
         {
-            prods.Invoke((Action)(() => { prods.DataSource = table; }));
+            prods.Invoke((Action)(() => { prods.DataSource = table;
+
+                prods.Columns["Prix d'achat"].Visible = PurpShow;
+            }));
 
             CartTable = ((DataTable)cart.DataSource).Copy();
         }
@@ -1233,6 +1248,8 @@ namespace Aromapp
             }
             bindingSource.DataSource = table;
             prods.DataSource = bindingSource;
+            prods.Columns["Prix d'achat"].Visible = PurpShow;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1245,6 +1262,48 @@ namespace Aromapp
             else
             {
                 SelectedTable = "produits";
+            }
+        }
+
+        private void ConfirmShowPurp(object sender, EventArgs e)
+        {
+            prods.Columns["Prix d'achat"].Visible = true;
+            Properties.Settings.Default.ShowSaleInfoPurp = true;
+            PurpShow = true;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Reload();
+
+
+        }
+
+        private void ShowPurp_Toggled(object sender, EventArgs e)
+        {
+            if (ShowPurp.IsOn)
+            {
+                Confirm confirm = new Confirm();
+                confirm.Passed += ConfirmShowPurp;
+
+                if (confirm.ShowDialog() != DialogResult.OK)
+                {
+                    ShowPurp.Toggled -= ShowPurp_Toggled;
+                    ShowPurp.IsOn = !ShowPurp.IsOn;
+                    ShowPurp.Toggled += ShowPurp_Toggled;
+
+                }
+                else
+                {
+                    confirm.Close();
+                    confirm.Dispose();
+                }
+            }
+            else
+            {
+                prods.Columns["Prix d'achat"].Visible = false;
+                Properties.Settings.Default.ShowSaleInfoPurp = false;
+                PurpShow = false;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+
             }
         }
 

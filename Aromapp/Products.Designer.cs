@@ -31,22 +31,23 @@ namespace Aromapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Bon = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -74,12 +75,12 @@ namespace Aromapp
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.detailsSurLeProduitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimerDesÉtiquettesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).BeginInit();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsTable)).BeginInit();
@@ -92,7 +93,6 @@ namespace Aromapp
             this.tableLayoutPanel6.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -187,6 +187,24 @@ namespace Aromapp
             this.tableLayoutPanel8.Size = new System.Drawing.Size(550, 98);
             this.tableLayoutPanel8.TabIndex = 33;
             // 
+            // ShowPurp
+            // 
+            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ShowPurp.Location = new System.Drawing.Point(3, 3);
+            this.ShowPurp.Name = "ShowPurp";
+            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
+            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.ShowPurp.Properties.OffText = "Prix d\'achat";
+            this.ShowPurp.Properties.OnText = "Prix d\'achat";
+            this.ShowPurp.Size = new System.Drawing.Size(310, 41);
+            this.ShowPurp.TabIndex = 33;
+            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -244,7 +262,7 @@ namespace Aromapp
             "Unisexe",
             "Emballage",
             "Sachet"});
-            this.types.Location = new System.Drawing.Point(4, 61);
+            this.types.Location = new System.Drawing.Point(4, 63);
             this.types.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
             this.types.Name = "types";
             this.types.Size = new System.Drawing.Size(276, 37);
@@ -262,7 +280,7 @@ namespace Aromapp
             "Derniér moi",
             "",
             " "});
-            this.Nouveautés.Location = new System.Drawing.Point(306, 63);
+            this.Nouveautés.Location = new System.Drawing.Point(306, 65);
             this.Nouveautés.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Nouveautés.Name = "Nouveautés";
             this.Nouveautés.Size = new System.Drawing.Size(274, 37);
@@ -324,31 +342,31 @@ namespace Aromapp
             // ProductsTable
             // 
             this.ProductsTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.ProductsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.ProductsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductsTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ProductsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.ProductsTable.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsTable.DefaultCellStyle = dataGridViewCellStyle18;
             this.ProductsTable.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.ProductsTable.Location = new System.Drawing.Point(10, 293);
@@ -356,23 +374,23 @@ namespace Aromapp
             this.ProductsTable.Name = "ProductsTable";
             this.ProductsTable.ReadOnly = true;
             this.ProductsTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.ProductsTable.RowHeadersVisible = false;
             this.ProductsTable.RowHeadersWidth = 82;
             this.ProductsTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsTable.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.ProductsTable.RowTemplate.Height = 33;
             this.ProductsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductsTable.Size = new System.Drawing.Size(1144, 689);
@@ -502,17 +520,17 @@ namespace Aromapp
             this.TVPP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea9.Name = "ChartArea1";
-            this.TVPP.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.TVPP.Legends.Add(legend9);
+            chartArea7.Name = "ChartArea1";
+            this.TVPP.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.TVPP.Legends.Add(legend7);
             this.TVPP.Location = new System.Drawing.Point(10, 41);
             this.TVPP.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TVPP.Name = "TVPP";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.TVPP.Series.Add(series9);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.TVPP.Series.Add(series7);
             this.TVPP.Size = new System.Drawing.Size(650, 387);
             this.TVPP.TabIndex = 0;
             this.TVPP.Text = "chart1";
@@ -541,19 +559,19 @@ namespace Aromapp
             this.VPJ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea10.Name = "ChartArea1";
-            this.VPJ.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.VPJ.Legends.Add(legend10);
+            chartArea8.Name = "ChartArea1";
+            this.VPJ.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.VPJ.Legends.Add(legend8);
             this.VPJ.Location = new System.Drawing.Point(10, 41);
             this.VPJ.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.VPJ.Name = "VPJ";
             this.VPJ.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.VPJ.Series.Add(series10);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.VPJ.Series.Add(series8);
             this.VPJ.Size = new System.Drawing.Size(650, 516);
             this.VPJ.TabIndex = 1;
             this.VPJ.Text = "chart2";
@@ -662,24 +680,6 @@ namespace Aromapp
             this.imprimerDesÉtiquettesToolStripMenuItem.Text = "Imprimer des étiquettes";
             this.imprimerDesÉtiquettesToolStripMenuItem.Click += new System.EventHandler(this.imprimerDesÉtiquettesToolStripMenuItem_Click);
             // 
-            // ShowPurp
-            // 
-            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ShowPurp.Location = new System.Drawing.Point(3, 3);
-            this.ShowPurp.Name = "ShowPurp";
-            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
-            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.ShowPurp.Properties.OffText = "Prix d\'achat";
-            this.ShowPurp.Properties.OnText = "Prix d\'achat";
-            this.ShowPurp.Size = new System.Drawing.Size(310, 41);
-            this.ShowPurp.TabIndex = 33;
-            // 
             // Products
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
@@ -695,6 +695,7 @@ namespace Aromapp
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsTable)).EndInit();
@@ -708,7 +709,6 @@ namespace Aromapp
             this.tableLayoutPanel6.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

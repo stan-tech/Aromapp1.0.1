@@ -32,6 +32,11 @@ namespace Aromapp
         {
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.modifMDP = new Guna.UI2.WinForms.Guna2Button();
+            this.DeleteUser = new Guna.UI2.WinForms.Guna2Button();
+            this.AddUser = new Guna.UI2.WinForms.Guna2Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.NewPass = new System.Windows.Forms.TextBox();
@@ -43,11 +48,13 @@ namespace Aromapp
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.encaiss = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            this.AddUser = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.TrashCheck = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
-            this.modifMDP = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.PrdCheck = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.ptCheck = new System.Windows.Forms.Label();
@@ -69,7 +76,6 @@ namespace Aromapp
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.SalesCheck = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.DeleteUser = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.CmptCheck = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -105,19 +111,17 @@ namespace Aromapp
             this.iconButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.iconButton2 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.TrashCheck = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
@@ -134,10 +138,6 @@ namespace Aromapp
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel19.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
-            this.tableLayoutPanel21.SuspendLayout();
-            this.tableLayoutPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -181,12 +181,92 @@ namespace Aromapp
             this.guna2GroupBox1.TabStop = false;
             this.guna2GroupBox1.Text = "Changer un mot de passe";
             // 
+            // tableLayoutPanel21
+            // 
+            this.tableLayoutPanel21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel21.ColumnCount = 1;
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.AddUser, 0, 1);
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(26, 431);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            this.tableLayoutPanel21.RowCount = 2;
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.41615F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.58385F));
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(849, 161);
+            this.tableLayoutPanel21.TabIndex = 45;
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel22.ColumnCount = 2;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Controls.Add(this.modifMDP, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.DeleteUser, 1, 0);
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 1;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(843, 80);
+            this.tableLayoutPanel22.TabIndex = 0;
+            // 
+            // modifMDP
+            // 
+            this.modifMDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modifMDP.BorderRadius = 5;
+            this.modifMDP.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.modifMDP.ForeColor = System.Drawing.Color.White;
+            this.modifMDP.Location = new System.Drawing.Point(3, 3);
+            this.modifMDP.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.modifMDP.Name = "modifMDP";
+            this.modifMDP.Size = new System.Drawing.Size(413, 69);
+            this.modifMDP.TabIndex = 1;
+            this.modifMDP.Text = "  Modifier";
+            this.modifMDP.Click += new System.EventHandler(this.modifMDP_Click);
+            // 
+            // DeleteUser
+            // 
+            this.DeleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteUser.BorderRadius = 5;
+            this.DeleteUser.FillColor = System.Drawing.Color.Red;
+            this.DeleteUser.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.DeleteUser.ForeColor = System.Drawing.Color.White;
+            this.DeleteUser.Location = new System.Drawing.Point(426, 3);
+            this.DeleteUser.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.DeleteUser.Name = "DeleteUser";
+            this.DeleteUser.Size = new System.Drawing.Size(414, 69);
+            this.DeleteUser.TabIndex = 1;
+            this.DeleteUser.Text = "  Supprimer";
+            this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
+            // 
+            // AddUser
+            // 
+            this.AddUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddUser.BorderRadius = 5;
+            this.AddUser.FillColor = System.Drawing.Color.RoyalBlue;
+            this.AddUser.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.AddUser.ForeColor = System.Drawing.Color.White;
+            this.AddUser.Location = new System.Drawing.Point(3, 89);
+            this.AddUser.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.AddUser.Name = "AddUser";
+            this.AddUser.Size = new System.Drawing.Size(841, 69);
+            this.AddUser.TabIndex = 1;
+            this.AddUser.Text = "  Ajouter un utilisateur";
+            this.AddUser.Click += new System.EventHandler(this.AddUser_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(33, 311);
+            this.label11.Location = new System.Drawing.Point(33, 289);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(275, 35);
@@ -203,7 +283,7 @@ namespace Aromapp
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.NewPass, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(32, 338);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(32, 316);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -275,7 +355,7 @@ namespace Aromapp
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.PassWord, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.panel2, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(32, 220);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(32, 198);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -338,26 +418,9 @@ namespace Aromapp
             this.encaiss.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.encaiss.Click += new System.EventHandler(this.PassWord_IconRightClick);
             // 
-            // AddUser
-            // 
-            this.AddUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddUser.BorderRadius = 5;
-            this.AddUser.FillColor = System.Drawing.Color.RoyalBlue;
-            this.AddUser.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.AddUser.ForeColor = System.Drawing.Color.White;
-            this.AddUser.Location = new System.Drawing.Point(3, 89);
-            this.AddUser.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
-            this.AddUser.Name = "AddUser";
-            this.AddUser.Size = new System.Drawing.Size(841, 69);
-            this.AddUser.TabIndex = 1;
-            this.AddUser.Text = "  Ajouter un utilisateur";
-            this.AddUser.Click += new System.EventHandler(this.AddUser_Click);
-            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -384,6 +447,69 @@ namespace Aromapp
             this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 412);
             this.tableLayoutPanel1.TabIndex = 44;
             // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.ColumnCount = 1;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel20, 0, 0);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(428, 3);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 1;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(419, 73);
+            this.tableLayoutPanel19.TabIndex = 46;
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tableLayoutPanel20.ColumnCount = 2;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel20.Controls.Add(this.TrashCheck, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.label22, 0, 0);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 1;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(390, 73);
+            this.tableLayoutPanel20.TabIndex = 13;
+            // 
+            // TrashCheck
+            // 
+            this.TrashCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TrashCheck.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TrashCheck.CheckedState.BorderRadius = 2;
+            this.TrashCheck.CheckedState.BorderThickness = 0;
+            this.TrashCheck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TrashCheck.Location = new System.Drawing.Point(182, 4);
+            this.TrashCheck.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.TrashCheck.Name = "TrashCheck";
+            this.TrashCheck.Size = new System.Drawing.Size(32, 57);
+            this.TrashCheck.TabIndex = 52;
+            this.TrashCheck.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TrashCheck.UncheckedState.BorderRadius = 2;
+            this.TrashCheck.UncheckedState.BorderThickness = 0;
+            this.TrashCheck.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TrashCheck.CheckedChanged += new System.EventHandler(this.CaisseCheck_CheckedChanged);
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(33, 19);
+            this.label22.Margin = new System.Windows.Forms.Padding(6, 12, 6, 25);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(113, 29);
+            this.label22.TabIndex = 51;
+            this.label22.Tag = "Nouveau mot de passe";
+            this.label22.Text = "Corbeille";
+            // 
             // tableLayoutPanel18
             // 
             this.tableLayoutPanel18.ColumnCount = 1;
@@ -394,7 +520,7 @@ namespace Aromapp
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel18.Size = new System.Drawing.Size(419, 73);
             this.tableLayoutPanel18.TabIndex = 45;
             // 
@@ -412,21 +538,6 @@ namespace Aromapp
             this.label21.TabIndex = 52;
             this.label21.Tag = "Nouveau mot de passe";
             this.label21.Text = "Pages Verrouillées:";
-            // 
-            // modifMDP
-            // 
-            this.modifMDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modifMDP.BorderRadius = 5;
-            this.modifMDP.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.modifMDP.ForeColor = System.Drawing.Color.White;
-            this.modifMDP.Location = new System.Drawing.Point(3, 3);
-            this.modifMDP.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
-            this.modifMDP.Name = "modifMDP";
-            this.modifMDP.Size = new System.Drawing.Size(413, 69);
-            this.modifMDP.TabIndex = 1;
-            this.modifMDP.Text = "  Modifier";
-            this.modifMDP.Click += new System.EventHandler(this.modifMDP_Click);
             // 
             // tableLayoutPanel17
             // 
@@ -757,22 +868,6 @@ namespace Aromapp
             this.label15.Tag = "Nouveau mot de passe";
             this.label15.Text = "Ventes";
             // 
-            // DeleteUser
-            // 
-            this.DeleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteUser.BorderRadius = 5;
-            this.DeleteUser.FillColor = System.Drawing.Color.Red;
-            this.DeleteUser.Font = new System.Drawing.Font("Calibri", 9.25F);
-            this.DeleteUser.ForeColor = System.Drawing.Color.White;
-            this.DeleteUser.Location = new System.Drawing.Point(426, 3);
-            this.DeleteUser.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.DeleteUser.Name = "DeleteUser";
-            this.DeleteUser.Size = new System.Drawing.Size(414, 69);
-            this.DeleteUser.TabIndex = 1;
-            this.DeleteUser.Text = "  Supprimer";
-            this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
-            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
@@ -826,7 +921,7 @@ namespace Aromapp
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(32, 192);
+            this.label6.Location = new System.Drawing.Point(32, 170);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(250, 35);
@@ -1286,102 +1381,6 @@ namespace Aromapp
             this.tableLayoutPanel7.Size = new System.Drawing.Size(2012, 1468);
             this.tableLayoutPanel7.TabIndex = 39;
             // 
-            // tableLayoutPanel19
-            // 
-            this.tableLayoutPanel19.ColumnCount = 1;
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel20, 0, 0);
-            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(428, 3);
-            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            this.tableLayoutPanel19.RowCount = 1;
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(419, 73);
-            this.tableLayoutPanel19.TabIndex = 46;
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tableLayoutPanel20.ColumnCount = 2;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
-            this.tableLayoutPanel20.Controls.Add(this.TrashCheck, 1, 0);
-            this.tableLayoutPanel20.Controls.Add(this.label22, 0, 0);
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 1;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(390, 73);
-            this.tableLayoutPanel20.TabIndex = 13;
-            // 
-            // TrashCheck
-            // 
-            this.TrashCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TrashCheck.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrashCheck.CheckedState.BorderRadius = 2;
-            this.TrashCheck.CheckedState.BorderThickness = 0;
-            this.TrashCheck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrashCheck.Location = new System.Drawing.Point(182, 4);
-            this.TrashCheck.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
-            this.TrashCheck.Name = "TrashCheck";
-            this.TrashCheck.Size = new System.Drawing.Size(32, 57);
-            this.TrashCheck.TabIndex = 52;
-            this.TrashCheck.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TrashCheck.UncheckedState.BorderRadius = 2;
-            this.TrashCheck.UncheckedState.BorderThickness = 0;
-            this.TrashCheck.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TrashCheck.CheckedChanged += new System.EventHandler(this.CaisseCheck_CheckedChanged);
-            // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(33, 19);
-            this.label22.Margin = new System.Windows.Forms.Padding(6, 12, 6, 25);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(113, 29);
-            this.label22.TabIndex = 51;
-            this.label22.Tag = "Nouveau mot de passe";
-            this.label22.Text = "Corbeille";
-            // 
-            // tableLayoutPanel21
-            // 
-            this.tableLayoutPanel21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel21.ColumnCount = 1;
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.AddUser, 0, 1);
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(26, 431);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            this.tableLayoutPanel21.RowCount = 2;
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.41615F));
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.58385F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(849, 161);
-            this.tableLayoutPanel21.TabIndex = 45;
-            // 
-            // tableLayoutPanel22
-            // 
-            this.tableLayoutPanel22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel22.ColumnCount = 2;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Controls.Add(this.modifMDP, 0, 0);
-            this.tableLayoutPanel22.Controls.Add(this.DeleteUser, 1, 0);
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 1;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(843, 80);
-            this.tableLayoutPanel22.TabIndex = 0;
-            // 
             // AdminOptions
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
@@ -1396,6 +1395,8 @@ namespace Aromapp
             this.tableLayoutPanel3.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            this.tableLayoutPanel21.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1403,6 +1404,9 @@ namespace Aromapp
             this.tableLayoutPanel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel18.PerformLayout();
             this.tableLayoutPanel17.ResumeLayout(false);
@@ -1430,11 +1434,6 @@ namespace Aromapp
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel19.ResumeLayout(false);
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel20.PerformLayout();
-            this.tableLayoutPanel21.ResumeLayout(false);
-            this.tableLayoutPanel22.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

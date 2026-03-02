@@ -38,11 +38,17 @@ namespace Aromapp
         bool searching = false, tableFull = false;
         public static int EtiqNumber { get; set; }
 
-      
+        bool PurpShow = false;
+
+
 
         public Products()
         {
             InitializeComponent();
+
+            PurpShow = Properties.Settings.Default.IsUserAdmin;
+
+
             this.Load += Produits_Shown;
             ShowPurp.IsOn = Properties.Settings.Default.ShowProdPurp;
             ShowPurp.Toggled += ShowPurp_Toggled;
@@ -177,8 +183,11 @@ namespace Aromapp
 
                 ProductsTable.Columns.Clear();
                 ProductsTable.DataSource = table;
-                ProductsTable.Columns["Prix d'achat"].Visible = Properties.Settings.Default.ShowProdPurp;
 
+                ProductsTable.Columns["Prix d'achat"].Visible = PurpShow;
+                ShowPurp.Toggled -= ShowPurp_Toggled;
+                ShowPurp.IsOn = PurpShow;
+                ShowPurp.Toggled += ShowPurp_Toggled;
             }));
 
 
@@ -814,6 +823,8 @@ namespace Aromapp
                 ProductsTable.Columns.Clear();
                 ProductsTable.DataSource = table;
 
+                ProductsTable.Columns["Prix d'achat"].Visible = PurpShow;
+
                 names = helper.GetTopSoldProductsNames();
                 totals = helper.GetTopSoldProductsTotals();
 
@@ -910,6 +921,8 @@ namespace Aromapp
                 {
                     DataTable table = helper.searchForProduct(SelectedTable, searchText.Text.ToLower());
                     ProductsTable.DataSource = table;
+                    ProductsTable.Columns["Prix d'achat"].Visible = PurpShow;
+
 
                 }
             }
@@ -1339,6 +1352,7 @@ namespace Aromapp
                 {
                     ShowPurp.Toggled -= ShowPurp_Toggled;
                     ShowPurp.IsOn = !ShowPurp.IsOn;
+                    ShowPurp.Toggled += ShowPurp_Toggled;
 
                 }
                 else
@@ -1351,6 +1365,7 @@ namespace Aromapp
             {
                 ProductsTable.Columns["Prix d'achat"].Visible = false;
                 Properties.Settings.Default.ShowProdPurp = false;
+                PurpShow = false;
                 Properties.Settings.Default.Save();
                 Properties.Settings.Default.Reload();
 
@@ -1366,6 +1381,7 @@ namespace Aromapp
         {
             ProductsTable.Columns["Prix d'achat"].Visible = true;
             Properties.Settings.Default.ShowProdPurp = true;
+            PurpShow = true;
             Properties.Settings.Default.Save();
             Properties.Settings.Default.Reload();
 
@@ -1383,6 +1399,8 @@ namespace Aromapp
             bindingSource.DataSource = table;
             ProductsTable.Columns.Clear();
             ProductsTable.DataSource = bindingSource;
+            ProductsTable.Columns["Prix d'achat"].Visible = PurpShow;
+
         }
 
         void TimerTick(object sender, EventArgs e)

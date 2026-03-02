@@ -1,4 +1,6 @@
 ﻿using Aromapp.Properties;
+using DevExpress.Data.Helpers;
+using DocumentFormat.OpenXml.Math;
 using DocumentFormat.OpenXml.Office2010.Excel;
 using System;
 using System.Collections.Generic;
@@ -695,72 +697,118 @@ namespace Aromapp
         }
 
 
-        public DataTable searchForSales(string search, int selection)
+        public DataTable searchForSales(string search, int selection, int currentPage = 1, int pageSize = 20)
         {
-
-
             DataTable table = new DataTable();
 
-            string query = "SELECT ventes.n,ventes.[Type],ventes.[DateA] as Date,Ventes.C_CL as 'Ref client',client.Nom as 'Nom de client ',totalttc as " +
-                " Total, totalremise as 'Remise totale',ModeReglement as 'Mode reglement',Regler" +
-                " as 'Reglée',MontantRegler as 'Montant Réglé'," +
-                " MontantRest as 'Montant reste'," +
-                " user FROM [Ventes] inner join client on client.c_cl = ventes.c_cl inner join l_ventes on l_ventes.n = ventes.n" +
-           " where client.nom like '%" + search + "%' " +
-           " or ventes.n like '%" + search + "%' or l_ventes.c_pr = (select c_prd from produits where nom like '%" + search + "%') order by Date desc ;";
+            int offset = (currentPage - 1) * pageSize;
 
+            string query = @"
+    SELECT ventes.n,
+           ventes.[Type],
+           ventes.[DateA] as Date,
+           ventes.C_CL as 'Ref client',
+           client.Nom as 'Nom de client',
+           totalttc as Total,
+           totalremise as 'Remise totale',
+           ModeReglement as 'Mode reglement',
+           Regler as 'Reglée',
+           MontantRegler as 'Montant Réglé',
+           MontantRest as 'Montant reste',
+           user
+    FROM Ventes
+    INNER JOIN client ON client.c_cl = ventes.c_cl
+    LEFT JOIN l_ventes ON l_ventes.n = ventes.n
+    WHERE (
+        client.nom LIKE @search
+        OR ventes.n LIKE @search
+        OR l_ventes.c_pr IN (SELECT c_prd FROM produits WHERE nom LIKE @search)
+    )
+    ORDER BY Date DESC
+    LIMIT @PageSize OFFSET @Offset;
+    ";
 
             switch (selection)
             {
-
-                case 5:
-
+                case 5: // Search by date
                     search = search.Replace("00:00:00", string.Empty).Trim();
                     string[] values = search.Split('-');
 
-                    query = "SELECT n,[Type],[DateA] as Date,Ventes.C_CL as 'Ref client',client.Nom as 'Nom de client ',totalttc as " +
-                "Total, totalremise as 'Remise totale',ModeReglement as 'Mode reglement',Regler" +
-                " as 'Reglée',MontantRegler as 'Montant Réglé'," +
-                " MontantRest as 'Montant reste'," +
-                " user FROM[Ventes] inner join client on client.c_cl = ventes.c_cl where" +
-                " strftime('%Y',ventes.[DateA]) = '" + values[2].Trim() + "' and strftime('%m',ventes.[DateA]) = '" + values[1].Trim() + "' and strftime('%d',ventes.[DateA])= '" + values[0].Trim() + "' " +
-                     "; ";
-
+                    query = @"
+            SELECT ventes.n,
+                   ventes.[Type],
+                   ventes.[DateA] as Date,
+                   ventes.C_CL as 'Ref client',
+                   client.Nom as 'Nom de client',
+                   totalttc as Total,
+                   totalremise as 'Remise totale',
+                   ModeReglement as 'Mode reglement',
+                   Regler as 'Reglée',
+                   MontantRegler as 'Montant Réglé',
+                   MontantRest as 'Montant reste',
+                   user
+            FROM Ventes
+            INNER JOIN client ON client.c_cl = ventes.c_cl
+            WHERE strftime('%Y', ventes.[DateA]) = @year
+              AND strftime('%m', ventes.[DateA]) = @month
+              AND strftime('%d', ventes.[DateA]) = @day
+            ORDER BY Date DESC
+            LIMIT @PageSize OFFSET @Offset;
+            ";
                     break;
-                case 4:
 
-                    query = "SELECT n,[Type],[DateA] as Date,Ventes.C_CL as 'Ref client',client.Nom as 'Nom de client ',totalttc as " +
-                "Total, totalremise as 'Remise totale',ModeReglement as 'Mode reglement',Regler" +
-                " as 'Reglée',MontantRegler as 'Montant Réglé'," +
-                " MontantRest as 'Montant reste'," +
-                " user FROM[Ventes] inner join client on client.c_cl = ventes.c_cl where " +
-          "ventes.type like '%" + search + "%' order by Date desc " +
-         "; ";
+                case 4: // Search by type
+                    query = @"
+            SELECT ventes.n,
+                   ventes.[Type],
+                   ventes.[DateA] as Date,
+                   ventes.C_CL as 'Ref client',
+                   client.Nom as 'Nom de client',
+                   totalttc as Total,
+                   totalremise as 'Remise totale',
+                   ModeReglement as 'Mode reglement',
+                   Regler as 'Reglée',
+                   MontantRegler as 'Montant Réglé',
+                   MontantRest as 'Montant reste',
+                   user
+            FROM Ventes
+            INNER JOIN client ON client.c_cl = ventes.c_cl
+            WHERE ventes.type LIKE @search
+            ORDER BY Date DESC
+            LIMIT @PageSize OFFSET @Offset;
+            ";
                     break;
-
             }
 
-
-
-
-
-
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection);
-
                 connection.Open();
 
+
+                if (selection == 5)
+                {
+                    string[] values = search.Split('-');
+
+                    command.Parameters.AddWithValue("@year", values[2].Trim());
+                    command.Parameters.AddWithValue("@month", values[1].Trim());
+                    command.Parameters.AddWithValue("@day", values[0].Trim());
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@search", "%" + search + "%");
+
+                }
+
+                command.Parameters.AddWithValue("@PageSize", pageSize);
+                command.Parameters.AddWithValue("@Offset", offset);
+
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
                 adapter.Fill(table);
-
-                connection.Close();
-
             }
 
             return table;
         }
-
         public DataTable selectBillLines(string BillID)
         {
 

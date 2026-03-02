@@ -36,12 +36,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.Tyype = new System.Windows.Forms.ComboBox();
+            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Ajouter = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.searchText = new Aromapp.HintTexBox();
             this.iconButton4 = new Guna.UI2.WinForms.Guna2Button();
-            this.Tyype = new System.Windows.Forms.ComboBox();
             this.invTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -65,11 +66,12 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.shortageN = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.searchText = new Aromapp.HintTexBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invTable)).BeginInit();
@@ -79,8 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.QR)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).BeginInit();
-            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -136,6 +136,63 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1121, 1063);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.68775F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.31225F));
+            this.tableLayoutPanel7.Controls.Add(this.Tyype, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.ShowPurp, 1, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 177);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(759, 100);
+            this.tableLayoutPanel7.TabIndex = 17;
+            // 
+            // Tyype
+            // 
+            this.Tyype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Tyype.Font = new System.Drawing.Font("Calibri", 10.125F);
+            this.Tyype.FormattingEnabled = true;
+            this.Tyype.Items.AddRange(new object[] {
+            "Tout",
+            "Homme",
+            "Femme",
+            "Unisexe",
+            "Emballage",
+            "Sachet"});
+            this.Tyype.Location = new System.Drawing.Point(20, 56);
+            this.Tyype.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.Tyype.Name = "Tyype";
+            this.Tyype.Size = new System.Drawing.Size(292, 41);
+            this.Tyype.TabIndex = 34;
+            this.Tyype.SelectedIndexChanged += new System.EventHandler(this.Tyype_SelectedIndexChanged);
+            this.Tyype.TextChanged += new System.EventHandler(this.Tyype_TextChanged);
+            this.Tyype.Leave += new System.EventHandler(this.Tyype_Leave);
+            // 
+            // ShowPurp
+            // 
+            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShowPurp.Location = new System.Drawing.Point(327, 56);
+            this.ShowPurp.Name = "ShowPurp";
+            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
+            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.ShowPurp.Properties.OffText = "Prix d\'achat";
+            this.ShowPurp.Properties.OnText = "Prix d\'achat";
+            this.ShowPurp.Size = new System.Drawing.Size(429, 41);
+            this.ShowPurp.TabIndex = 16;
+            this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -186,24 +243,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1115, 141);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // searchText
-            // 
-            this.searchText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchText.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.searchText.ForeColor = System.Drawing.Color.Gray;
-            this.searchText.Location = new System.Drawing.Point(20, 30);
-            this.searchText.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
-            this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(462, 47);
-            this.searchText.TabIndex = 0;
-            this.searchText.Tag = "Rechercher...";
-            this.searchText.Text = "Rechercher...";
-            this.searchText.Click += new System.EventHandler(this.searchText_Click);
-            this.searchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchText_KeyDown);
-            this.searchText.Leave += new System.EventHandler(this.searchText_Leave);
-            // 
             // iconButton4
             // 
             this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -219,27 +258,6 @@
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "Actualiser";
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // Tyype
-            // 
-            this.Tyype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Tyype.Font = new System.Drawing.Font("Calibri", 10.125F);
-            this.Tyype.FormattingEnabled = true;
-            this.Tyype.Items.AddRange(new object[] {
-            "Tout",
-            "Homme",
-            "Femme",
-            "Unisexe",
-            "Emballage",
-            "Sachet"});
-            this.Tyype.Location = new System.Drawing.Point(20, 56);
-            this.Tyype.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.Tyype.Name = "Tyype";
-            this.Tyype.Size = new System.Drawing.Size(292, 41);
-            this.Tyype.TabIndex = 34;
-            this.Tyype.SelectedIndexChanged += new System.EventHandler(this.Tyype_SelectedIndexChanged);
-            this.Tyype.TextChanged += new System.EventHandler(this.Tyype_TextChanged);
-            this.Tyype.Leave += new System.EventHandler(this.Tyype_Leave);
             // 
             // invTable
             // 
@@ -636,41 +654,23 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "cliquez sur le chiffre pour voir ces articles";
             // 
-            // ShowPurp
+            // searchText
             // 
-            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.searchText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShowPurp.Location = new System.Drawing.Point(327, 56);
-            this.ShowPurp.Name = "ShowPurp";
-            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
-            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.ShowPurp.Properties.OffText = "Prix d\'achat";
-            this.ShowPurp.Properties.OnText = "Prix d\'achat";
-            this.ShowPurp.Size = new System.Drawing.Size(429, 41);
-            this.ShowPurp.TabIndex = 16;
-            this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.68775F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.31225F));
-            this.tableLayoutPanel7.Controls.Add(this.Tyype, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.ShowPurp, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 177);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(759, 100);
-            this.tableLayoutPanel7.TabIndex = 17;
+            this.searchText.Font = new System.Drawing.Font("Calibri", 12.25F);
+            this.searchText.ForeColor = System.Drawing.Color.Gray;
+            this.searchText.Location = new System.Drawing.Point(20, 30);
+            this.searchText.Margin = new System.Windows.Forms.Padding(20, 30, 3, 3);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(462, 47);
+            this.searchText.TabIndex = 0;
+            this.searchText.Tag = "Rechercher...";
+            this.searchText.Text = "Rechercher...";
+            this.searchText.Click += new System.EventHandler(this.searchText_Click);
+            this.searchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchText_KeyDown);
+            this.searchText.Leave += new System.EventHandler(this.searchText_Leave);
             // 
             // StockForm
             // 
@@ -684,6 +684,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -697,8 +699,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPurp.Properties)).EndInit();
-            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
