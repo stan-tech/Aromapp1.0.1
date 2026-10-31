@@ -161,13 +161,13 @@
             this.panel3.Size = new System.Drawing.Size(548, 50);
             this.panel3.TabIndex = 28;
             // 
-            // totalBulkText
+            // totalText
             // 
             this.totalBulkText.Font = new System.Drawing.Font("Calibri", 9.25F);
             this.totalBulkText.ForeColor = System.Drawing.Color.White;
             this.totalBulkText.Location = new System.Drawing.Point(201, 1);
             this.totalBulkText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.totalBulkText.Name = "totalBulkText";
+            this.totalBulkText.Name = "totalText";
             this.totalBulkText.Size = new System.Drawing.Size(205, 45);
             this.totalBulkText.TabIndex = 27;
             this.totalBulkText.Text = "00,00";

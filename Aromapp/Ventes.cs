@@ -24,7 +24,8 @@ namespace Aromapp
         int limit = 100, currentPage = 1;
         bool tableFull = false;
         DataTable table;
-        DBHelper helper = new DBHelper();
+        string selectedInvoiceType = "";
+
         public Ventes()
         {
             InitializeComponent();
@@ -87,6 +88,7 @@ namespace Aromapp
             Factures.Checked = false;
             currentPage = 1;
 
+            EffSauv.SelectedIndex = 0;
             searchText.Text = string.Empty;
 
             HintUtils.ShowHint(searchText);
@@ -107,10 +109,14 @@ namespace Aromapp
 
         public void RefreshData()
         {
-            bindingSource = new BindingSource();
-            table = helper.selectSales(limit, 1,"");
-            bindingSource.DataSource = table;
-            soldProducts.DataSource = bindingSource;
+
+            using (DBHelper helper = new DBHelper())
+            {
+                bindingSource = new BindingSource();
+                table = helper.selectSales(limit, 1, "");
+                bindingSource.DataSource = table;
+                soldProducts.DataSource = bindingSource; 
+            }
 
         }
         void worker_workCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -128,7 +134,7 @@ namespace Aromapp
             BindingSource bindingSource = new BindingSource();
             using (DBHelper helper = new DBHelper())
             {
-                table = helper.selectSales(limit, currentPage,"");
+                table = helper.selectSales(limit, currentPage,selectedInvoiceType);
 
             }
 
@@ -141,9 +147,11 @@ namespace Aromapp
                 tableFull = false;
 
             }
-
-            bindingSource.DataSource = table;
-            soldProducts.DataSource = bindingSource;
+            if(table.Rows.Count > 0)
+            {
+                bindingSource.DataSource = table;
+                soldProducts.DataSource = bindingSource;
+            }
         }
 
         private void soldProducts_Scroll(object sender, ScrollEventArgs e)
@@ -153,85 +161,45 @@ namespace Aromapp
             if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
             {
                 foreach (DataGridViewRow row in soldProducts.Rows)
-                    totalHeight += row.Height;
+                    if (row.Visible)
+                        totalHeight += row.Height;
 
-                if (!tableFull)
+                // Scroll UP
+                if (soldProducts.VerticalScrollingOffset == 0 &&
+                    e.NewValue < e.OldValue)
                 {
-
-                    if (soldProducts.VerticalScrollingOffset == 0 && e.NewValue < e.OldValue)
+                    if (currentPage > 1)
                     {
-                        if (currentPage > 1)
-                        {
-                            currentPage--;
+                        currentPage--;
 
-                            if (!searching)
-                            {
-                                AddTable(currentPage);
-                            }
-                            else
-                            {
-                                SearchSales(currentPage,selection, saleType);   
-                            }
-                            tableFull = false;
-
-                        }
+                        if (!searching)
+                            AddTable(currentPage);
                         else
-                        {
-                            if (!searching)
-                            {
-                                AddTable(currentPage);
-                            }
-                            else
-                            {
-                                SearchSales(1, selection, saleType);
-                            }
-                        }
+                            SearchSales(currentPage, selection, saleType);
+
+                        tableFull = false;
                     }
 
-                    if (totalHeight - soldProducts.Height < soldProducts.VerticalScrollingOffset)
-                    {
-                        if (currentPage == 1)
-                        {
-                            if (!searching)
-                            {
-                                AddTable(currentPage);
-                            }
-                            else
-                            {
-                                SearchSales(currentPage, selection, saleType);
-                            }
-
-
-                        }
-                        else if (currentPage != 1 && !tableFull)
-                        {
-                            if (!searching)
-                            {
-                                AddTable(currentPage);
-                            }
-                            else
-                            {
-                                SearchSales(currentPage, selection, saleType);
-                            }
-
-                            if (table.Rows.Count < limit)
-                            {
-                                tableFull = true;
-                            }
-
-                        }
-
-                        if (!tableFull)
-                        {
-                            currentPage++;
-
-                        }
-
-                    }
-
-
+                    return;
                 }
 
+                // Scroll DOWN
+                if (totalHeight - soldProducts.ClientSize.Height <=
+                    soldProducts.VerticalScrollingOffset + 5)
+                {
+                    if (!tableFull)
+                    {
+                        if (!searching)
+                            AddTable(currentPage);
+                        else
+                            SearchSales(currentPage, selection, saleType);
+
+                        if (table.Rows.Count < limit)
+                            tableFull = true;
+                        else
+                            currentPage++;
+                    }
+                }
             }
 
 
@@ -297,6 +265,10 @@ namespace Aromapp
 
                 SearchSales(1, selection, saleType);
             }
+            else
+            {
+                saleType = "";
+            }
         }
 
         private void Bon_Click(object sender, EventArgs e)
@@ -312,6 +284,10 @@ namespace Aromapp
                 saleType = "Bon";
                 selection = 4;
                 SearchSales(1, selection, saleType);
+            }
+            else
+            {
+                saleType = "";
             }
         }
 
@@ -352,11 +328,12 @@ namespace Aromapp
         void RefreshTable(object sender, FormClosedEventArgs e)
         {
 
-            
-                table = helper.selectSales(100, 1,"");
+            using (DBHelper helper = new DBHelper())
+            {
+                table = helper.selectSales(100, 1, "");
                 soldProducts.DataSource = table;
-           
 
+            }
 
         }
         private void soldProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -464,15 +441,12 @@ namespace Aromapp
 
         void worker_Work(object sender, DoWorkEventArgs e)
         {
-
-            bindingSource = new BindingSource();
-            table = helper.selectSales(limit, currentPage,"");
-            bindingSource.DataSource = table;
-
-
-
-
-
+            using (DBHelper helper = new DBHelper())
+            {
+                bindingSource = new BindingSource();
+                table = helper.selectSales(limit, currentPage, "");
+                bindingSource.DataSource = table;
+            }
         }
       
 
@@ -500,7 +474,7 @@ namespace Aromapp
 
             using (DBHelper helper = new DBHelper())
             {
-                table = helper.searchForSales(searchStr, selection, currentPage, limit);
+                table = helper.searchForSales(searchStr,(saleType=="")?1:selection, currentPage, limit);
 
             }
 
@@ -559,26 +533,28 @@ namespace Aromapp
         {
             HintUtils.HideHint(searchText);
         }
-
         private void EffSauv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedType = "";
+            
 
             switch (EffSauv.SelectedIndex)
             {
                 case 1:
-                    selectedType = "T";
+                    selectedInvoiceType = "T";
                     break;
                 case 0:
-                    selectedType = "";
+                    selectedInvoiceType = "";
 
                     break;
             }
 
-            bindingSource = new BindingSource();
-            table = helper.selectSales(limit, 1,selectedType);
-            bindingSource.DataSource = table;
-            soldProducts.DataSource = bindingSource;
+            using (DBHelper helper = new DBHelper())
+            {
+                bindingSource = new BindingSource();
+                table = helper.selectSales(limit, 1, selectedInvoiceType);
+                bindingSource.DataSource = table;
+                soldProducts.DataSource = bindingSource;
+            }
         }
 
         public static bool DeletedBill { get => deletedBill; set => deletedBill = value; }

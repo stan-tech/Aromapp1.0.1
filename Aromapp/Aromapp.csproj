@@ -153,60 +153,73 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessControl\AccessControl.cs" />
-    <Compile Include="AccountModel.cs" />
-    <Compile Include="Achats.cs">
+    <Compile Include="ChangePriceOrRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePriceOrRemove.Designer.cs">
+      <DependentUpon>ChangePriceOrRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PriceChangingProps.cs" />
+    <Compile Include="Products\ExportOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\ExportOptions.Designer.cs">
+      <DependentUpon>ExportOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Achats\Achats.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Achats.Designer.cs">
+    <Compile Include="Achats\Achats.Designer.cs">
       <DependentUpon>Achats.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddClient.cs">
+    <Compile Include="Clients\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddClient.Designer.cs">
+    <Compile Include="Clients\AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddProduct.cs">
+    <Compile Include="Products\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddProduct.Designer.cs">
+    <Compile Include="Products\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddPurchase.cs">
+    <Compile Include="Achats\AddPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPurchase.Designer.cs">
+    <Compile Include="Achats\AddPurchase.Designer.cs">
       <DependentUpon>AddPurchase.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSavingAccount.cs">
+    <Compile Include="Caisse\AddSavingAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSavingAccount.Designer.cs">
+    <Compile Include="Caisse\AddSavingAccount.Designer.cs">
       <DependentUpon>AddSavingAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSupplier.cs">
+    <Compile Include="Suppliers\AddSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSupplier.Designer.cs">
+    <Compile Include="Suppliers\AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUser.cs">
+    <Compile Include="Admin Options\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
+    <Compile Include="Admin Options\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminOptions.cs">
+    <Compile Include="Admin Options\AdminOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AdminOptions.Designer.cs">
+    <Compile Include="Admin Options\AdminOptions.Designer.cs">
       <DependentUpon>AdminOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bill.cs" />
-    <Compile Include="Caisse.cs">
+    <Compile Include="Models\Bill.cs" />
+    <Compile Include="Caisse\Caisse.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Caisse.Designer.cs">
+    <Compile Include="Caisse\Caisse.Designer.cs">
       <DependentUpon>Caisse.cs</DependentUpon>
     </Compile>
     <Compile Include="CartItemOptions.cs">
@@ -215,24 +228,24 @@
     <Compile Include="CartItemOptions.Designer.cs">
       <DependentUpon>CartItemOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangeRetentionPeriod.cs">
+    <Compile Include="Admin Options\ChangeRetentionPeriod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeRetentionPeriod.Designer.cs">
+    <Compile Include="Admin Options\ChangeRetentionPeriod.Designer.cs">
       <DependentUpon>ChangeRetentionPeriod.cs</DependentUpon>
     </Compile>
     <Compile Include="CleanTrashService.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="ClientHistory.cs">
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Clients\ClientHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientHistory.Designer.cs">
+    <Compile Include="Clients\ClientHistory.Designer.cs">
       <DependentUpon>ClientHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients.cs">
+    <Compile Include="Clients\Clients.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Clients.Designer.cs">
+    <Compile Include="Clients\Clients.Designer.cs">
       <DependentUpon>Clients.cs</DependentUpon>
     </Compile>
     <Compile Include="Comptoire.cs">
@@ -247,30 +260,30 @@
     <Compile Include="Confirm.Designer.cs">
       <DependentUpon>Confirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CryptographyHelper.cs" />
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="Debts.cs">
+    <Compile Include="Helpers\CryptographyHelper.cs" />
+    <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Caisse\Debts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Debts.Designer.cs">
+    <Compile Include="Caisse\Debts.Designer.cs">
       <DependentUpon>Debts.cs</DependentUpon>
     </Compile>
-    <Compile Include="DecEnc.cs">
+    <Compile Include="Caisse\DecEnc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DecEnc.Designer.cs">
+    <Compile Include="Caisse\DecEnc.Designer.cs">
       <DependentUpon>DecEnc.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditClient.cs">
+    <Compile Include="Clients\EditClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditClient.Designer.cs">
+    <Compile Include="Clients\EditClient.Designer.cs">
       <DependentUpon>EditClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditSupplierForm.cs">
+    <Compile Include="Suppliers\EditSupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditSupplierForm.Designer.cs">
+    <Compile Include="Suppliers\EditSupplierForm.Designer.cs">
       <DependentUpon>EditSupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="etiquette.cs">
@@ -283,10 +296,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="HintUtils.cs" />
-    <Compile Include="History.cs">
+    <Compile Include="Admin Options\History.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="History.Designer.cs">
+    <Compile Include="Admin Options\History.Designer.cs">
       <DependentUpon>History.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
@@ -295,7 +308,7 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Information.cs" />
+    <Compile Include="Models\Information.cs" />
     <Compile Include="InvoiceOrTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,90 +321,90 @@
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lend.cs">
+    <Compile Include="Caisse\Lend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lend.Designer.cs">
+    <Compile Include="Caisse\Lend.Designer.cs">
       <DependentUpon>Lend.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogForm.cs">
+    <Compile Include="Admin Options\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogForm.Designer.cs">
+    <Compile Include="Admin Options\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoyalClients.cs">
+    <Compile Include="Clients\LoyalClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoyalClients.Designer.cs">
+    <Compile Include="Clients\LoyalClients.Designer.cs">
       <DependentUpon>LoyalClients.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBoxer.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="Products.cs">
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Products\Products.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Products.Designer.cs">
+    <Compile Include="Products\Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produit.cs" />
-    <Compile Include="ProdView.cs">
+    <Compile Include="Models\Produit.cs" />
+    <Compile Include="Products\ProdView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProdView.Designer.cs">
+    <Compile Include="Products\ProdView.Designer.cs">
       <DependentUpon>ProdView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchaseInfo.cs">
+    <Compile Include="Achats\PurchaseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PurchaseInfo.Designer.cs">
+    <Compile Include="Achats\PurchaseInfo.Designer.cs">
       <DependentUpon>PurchaseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="PurchaseLine.cs" />
+    <Compile Include="Models\PurchaseLine.cs" />
     <Compile Include="Qt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Qt.Designer.cs">
       <DependentUpon>Qt.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveFromPurchases.cs">
+    <Compile Include="Achats\RemoveFromPurchases.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveFromPurchases.Designer.cs">
+    <Compile Include="Achats\RemoveFromPurchases.Designer.cs">
       <DependentUpon>RemoveFromPurchases.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveProduct.cs">
+    <Compile Include="Products\RemoveProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveProduct.Designer.cs">
+    <Compile Include="Products\RemoveProduct.Designer.cs">
       <DependentUpon>RemoveProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale.cs" />
+    <Compile Include="Models\Sale.cs" />
     <Compile Include="SaleInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SaleInfo.Designer.cs">
       <DependentUpon>SaleInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaleLine.cs" />
-    <Compile Include="ScarceProducts.cs">
+    <Compile Include="Models\SaleLine.cs" />
+    <Compile Include="Products\ScarceProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScarceProducts.Designer.cs">
+    <Compile Include="Products\ScarceProducts.Designer.cs">
       <DependentUpon>ScarceProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignIn.cs">
+    <Compile Include="Admin Options\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignIn.Designer.cs">
+    <Compile Include="Admin Options\SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Spend.cs">
+    <Compile Include="Caisse\Spend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Spend.Designer.cs">
+    <Compile Include="Caisse\Spend.Designer.cs">
       <DependentUpon>Spend.cs</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.cs">
@@ -406,72 +419,78 @@
     <Compile Include="StockForm.Designer.cs">
       <DependentUpon>StockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Supplier.cs" />
-    <Compile Include="Suppliers.cs">
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Suppliers\Suppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Suppliers.Designer.cs">
+    <Compile Include="Suppliers\Suppliers.Designer.cs">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="TableConfig.cs" />
-    <Compile Include="Tables.cs" />
-    <Compile Include="Trash.cs">
+    <Compile Include="Models\Tables.cs" />
+    <Compile Include="Admin Options\Trash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Trash.Designer.cs">
+    <Compile Include="Admin Options\Trash.Designer.cs">
       <DependentUpon>Trash.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrashDBHelper.cs" />
-    <Compile Include="TrashView.cs">
+    <Compile Include="Helpers\TrashDBHelper.cs" />
+    <Compile Include="Admin Options\TrashView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TrashView.Designer.cs">
+    <Compile Include="Admin Options\TrashView.Designer.cs">
       <DependentUpon>TrashView.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Ventes.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventes.Designer.cs">
       <DependentUpon>Ventes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Achats.resx">
+    <EmbeddedResource Include="Achats\Achats.resx">
       <DependentUpon>Achats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddClient.resx">
+    <EmbeddedResource Include="ChangePriceOrRemove.resx">
+      <DependentUpon>ChangePriceOrRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\ExportOptions.resx">
+      <DependentUpon>ExportOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddProduct.resx">
+    <EmbeddedResource Include="Products\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddPurchase.resx">
+    <EmbeddedResource Include="Achats\AddPurchase.resx">
       <DependentUpon>AddPurchase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSavingAccount.resx">
+    <EmbeddedResource Include="Caisse\AddSavingAccount.resx">
       <DependentUpon>AddSavingAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSupplier.resx">
+    <EmbeddedResource Include="Suppliers\AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddUser.resx">
+    <EmbeddedResource Include="Admin Options\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminOptions.resx">
+    <EmbeddedResource Include="Admin Options\AdminOptions.resx">
       <DependentUpon>AdminOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Caisse.resx">
+    <EmbeddedResource Include="Caisse\Caisse.resx">
       <DependentUpon>Caisse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CartItemOptions.resx">
       <DependentUpon>CartItemOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeRetentionPeriod.resx">
+    <EmbeddedResource Include="Admin Options\ChangeRetentionPeriod.resx">
       <DependentUpon>ChangeRetentionPeriod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientHistory.resx">
+    <EmbeddedResource Include="Clients\ClientHistory.resx">
       <DependentUpon>ClientHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clients.resx">
+    <EmbeddedResource Include="Clients\Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comptoire.resx">
@@ -480,16 +499,16 @@
     <EmbeddedResource Include="Confirm.resx">
       <DependentUpon>Confirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Debts.resx">
+    <EmbeddedResource Include="Caisse\Debts.resx">
       <DependentUpon>Debts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DecEnc.resx">
+    <EmbeddedResource Include="Caisse\DecEnc.resx">
       <DependentUpon>DecEnc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditClient.resx">
+    <EmbeddedResource Include="Clients\EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditSupplierForm.resx">
+    <EmbeddedResource Include="Suppliers\EditSupplierForm.resx">
       <DependentUpon>EditSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="etiquette.resx">
@@ -498,7 +517,7 @@
     <EmbeddedResource Include="HintTexBox.resx">
       <DependentUpon>HintTexBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="History.resx">
+    <EmbeddedResource Include="Admin Options\History.resx">
       <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
@@ -510,19 +529,19 @@
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lend.resx">
+    <EmbeddedResource Include="Caisse\Lend.resx">
       <DependentUpon>Lend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogForm.resx">
+    <EmbeddedResource Include="Admin Options\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoyalClients.resx">
+    <EmbeddedResource Include="Clients\LoyalClients.resx">
       <DependentUpon>LoyalClients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products.resx">
+    <EmbeddedResource Include="Products\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProdView.resx">
+    <EmbeddedResource Include="Products\ProdView.resx">
       <DependentUpon>ProdView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -535,28 +554,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="PurchaseInfo.resx">
+    <EmbeddedResource Include="Achats\PurchaseInfo.resx">
       <DependentUpon>PurchaseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Qt.resx">
       <DependentUpon>Qt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoveFromPurchases.resx">
+    <EmbeddedResource Include="Achats\RemoveFromPurchases.resx">
       <DependentUpon>RemoveFromPurchases.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoveProduct.resx">
+    <EmbeddedResource Include="Products\RemoveProduct.resx">
       <DependentUpon>RemoveProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaleInfo.resx">
       <DependentUpon>SaleInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScarceProducts.resx">
+    <EmbeddedResource Include="Products\ScarceProducts.resx">
       <DependentUpon>ScarceProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignIn.resx">
+    <EmbeddedResource Include="Admin Options\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Spend.resx">
+    <EmbeddedResource Include="Caisse\Spend.resx">
       <DependentUpon>Spend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
@@ -565,13 +584,13 @@
     <EmbeddedResource Include="StockForm.resx">
       <DependentUpon>StockForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Suppliers.resx">
+    <EmbeddedResource Include="Suppliers\Suppliers.resx">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Trash.resx">
+    <EmbeddedResource Include="Admin Options\Trash.resx">
       <DependentUpon>Trash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrashView.resx">
+    <EmbeddedResource Include="Admin Options\TrashView.resx">
       <DependentUpon>TrashView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventes.resx">
@@ -610,6 +629,7 @@
     <Content Include="Resources\delete.png" />
     <Content Include="smallLogo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

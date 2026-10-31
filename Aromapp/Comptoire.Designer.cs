@@ -47,6 +47,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.prods = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.searchBox = new Aromapp.HintTexBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
@@ -65,11 +66,10 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tva = new System.Windows.Forms.ComboBox();
             this.effacerbtn = new Guna.UI2.WinForms.Guna2Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.n_lignes = new System.Windows.Forms.Label();
-            this.searchBox = new Aromapp.HintTexBox();
             this.amount = new Aromapp.HintTexBox();
             this.reduction = new Aromapp.HintTexBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.n_lignes = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -97,11 +97,11 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(4, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 19, 4, 2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1225, 265);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.groupBox1.Size = new System.Drawing.Size(816, 164);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information sur le client";
@@ -118,12 +118,12 @@
             this.tableLayoutPanel1.Controls.Add(this.custName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.custPhone, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.custAddress, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 33);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 20);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1197, 209);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(797, 130);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // custName
@@ -141,12 +141,12 @@
             this.custName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.custName.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.custName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.custName.Location = new System.Drawing.Point(4, 35);
-            this.custName.Margin = new System.Windows.Forms.Padding(4, 35, 4, 99);
+            this.custName.Location = new System.Drawing.Point(3, 22);
+            this.custName.Margin = new System.Windows.Forms.Padding(3, 22, 3, 61);
             this.custName.Name = "custName";
             this.custName.PlaceholderText = "";
             this.custName.SelectedText = "";
-            this.custName.Size = new System.Drawing.Size(390, 75);
+            this.custName.Size = new System.Drawing.Size(259, 47);
             this.custName.TabIndex = 2;
             this.custName.Tag = "Nom de client...";
             this.custName.TextChanged += new System.EventHandler(this.custName_TextChanged);
@@ -168,12 +168,12 @@
             this.custPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.custPhone.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.custPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.custPhone.Location = new System.Drawing.Point(402, 35);
-            this.custPhone.Margin = new System.Windows.Forms.Padding(4, 35, 4, 99);
+            this.custPhone.Location = new System.Drawing.Point(268, 22);
+            this.custPhone.Margin = new System.Windows.Forms.Padding(3, 22, 3, 61);
             this.custPhone.Name = "custPhone";
             this.custPhone.PlaceholderText = "";
             this.custPhone.SelectedText = "";
-            this.custPhone.Size = new System.Drawing.Size(390, 75);
+            this.custPhone.Size = new System.Drawing.Size(259, 47);
             this.custPhone.TabIndex = 2;
             this.custPhone.Tag = "Téléphone de client...";
             this.custPhone.Click += new System.EventHandler(this.custPhone_Click);
@@ -194,12 +194,12 @@
             this.custAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.custAddress.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.custAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.custAddress.Location = new System.Drawing.Point(800, 35);
-            this.custAddress.Margin = new System.Windows.Forms.Padding(4, 35, 4, 99);
+            this.custAddress.Location = new System.Drawing.Point(533, 22);
+            this.custAddress.Margin = new System.Windows.Forms.Padding(3, 22, 3, 61);
             this.custAddress.Name = "custAddress";
             this.custAddress.PlaceholderText = "";
             this.custAddress.SelectedText = "";
-            this.custAddress.Size = new System.Drawing.Size(393, 75);
+            this.custAddress.Size = new System.Drawing.Size(261, 47);
             this.custAddress.TabIndex = 2;
             this.custAddress.Tag = "Adresse de client...";
             this.custAddress.Click += new System.EventHandler(this.custAddress_Click);
@@ -214,12 +214,12 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(2096, 1514);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1397, 940);
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -231,14 +231,14 @@
             this.tableLayoutPanel3.Controls.Add(this.prods, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(20, 2);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(20, 2, 4, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(13, 1);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(13, 1, 3, 1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.81321F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.5517F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.56838F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1233, 1500);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(822, 932);
             this.tableLayoutPanel3.TabIndex = 1;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
@@ -273,8 +273,8 @@
             this.prods.DefaultCellStyle = dataGridViewCellStyle3;
             this.prods.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.prods.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.prods.Location = new System.Drawing.Point(10, 720);
-            this.prods.Margin = new System.Windows.Forms.Padding(10, 10, 10, 108);
+            this.prods.Location = new System.Drawing.Point(7, 446);
+            this.prods.Margin = new System.Windows.Forms.Padding(7, 6, 7, 67);
             this.prods.Name = "prods";
             this.prods.ReadOnly = true;
             this.prods.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -297,7 +297,7 @@
             this.prods.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.prods.RowTemplate.Height = 33;
             this.prods.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prods.Size = new System.Drawing.Size(1213, 672);
+            this.prods.Size = new System.Drawing.Size(808, 419);
             this.prods.TabIndex = 2;
             this.prods.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.prods.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -336,13 +336,32 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.46939F));
             this.tableLayoutPanel4.Controls.Add(this.searchBox, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 299);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 185);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1225, 409);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(816, 254);
             this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.Font = new System.Drawing.Font("Calibri", 10.25F);
+            this.searchBox.ForeColor = System.Drawing.Color.Gray;
+            this.searchBox.Location = new System.Drawing.Point(3, 38);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 38, 3, 1);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(265, 28);
+            this.searchBox.TabIndex = 0;
+            this.searchBox.Tag = "Rechercher...";
+            this.searchBox.Text = "Rechercher...";
+            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // tableLayoutPanel5
             // 
@@ -353,13 +372,13 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel9, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.comboBox1, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(622, 2);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(414, 1);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(599, 405);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(399, 252);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -370,20 +389,24 @@
             this.tableLayoutPanel9.Controls.Add(this.ShowPurp, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.iconButton4, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 312);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 194);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(599, 93);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(399, 58);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
             // ShowPurp
             // 
             this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShowPurp.Location = new System.Drawing.Point(3, 49);
+            this.ShowPurp.Location = new System.Drawing.Point(2, 31);
+            this.ShowPurp.Margin = new System.Windows.Forms.Padding(2);
             this.ShowPurp.Name = "ShowPurp";
+            // 
+            // 
+            // 
             this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.ShowPurp.Properties.Appearance.Options.UseFont = true;
@@ -394,7 +417,7 @@
             this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.ShowPurp.Properties.OffText = "Prix d\'achat";
             this.ShowPurp.Properties.OnText = "Prix d\'achat";
-            this.ShowPurp.Size = new System.Drawing.Size(376, 41);
+            this.ShowPurp.Size = new System.Drawing.Size(251, 25);
             this.ShowPurp.TabIndex = 2;
             this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
             // 
@@ -410,10 +433,10 @@
             this.iconButton4.ForeColor = System.Drawing.Color.White;
             this.iconButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.iconButton4.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton4.Location = new System.Drawing.Point(386, 27);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.iconButton4.Location = new System.Drawing.Point(258, 17);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(209, 64);
+            this.iconButton4.Size = new System.Drawing.Size(138, 40);
             this.iconButton4.TabIndex = 2;
             this.iconButton4.Text = "   Actualiser";
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
@@ -431,10 +454,10 @@
             "Unisexe",
             "Emballage",
             "Sachet"});
-            this.comboBox1.Location = new System.Drawing.Point(4, 62);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 62, 4, 2);
+            this.comboBox1.Location = new System.Drawing.Point(3, 38);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 38, 3, 1);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(591, 37);
+            this.comboBox1.Size = new System.Drawing.Size(393, 26);
             this.comboBox1.TabIndex = 25;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
@@ -451,16 +474,16 @@
             this.tableLayoutPanel7.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.groupBox5, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.groupBox6, 0, 2);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(1261, 2);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(841, 1);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 5;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.72136F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.94342F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.846154F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.53846F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(831, 1500);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(553, 932);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // iconButton2
@@ -478,10 +501,10 @@
             this.iconButton2.ForeColor = System.Drawing.Color.White;
             this.iconButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.iconButton2.ImageSize = new System.Drawing.Size(10, 10);
-            this.iconButton2.Location = new System.Drawing.Point(10, 1416);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(10, 2, 20, 2);
+            this.iconButton2.Location = new System.Drawing.Point(7, 879);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(7, 1, 13, 1);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(801, 82);
+            this.iconButton2.Size = new System.Drawing.Size(533, 52);
             this.iconButton2.TabIndex = 7;
             this.iconButton2.Text = "Confirmer";
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
@@ -519,8 +542,8 @@
             this.cart.DefaultCellStyle = dataGridViewCellStyle8;
             this.cart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.cart.Location = new System.Drawing.Point(10, 724);
-            this.cart.Margin = new System.Windows.Forms.Padding(10, 10, 20, 23);
+            this.cart.Location = new System.Drawing.Point(7, 449);
+            this.cart.Margin = new System.Windows.Forms.Padding(7, 6, 13, 14);
             this.cart.Name = "cart";
             this.cart.ReadOnly = true;
             this.cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -544,7 +567,7 @@
             this.cart.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.cart.RowTemplate.Height = 33;
             this.cart.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cart.Size = new System.Drawing.Size(801, 667);
+            this.cart.Size = new System.Drawing.Size(533, 415);
             this.cart.TabIndex = 6;
             this.cart.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.cart.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -579,11 +602,11 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel6);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(4, 14);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 14, 20, 2);
+            this.groupBox2.Location = new System.Drawing.Point(3, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 9, 13, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox2.Size = new System.Drawing.Size(807, 276);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.groupBox2.Size = new System.Drawing.Size(537, 171);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Résumé du commande";
@@ -598,12 +621,12 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.groupBox3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.groupBox4, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(28, 56);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(19, 35);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(749, 188);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(498, 117);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // groupBox3
@@ -615,11 +638,11 @@
             this.groupBox3.Controls.Add(this.subtotalText);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(4, 2);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.groupBox3.Location = new System.Drawing.Point(3, 1);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox3.Size = new System.Drawing.Size(366, 184);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.groupBox3.Size = new System.Drawing.Size(243, 115);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sous-total";
@@ -633,11 +656,11 @@
             this.subtotalText.BackColor = System.Drawing.Color.Transparent;
             this.subtotalText.Font = new System.Drawing.Font("Calibri", 16.125F, System.Drawing.FontStyle.Bold);
             this.subtotalText.ForeColor = System.Drawing.Color.OliveDrab;
-            this.subtotalText.Location = new System.Drawing.Point(32, 77);
-            this.subtotalText.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.subtotalText.Location = new System.Drawing.Point(21, 48);
+            this.subtotalText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.subtotalText.Name = "subtotalText";
-            this.subtotalText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.subtotalText.Size = new System.Drawing.Size(55, 53);
+            this.subtotalText.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.subtotalText.Size = new System.Drawing.Size(36, 33);
             this.subtotalText.TabIndex = 2;
             this.subtotalText.Text = "0";
             this.subtotalText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -651,11 +674,11 @@
             this.groupBox4.Controls.Add(this.nettotalText);
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(378, 2);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.groupBox4.Location = new System.Drawing.Point(252, 1);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox4.Size = new System.Drawing.Size(367, 184);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.groupBox4.Size = new System.Drawing.Size(243, 115);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Total net";
@@ -667,16 +690,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nettotalText.AutoSize = true;
             this.nettotalText.BackColor = System.Drawing.Color.Transparent;
+            this.nettotalText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nettotalText.Font = new System.Drawing.Font("Calibri", 16.125F, System.Drawing.FontStyle.Bold);
             this.nettotalText.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.nettotalText.Location = new System.Drawing.Point(44, 77);
-            this.nettotalText.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.nettotalText.Location = new System.Drawing.Point(29, 48);
+            this.nettotalText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.nettotalText.Name = "nettotalText";
-            this.nettotalText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.nettotalText.Size = new System.Drawing.Size(55, 53);
+            this.nettotalText.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.nettotalText.Size = new System.Drawing.Size(36, 33);
             this.nettotalText.TabIndex = 1;
             this.nettotalText.Text = "0";
             this.nettotalText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nettotalText.MouseEnter += new System.EventHandler(this.nettotalText_MouseEnter);
+            this.nettotalText.MouseLeave += new System.EventHandler(this.nettotalText_MouseLeave);
             // 
             // groupBox5
             // 
@@ -686,11 +712,11 @@
             this.groupBox5.Controls.Add(this.tableLayoutPanel8);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(4, 295);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 2, 20, 2);
+            this.groupBox5.Location = new System.Drawing.Point(3, 183);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 1, 13, 1);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox5.Size = new System.Drawing.Size(807, 278);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.groupBox5.Size = new System.Drawing.Size(537, 173);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Informations sur le paiement ";
@@ -705,15 +731,15 @@
             this.tableLayoutPanel8.Controls.Add(this.amount, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.reduction, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(10, 41);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(7, 25);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.Padding = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanel8.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.94118F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.05882F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(787, 227);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(523, 142);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // tva
@@ -726,10 +752,10 @@
             "0",
             "9",
             "19"});
-            this.tva.Location = new System.Drawing.Point(14, 168);
-            this.tva.Margin = new System.Windows.Forms.Padding(4, 10, 4, 10);
+            this.tva.Location = new System.Drawing.Point(10, 103);
+            this.tva.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.tva.Name = "tva";
-            this.tva.Size = new System.Drawing.Size(375, 39);
+            this.tva.Size = new System.Drawing.Size(248, 26);
             this.tva.TabIndex = 26;
             this.tva.TextChanged += new System.EventHandler(this.tva_TextChanged);
             // 
@@ -748,65 +774,13 @@
             this.effacerbtn.ForeColor = System.Drawing.Color.White;
             this.effacerbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.effacerbtn.ImageSize = new System.Drawing.Size(10, 10);
-            this.effacerbtn.Location = new System.Drawing.Point(397, 140);
-            this.effacerbtn.Margin = new System.Windows.Forms.Padding(4, 21, 4, 10);
+            this.effacerbtn.Location = new System.Drawing.Point(264, 87);
+            this.effacerbtn.Margin = new System.Windows.Forms.Padding(3, 13, 3, 6);
             this.effacerbtn.Name = "effacerbtn";
-            this.effacerbtn.Size = new System.Drawing.Size(376, 67);
+            this.effacerbtn.Size = new System.Drawing.Size(249, 43);
             this.effacerbtn.TabIndex = 2;
             this.effacerbtn.Text = "Vider le panier";
             this.effacerbtn.Click += new System.EventHandler(this.effacerbtn_Click);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.Controls.Add(this.n_lignes);
-            this.groupBox6.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(4, 577);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 2, 20, 2);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox6.Size = new System.Drawing.Size(807, 135);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Nombre des lignes";
-            // 
-            // n_lignes
-            // 
-            this.n_lignes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.n_lignes.AutoSize = true;
-            this.n_lignes.BackColor = System.Drawing.Color.Transparent;
-            this.n_lignes.Font = new System.Drawing.Font("Calibri", 16.125F, System.Drawing.FontStyle.Bold);
-            this.n_lignes.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.n_lignes.Location = new System.Drawing.Point(379, 58);
-            this.n_lignes.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.n_lignes.Name = "n_lignes";
-            this.n_lignes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.n_lignes.Size = new System.Drawing.Size(55, 53);
-            this.n_lignes.TabIndex = 1;
-            this.n_lignes.Text = "0";
-            this.n_lignes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // searchBox
-            // 
-            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.Font = new System.Drawing.Font("Calibri", 10.25F);
-            this.searchBox.ForeColor = System.Drawing.Color.Gray;
-            this.searchBox.Location = new System.Drawing.Point(4, 62);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 62, 4, 2);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(400, 41);
-            this.searchBox.TabIndex = 0;
-            this.searchBox.Tag = "Rechercher...";
-            this.searchBox.Text = "Rechercher...";
-            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
-            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
-            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // amount
             // 
@@ -814,10 +788,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.amount.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.amount.ForeColor = System.Drawing.Color.Gray;
-            this.amount.Location = new System.Drawing.Point(14, 24);
-            this.amount.Margin = new System.Windows.Forms.Padding(4, 14, 4, 2);
+            this.amount.Location = new System.Drawing.Point(10, 15);
+            this.amount.Margin = new System.Windows.Forms.Padding(3, 9, 3, 1);
             this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(375, 41);
+            this.amount.Size = new System.Drawing.Size(248, 28);
             this.amount.TabIndex = 1;
             this.amount.Tag = "Montant payé...";
             this.amount.Text = "Montant payé...";
@@ -831,26 +805,59 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reduction.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.reduction.ForeColor = System.Drawing.Color.Gray;
-            this.reduction.Location = new System.Drawing.Point(397, 24);
-            this.reduction.Margin = new System.Windows.Forms.Padding(4, 14, 4, 2);
+            this.reduction.Location = new System.Drawing.Point(264, 15);
+            this.reduction.Margin = new System.Windows.Forms.Padding(3, 9, 3, 1);
             this.reduction.Name = "reduction";
-            this.reduction.Size = new System.Drawing.Size(376, 41);
+            this.reduction.Size = new System.Drawing.Size(249, 28);
             this.reduction.TabIndex = 2;
             this.reduction.Tag = "Réduction...";
             this.reduction.Text = "Réduction...";
             this.reduction.Click += new System.EventHandler(this.reduction_Click);
             this.reduction.Leave += new System.EventHandler(this.reduction_Leave);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.n_lignes);
+            this.groupBox6.Font = new System.Drawing.Font("Calibri", 9.25F, System.Drawing.FontStyle.Bold);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(3, 358);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 1, 13, 1);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.groupBox6.Size = new System.Drawing.Size(537, 84);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Nombre des lignes";
+            // 
+            // n_lignes
+            // 
+            this.n_lignes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.n_lignes.AutoSize = true;
+            this.n_lignes.BackColor = System.Drawing.Color.Transparent;
+            this.n_lignes.Font = new System.Drawing.Font("Calibri", 16.125F, System.Drawing.FontStyle.Bold);
+            this.n_lignes.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.n_lignes.Location = new System.Drawing.Point(252, 36);
+            this.n_lignes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.n_lignes.Name = "n_lignes";
+            this.n_lignes.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.n_lignes.Size = new System.Drawing.Size(36, 33);
+            this.n_lignes.TabIndex = 1;
+            this.n_lignes.Text = "0";
+            this.n_lignes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Comptoire
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.Name = "Comptoire";
-            this.Size = new System.Drawing.Size(2096, 1514);
+            this.Size = new System.Drawing.Size(1397, 940);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

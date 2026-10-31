@@ -97,7 +97,7 @@
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(595, 81);
             this.save.TabIndex = 1;
-            this.save.Text = "Sauveguarder";
+            this.save.Text = "Sauvegarder";
             this.save.Click += new System.EventHandler(this.SaveClick);
             // 
             // delete

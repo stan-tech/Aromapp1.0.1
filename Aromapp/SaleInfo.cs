@@ -20,6 +20,8 @@ using static DevExpress.XtraEditors.Mask.MaskSettings;
 using ZXing;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using Aromapp.Models;
+using DevExpress.Data.Helpers;
 
 
 namespace Aromapp
@@ -37,6 +39,8 @@ namespace Aromapp
 
         public static decimal Total { get; set; }
         DBHelper helper = new DBHelper();
+
+        List<string> ModifiedProduct = new List<string>();
 
         public Client ClientProp { get; set; }
         private BackgroundWorker dataLoader;
@@ -90,7 +94,7 @@ namespace Aromapp
             HintUtils.ShowHint(searchBox);
 
         }
-        string SelectedTable = "produits";
+        string SelectedTable = "Produits";
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
@@ -342,7 +346,7 @@ namespace Aromapp
 
 
 
-        void PasswoCorrectDelete(object sender, EventArgs e)
+        void PasswoCorrectDelete(object sender=default, EventArgs e=default)
         {
            
             using (DBHelper helper = new DBHelper())
@@ -375,10 +379,11 @@ namespace Aromapp
 
             if (result == DialogResult.Yes)
             {
-                Confirm confirm = new Confirm();
-                confirm.Passed += PasswoCorrectDelete;
+                //Confirm confirm = new Confirm();
+                //confirm.Passed += PasswoCorrectDelete;
 
-                confirm.ShowDialog();
+                //confirm.ShowDialog();
+                PasswoCorrectDelete();
             }
 
         }
@@ -580,7 +585,6 @@ namespace Aromapp
             document.Add(new Phrase("Le: " + bill.DateA, FS));
 
 
-
             #region Write table
 
             /*[N],[Type],[C_PR] as Réf,[Nomproduit] as Désignation ,[Quantité] as Qté,[PrixHT] as 'Prix U' " +
@@ -658,9 +662,6 @@ namespace Aromapp
             }
 
             #endregion
-
-
-
 
 
             document.Add(table);
@@ -787,7 +788,7 @@ namespace Aromapp
         private void prods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             NewPrice = detail ? double.Parse(prods.SelectedRows[0].Cells[6].Value.ToString()) :
-     NewPrice = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
+            NewPrice = double.Parse(prods.SelectedRows[0].Cells[7].Value.ToString());
 
             qtForm = new Qt();
 
@@ -815,7 +816,7 @@ namespace Aromapp
 
             BuyingPrices.Add(buyinPrice);
 
-            produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
+            Produits l_Ventes = new Produits(nomproduits, quantity, NewPrice, 10, 0);
 
             l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
             l_Ventes.MontantHT = NewPrice* quantity;
@@ -946,6 +947,8 @@ namespace Aromapp
         }
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            ModifiedProduct = new List<string>();
+
             try
             {
                 SaveBtn.Enabled = false;
@@ -993,8 +996,171 @@ namespace Aromapp
 
 
         }
+        ChangePriceOrRemove changePriceOrRemove;
 
         private void cart_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string ProductID = cart.SelectedRows[0].Cells[2].Value.ToString();
+            string saleRef = cart.SelectedRows[0].Cells[0].Value.ToString();
+            int idx = cart.SelectedRows[0].Index;
+
+            double newPrice =  double.Parse(cart.SelectedRows[0].Cells[5].Value.ToString());
+
+
+            double selectedQt = double.Parse(cart.SelectedRows[0].Cells[4].Value.ToString());
+
+            PriceChangingProps changingProps = new PriceChangingProps()
+            {
+                Quantity = selectedQt,
+                ProdRef = ProductID,
+                TotalBulk = newPrice * selectedQt,
+                TotalRetail = newPrice * selectedQt,
+                SaleRef = saleRef,
+                NewPrice = newPrice
+            };
+
+
+            changePriceOrRemove = new ChangePriceOrRemove(changingProps, ModifiedProduct);
+
+
+            try
+            {
+                if (ModifiedProduct.Contains(ProductID))
+                {
+                    changePriceOrRemove.deleteExisting = true;
+                    changePriceOrRemove.deleteNew = true;
+                    prodIsNew = false;
+                }
+                else
+                {
+                    if (OldSaleLines[idx] != null && OldSaleLines[idx].C_PR == ProductID)
+                    {
+                        changePriceOrRemove.deleteExisting = true;
+                        changePriceOrRemove.deleteNew = false;
+                        prodIsNew = false;
+
+                    }
+                    else
+                    {
+
+                        if (applied)
+                        {
+                            changePriceOrRemove.deleteExisting = true;
+                            changePriceOrRemove.deleteNew = false;
+                            prodIsNew = true;
+                        }
+                        else
+                        {
+                            changePriceOrRemove.deleteExisting = false;
+                            changePriceOrRemove.deleteNew = true;
+                            prodIsNew = true;
+                        }
+
+
+                    }
+
+
+                    if (OldSaleLines[idx] != null && OldSaleLines[idx].N.Contains("T"))
+                    {
+                        changePriceOrRemove.deleteExisting = false;
+                        changePriceOrRemove.deleteNew = true;
+                        prodIsNew = true;
+                    }
+                }
+
+              
+
+            }
+            catch (Exception)
+            {
+
+                changePriceOrRemove.deleteExisting = false;
+                changePriceOrRemove.deleteNew = true;
+                prodIsNew = true;
+
+            }
+
+
+            changePriceOrRemove.Removed += RemovedFromCart;
+            changePriceOrRemove.OnPriceChanged += cartProductPriceChanged;
+
+            changePriceOrRemove.ShowDialog();
+
+        }
+
+
+
+
+        private void cartProductPriceChanged(object sender, EventArgs e)
+        {
+            double buyinPrice;
+
+            PriceChangingProps props = (PriceChangingProps)sender;
+
+            double quantity = props.Quantity, newPrice = props.NewPrice; 
+
+            string billRef = cart.SelectedRows[0].Cells[0].Value.ToString(),
+                type = cart.SelectedRows[0].Cells[1].Value.ToString();
+
+
+            string prodRef = cart.SelectedRows[0].Cells[2].Value.ToString();
+
+
+            buyinPrice = double.Parse(cart.SelectedRows[0].Cells[5].Value.ToString());
+
+            BuyingPrices.Add(buyinPrice);
+
+            double buyingPrice = 0;
+            string productDesc = "";
+            using(DBHelper helper= new DBHelper())
+            {
+                string table = prodRef.StartsWith("FL") ? "Emballage" : "Produits";
+                Product product = helper.GetProductByID( table,prodRef);
+                buyingPrice = product.PriceP;
+                productDesc = product.Name;
+            }
+            
+            if(newPrice <= buyingPrice)
+            {
+                if(!MessageBoxer.isConfirm("Le prix d'achat dépasse le nouveau prix. Voulez-vous continuer ?"))
+                {
+                    return;
+                }
+            }
+
+            Produits l_Ventes = new Produits(prodRef, quantity, NewPrice, 10, 0);
+
+            l_Ventes.Marge = (newPrice - buyingPrice) * quantity ;
+            l_Ventes.MontantHT = newPrice * props.Quantity;
+
+
+            int targetRowIndex = cart.SelectedRows[0].Index;
+
+            // n, type, ref, desc, qt, prix u , marge, total , discount
+
+
+            CartTable.Rows.Add(billRef, type, prodRef, productDesc, quantity,
+               props.NewPrice, l_Ventes.Marge, l_Ventes.MontantHT,0);
+
+            CartTable.Rows.RemoveAt(targetRowIndex);
+
+            cart.DataSource = CartTable;
+
+
+            object newSum = CartTable.Compute("Sum([Montant HT])", "");
+            
+            NewTotal = Convert.ToDouble(newSum);
+
+            nettotalText.Text = NewTotal.ToString("F2") + " DA";
+
+            applied = false;
+
+            changePriceOrRemove.Close();
+
+        }
+
+
+/*        private void cart_CellDoubleClick_(object sender, DataGridViewCellEventArgs e)
         {
             string ProductID = cart.SelectedRows[0].Cells[2].Value.ToString();
             decimal qtt = (decimal)double.Parse(cart.SelectedRows[0].Cells[4].Value.ToString());
@@ -1008,13 +1174,10 @@ namespace Aromapp
                 {
                     if (OldSaleLines[idx] != null && OldSaleLines[idx].C_PR == ProductID)
                     {
-                        
                             removeProduct.modif = true;
                             removeProduct.modifNew = false;
                             prodIsNew = false; 
                         
-
-
                     }
 
                     else
@@ -1068,7 +1231,7 @@ namespace Aromapp
                 MessageBoxer.showGeneralMsg("Sélectionnez d'abord une ligne");
             }
         }
-        void Removed(object sender, EventArgs e)
+*/        void Removed(object sender, EventArgs e)
         {
             if (DeletedBill)
             {
@@ -1099,6 +1262,7 @@ namespace Aromapp
                 try
                 {
                     CartTable.Rows.RemoveAt(index);
+
                 }
                 catch (Exception)
                 {
@@ -1108,8 +1272,10 @@ namespace Aromapp
 
                 if (!prodIsNew)
                 {
-                    OldSaleLines[index] = null;
+                    OldSaleLines.RemoveAt(index);
+                    //OldSaleLines[index] = null;
                 }
+
                 NewTotal=double.Parse(nettotalText.Text.Replace(" DA",""));
 
                  saleTotal.Text = Total.ToString("F2") + " DA";
@@ -1261,7 +1427,7 @@ namespace Aromapp
             }
             else
             {
-                SelectedTable = "produits";
+                SelectedTable = "Produits";
             }
         }
 

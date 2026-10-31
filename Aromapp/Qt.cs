@@ -14,9 +14,9 @@ namespace Aromapp
 {
     public partial class Qt : DevExpress.XtraEditors.XtraForm
     {
-        private int remise1;
+        private int Discount;
 
-        public long Quantity { get; set; }
+        long Quantity;
         public static double OptionalPrice { get; set; }
         public static double Remise { get; set; }
 
@@ -48,10 +48,10 @@ namespace Aromapp
                 }
             }
         }
-        public Qt(int quantity, int remise1)
+        public Qt(int quantity, int discount)
         {
             Quantity = quantity;
-            this.remise1 = remise1;
+            Discount = discount;
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

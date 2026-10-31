@@ -31,21 +31,21 @@ namespace Aromapp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle111 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle112 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle114 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle115 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle116 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle117 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle118 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle119 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle106 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle107 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle108 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle109 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle110 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.supprimer = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -96,10 +96,10 @@ namespace Aromapp
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.prods = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
+            this.label11 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchBox = new Aromapp.HintTexBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.ShowPurp = new DevExpress.XtraEditors.ToggleSwitch();
             this.tableLayoutPanel6.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.Actuelle.SuspendLayout();
@@ -131,11 +131,12 @@ namespace Aromapp
             this.tableLayoutPanel6.Controls.Add(this.supprimer, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.guna2Button1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 954);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 592);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(2133, 96);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1293, 60);
             this.tableLayoutPanel6.TabIndex = 45;
             // 
             // supprimer
@@ -153,10 +154,10 @@ namespace Aromapp
             this.supprimer.ForeColor = System.Drawing.Color.White;
             this.supprimer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.supprimer.ImageSize = new System.Drawing.Size(10, 10);
-            this.supprimer.Location = new System.Drawing.Point(10, 10);
-            this.supprimer.Margin = new System.Windows.Forms.Padding(10);
+            this.supprimer.Location = new System.Drawing.Point(7, 6);
+            this.supprimer.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(1046, 76);
+            this.supprimer.Size = new System.Drawing.Size(632, 48);
             this.supprimer.TabIndex = 4;
             this.supprimer.Text = "Supprimer la vente";
             this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
@@ -175,10 +176,10 @@ namespace Aromapp
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button1.Location = new System.Drawing.Point(1076, 10);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(10);
+            this.guna2Button1.Location = new System.Drawing.Point(653, 6);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(1047, 76);
+            this.guna2Button1.Size = new System.Drawing.Size(633, 48);
             this.guna2Button1.TabIndex = 4;
             this.guna2Button1.Text = "Imprimer";
             this.guna2Button1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -190,9 +191,10 @@ namespace Aromapp
             this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
+            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(2133, 954);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1293, 592);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -219,9 +221,10 @@ namespace Aromapp
             this.Actuelle.BackColor = System.Drawing.Color.Black;
             this.Actuelle.Controls.Add(this.tableLayoutPanel4);
             this.Actuelle.Location = new System.Drawing.Point(4, 44);
+            this.Actuelle.Margin = new System.Windows.Forms.Padding(2);
             this.Actuelle.Name = "Actuelle";
-            this.Actuelle.Padding = new System.Windows.Forms.Padding(3);
-            this.Actuelle.Size = new System.Drawing.Size(1591, 906);
+            this.Actuelle.Padding = new System.Windows.Forms.Padding(2);
+            this.Actuelle.Size = new System.Drawing.Size(1285, 544);
             this.Actuelle.TabIndex = 0;
             this.Actuelle.Text = "Actuelle";
             // 
@@ -233,12 +236,12 @@ namespace Aromapp
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1585, 900);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1281, 540);
             this.tableLayoutPanel4.TabIndex = 45;
             // 
             // tableLayoutPanel9
@@ -250,19 +253,20 @@ namespace Aromapp
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.BillLines, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.823266F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.17673F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(837, 894);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(677, 536);
             this.tableLayoutPanel9.TabIndex = 44;
             // 
             // BillLines
             // 
             this.BillLines.AllowUserToResizeRows = false;
-            dataGridViewCellStyle111.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.BillLines.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle111;
+            dataGridViewCellStyle76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.BillLines.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
             this.BillLines.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,46 +274,46 @@ namespace Aromapp
             this.BillLines.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.BillLines.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BillLines.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle112.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle112.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle112.ForeColor = System.Drawing.Color.White;
-            this.BillLines.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle112;
+            dataGridViewCellStyle77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.White;
+            this.BillLines.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.BillLines.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle113.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle113.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle113.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle113.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle113.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle113.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle113.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BillLines.DefaultCellStyle = dataGridViewCellStyle113;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BillLines.DefaultCellStyle = dataGridViewCellStyle78;
             this.BillLines.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.BillLines.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.BillLines.Location = new System.Drawing.Point(3, 66);
-            this.BillLines.Margin = new System.Windows.Forms.Padding(3, 5, 10, 10);
+            this.BillLines.Location = new System.Drawing.Point(2, 39);
+            this.BillLines.Margin = new System.Windows.Forms.Padding(2, 3, 7, 6);
             this.BillLines.Name = "BillLines";
             this.BillLines.ReadOnly = true;
             this.BillLines.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle114.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle114.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle114.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle114.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle114.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle114.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BillLines.RowHeadersDefaultCellStyle = dataGridViewCellStyle114;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BillLines.RowHeadersDefaultCellStyle = dataGridViewCellStyle79;
             this.BillLines.RowHeadersVisible = false;
             this.BillLines.RowHeadersWidth = 82;
             this.BillLines.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle115.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle115.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle115.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle115.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle115.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BillLines.RowsDefaultCellStyle = dataGridViewCellStyle115;
+            dataGridViewCellStyle80.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BillLines.RowsDefaultCellStyle = dataGridViewCellStyle80;
             this.BillLines.RowTemplate.Height = 33;
             this.BillLines.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.BillLines.Size = new System.Drawing.Size(824, 818);
+            this.BillLines.Size = new System.Drawing.Size(668, 491);
             this.BillLines.TabIndex = 28;
             this.BillLines.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.BillLines.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -341,12 +345,12 @@ namespace Aromapp
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label13.Location = new System.Drawing.Point(6, 11);
-            this.label13.Margin = new System.Windows.Forms.Padding(6, 5, 6, 0);
+            this.label13.Location = new System.Drawing.Point(4, 5);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 3, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(337, 50);
+            this.label13.Size = new System.Drawing.Size(225, 31);
             this.label13.TabIndex = 35;
-            this.label13.Text = "Contenu de la vente";
+            this.label13.Text = "Contenu";
             // 
             // tableLayoutPanel3
             // 
@@ -357,13 +361,13 @@ namespace Aromapp
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(846, 65);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 65, 3, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(683, 40);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 40, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.33569F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.66431F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(736, 832);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(596, 498);
             this.tableLayoutPanel3.TabIndex = 43;
             // 
             // tableLayoutPanel2
@@ -384,7 +388,8 @@ namespace Aromapp
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.saleDate, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -392,17 +397,17 @@ namespace Aromapp
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(730, 287);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(592, 171);
             this.tableLayoutPanel2.TabIndex = 42;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(6, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.Location = new System.Drawing.Point(4, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 50);
+            this.label12.Size = new System.Drawing.Size(75, 31);
             this.label12.TabIndex = 34;
             this.label12.Text = "Date:";
             // 
@@ -411,10 +416,10 @@ namespace Aromapp
             this.saleTotal.AutoSize = true;
             this.saleTotal.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleTotal.ForeColor = System.Drawing.Color.White;
-            this.saleTotal.Location = new System.Drawing.Point(433, 228);
-            this.saleTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.saleTotal.Location = new System.Drawing.Point(350, 136);
+            this.saleTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.saleTotal.Name = "saleTotal";
-            this.saleTotal.Size = new System.Drawing.Size(58, 33);
+            this.saleTotal.Size = new System.Drawing.Size(38, 21);
             this.saleTotal.TabIndex = 36;
             this.saleTotal.Text = "Null";
             // 
@@ -422,10 +427,10 @@ namespace Aromapp
             // 
             this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label14.Location = new System.Drawing.Point(6, 57);
-            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label14.Location = new System.Drawing.Point(4, 34);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(112, 50);
+            this.label14.Size = new System.Drawing.Size(75, 31);
             this.label14.TabIndex = 32;
             this.label14.Text = "Type:";
             // 
@@ -434,10 +439,10 @@ namespace Aromapp
             this.subTotal.AutoSize = true;
             this.subTotal.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotal.ForeColor = System.Drawing.Color.White;
-            this.subTotal.Location = new System.Drawing.Point(433, 171);
-            this.subTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.subTotal.Location = new System.Drawing.Point(350, 102);
+            this.subTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.subTotal.Name = "subTotal";
-            this.subTotal.Size = new System.Drawing.Size(58, 33);
+            this.subTotal.Size = new System.Drawing.Size(38, 21);
             this.subTotal.TabIndex = 38;
             this.subTotal.Text = "Null";
             // 
@@ -446,10 +451,10 @@ namespace Aromapp
             this.saleType.AutoSize = true;
             this.saleType.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleType.ForeColor = System.Drawing.Color.White;
-            this.saleType.Location = new System.Drawing.Point(433, 57);
-            this.saleType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.saleType.Location = new System.Drawing.Point(350, 34);
+            this.saleType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.saleType.Name = "saleType";
-            this.saleType.Size = new System.Drawing.Size(58, 33);
+            this.saleType.Size = new System.Drawing.Size(38, 21);
             this.saleType.TabIndex = 37;
             this.saleType.Text = "Null";
             // 
@@ -458,10 +463,10 @@ namespace Aromapp
             this.saleRef.AutoSize = true;
             this.saleRef.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleRef.ForeColor = System.Drawing.Color.White;
-            this.saleRef.Location = new System.Drawing.Point(433, 114);
-            this.saleRef.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.saleRef.Location = new System.Drawing.Point(350, 68);
+            this.saleRef.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.saleRef.Name = "saleRef";
-            this.saleRef.Size = new System.Drawing.Size(58, 33);
+            this.saleRef.Size = new System.Drawing.Size(38, 21);
             this.saleRef.TabIndex = 40;
             this.saleRef.Text = "Null";
             // 
@@ -469,10 +474,10 @@ namespace Aromapp
             // 
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(6, 228);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(4, 136);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 50);
+            this.label7.Size = new System.Drawing.Size(83, 31);
             this.label7.TabIndex = 31;
             this.label7.Text = "Total:";
             // 
@@ -480,10 +485,10 @@ namespace Aromapp
             // 
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(6, 114);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(4, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(374, 50);
+            this.label3.Size = new System.Drawing.Size(249, 31);
             this.label3.TabIndex = 35;
             this.label3.Text = "Reference de Bon:";
             // 
@@ -492,10 +497,10 @@ namespace Aromapp
             this.saleDate.AutoSize = true;
             this.saleDate.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleDate.ForeColor = System.Drawing.Color.White;
-            this.saleDate.Location = new System.Drawing.Point(433, 0);
-            this.saleDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.saleDate.Location = new System.Drawing.Point(350, 0);
+            this.saleDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.saleDate.Name = "saleDate";
-            this.saleDate.Size = new System.Drawing.Size(58, 33);
+            this.saleDate.Size = new System.Drawing.Size(38, 21);
             this.saleDate.TabIndex = 39;
             this.saleDate.Text = "Null";
             // 
@@ -503,10 +508,10 @@ namespace Aromapp
             // 
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(6, 171);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(4, 102);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 50);
+            this.label5.Size = new System.Drawing.Size(118, 31);
             this.label5.TabIndex = 33;
             this.label5.Text = "Sous-total:";
             // 
@@ -516,9 +521,11 @@ namespace Aromapp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(3, 296);
+            this.groupBox1.Location = new System.Drawing.Point(2, 177);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(730, 533);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(592, 319);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations sur le produit";
@@ -543,9 +550,10 @@ namespace Aromapp
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.Qt, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.PriceG, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 75);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 47);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -553,7 +561,7 @@ namespace Aromapp
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(690, 433);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(565, 257);
             this.tableLayoutPanel1.TabIndex = 41;
             // 
             // label8
@@ -563,12 +571,12 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(16, 10);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Location = new System.Drawing.Point(11, 6);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(323, 68);
+            this.label8.Size = new System.Drawing.Size(267, 40);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Nome de produits:";
+            this.label8.Text = "Nome de Produits:";
             // 
             // label10
             // 
@@ -577,10 +585,10 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label10.Location = new System.Drawing.Point(16, 146);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Location = new System.Drawing.Point(11, 86);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(323, 68);
+            this.label10.Size = new System.Drawing.Size(267, 40);
             this.label10.TabIndex = 11;
             this.label10.Text = "Prix en detail:";
             // 
@@ -592,10 +600,10 @@ namespace Aromapp
             this.prodName.AutoSize = true;
             this.prodName.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodName.ForeColor = System.Drawing.Color.White;
-            this.prodName.Location = new System.Drawing.Point(351, 10);
-            this.prodName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.prodName.Location = new System.Drawing.Point(286, 6);
+            this.prodName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.prodName.Name = "prodName";
-            this.prodName.Size = new System.Drawing.Size(323, 68);
+            this.prodName.Size = new System.Drawing.Size(268, 40);
             this.prodName.TabIndex = 12;
             this.prodName.Text = "Non disponible";
             // 
@@ -606,10 +614,10 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(16, 282);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(11, 166);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(323, 68);
+            this.label1.Size = new System.Drawing.Size(267, 40);
             this.label1.TabIndex = 11;
             this.label1.Text = "Quantité disponible:";
             // 
@@ -620,12 +628,12 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(16, 78);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(11, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(323, 68);
+            this.label2.Size = new System.Drawing.Size(267, 40);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Type de produits";
+            this.label2.Text = "Type de Produits";
             // 
             // QtD
             // 
@@ -635,10 +643,10 @@ namespace Aromapp
             this.QtD.AutoSize = true;
             this.QtD.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtD.ForeColor = System.Drawing.Color.White;
-            this.QtD.Location = new System.Drawing.Point(351, 282);
-            this.QtD.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.QtD.Location = new System.Drawing.Point(286, 166);
+            this.QtD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.QtD.Name = "QtD";
-            this.QtD.Size = new System.Drawing.Size(323, 68);
+            this.QtD.Size = new System.Drawing.Size(268, 40);
             this.QtD.TabIndex = 14;
             this.QtD.Text = "Non disponible";
             // 
@@ -650,10 +658,10 @@ namespace Aromapp
             this.prodType.AutoSize = true;
             this.prodType.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodType.ForeColor = System.Drawing.Color.White;
-            this.prodType.Location = new System.Drawing.Point(351, 78);
-            this.prodType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.prodType.Location = new System.Drawing.Point(286, 46);
+            this.prodType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.prodType.Name = "prodType";
-            this.prodType.Size = new System.Drawing.Size(323, 68);
+            this.prodType.Size = new System.Drawing.Size(268, 40);
             this.prodType.TabIndex = 12;
             this.prodType.Text = "Non disponible";
             // 
@@ -665,10 +673,10 @@ namespace Aromapp
             this.PriceD.AutoSize = true;
             this.PriceD.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriceD.ForeColor = System.Drawing.Color.White;
-            this.PriceD.Location = new System.Drawing.Point(351, 146);
-            this.PriceD.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PriceD.Location = new System.Drawing.Point(286, 86);
+            this.PriceD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PriceD.Name = "PriceD";
-            this.PriceD.Size = new System.Drawing.Size(323, 68);
+            this.PriceD.Size = new System.Drawing.Size(268, 40);
             this.PriceD.TabIndex = 14;
             this.PriceD.Text = "Non disponible";
             // 
@@ -679,10 +687,10 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(16, 350);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(11, 206);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(323, 73);
+            this.label4.Size = new System.Drawing.Size(267, 45);
             this.label4.TabIndex = 11;
             this.label4.Text = "Quantité achetée:";
             // 
@@ -693,10 +701,10 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label9.Location = new System.Drawing.Point(16, 214);
-            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Location = new System.Drawing.Point(11, 126);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(323, 68);
+            this.label9.Size = new System.Drawing.Size(267, 40);
             this.label9.TabIndex = 10;
             this.label9.Text = "Prix en gros:";
             // 
@@ -708,10 +716,10 @@ namespace Aromapp
             this.Qt.AutoSize = true;
             this.Qt.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Qt.ForeColor = System.Drawing.Color.White;
-            this.Qt.Location = new System.Drawing.Point(351, 350);
-            this.Qt.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Qt.Location = new System.Drawing.Point(286, 206);
+            this.Qt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Qt.Name = "Qt";
-            this.Qt.Size = new System.Drawing.Size(323, 73);
+            this.Qt.Size = new System.Drawing.Size(268, 45);
             this.Qt.TabIndex = 14;
             this.Qt.Text = "Non disponible";
             // 
@@ -723,10 +731,10 @@ namespace Aromapp
             this.PriceG.AutoSize = true;
             this.PriceG.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriceG.ForeColor = System.Drawing.Color.White;
-            this.PriceG.Location = new System.Drawing.Point(351, 214);
-            this.PriceG.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PriceG.Location = new System.Drawing.Point(286, 126);
+            this.PriceG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PriceG.Name = "PriceG";
-            this.PriceG.Size = new System.Drawing.Size(323, 68);
+            this.PriceG.Size = new System.Drawing.Size(268, 40);
             this.PriceG.TabIndex = 13;
             this.PriceG.Text = "Non disponible";
             // 
@@ -735,9 +743,10 @@ namespace Aromapp
             this.Modification.BackColor = System.Drawing.Color.Black;
             this.Modification.Controls.Add(this.tableLayoutPanel5);
             this.Modification.Location = new System.Drawing.Point(4, 44);
+            this.Modification.Margin = new System.Windows.Forms.Padding(2);
             this.Modification.Name = "Modification";
-            this.Modification.Padding = new System.Windows.Forms.Padding(3);
-            this.Modification.Size = new System.Drawing.Size(2125, 906);
+            this.Modification.Padding = new System.Windows.Forms.Padding(2);
+            this.Modification.Size = new System.Drawing.Size(1285, 544);
             this.Modification.TabIndex = 1;
             this.Modification.Text = "Modification";
             // 
@@ -749,12 +758,12 @@ namespace Aromapp
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(2119, 900);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1281, 540);
             this.tableLayoutPanel5.TabIndex = 45;
             // 
             // tableLayoutPanel7
@@ -767,13 +776,14 @@ namespace Aromapp
             this.tableLayoutPanel7.Controls.Add(this.cart, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel12, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel11, 0, 1);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(1051, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(635, 2);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 3;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.487696F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.060403F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.34004F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1065, 894);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(644, 536);
             this.tableLayoutPanel7.TabIndex = 29;
             // 
             // cart
@@ -781,60 +791,60 @@ namespace Aromapp
             this.cart.AllowUserToAddRows = false;
             this.cart.AllowUserToDeleteRows = false;
             this.cart.AllowUserToResizeRows = false;
-            dataGridViewCellStyle116.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle116.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle116;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
             this.cart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cart.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.cart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle117.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle117.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle117.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle117.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle117.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle117.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle117.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle117;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle82.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
             this.cart.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle118.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle118.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle118.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle118.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle118.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle118.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle118.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.DefaultCellStyle = dataGridViewCellStyle118;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.DefaultCellStyle = dataGridViewCellStyle83;
             this.cart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.cart.Location = new System.Drawing.Point(10, 149);
-            this.cart.Margin = new System.Windows.Forms.Padding(10, 10, 20, 23);
+            this.cart.Location = new System.Drawing.Point(7, 88);
+            this.cart.Margin = new System.Windows.Forms.Padding(7, 6, 13, 14);
             this.cart.Name = "cart";
             this.cart.ReadOnly = true;
             this.cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle119.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle119.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle119.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle119.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle119.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle119.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle119.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle119;
+            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle84.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle84.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle84.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
             this.cart.RowHeadersVisible = false;
             this.cart.RowHeadersWidth = 82;
             this.cart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle120.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle120.Font = new System.Drawing.Font("Calibri", 9.25F);
-            dataGridViewCellStyle120.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle120.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle120.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle120.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cart.RowsDefaultCellStyle = dataGridViewCellStyle120;
+            dataGridViewCellStyle85.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Calibri", 9.25F);
+            dataGridViewCellStyle85.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cart.RowsDefaultCellStyle = dataGridViewCellStyle85;
             this.cart.RowTemplate.Height = 33;
             this.cart.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cart.Size = new System.Drawing.Size(1035, 722);
+            this.cart.Size = new System.Drawing.Size(624, 434);
             this.cart.TabIndex = 39;
             this.cart.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.cart.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -867,11 +877,12 @@ namespace Aromapp
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.44304F));
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(790, 52);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(527, 30);
             this.tableLayoutPanel12.TabIndex = 38;
             // 
             // tableLayoutPanel13
@@ -884,11 +895,12 @@ namespace Aromapp
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.00507F));
             this.tableLayoutPanel13.Controls.Add(this.nettotalText, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(196, 3);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(131, 2);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(591, 46);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(394, 26);
             this.tableLayoutPanel13.TabIndex = 37;
             // 
             // nettotalText
@@ -897,13 +909,13 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nettotalText.BackColor = System.Drawing.Color.Transparent;
-            this.nettotalText.Font = new System.Drawing.Font("Calibri", 14.125F, System.Drawing.FontStyle.Bold);
+            this.nettotalText.Font = new System.Drawing.Font("Calibri", 13.125F, System.Drawing.FontStyle.Bold);
             this.nettotalText.ForeColor = System.Drawing.Color.Green;
-            this.nettotalText.Location = new System.Drawing.Point(201, 0);
-            this.nettotalText.Margin = new System.Windows.Forms.Padding(7, 0, 7, 5);
+            this.nettotalText.Location = new System.Drawing.Point(134, 0);
+            this.nettotalText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 3);
             this.nettotalText.Name = "nettotalText";
-            this.nettotalText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.nettotalText.Size = new System.Drawing.Size(383, 41);
+            this.nettotalText.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.nettotalText.Size = new System.Drawing.Size(255, 23);
             this.nettotalText.TabIndex = 41;
             this.nettotalText.Tag = " DA";
             this.nettotalText.Text = "0";
@@ -912,12 +924,12 @@ namespace Aromapp
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Calibri", 11.5F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(62, 5);
-            this.label17.Margin = new System.Windows.Forms.Padding(6, 5, 6, 0);
+            this.label17.Location = new System.Drawing.Point(41, 3);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 3, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(126, 41);
+            this.label17.Size = new System.Drawing.Size(84, 23);
             this.label17.TabIndex = 40;
             this.label17.Text = "Total:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -925,12 +937,12 @@ namespace Aromapp
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Calibri", 11.5F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(6, 5);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 5, 6, 0);
+            this.label6.Location = new System.Drawing.Point(4, 3);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 47);
+            this.label6.Size = new System.Drawing.Size(109, 27);
             this.label6.TabIndex = 36;
             this.label6.Text = "Panier";
             // 
@@ -945,11 +957,12 @@ namespace Aromapp
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.3924F));
             this.tableLayoutPanel11.Controls.Add(this.guna2Button2, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.SaveBtn, 1, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 61);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(2, 36);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(1059, 75);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(640, 44);
             this.tableLayoutPanel11.TabIndex = 36;
             // 
             // guna2Button2
@@ -966,10 +979,10 @@ namespace Aromapp
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button2.Location = new System.Drawing.Point(10, 10);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(10);
+            this.guna2Button2.Location = new System.Drawing.Point(7, 6);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(248, 55);
+            this.guna2Button2.Size = new System.Drawing.Size(165, 32);
             this.guna2Button2.TabIndex = 39;
             this.guna2Button2.Text = "Éffectuer";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -988,10 +1001,10 @@ namespace Aromapp
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SaveBtn.ImageSize = new System.Drawing.Size(10, 10);
-            this.SaveBtn.Location = new System.Drawing.Point(369, 10);
-            this.SaveBtn.Margin = new System.Windows.Forms.Padding(10);
+            this.SaveBtn.Location = new System.Drawing.Point(224, 6);
+            this.SaveBtn.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(248, 55);
+            this.SaveBtn.Size = new System.Drawing.Size(165, 32);
             this.SaveBtn.TabIndex = 39;
             this.SaveBtn.Text = "Sauvegarder";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
@@ -1005,19 +1018,20 @@ namespace Aromapp
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Controls.Add(this.prods, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.823266F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.17673F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1042, 894);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(629, 536);
             this.tableLayoutPanel8.TabIndex = 29;
             // 
             // prods
             // 
             this.prods.AllowUserToResizeRows = false;
-            dataGridViewCellStyle106.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            this.prods.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle106;
+            dataGridViewCellStyle86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.prods.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle86;
             this.prods.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1025,46 +1039,46 @@ namespace Aromapp
             this.prods.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.prods.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.prods.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle107.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle107.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle107.ForeColor = System.Drawing.Color.White;
-            this.prods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle107;
+            dataGridViewCellStyle87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle87.ForeColor = System.Drawing.Color.White;
+            this.prods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle87;
             this.prods.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle108.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle108.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle108.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle108.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle108.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prods.DefaultCellStyle = dataGridViewCellStyle108;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle88.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle88.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prods.DefaultCellStyle = dataGridViewCellStyle88;
             this.prods.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.prods.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.prods.Location = new System.Drawing.Point(3, 66);
-            this.prods.Margin = new System.Windows.Forms.Padding(3, 5, 10, 10);
+            this.prods.Location = new System.Drawing.Point(2, 39);
+            this.prods.Margin = new System.Windows.Forms.Padding(2, 3, 7, 6);
             this.prods.Name = "prods";
             this.prods.ReadOnly = true;
             this.prods.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle109.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle109.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle109.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle109.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle109.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle109.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle109.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prods.RowHeadersDefaultCellStyle = dataGridViewCellStyle109;
+            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle89.Font = new System.Drawing.Font("Calibri", 7.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle89.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prods.RowHeadersDefaultCellStyle = dataGridViewCellStyle89;
             this.prods.RowHeadersVisible = false;
             this.prods.RowHeadersWidth = 82;
             this.prods.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle110.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle110.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle110.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle110.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle110.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prods.RowsDefaultCellStyle = dataGridViewCellStyle110;
+            dataGridViewCellStyle90.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle90.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prods.RowsDefaultCellStyle = dataGridViewCellStyle90;
             this.prods.RowTemplate.Height = 33;
             this.prods.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prods.Size = new System.Drawing.Size(1029, 818);
+            this.prods.Size = new System.Drawing.Size(620, 491);
             this.prods.TabIndex = 28;
             this.prods.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.prods.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -1097,20 +1111,57 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel10.ColumnCount = 4;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.4F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.6F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.92395F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.07605F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
             this.tableLayoutPanel10.Controls.Add(this.ShowPurp, 3, 0);
             this.tableLayoutPanel10.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.comboBox1, 2, 0);
             this.tableLayoutPanel10.Controls.Add(this.searchBox, 1, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1036, 55);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(625, 32);
             this.tableLayoutPanel10.TabIndex = 29;
+            // 
+            // ShowPurp
+            // 
+            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShowPurp.Location = new System.Drawing.Point(427, 6);
+            this.ShowPurp.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
+            this.ShowPurp.Name = "ShowPurp";
+            // 
+            // 
+            // 
+            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
+            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.ShowPurp.Properties.OffText = "Prix d\'achat";
+            this.ShowPurp.Properties.OnText = "Prix d\'achat";
+            this.ShowPurp.Size = new System.Drawing.Size(196, 25);
+            this.ShowPurp.TabIndex = 39;
+            this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Calibri", 11.5F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label11.Location = new System.Drawing.Point(4, 3);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 29);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Produits";
             // 
             // comboBox1
             // 
@@ -1123,10 +1174,10 @@ namespace Aromapp
             this.comboBox1.Items.AddRange(new object[] {
             "Parfum",
             "Emballage/Sachet"});
-            this.comboBox1.Location = new System.Drawing.Point(503, 6);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 6, 8, 3);
+            this.comboBox1.Location = new System.Drawing.Point(264, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 4, 5, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 41);
+            this.comboBox1.Size = new System.Drawing.Size(156, 29);
             this.comboBox1.TabIndex = 38;
             this.comboBox1.Tag = "";
             this.comboBox1.Text = "Catégories";
@@ -1139,10 +1190,10 @@ namespace Aromapp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.Font = new System.Drawing.Font("Calibri", 10.25F);
             this.searchBox.ForeColor = System.Drawing.Color.Gray;
-            this.searchBox.Location = new System.Drawing.Point(180, 6);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 6, 8, 3);
+            this.searchBox.Location = new System.Drawing.Point(106, 4);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 4, 5, 2);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(312, 41);
+            this.searchBox.Size = new System.Drawing.Size(151, 28);
             this.searchBox.TabIndex = 37;
             this.searchBox.Tag = "Rechercher...";
             this.searchBox.Text = "Rechercher...";
@@ -1150,54 +1201,22 @@ namespace Aromapp
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(6, 5);
-            this.label11.Margin = new System.Windows.Forms.Padding(6, 5, 6, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 50);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "Produits";
-            // 
-            // ShowPurp
-            // 
-            this.ShowPurp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShowPurp.Location = new System.Drawing.Point(747, 10);
-            this.ShowPurp.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.ShowPurp.Name = "ShowPurp";
-            this.ShowPurp.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.Appearance.Options.UseFont = true;
-            this.ShowPurp.Properties.Appearance.Options.UseForeColor = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Calibri", 10F);
-            this.ShowPurp.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.White;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.ShowPurp.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.ShowPurp.Properties.OffText = "Prix d\'achat";
-            this.ShowPurp.Properties.OnText = "Prix d\'achat";
-            this.ShowPurp.Size = new System.Drawing.Size(286, 41);
-            this.ShowPurp.TabIndex = 39;
-            this.ShowPurp.Toggled += new System.EventHandler(this.ShowPurp_Toggled);
-            // 
             // SaleInfo
             // 
             this.Appearance.BackColor = System.Drawing.Color.Black;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2133, 1050);
+            this.ClientSize = new System.Drawing.Size(1293, 652);
             this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.tableLayoutPanel6);
             this.IconOptions.ShowIcon = false;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SaleInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Informations sur la ventes ";
+            this.Text = "Informations sur la vente";
             this.Load += new System.EventHandler(this.SaleInfo_Load);
             this.SizeChanged += new System.EventHandler(this.SaleInfo_SizeChanged);
             this.tableLayoutPanel6.ResumeLayout(false);

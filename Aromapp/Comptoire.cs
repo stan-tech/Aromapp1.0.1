@@ -449,7 +449,7 @@ namespace Aromapp
                
                 BuyingPrices.Add(buyinPrice);
 
-                produits l_Ventes = new produits(nomproduits, quantity, NewPrice, 10, 0);
+                Produits l_Ventes = new Produits(nomproduits, quantity, NewPrice, 10, 0);
 
                 l_Ventes.Marge = (NewPrice - buyinPrice) * quantity;
                 l_Ventes.MontantHT = NewPrice * quantity;
@@ -513,7 +513,7 @@ namespace Aromapp
             else
             {
                 MessageBoxer.showGeneralMsg("Le produit " + prodID + 
-                    " n'est plus disponible. Vérifiez la liste des produits.");
+                    " n'est plus disponible. Vérifiez la liste des Produits.");
 
             } 
 
@@ -525,7 +525,7 @@ namespace Aromapp
 
         }
 
-        string SelectedTable = "produits";
+        string SelectedTable = "Produits";
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
@@ -565,7 +565,7 @@ namespace Aromapp
             }
             else
             {
-                SelectedTable = "produits";
+                SelectedTable = "Produits";
             }
 
         }
@@ -800,7 +800,7 @@ namespace Aromapp
             
 
             comboBox1.Text = "Types";
-            SelectedTable = "produits";
+            SelectedTable = "Produits";
             searchBox.Text = "";
             HintUtils.ShowHint(searchBox);
 
@@ -1287,6 +1287,19 @@ namespace Aromapp
                 prods.Columns["Prix d'achat"].Visible = Properties.Settings.Default.ShowPurp;
 
         }
+
+        private void nettotalText_MouseEnter(object sender, EventArgs e)
+        {
+            nettotalText.ForeColor = System.Drawing.Color.White;
+
+        }
+
+        private void nettotalText_MouseLeave(object sender, EventArgs e)
+        {
+            nettotalText.ForeColor = System.Drawing.Color.CornflowerBlue;
+
+        }
+
 
         public string GeneratePdf(Guna2DataGridView grid,
        Bill bill)

@@ -30,7 +30,8 @@ namespace Aromapp
         string number = "0";
         public Home()
         {
-          
+            Confirm.SelectedUser = new User() { Name = "test" };
+
             InitializeComponent();
             InitializeTrashTimer();
             AccessControl.AccessControl._Form = this;

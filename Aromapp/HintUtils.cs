@@ -39,7 +39,7 @@ namespace Aromapp
         }
         public static void HideHint(Guna2TextBox box)
         {
-            if (box.Text == (string)box.Tag)
+            if (box.Text == (string) box.Tag)
             {
                 box.Text = "";
                 box.ForeColor = Color.Black;
