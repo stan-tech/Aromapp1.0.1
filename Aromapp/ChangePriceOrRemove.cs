@@ -88,6 +88,15 @@ namespace Aromapp
                     modifiedProducts.Add(ChangingProps.ProdRef);
                 }
 
+                if(string.IsNullOrEmpty(newPrice.Text) || newPrice.Text == newPrice.Tag.ToString())
+                {
+                    ChangingProps.NewPrice = double.Parse(ProductPriceTxt.Text.ToString(), CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    ChangingProps.NewPrice = double.Parse(newPrice.Text.ToString(), CultureInfo.InvariantCulture);
+
+                }
                 ChangingProps.Quantity = qty;
 
                 PriceChanged(e);
@@ -257,7 +266,7 @@ namespace Aromapp
                 ? (newRtail * double.Parse(qtt.Text.Replace(".", ","))).ToString("F2") + " DA"
                 : totalText.Text;
 
-            ChangingProps.NewPrice = double.Parse(ProductPriceTxt.ToString(), CultureInfo.InvariantCulture);
+            ChangingProps.NewPrice = double.Parse(ProductPriceTxt.Text.ToString(), CultureInfo.InvariantCulture);
 
         }
 

@@ -24,7 +24,6 @@ namespace Aromapp
         private bool disposedValue;
         NumberFormatInfo nfi = new NumberFormatInfo();
 
-
         public bool IsDisposed
         {
             get; set;
@@ -1589,7 +1588,6 @@ namespace Aromapp
 
             return id;
         }
-
 
         public bool ProductExists(string id)
         {

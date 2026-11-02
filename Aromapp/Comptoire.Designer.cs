@@ -752,7 +752,7 @@
             "0",
             "9",
             "19"});
-            this.tva.Location = new System.Drawing.Point(10, 103);
+            this.tva.Location = new System.Drawing.Point(10, 104);
             this.tva.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.tva.Name = "tva";
             this.tva.Size = new System.Drawing.Size(248, 26);

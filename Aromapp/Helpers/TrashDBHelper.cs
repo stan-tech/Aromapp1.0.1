@@ -15,7 +15,7 @@ namespace Aromapp
     {
         string query = "";
 
-        private static readonly Dictionary<string, TableConfig
+        public static readonly Dictionary<string, TableConfig
                    > TrashTables
            = new Dictionary<string, TableConfig
                >(StringComparer.OrdinalIgnoreCase)

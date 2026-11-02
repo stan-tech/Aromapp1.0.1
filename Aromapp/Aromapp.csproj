@@ -159,6 +159,7 @@
     <Compile Include="ChangePriceOrRemove.Designer.cs">
       <DependentUpon>ChangePriceOrRemove.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Models\PriceChangingProps.cs" />
     <Compile Include="Products\ExportOptions.cs">
       <SubType>Form</SubType>
